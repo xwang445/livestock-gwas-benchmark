@@ -2,7 +2,7 @@
 
 Repository for the manuscript: Widely used GWAS methods can produce misleading localization under diffuse polygenic architecture in livestock.
 
-GitHub repository: https://github.com/xwang445/livestock-gwas-polygenic-benchmark
+GitHub repository: https://github.com/xwang445/livestock-gwas-benchmark
 
 ## Project title
 
