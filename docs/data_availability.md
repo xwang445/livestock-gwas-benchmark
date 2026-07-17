@@ -1,0 +1,5 @@
+# Data availability
+
+The individual-level Duroc pig genotype and phenotype data used in this study are proprietary to Smithfield Premium Genetics and are not publicly available. Access to these data may be available from the corresponding author and Smithfield Premium Genetics upon reasonable request and subject to a data-sharing agreement and any applicable institutional approvals. This repository contains the analysis code used for phenotype simulation, GWAS benchmarking, realized effect-size and power calculations, spillover and genomic-inflation analyses, locus-overlap analyses, and the theoretical non-centrality parameter calculations. Non-identifying derived summaries required to reproduce selected manuscript figures are included where permitted.
+
+The public GitHub repository for this project is https://github.com/xwang445/livestock-gwas-polygenic-benchmark. The repository intentionally excludes the proprietary genotype and phenotype inputs and the full raw GWAS output tables that are required for full end-to-end reruns.

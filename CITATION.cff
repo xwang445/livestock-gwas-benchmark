@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: If you use this repository or the associated analysis workflow, please cite the manuscript.
+title: "Widely used GWAS methods can produce misleading localization under diffuse polygenic architecture in livestock"
+authors:
+  - name: "TBD (please update with the manuscript authors)"
+repository-code: "https://github.com/xwang445/livestock-gwas-polygenic-benchmark"
+url: "https://github.com/xwang445/livestock-gwas-polygenic-benchmark"
+license: MIT
+keywords:
+  - GWAS
+  - livestock
+  - polygenic architecture
+  - benchmark
+  - Duroc pig
