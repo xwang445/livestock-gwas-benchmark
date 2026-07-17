@@ -1,0 +1,6 @@
+project_root: "/path/to/project"
+plink_prefix: "/path/to/genotype_prefix"
+phenotype_directory: "/path/to/phenotypes"
+causal_variant_file: "/path/to/causal_variant_list.csv"
+output_directory: "/path/to/output"
+analysis_panel: "/path/to/analysis_panel"

@@ -1,0 +1,5 @@
+data.table
+ggplot2
+scales
+dplyr
+stringr

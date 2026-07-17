@@ -1,0 +1,7 @@
+original_name	repository_name	reason
+FPR_50kb_window.R	scripts/07_spillover/fpr_50kb_window.R	Renamed to remove the ambiguous space-containing name and place it in the spillover workflow directory.
+Figure6A_spillover_locus_500kb.R	scripts/07_spillover/figure6A_spillover_locus_500kb.R	Renamed to a descriptive, machine-friendly name and placed in the spillover workflow directory.
+calculate_NCP.R	scripts/10_equation13_ncp/calculate_ncp.R	Renamed to a lowercase, descriptive name consistent with the Equation 13 workflow.
+lambdaGC_range.R	scripts/08_lambda_gc/lambda_gc_range.R	Renamed to a descriptive name consistent with the lambda GC workflow.
+power_analysis.R	scripts/05_effect_size_power/power_analysis.R	Placed in the effect-size and power workflow directory.
+summarize _sig_SNPs_number.R	scripts/06_significant_loci/summarize_significant_snps_and_loci.R	Renamed to remove the space and clarify that both significant SNPs and loci are summarized.

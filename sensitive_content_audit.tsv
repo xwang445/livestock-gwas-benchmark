@@ -1,0 +1,15 @@
+file	line	matched_pattern	interpretation	action_taken
+.gitignore	37	secret	sensitive path or identifier pattern	removed from repository content
+README.md	88	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	2	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	3	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	15	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	212	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	215	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	268	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	340	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	343	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	428	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	524	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	525	Smithfield	scientific mention of Smithfield	retained as documentation only
+repository_inventory.tsv	526	Smithfield	scientific mention of Smithfield	retained as documentation only
