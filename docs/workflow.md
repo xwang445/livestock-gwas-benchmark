@@ -37,7 +37,7 @@
    - Requirements: proprietary data required
 
 7. Run all GWAS methods.
-   - Scripts: scripts/04_gwas/*
+   - Scripts: scripts/GWAS/*
    - Inputs: prepared genotype and phenotype data
    - Outputs: GWAS summary statistics
    - Requirements: proprietary data required

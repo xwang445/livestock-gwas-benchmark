@@ -41,12 +41,41 @@ The analysis workflow was designed around a large-scale Duroc pig resource with:
 
 ## Repository structure
 
-- scripts/: analysis scripts grouped by workflow stage
-- derived_data/: non-identifying derived summary templates
-- docs/: workflow and manuscript mapping documentation
-- environment/: software and package notes
-- config/: example configuration file for local paths
-- example/: minimal usage examples
+```text
+livestock-gwas-benchmark/
+├── config/                 # Example local-path configuration
+├── derived_data/           # Non-identifying derived summary templates
+├── docs/                   # Workflow, input-format, and manuscript mapping documentation
+├── environment/            # Software versions and package requirements
+├── example/                # Minimal usage examples
+└── scripts/                # Analysis scripts grouped by workflow stage
+    ├── 01_genotype_preparation/
+    ├── 02_ld_analysis/
+    ├── 03_simulation/
+    ├── GWAS/               # Runners for BOLT-LMM, fastGWA, REGENIE, SLEMM, and GAPIT/BLINK
+    ├── 05_effect_size_power/
+    ├── 06_significant_loci/
+    ├── 07_spillover/
+    ├── 08_lambda_gc/
+    ├── 09_locus_overlap/
+    ├── 10_equation13_ncp/
+    └── 11_figures/
+```
+
+## Running the GWAS scripts
+
+The method-specific runners are in [`scripts/GWAS/`](scripts/GWAS/). Each script contains placeholder paths that must be changed for the local genotype, phenotype, software, and output locations before execution.
+
+| Script | Method | Main workflow |
+| --- | --- | --- |
+| [`run_boltlmm.sh`](scripts/GWAS/run_boltlmm.sh) | BOLT-LMM | Runs the linear mixed-model association test for phenotypes 1–10 |
+| [`run_fastGWA.sh`](scripts/GWAS/run_fastGWA.sh) | fastGWA | Builds a GRM and sparse GRM, then runs fastGWA-MLM |
+| [`run_regenie.sh`](scripts/GWAS/run_regenie.sh) | REGENIE with LOCO | Fits the step-1 model and performs step-2 association testing |
+| [`run_regenie_wo_loco.sh`](scripts/GWAS/run_regenie_wo_loco.sh) | REGENIE without LOCO | Fits the model and performs association testing using PRS predictions |
+| [`run_slemm_gwas.sh`](scripts/GWAS/run_slemm_gwas.sh) | SLEMM | Fits the null LMM, computes GRAMMAR-Gamma, runs chromosomes 1–18, and merges results |
+| [`gapit.R`](scripts/GWAS/gapit.R) | GAPIT/BLINK | Loads phenotype, genotype, and map files; validates marker alignment; and runs BLINK |
+
+See the [GWAS scripts README](scripts/GWAS/README.md) for required variables, input expectations, output types, and example commands. The supplied runners default to 10 phenotype replicates; adjust their phenotype loops if a different number of replicates is required.
 
 ## Required software
 
@@ -70,7 +99,7 @@ Copy the example configuration in config/example_paths.yaml and edit the placeho
 3. Define effect and null windows.
 4. Simulate phenotypes.
 5. Prepare the 20,000-animal subset.
-6. Run all GWAS methods.
+6. Run the method-specific workflows in [`scripts/GWAS/`](scripts/GWAS/).
 7. Harmonize GWAS outputs and SNP identifiers.
 8. Summarize significant SNPs and 500 kb loci.
 9. Calculate spillover-locus rates and genomic inflation.
