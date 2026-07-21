@@ -25,7 +25,7 @@
    - Requirements: proprietary data required
 
 5. Simulate phenotypes.
-   - Script: scripts/03_simulation/README.md
+   - Script: scripts/03_simulation/simulate_polygenic_phenotypes.sh
    - Inputs: causal variant list, genotype panel
    - Outputs: phenotype replicates
    - Requirements: proprietary data required
@@ -37,7 +37,7 @@
    - Requirements: proprietary data required
 
 7. Run all GWAS methods.
-   - Scripts: scripts/GWAS/*
+   - Scripts: scripts/04_gwas/*
    - Inputs: prepared genotype and phenotype data
    - Outputs: GWAS summary statistics
    - Requirements: proprietary data required
