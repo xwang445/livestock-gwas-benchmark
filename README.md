@@ -1,5 +1,7 @@
 # livestock-gwas-benchmark
 
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-10.64898%2F2026.07.20.739621-B31B1B.svg)](https://doi.org/10.64898/2026.07.20.739621)
+
 Repository for the manuscript: Widely used GWAS methods can produce misleading localization under diffuse polygenic architecture in livestock.
 
 GitHub repository: https://github.com/xwang445/livestock-gwas-benchmark
@@ -124,7 +126,15 @@ This repository contains the public-safe analysis code, documentation, and non-i
 
 ## Citation
 
-Please cite the manuscript when using this repository. A citation file is included in CITATION.cff.
+Please cite the following preprint when using this repository:
+
+Wang, X.; Wang, J.; Tiezzi, F.; Huang, Y.; Huang, W.; Maltecca, C.; Jiang, J. (2026).
+
+Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock.
+
+bioRxiv. https://doi.org/10.64898/2026.07.20.739621
+
+A machine-readable citation is available in [`CITATION.cff`](CITATION.cff).
 
 ## Contact
 
