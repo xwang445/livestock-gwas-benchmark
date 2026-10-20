@@ -2,13 +2,13 @@
 
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-10.64898%2F2026.07.20.739621-B31B1B.svg)](https://doi.org/10.64898/2026.07.20.739621)
 
-Repository for the manuscript: Widely used GWAS methods can produce misleading localization under diffuse polygenic architecture in livestock.
+Repository for the manuscript: Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock.
 
 GitHub repository: https://github.com/xwang445/livestock-gwas-benchmark
 
 ## Project title
 
-Widely used GWAS methods can produce misleading localization under diffuse polygenic architecture in livestock
+Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock
 
 ## Scientific question
 
@@ -61,7 +61,8 @@ livestock-gwas-benchmark/
     ├── 08_lambda_gc/
     ├── 09_locus_overlap/
     ├── 10_equation13_ncp/
-    └── 11_figures/
+    ├── 11_figures/
+    └── 12_finemapping/     # LOCO SuSiE-adj, SuSiE-RSS, and comparison analyses
 ```
 
 ## Running the GWAS scripts
@@ -78,6 +79,14 @@ The method-specific runners are in [`scripts/04_gwas/`](scripts/04_gwas/). Each 
 | [`gapit.R`](scripts/04_gwas/gapit.R) | GAPIT/BLINK | Loads phenotype, genotype, and map files; validates marker alignment; and runs BLINK |
 
 See the [GWAS scripts README](scripts/04_gwas/README.md) for required variables, input expectations, output types, and example commands. The supplied runners default to 10 phenotype replicates; adjust their phenotype loops if a different number of replicates is required.
+
+## Fine-mapping code
+
+The [fine-mapping workflow](scripts/12_finemapping/README.md) contains the LOCO-adjusted SuSiE-adj and ordinary-LD SuSiE-RSS implementations, shared genotype/locus preparation, and comparison and high-PIP evaluation scripts for BOLT-LMM and REGENIE-LOCO inputs.
+
+Both pipelines use susieR 0.14.2 with `L = 10` and 95% credible-set coverage. SuSiE-adj uses LOCO-adjusted LD, effective sample size, and estimated residual variance; SuSiE-RSS uses ordinary in-sample LD, `n = 20000`, and fixed residual variance. The comparison therefore evaluates the complete pipelines rather than changing LD alone.
+
+See the [installation and execution instructions](scripts/12_finemapping/README.md) for required inputs and execution order. Code is included; genotype data, fitted objects, and LD/GRM matrices are not.
 
 ## Required software
 
@@ -120,7 +129,7 @@ Copy the example configuration in config/example_paths.yaml and edit the placeho
 
 ## Data availability
 
-The individual-level Duroc pig genotype and phenotype data used in this study are proprietary to Smithfield Premium Genetics and are not publicly available. Access to these data may be available from the corresponding author and Smithfield Premium Genetics upon reasonable request and subject to a data-sharing agreement and any applicable institutional approvals.
+The individual-level Duroc pig genotype data used in this study are proprietary to Smithfield Premium Genetics and are not publicly available. Access to these data may be available from the corresponding author and Smithfield Premium Genetics upon reasonable request and subject to a data-sharing agreement and any applicable institutional approvals.
 
 This repository contains the public-safe analysis code, documentation, and non-identifying derived summary templates needed to inspect the workflow and adapt the analysis for similar projects. Complete reruns require access to the underlying Duroc data and authorized computational resources.
 

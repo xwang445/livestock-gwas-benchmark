@@ -1,0 +1,10 @@
+source("scripts/common.R")
+b<-read_bim("genotype/spg.20k");f<-read_fam("genotype/spg.20k")
+expected<-read("qc/expected_samples.tsv",colClasses="character")
+original<-read_bim(geno_source)
+stopifnot(nrow(f)==20000,!anyDuplicated(f$IID),identical(f$IID,expected$IID),identical(b,original))
+frq<-read("genotype/spg.20k.frq");miss<-read("genotype/spg.20k.lmiss")
+stopifnot(identical(frq$SNP,b$SNP),all(frq$A1==b$A1 & frq$A2==b$A2))
+write(data.table(n_individuals=nrow(f),n_snps=nrow(b),mean_missingness=mean(miss$F_MISS),
+                max_snp_missingness=max(miss$F_MISS),monomorphic=sum(frq$MAF==0)),"qc/genotype_summary.tsv")
+writeLines("PASS","status/genotype.PASS")
