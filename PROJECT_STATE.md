@@ -1,6 +1,6 @@
 # Project state
 
-Updated 2026-11-04. Workflow consolidation and the authorized provenance checks are complete locally. Installation and publication verification are the final steps. No model fits or simulation jobs are active. The previous state and publication history are preserved in Git at commit 0182c6e.
+Updated 2026-11-04. Workflow consolidation, the authorized provenance checks, manuscript correction, installation and GitHub publication are complete. Both remote main and reconstruct/20261104 were verified at content commit 997d219c5fb10e876e235d140834c30758599f8e; this state-only follow-up records that verification. No jobs are active. The installed repository is clean, its private profile remains ignored, and all 90 Mac GWAS input paths passed the installed configuration check. The previous state and publication history are preserved in Git at commit 0182c6e.
 
 ## Completed
 
@@ -10,7 +10,7 @@ Updated 2026-11-04. Workflow consolidation and the authorized provenance checks 
 - Retained simulation/chip/GRM sample order verified. All ten phenotype subsets exactly match the original simulation values. GWAS and fine-mapping inputs contain the correct ID sets in different row orders; alignment is by IID.
 - All 31,301 GRM diagonals and 4,096 deterministic off-diagonals checked against the retained causal genotypes. This was a partial matrix check, not a full original-file comparison.
 - Independent raw-column scan of all 90 GWAS panels confirmed REGENIE_LOCO's significant-SNP maximum of 20,461 and the overall untruncated maximum −log10(P) of 107.517 in REGENIE_LOCO phenotype 8. The source of the historical approximately 102 wording was not established.
-- A separate corrected local DOCX contains the two numerical corrections and consistent MPH/sample-selection wording. The original manuscript remains unchanged. Local delivery location: `../manuscript_review_20261104/`; manuscript files are excluded from Git.
+- A separate corrected local DOCX contains the two numerical corrections and consistent MPH/sample-selection wording. The original manuscript remains unchanged. Installed local delivery location: `../manuscript_review_20261104/`, containing the corrected DOCX and full edit log; manuscript files are excluded from Git.
 
 ## Evidence and validation
 
