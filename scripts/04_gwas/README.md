@@ -1,16 +1,24 @@
-# Nine recovered GWAS configurations
+# GWAS
 
-Every shell runner requires a new OUTPUT_DIR and authorized GENO_DIR prefix; it refuses an existing output directory. Defaults preserve the recovered scientific command choices. These runners were syntax-checked and selected arguments were tested with mocks; expensive fitting was NOT repeated.
+The benchmark contains nine configurations across ten simulated phenotypes: 90 saved GWAS panels. To analyze these results, use `python scripts/workflow.py summarize --profile mac --out ../benchmark-rerun`. The source filenames are in [methods.yaml](../../config/methods.yaml); formats are in [input_file_formats.md](../../docs/input_file_formats.md).
 
-| Runner | Required phenotype input | Configuration |
+## Fitting commands
+
+These runners are for a new, separately allocated run. Each shell runner requires a genotype prefix in `GENO_DIR` and a new `OUTPUT_DIR` and refuses to overwrite existing output. No new fits were needed for the published downstream tables.
+
+| Runner | Phenotype input | Model settings |
 |---|---|---|
-| run_boltlmm.sh | PHENO_FILE combined TSV | BOLT --lmm --LDscoresUseChip; ten traits |
-| run_regenie.sh | PHENO_FILE combined TSV | Step1/2 --qt --bsize 1000; default LOCO |
-| run_regenie_wo_loco.sh | PHENO_FILE combined TSV | Step1 --print-prs; Step2 --use-prs |
-| run_fastGWA.sh | PHENO_DIR containing pheno.1.txt..10 | Full GRM, sparse cutoff 0.05, --fastGWA-mlm; final extension .fastgwa.fastGWA |
-| run_slemm_gwas.sh | PHENO_FILE SLEMM CSV; SNP_INFO_FILE | Full null fit, gamma calibration, chr1–18 association; genotype prefix must have both bed and pgen companions |
-| gapit.R | Five positional arguments: retained source, combined TSV, PLINK raw, matching GM, new output directory | Both FarmCPU and BLINK; Kansas is pre-local refinement and NYC post-refinement |
+| `run_boltlmm.sh` | `PHENO_FILE`: combined TSV | BOLT-LMM 2.5; `--lmm --LDscoresUseChip`; infinitesimal output |
+| `run_regenie.sh` | `PHENO_FILE`: combined TSV | REGENIE 4.1.2; quantitative two-step model, block size 1,000, LOCO |
+| `run_regenie_wo_loco.sh` | `PHENO_FILE`: combined TSV | Step 1 `--print-prs`; step 2 `--use-prs` |
+| `run_fastGWA.sh` | `PHENO_DIR`: `pheno.1.txt` through `pheno.10.txt` | GCTA 1.94.1; sparse GRM cutoff 0.05; `--fastGWA-mlm` |
+| `run_slemm_gwas.sh` | `PHENO_FILE`: SLEMM CSV; `SNP_INFO_FILE` | SLEMM 0.90.1; full null fit, gamma calibration, chromosome-wise testing |
+| `gapit.R` | Retained GAPIT source, combined TSV, PLINK RAW, matching marker map, new output directory | FarmCPU and BLINK; Kansas before local refinement, NYC after refinement |
 
-THREADS defaults to 16; executable paths are configurable through BOLT_BIN, REGENIE_BIN, GCTA_BIN, SLEMM_BIN, SLEMM_GAMMA_BIN and SLEMM_GWA_BIN. No covariate option was recovered in these runs; none is added. The fastGWA absolute output prefix fixes the earlier relative-path nesting bug. Per-chromosome SLEMM outputs are retained for audit.
+SLEMM needs BED and PGEN companions for its genotype prefix. `THREADS` defaults to 16. Executables are selected through `BOLT_BIN`, `REGENIE_BIN`, `GCTA_BIN`, `SLEMM_BIN`, `SLEMM_GAMMA_BIN`, and `SLEMM_GWA_BIN`. Phenotypes are matched by individual ID; genotype-file row order is not assumed to equal simulation order. No additional covariates were used beyond the intercept.
 
-GAPIT source is required externally and checked against the retained library hash. The library identifies itself as 4.0 while the manuscript says 3.5; logs establish execution of both models but do not establish which library bytes executed. The pin enables a reproducible retained-source run, **not a claim that the historical software version is resolved**. Required R packages must already be present; the wrapper does not silently install dependencies.
+The retained GAPIT library is externally supplied and hash-checked. Its version string is 4.0; the manuscript reports 3.5. This version distinction is recorded in [methods.yaml](../../config/methods.yaml) rather than silently changing the historical claim.
+
+## Result definitions
+
+Significant-SNP/locus counts use P < 5 × 10⁻⁸ and chromosome-specific 500 kb bins. The REGENIE_LOCO maximum is 20,461 significant SNPs; 21,484 is the BOLT-LMM maximum. The full-range maximum −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. Both were independently checked from raw result columns in [manuscript_number_checks.tsv](../../audit/manuscript_number_checks.tsv).

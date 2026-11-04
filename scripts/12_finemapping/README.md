@@ -1,4 +1,6 @@
-# Fine-mapping: LOCO SuSiE-adj and SuSiE-RSS
+# Fine-mapping
+
+For the published saved-fit summaries, run `python scripts/workflow.py fine-mapping --profile hpcc --out ../benchmark-finemapping-check` on HPCC. This recounts converged fits and exports aggregate tables. The fitting instructions below describe a separate new run; they are not invoked by the saved-result workflow.
 
 These scripts are the fine-mapping implementations used for the BOLT-LMM and REGENIE-LOCO benchmark comparison. They include preparation, fitting, evaluation, publication comparisons, and high-PIP window summaries. No fitted objects or individual-level data are included.
 

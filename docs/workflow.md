@@ -1,21 +1,48 @@
-# Recovered execution workflow
+# Supported workflow
 
-The selected manuscript is the scientific specification. The shared `scripts/benchmark_core.py` implements stages 05–11 in one validated pass to avoid nine separate parsers and repeated loading of all 90 files. Older numbered directories remain for compatibility; do not assume their numeric prefixes describe the current order.
+Start with `python scripts/workflow.py --help`. This is the supported entry point. It uses the checked configuration and calls the analysis modules below. Historical alternatives are preserved in `archive/legacy_workflow` and are not part of this workflow.
 
-| Stage | Input → implementation → output | Next stage |
-|---|---|---|
-| 01 Genotype preparation | Restricted chromosome pgens + original chip list → `01_genotype_preparation/prepare_panel.sh` → 31,301-animal / 135,358-SNP panel | LD, simulation, GWAS |
-| 02 LD | Full resource PLINK panel → `02_ld_analysis/run_plink_ld.sh`, `verify_ld_means.py` → restricted LD / public 10 kb means | Figure 1 |
-| 03 Simulation | Ordered QC chip SNPs + chromosome lengths → `select_causal_snps.R`; historical ordered genotype → `simulate_polygenic_phenotypes.sh`; `prepare_benchmark_phenotypes.R` → restricted ten-trait subset | GWAS |
-| 04 GWAS | Authorized genotypes + ten traits → five shell runners and `04_gwas/gapit.R` → 90 method-specific outputs | Harmonization; fine-mapping |
-| 05 Harmonization | Saved outputs → `benchmark_core.py harmonize` → restricted common schema | Downstream statistics |
-| 06 Power/FPR | Shared truth, windows, harmonized P → `benchmark_core.py summarize` → `power_summary/` | Tables/figures |
-| 07 Significant loci | Strict P and chromosome-position bins → same command → `method_summary/` | Figure 3, overlap |
-| 08 Spillover | Inclusive P and central-null window IDs → same command → `spillover_summary/` | Figure 6A |
-| 09 Lambda | Historical statistic and central-null mask → same command → `lambda_gc_summary/` | Figure 6B |
-| 10 Overlap | Strict significant-locus sets → same command → `overlap_summary/` | Figure 5 |
-| 11 Equation 13 | Cached theory + four methods × ten traits → `benchmark_core.py equation13` → `equation13_summary/` | Figure 7; upstream Equation 12 unresolved |
-| 12 Fine-mapping | Restricted genotypes/GWAS/LOCO inputs → installed `12_finemapping` pipelines → restricted fits; `verify_saved_results.py` → aggregate JSON | Figure 8 |
-| 13 Figures | Verified aggregates → `13_figures/plot_aggregates.py`, `plot_ld.R`; restricted GWAS → `plot_manhattan.py` | Reviewable PDF/PNG |
+## Check the published results
 
-The first four stages and new fine-mapping fits are prepared but were not re-executed. Current verification starts from saved GWAS, existing pairwise LD and converged fitted PIPs. Old exploratory NCP code was replaced by an explicit downstream compatibility wrapper; its prior content remains in Git history and historical source directories.
+```bash
+python scripts/workflow.py check
+```
+
+This checks configuration, source-table fingerprints, schemas, script syntax, synthetic tests, and the corrected manuscript claims. It needs Python dependencies from `environment/requirements-validation.txt` and R for syntax checks. It does not require restricted inputs or fit a model.
+
+## Recalculate from saved inputs
+
+Install the private machine profile described in [configuration](../config/README.md). Run each command on the machine holding the files. Choose new output directories outside the historical data tree.
+
+| Command | Profile | Inputs | Outputs |
+|---|---|---|---|
+| `summarize` | Mac or HPCC | 90 saved GWAS panels, causal SNP list, effect windows | SNP/locus counts, power/FPR, spillover, lambda, overlap and stability |
+| `equation13` | Mac | Saved GWAS and cached theoretical predictions | Replicate-bin means, intervals and cache checks |
+| `ld` | HPCC | Saved pairwise LD | 1,000 distance-bin counts and means |
+| `fine-mapping` | HPCC | Saved converged PIPs, locus diagnostics and MAF annotations | Per-phenotype and pooled fine-mapping summaries |
+| `figures` | Either | Public aggregate tables | Aggregate figures and LD curve |
+| `manhattan` | Mac or HPCC | Saved GWAS panels | Figure 4 and S1–S10 |
+
+```bash
+python scripts/workflow.py summarize --profile mac --out ../benchmark-rerun
+python scripts/workflow.py equation13 --profile mac --out ../benchmark-equation13
+python scripts/workflow.py figures --data derived_data --out ../benchmark-figures
+python scripts/workflow.py manhattan --profile mac --out ../benchmark-manhattan
+```
+
+On HPCC, with the local profile installed:
+
+```bash
+python scripts/workflow.py ld --profile hpcc --out ../benchmark-ld-check
+python scripts/workflow.py fine-mapping --profile hpcc --out ../benchmark-finemapping-check
+```
+
+Only `summarize` accepts `--resume`. Its cache is reused only when input, code and design hashes match. The `.restricted_cache` stays local. The workflow refuses outputs inside the historical source tree and does not replace committed result tables.
+
+`benchmark_core.py` implements harmonization and summary definitions; the wrapper does not create a second statistical implementation. Equation 13 uses the existing prediction file. Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang at the author's request.
+
+## Upstream study stages
+
+The retained fitting commands are documented in [genotype preparation](../scripts/01_genotype_preparation/README.md), [simulation](../scripts/03_simulation/README.md), [GWAS](../scripts/04_gwas/README.md), and [fine-mapping](../scripts/12_finemapping/README.md). These are for a separately allocated new run. They are not invoked by the saved-result workflow and were not refitted during this update.
+
+Use [statistical definitions](statistical_definitions.md) for thresholds and boundaries, [input formats](input_file_formats.md) for schemas, and [figure map](figure_map.md) for table-to-figure links.

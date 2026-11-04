@@ -5,3 +5,14 @@ calculate_NCP.R	scripts/10_equation13_ncp/calculate_ncp.R	Renamed to a lowercase
 lambdaGC_range.R	scripts/08_lambda_gc/lambda_gc_range.R	Renamed to a descriptive name consistent with the lambda GC workflow.
 power_analysis.R	scripts/05_effect_size_power/power_analysis.R	Placed in the effect-size and power workflow directory.
 summarize _sig_SNPs_number.R	scripts/06_significant_loci/summarize_significant_snps_and_loci.R	Renamed to remove the space and clarify that both significant SNPs and loci are summarized.
+scripts/05_effect_size_power/summarize_max_snp_pve.py	archive/legacy_workflow/scripts/05_effect_size_power/summarize_max_snp_pve.py	Consolidation: preserved intact outside the supported active workflow.
+scripts/05_effect_size_power/calculate_max_snp_pve.sh	archive/legacy_workflow/scripts/05_effect_size_power/calculate_max_snp_pve.sh	Consolidation: preserved intact outside the supported active workflow.
+scripts/05_effect_size_power/power_analysis.R	archive/legacy_workflow/scripts/05_effect_size_power/power_analysis.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/06_significant_loci/summarize_significant_snps_and_loci.R	archive/legacy_workflow/scripts/06_significant_loci/summarize_significant_snps_and_loci.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/07_spillover/figure6A_spillover_locus_500kb.R	archive/legacy_workflow/scripts/07_spillover/figure6A_spillover_locus_500kb.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/07_spillover/fpr_50kb_window.R	archive/legacy_workflow/scripts/07_spillover/fpr_50kb_window.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/08_lambda_gc/lambda_gc_range.R	archive/legacy_workflow/scripts/08_lambda_gc/lambda_gc_range.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/09_locus_overlap/README.md	archive/legacy_workflow/scripts/09_locus_overlap/README.md	Consolidation: preserved intact outside the supported active workflow.
+scripts/10_equation13_ncp/calculate_ncp.R	archive/legacy_workflow/scripts/10_equation13_ncp/calculate_ncp.R	Consolidation: preserved intact outside the supported active workflow.
+scripts/11_figures/README.md	archive/legacy_workflow/scripts/11_figures/README.md	Consolidation: preserved intact outside the supported active workflow.
+docs/reconstruction_workflow.md	archive/legacy_workflow/reconstruction_workflow.md	Consolidation: preserved intact outside the supported active workflow.

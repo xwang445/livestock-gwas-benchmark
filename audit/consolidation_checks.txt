@@ -1,0 +1,81 @@
+Command: python scripts/workflow.py check
+Running: scripts/check_config.py
+All configured public paths exist; method output patterns are relative and valid.
+Running: scripts/build_result_config.py
+Verified results configuration matches all executed source tables.
+Running: tests/check_static.py
+R parse checks passed
+Python compilation, shell syntax, YAML, R parsing, aggregate schemas and method labels passed.
+test_central_null_closed_coordinates (test_benchmark.ScientificDefinitions) ... ok
+test_equation13_prediction_only_stable_bins (test_benchmark.ScientificDefinitions) ... ok
+test_lambda_historical_finite_tail_exclusion (test_benchmark.ScientificDefinitions) ... ok
+test_locus_threshold_and_boundaries (test_benchmark.ScientificDefinitions) ... ok
+test_output_cannot_modify_historical_tree (test_benchmark.ScientificDefinitions) ... ok
+test_overlap_empty_and_union (test_benchmark.ScientificDefinitions) ... ok
+test_spatial_shared_boundary_counts_twice (test_benchmark.ScientificDefinitions) ... ok
+test_all_nine_harmonizers (test_benchmark.SyntheticSmoke) ... ok
+test_full_downstream_and_resume (test_benchmark.SyntheticSmoke) ... BOLT-LMM phenotype 1: 36 SNPs, 6 strict loci
+BOLT-LMM phenotype 2: 36 SNPs, 6 strict loci
+REGENIE_LOCO phenotype 1: 36 SNPs, 8 strict loci
+REGENIE_LOCO phenotype 2: 36 SNPs, 10 strict loci
+REGENIE_woLOCO phenotype 1: 36 SNPs, 8 strict loci
+REGENIE_woLOCO phenotype 2: 36 SNPs, 10 strict loci
+fastGWA phenotype 1: 36 SNPs, 6 strict loci
+fastGWA phenotype 2: 36 SNPs, 6 strict loci
+FarmCPU_NYC phenotype 1: 36 SNPs, 6 strict loci
+FarmCPU_NYC phenotype 2: 36 SNPs, 6 strict loci
+FarmCPU_Kansas phenotype 1: 36 SNPs, 6 strict loci
+FarmCPU_Kansas phenotype 2: 36 SNPs, 6 strict loci
+BLINK_NYC phenotype 1: 36 SNPs, 6 strict loci
+BLINK_NYC phenotype 2: 36 SNPs, 6 strict loci
+BLINK_Kansas phenotype 1: 36 SNPs, 6 strict loci
+BLINK_Kansas phenotype 2: 36 SNPs, 6 strict loci
+SLEMM phenotype 1: 36 SNPs, 6 strict loci
+SLEMM phenotype 2: 36 SNPs, 6 strict loci
+BOLT-LMM phenotype 1: verified cache
+BOLT-LMM phenotype 2: verified cache
+REGENIE_LOCO phenotype 1: verified cache
+REGENIE_LOCO phenotype 2: verified cache
+REGENIE_woLOCO phenotype 1: verified cache
+REGENIE_woLOCO phenotype 2: verified cache
+fastGWA phenotype 1: verified cache
+fastGWA phenotype 2: verified cache
+FarmCPU_NYC phenotype 1: verified cache
+FarmCPU_NYC phenotype 2: verified cache
+FarmCPU_Kansas phenotype 1: verified cache
+FarmCPU_Kansas phenotype 2: verified cache
+BLINK_NYC phenotype 1: verified cache
+BLINK_NYC phenotype 2: verified cache
+BLINK_Kansas phenotype 1: verified cache
+BLINK_Kansas phenotype 2: verified cache
+SLEMM phenotype 1: verified cache
+SLEMM phenotype 2: verified cache
+ok
+test_validation_rejects_corruption (test_benchmark.SyntheticSmoke) ... ok
+test_profile_availability_and_missing_input_detection (test_configuration.Configuration) ... ok
+test_public_configuration_is_portable (test_configuration.Configuration) ... ok
+test_results_match_executed_tables (test_configuration.Configuration) ... ok
+test_fastgwa_relative_output_not_nested (test_runners.RunnerArguments) ... ok
+test_mph_historical_weight_seed_and_replicates (test_runners.RunnerArguments) ... ok
+test_archived_sources_are_intact_and_inactive (test_workflow.Workflow) ... ok
+test_existing_outputs_require_explicit_resume (test_workflow.Workflow) ... ok
+test_protects_source_and_repository (test_workflow.Workflow) ... ok
+test_summary_dispatch_uses_verified_profile (test_workflow.Workflow) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.198s
+
+OK
+Running: scripts/validate_manuscript.py
+status
+PASS                      108
+NOT_RUN                     3
+AMBIGUOUS                   2
+REQUIRES_RECOMPUTATION      1
+Empty DataFrame
+Columns: [manuscript_item, observed, note]
+Index: []
+Running: tests/check_validation_status.py
+Corrected claims pass; original discrepancies and deferred provenance remain recorded.
+
+Exit code: 0

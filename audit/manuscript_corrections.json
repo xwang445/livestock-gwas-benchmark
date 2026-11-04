@@ -1,0 +1,20 @@
+{
+  "source_sha256": "691b4cad7f5a771392009a949becd0c8dded2b99a6481bb47f8069bc2dc34e09",
+  "corrected_sha256": "bbeeed7dcda682fb2cd611ad3aa9ba2436df21ccfb1be051ea6897b7324bf839",
+  "deferred": "Equation 12 and maximum-SNP PVE provenance/text left for Professor Jicai Jiang at user request.",
+  "edited_items": [
+    "REGENIE significant-SNP upper bound",
+    "Figure 4 full-range maximum",
+    "Abstract simulation description",
+    "Methods simulation and sample selection",
+    "Methods implemented genetic-value simulation",
+    "Methods distributional equivalence",
+    "Methods random stream and variance scales",
+    "Discussion simulation description"
+  ],
+  "scope": "Separate local review copy; original preserved; manuscript and full edit log excluded from Git.",
+  "render": {
+    "pages": 32,
+    "visual_review": "All pages inspected; no new clipping, overlap or missing glyphs. Original layout retained."
+  }
+}

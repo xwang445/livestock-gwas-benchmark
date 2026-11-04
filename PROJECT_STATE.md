@@ -1,87 +1,41 @@
 # Project state
 
-Status: reconstruction/review package published to GitHub main following the user request for real results on the default branch on 2026-11-04. End-to-end scientific reproduction remains PARTIAL. No manuscript deposit, submission, or external message. Original data, original manuscript, original local main, and historical HPCC outputs were preserved.
+Updated 2026-11-04. Workflow consolidation and the authorized provenance checks are complete locally. Installation and publication verification are the final steps. No model fits or simulation jobs are active. The previous state and publication history are preserved in Git at commit 0182c6e.
 
-## Completed work and outputs
+## Completed
 
-- Audited 590 local and 502,804 HPCC files; inspected the author-confirmed October manuscript and selected historical code.
-- Recomputed all 90 GWAS downstream panels and 40 Equation 13 jobs. Final source-write-guard rebuild produced 20 byte-identical TSVs.
-- Recounted 40 fine-mapping method/pipeline/phenotype groups on HPCC; streamed and independently checked 1,000 LD bins. No expensive model fits were rerun.
-- Numerical ledger: 95 PASS, 2 FAIL, 4 AMBIGUOUS, 3 NOT_RUN, 1 REQUIRES_RECOMPUTATION. Two FAIL rows describe manuscript count/statistic discrepancies, not test failures.
-- Generated 19 figures (eight main, S1–S10, central-null Equation 13 supplement), each PDF and PNG; inspected their layout and verified PDF/PNG files.
-- All 12 unit/synthetic/mock tests and shell/Python/R/YAML/schema checks passed, including from this installed clone. GitHub-hosted CI is configured; its current status is available on the repository Actions page. Local validation results are recorded above.
-- Detailed outputs: derived_data/, figures/reconstructed/, audit/manuscript_validation.tsv, audit/run_registry.tsv, docs/stage_status.md, repository_validation_report.md, docs/author_review.md.
+- One supported entry point: `python scripts/workflow.py`. The root README, result index, workflow guide, validation report, configuration notes and stage READMEs now describe the same commands.
+- Eleven superseded files moved intact to `archive/legacy_workflow`; their original hashes and replacements are in `audit/legacy_relocation.tsv`.
+- MPH v0.55.1 source checked: genetic-value covariance 0.5G + 0.00005I, residual variance 0.5, 1,000 generated replicates, default seed mapping and no phenotype rescaling.
+- Retained simulation/chip/GRM sample order verified. All ten phenotype subsets exactly match the original simulation values. GWAS and fine-mapping inputs contain the correct ID sets in different row orders; alignment is by IID.
+- All 31,301 GRM diagonals and 4,096 deterministic off-diagonals checked against the retained causal genotypes. This was a partial matrix check, not a full original-file comparison.
+- Independent raw-column scan of all 90 GWAS panels confirmed REGENIE_LOCO's significant-SNP maximum of 20,461 and the overall untruncated maximum −log10(P) of 107.517 in REGENIE_LOCO phenotype 8. The source of the historical approximately 102 wording was not established.
+- A separate corrected local DOCX contains the two numerical corrections and consistent MPH/sample-selection wording. The original manuscript remains unchanged. Local delivery location: `../manuscript_review_20261104/`; manuscript files are excluded from Git.
 
-## Local commits
+## Evidence and validation
 
-Public baseline 14ff11e; original local main ec6cb32 remains preserved.
+The current numerical ledger contains 108 PASS, 3 NOT_RUN, 2 AMBIGUOUS and 1 REQUIRES_RECOMPUTATION records. The original 95-PASS/two-FAIL manuscript ledger is preserved separately. Nineteen unit, synthetic and command-routing tests pass. Static/schema checks, result-configuration equality and corrected-claim checks pass through `python scripts/workflow.py check`.
 
-- 32ffb12: initial inventory and manuscript provenance.
-- 00e08b0: recovered runners, harmonization and downstream implementation.
-- 1deaa16: verified aggregate results and 19 figure redraws.
-- b8524cf: synthetic example, tests and CI.
-- d49a978: documentation and scientific review records.
-- Publication status: the user authorized the push after reviewing the completion report. The five reviewed commits through d49a978 were pushed successfully; this status record is a documentation-only follow-up. The remote review branch is reconstruct/20261104.
+The original 27 numerical result tables and all reconstructed figures are byte-identical to commit 0182c6e. This update adds provenance evidence and corrects descriptions; it does not replace prior numerical analyses. See `audit/run_registry.tsv`, `audit/consolidation_checks.txt`, `audit/manuscript_corrections.json`, and `docs/scientific_provenance.md`.
 
-Active jobs: NONE. Remote verification jobs and local rendering/rebuilds exited successfully.
+## Deferred and remaining author review
 
-## Failures and corrections
+Equation 12/theory and maximum-SNP PVE provenance were deferred at the user's request because those inputs came from Professor Jicai Jiang. Their manuscript statements remain unchanged. The broad source search was interrupted after this instruction; it produced no final evidence and was not used to support a conclusion.
 
-System Python SciPy import failed; an existing working scientific environment was used read-only. Git 2.22 lacks switch; checkout was used. Renderer fallback used pypdf instead of unavailable fitz. Initial comparison labels were canonicalized explicitly. One mock test initially compared /var and /private/var literally; resolving paths fixed the test. TSV line endings/trailing empty fields were normalized without changing numeric results. Historical lambda and simulation packaging errors were corrected using source evidence.
-
-## Scientific blockers and human decisions
-
-Original Equation 12 generator, maximum-PVE claim source, exact executed GAPIT library, original genotype/sample ordering and chip/imputation metadata remain unresolved. Authors must review the two numeric discrepancies, simulation description, interval/threshold/lambda distinctions, rights to publish aggregates/figures, citation and ethics/access metadata. These are listed in docs/author_review.md. No author approval is inferred.
+The exact historical GAPIT version, chip/imputation production metadata, data-access terms and final manuscript approval remain author items. PVE wording still needs reconciliation with the implemented MPH sampling procedure when the deferred source is reviewed. New GWAS, SuSiE fitting and the complete simulation were not rerun. No manuscript submission, preprint deposit or external messages were made.
 
 ## Recovery
 
-The durable review clone is this repository. Full path inventories are here under audit/ but Git-ignored. Private source snapshots, original manuscript snapshot/render, execution logs and caches are retained at /private/tmp/livestock-reconstruction-20261104; do not publish them. Original research directories remain the source of truth if temporary storage expires.
+Active jobs: NONE after final checks. Failed/aborted jobs: broad provenance search interrupted on user deferral (exit 255); no inputs or results modified. The isolated working checkout was `/private/tmp/livestock-consolidation-20261104`; private source inspection and manuscript rendering used `/private/tmp/livestock-provenance-20261104`. Original research data and the installed repository remain durable sources if temporary files expire.
 
-Exact next review commands from this repository root:
+The installed branch is `reconstruct/20261104`; original local `main` remains at ec6cb32. Publication targets are remote `main` and `reconstruct/20261104`, under the user's existing push authorization. Do not force-push or stage the ignored private path profile.
 
-```bash
-git log --oneline 14ff11e..HEAD
-git diff --stat 14ff11e..HEAD
-python tests/check_validation_status.py
-```
-
-Continue from this state. Do not rerun completed experiments simply because a session resumes. Use docs/reproducibility.md only when a new verification is needed; use new output directories. The reviewed package push was explicitly authorized and completed. Any future publication outside that scope requires the applicable authorization.
-
-## Default-branch results update
-
-The earlier push published only reconstruct/20261104, leaving main at the template-only baseline. The user requested real derived_data on GitHub. All 27 populated TSV files were verified against their fingerprints; the five schema templates were relocated intact to example/schemas. The results index now links every analysis. No numerical result was altered or invented.
-
-Publication: fast-forward remote main and the review branch to this update, without force. The default-branch update includes all 27 populated TSV files and preserves the former templates under example/schemas. The original local main remains preserved at ec6cb32. After publication, verify with:
+Next verification commands from the repository root:
 
 ```bash
+python scripts/workflow.py check
 git ls-remote --heads origin main reconstruct/20261104
 git status --short --branch
 ```
 
-No analysis jobs are active. Existing scientific limitations and two manuscript discrepancies remain unchanged.
-
-Verification for this update: all 12 tests and static/schema checks passed; the numerical ledger is unchanged at 95 PASS and two documented manuscript discrepancies. No numeric analysis table changed.
-
-## Configuration update
-
-Replaced the active placeholder path example with config/paths.yaml and moved the original example to example/schemas. Added config/verified_results.yaml generated from executed result tables, versioned Mac/HPCC method filename patterns, and path validation. The local machine roots are installed in Git-ignored config/local_paths.yaml. Public configuration contains real repository-relative and source-relative paths, with no personal machine paths or credentials.
-
-Read-only filesystem checks confirmed all 90 GWAS outputs on both machines. The cached Equation 13 predictions are present only in the checked Mac location; phenotype/LD/fine-mapping inputs are present on HPCC. The fine-mapping genotype files contain 20,000 animals and 135,358 SNPs. The original simulation genotype identity remains unresolved and has no active default.
-
-Exact next configuration checks:
-
-```bash
-python scripts/check_config.py
-python scripts/check_config.py --profile mac --check-inputs
-python scripts/build_result_config.py --check
-```
-
-Configuration verification passed: all 15 tests, script/schema checks, result-source equality and the 90-file Mac input check. HPCC source presence was verified separately through read-only SSH. See audit/configuration_checks.txt. No analysis results were changed and no model jobs were launched. Publication targets are main and reconstruct/20261104 under the user's continuing authorization; verify both remote refs after the push.
-
-Publication verified on 2026-11-04: configuration commit 020832eb241a52116f5f300e645d3728af1a5717 reached both remote main and reconstruct/20261104. The private profile was installed locally and remains ignored by Git. Installed verification passed for all 90 Mac GWAS files, all 94 artifact hashes and exact result-snapshot equality. The tracked working tree was clean; no jobs remain active. The commands above are the next checks for any later configuration change.
-
-## README maintenance — 2026-11-04
-
-Rewrote README.md in direct research prose with study design, an eight-step workflow, result locations, setup commands, configuration, repository structure, and data/citation details. Removed audit commentary from the main page while retaining links to the detailed records. The source of the published tables and use of simulated phenotypes remain explicit. All 34 local links and all Bash command blocks passed checks. No code, data, configuration, or scientific results changed; no jobs are active. Publication targets remain main and reconstruct/20261104. Next check: `git ls-remote --heads origin main reconstruct/20261104` followed by `git status --short --branch`.
-
-Added the bioRxiv preprint citation near the top of README.md, with all seven authors, title, year, article link, and DOI. The citation matches CITATION.cff and the bioRxiv record checked on 2026-11-04. This is a documentation-only update; no analysis jobs or data changes. Publication targets and the next verification command remain as above.
+Continue from verified state. Do not restart completed analyses on resumption. Deferred provenance requires the author's source material and renewed instruction, not another unconstrained search.

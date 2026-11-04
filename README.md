@@ -39,18 +39,27 @@ Kansas and NYC refer to the GAPIT outputs before and after local refinement. The
 
 ## Workflow
 
-| Step | Analysis | Code |
-|---|---|---|
-| 1 | Prepare the genotype panel | [Genotype preparation](scripts/01_genotype_preparation) |
-| 2 | Calculate LD decay | [LD analysis](scripts/02_ld_analysis) |
-| 3 | Select causal SNPs and simulate phenotypes | [Simulation](scripts/03_simulation) |
-| 4 | Run the nine GWAS configurations | [GWAS](scripts/04_gwas) |
-| 5 | Harmonize outputs and calculate SNP/locus counts, power, false-positive rates, spillover, genomic inflation, and overlap | [Shared analysis script](scripts/benchmark_core.py) |
-| 6 | Compare observed statistics with cached Equation 13 predictions | [Shared analysis script](scripts/benchmark_core.py) |
-| 7 | Run and evaluate SuSiE-adj and SuSiE-RSS fine-mapping | [Fine-mapping](scripts/12_finemapping) |
-| 8 | Generate the main and supplementary figures | [Figure scripts](scripts/13_figures) |
+Use `python scripts/workflow.py --help`. This is the supported entry point for checking the public results, recalculating summaries from saved inputs, and generating figures.
 
-Use the [workflow guide](docs/workflow.md) for input/output details and the [reproducibility guide](docs/reproducibility.md) for commands. The shared analysis script handles several downstream steps in one pass.
+```text
+Saved GWAS + causal SNPs + windows → counts, power/FPR, spillover, lambda, overlap
+Saved GWAS + cached theory        → Equation 13 comparisons
+Saved LD and fine-mapping fits     → LD and fine-mapping summaries
+Aggregate tables                  → main and supplementary figures
+```
+
+| Step | Command | Where |
+|---|---|---|
+| Check the public package | `python scripts/workflow.py check` | Any configured Python/R environment |
+| Summarize the saved GWAS panels | `summarize --profile mac --out ../benchmark-rerun` | Mac; HPCC profile also supported |
+| Compare cached theory and observed statistics | `equation13 --profile mac --out ../benchmark-equation13` | Mac |
+| Verify saved LD / fine-mapping results | `ld` / `fine-mapping` with `--profile hpcc --out NEW_DIRECTORY` | HPCC |
+| Draw aggregate figures | `figures --data derived_data --out ../benchmark-figures` | Mac or HPCC |
+| Draw Manhattan plots | `manhattan --profile mac --out ../benchmark-manhattan` | Mac; HPCC profile also supported |
+
+For rows after the first, prefix the command with `python scripts/workflow.py`. The [workflow guide](docs/workflow.md) gives complete commands and inputs. Upstream genotype preparation, simulation and fitting scripts are retained for a separately allocated new run. Superseded scripts are preserved in [archive](archive/README.md) and are not part of the active workflow.
+
+MPH generated genetic values from the fixed causal-SNP relationship matrix and added independent residuals. The benchmark uses the first ten of 1,000 generated phenotypes and the first 20,000 simulation rows. GWAS and fine-mapping files are aligned by individual ID. The [provenance record](docs/scientific_provenance.md) documents the source code and sample-chain checks.
 
 ## Results
 
@@ -63,11 +72,13 @@ Use the [workflow guide](docs/workflow.md) for input/output details and the [rep
 
 [figures/reconstructed](figures/reconstructed) contains Figures 1–8, Manhattan supplements S1–S10, and the central-null Equation 13 supplement in PDF and PNG formats. The [figure map](docs/figure_map.md) links each figure to its inputs and script.
 
+The corrected REGENIE_LOCO maximum is 20,461 significant SNPs. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. [Independent checks](audit/manuscript_number_checks.tsv) support both values.
+
 The machine-readable [results summary](config/verified_results.yaml) records the calculated values and source-file hashes. [Statistical definitions](docs/statistical_definitions.md) document the thresholds, window boundaries, and denominators used in each analysis.
 
 ## Set up and check the repository
 
-Use Python 3.10 or later. The checks below use the public tables and synthetic test data.
+Use Python 3.10 or later and R. The checks below use public tables and synthetic test data.
 
 ```bash
 git clone https://github.com/xwang445/livestock-gwas-benchmark.git
@@ -76,15 +87,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r environment/requirements-validation.txt
 
-python scripts/check_config.py
-python scripts/build_result_config.py --check
-python -m unittest discover -s tests -v
-```
-
-For script syntax checks, install R and run:
-
-```bash
-python tests/check_static.py
+python scripts/workflow.py check
 ```
 
 The LD figure script uses the R packages `data.table`, `ggplot2`, and `patchwork`. Software versions and dependencies are listed in [environment](environment).
@@ -120,6 +123,7 @@ environment/            Dependencies and software versions
 tests/                  Code and result checks
 example/                Synthetic test data and schema examples
 audit/                  Source records and numerical validation
+archive/                Superseded workflow, retained for reference
 ```
 
 ## Data and citation

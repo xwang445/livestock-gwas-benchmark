@@ -1,24 +1,18 @@
 # Stage status
 
-“Ready” means technically prepared for review, not permission to publish restricted derivatives.
+| Stage | Status | Evidence / entry point |
+|---|---|---|
+| Public checks | Implemented and locally tested | `workflow.py check` |
+| Saved GWAS summaries | Complete | 90 panels; `workflow.py summarize` |
+| Cached Equation 13 comparisons | Complete downstream | `workflow.py equation13` |
+| Saved LD summaries | Complete | 1,000 bins; `workflow.py ld` |
+| Saved fine-mapping evaluation | Complete | 40 groups; `workflow.py fine-mapping` |
+| Figures | Complete | 19 PDF/PNG pairs; `workflow.py figures` / `manhattan` |
+| MPH implementation description | Verified and corrected | Versioned source and corrected manuscript copy |
+| Historical sample chain | Verified for retained files | Exact ID/phenotype checks; all diagonal and sampled off-diagonal GRM entries |
+| Manuscript numerical corrections | Complete in separate local copy | REGENIE 20,461; maximum −log10(P) 107.517 |
+| Equation 12 / maximum SNP PVE provenance | Deferred by author | Professor Jicai Jiang's inputs; no substitution |
+| New genotype preparation, simulation, GWAS or SuSiE fitting | Not run in this update | Upstream runners retained |
+| GAPIT executed version | Author review | Retained source 4.0 versus manuscript 3.5 |
 
-| Stage | Status | Source | Validated against manuscript | GitHub ready |
-|---|---|---|---|---|
-| Genotype QC | PARTIAL | HPCC QC script and prior chip/INFO audits | Counts supported by historical evidence; no new QC fit | Code ready; source identity unresolved |
-| LD decay | COMPLETE | HPCC pairwise LD and harmonized binning code | 1,000 counts/means independently matched | Yes, aggregate review candidate |
-| Architecture / simulation | AMBIGUOUS | Historical R/MPH commands, versioned MPH source | Design recovered; new simulation not run | Code ready with implementation caveats |
-| Nine GWAS configurations | PARTIAL | HPCC runners/logs and 90 local results | All 90 panels validated downstream; no new fits | Code ready; GAPIT version unresolved |
-| Harmonization | COMPLETE | Nine observed output schemas | 90 × 135,358 rows and common coordinates checked | Yes; per-variant exports remain restricted |
-| Significant SNPs/loci | COMPLETE | Local historical Figure 3 logic | All 90 SNP and 90 locus cells matched | Yes |
-| Power / FPR | COMPLETE | Local pwer_analysis.R and 90 outputs | 2,970 historical rows for each curve matched | Yes |
-| Spillover | COMPLETE | Local Figure 6A code | 90 rows; nine rounded rates; denominator 1,480 | Yes |
-| Lambda GC | COMPLETE | Local historical statistic definitions | All 90 historical values matched | Yes; numerical tail limitation disclosed |
-| Overlap / stability | COMPLETE | Local Jaccard code, manuscript caption | 30 displayed spot checks; full tables recomputed | Yes; stability is supporting output |
-| Equation 12 / upstream theory | REQUIRES_RECOMPUTATION | Cached prediction table; generator not found | NOT_RUN upstream | No end-to-end claim |
-| Equation 13 downstream | COMPLETE | Cached table and local production R | 1,600 replicate bins, 160 means/intervals matched | Yes with upstream limitation |
-| Fine-mapping fitting | PARTIAL | HPCC primary LOCO/RSS code and saved fits | Fit counts recounted; fitting not repeated | Code ready with restricted inputs |
-| Fine-mapping evaluation | COMPLETE | Saved converged PIPs and MAF annotations | All four counts, precision and MAF expectations match | Yes; MAF not recalculated from genotypes |
-| Figures / supplements | COMPLETE | Verified aggregates plus restricted GWAS for Manhattan | 8 main + S1–S10 + central-null supplement rendered | Yes after data-agreement review |
-| Synthetic / tests / CI | COMPLETE | New artificial fixtures and tests | Local tests/static checks passed; remote CI not run | Yes |
-| Maximum SNP PVE | AMBIGUOUS | Recovered LSMR outputs differ from manuscript | Manuscript range not reproduced | No validated claim |
-| Metadata / publication | PARTIAL | Author review required | Data rights, array/imputation and citation unresolved | No push authorized |
+See [workflow.md](workflow.md) for supported commands and [scientific_provenance.md](scientific_provenance.md) for evidence and scope. Public repository updates remain authorized; manuscript submission and preprint deposition are outside this task.

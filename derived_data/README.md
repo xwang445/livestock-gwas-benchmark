@@ -1,6 +1,6 @@
-# Executed aggregate results
+# Benchmark results
 
-This directory contains **27 populated TSV files** from the executed reconstruction of the saved livestock GWAS benchmark, plus JSON provenance records. The former placeholder templates are preserved separately in [example/schemas](../example/schemas/README.md).
+This directory contains **27 populated TSV files** calculated from the saved livestock GWAS benchmark, plus JSON provenance records. The former placeholder templates are preserved separately in [example/schemas](../example/schemas/README.md).
 
 ## Main result tables
 
@@ -20,10 +20,14 @@ This directory contains **27 populated TSV files** from the executed reconstruct
 
 For example, the pooled high-PIP table contains 1,974 calls with 1,153 in null windows for BOLT-LMM/SuSiE-adj, and 2,101 calls with 1,274 in null windows for REGENIE_LOCO/SuSiE-adj. These are independently recounted saved results, not template values.
 
-## Provenance and limits
+## Recalculate and verify
 
-[Input fingerprints](input_manifest.tsv) identify all 90 source GWAS panels. [Run metadata](run_manifest.json), [cached-theory checks](equation13_summary/cached_theory_validation.tsv), and [fine-mapping verification metadata](finemapping_summary/verification_manifest.json) describe the executed calculations. The [numerical validation ledger](../audit/manuscript_validation.tsv) retains 95 agreements, two manuscript discrepancies and explicit unresolved items.
+Use `python scripts/workflow.py check` to check the public package. Use the [supported workflow](../docs/workflow.md) to recalculate tables from saved restricted inputs in a new output directory. Figure scripts read these tables; they do not define a second set of statistics.
 
-The study uses real livestock genotypes and **simulated phenotypes**. These tables recompute downstream results from saved GWAS, cached theoretical predictions, saved converged fits and pairwise LD. They are not fresh model refits. Upstream Equation 12 and the manuscript maximum-PVE provenance remain unresolved. Legitimate NA values in overlap comparisons indicate an empty locus set, as defined in the manuscript; they are not missing template data.
+[Input fingerprints](input_manifest.tsv), [run metadata](run_manifest.json), [cached-theory checks](equation13_summary/cached_theory_validation.tsv), and [fine-mapping metadata](finemapping_summary/verification_manifest.json) identify the source calculations. The [current ledger](../audit/manuscript_validation.tsv) validates the corrected manuscript claims; the [historical ledger](../audit/historical_manuscript_validation.tsv) preserves the two original numerical discrepancies.
 
-No animal IDs, individual phenotypes, genotypes, raw GWAS, GRMs, raw LD matrices or per-SNP PIPs are distributed here. Synthetic code-validation data are separate in [example/synthetic](../example/synthetic/README.md). See the [validation report](../repository_validation_report.md) and [data availability](../docs/data_availability.md).
+The REGENIE_LOCO significant-SNP maximum is 20,461; 21,484 belongs to BOLT-LMM. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. An independent raw-column scan reproduced the counts and maxima for all 90 panels.
+
+These are results from simulated phenotypes on real livestock genotypes. Saved GWAS and fine-mapping fits were evaluated without new fitting. Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang at the author's request. Legitimate NA Jaccard values denote comparisons involving an empty locus set.
+
+Individual-level inputs, raw GWAS, GRMs, raw LD and per-SNP PIPs remain restricted. [Synthetic examples](../example/synthetic/README.md) and [schema examples](../example/schemas/README.md) are separate from the benchmark results.
