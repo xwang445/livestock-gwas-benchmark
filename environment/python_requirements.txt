@@ -1,4 +1,2 @@
-numpy
-pandas
-scipy
-matplotlib
+# Legacy entry point; use the tested downstream validation environment.
+-r requirements-validation.txt

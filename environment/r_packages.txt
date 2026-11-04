@@ -3,3 +3,5 @@ ggplot2
 scales
 dplyr
 stringr
+patchwork
+susieR # production fine-mapping requires exactly 0.14.2
