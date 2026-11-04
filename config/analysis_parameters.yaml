@@ -1,0 +1,68 @@
+schema_version: 1
+resource_animals: 31301
+gwas_animals: 20000
+panel_snps: 135358
+chromosomes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+qc:
+  maf_min: 0.01
+  hwe_p_min: 1.0e-9
+  info_min: 0.8
+  thinning_bp: 20000
+  sample_missingness_threshold: null  # not recovered; do not invent
+  variant_missingness_threshold: null
+simulation:
+  target_h2: 0.5
+  causal_snps: 10000
+  eligible_qc_chip_snps: 10461
+  causal_selection_seed_R: 1
+  generated_replicates: 1000
+  analyzed_replicates: 10
+  sample_selection: first_20000_in_historical_order
+  mph_version: 0.55.1
+  mph_source_commit: 13ffe633e0170d35e01e6164fc2bb4e01f35e2f2
+  mph_seed_argument: 0
+  mt19937_seed: 54321
+  grm_variance_weight: 0.5
+  residual_variance: 0.5
+  diagonal_ridge: 0.00005
+  explicit_per_snp_effects_generated: false
+windows:
+  effect_bp: 2000000
+  null_bp: 4000000
+  central_null_bp: 2000000
+  locus_bp: 500000
+  spatial_bin_bp: 50000
+  full_null_gaps: 370
+  central_null_locus_denominator: 1480
+significance:
+  alpha: 5.0e-8
+  figure3_comparator: lt
+  spillover_comparator: le
+  fine_mapping_locus_comparator: le
+equation13:
+  bins: 20
+  binning: stable_equal_count_prediction_only
+  interval: t9_across_ten_replicate_bin_means
+  expected_chisq: 1_plus_ncp
+  upstream_equation12_generator: null
+ld_decay:
+  plink_version: 1.9.0-b.8
+  resource_animals: 31301
+  window_snps: 999999
+  window_kb: 10000
+  r2_min: 0
+  logged_seed: 1773948362
+finemapping:
+  susieR: 0.14.2
+  L: 10
+  coverage: 0.95
+  min_abs_corr: 0.5
+  max_iter: 1000
+  high_pip: 0.9
+  high_pip_comparator: ge
+  locus_flank_bp: 1000000
+  maf_quantile_bins: 10
+  pooled_percentages: ratio_of_summed_counts
+  rss_seed: 20261014
+  adj_explicit_seed: null  # no set.seed call in primary L4 fitter
+  prior_settings: susieR_0.14.2_defaults_except_explicit_fitter_arguments

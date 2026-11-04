@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Simulate 10 polygenic phenotypes for the GWAS benchmarking study.
+# Simulate the historical 1,000 polygenic phenotypes (first 10 analyzed) for the GWAS benchmarking study.
 #
 # Assumptions:
 #   1. The PLINK genotype prefix contains the pig genotype data used in the study.
@@ -27,14 +27,19 @@ OUT_DIR="${3:-./simulation_output}"
 
 MPH_BIN="${MPH_BIN:-mph}"
 NUM_THREADS="${NUM_THREADS:-20}"
-NUM_PHENOTYPES="${NUM_PHENOTYPES:-10}"
+NUM_PHENOTYPES="${NUM_PHENOTYPES:-1000}"
 HERITABILITY="${HERITABILITY:-0.5}"
 
 GRM_PREFIX="${OUT_DIR}/MPH_grm_chr1_18"
 GRM_LIST="${OUT_DIR}/grmlist.txt"
 PHENO_PREFIX="${OUT_DIR}/pheno"
 
+[[ ! -e "${OUT_DIR}" ]] || { echo "Output directory must be new" >&2; exit 2; }
 mkdir -p "${OUT_DIR}"
+OUT_DIR=$(cd "${OUT_DIR}" && pwd)
+GRM_PREFIX="${OUT_DIR}/MPH_grm_chr1_18"
+GRM_LIST="${OUT_DIR}/grmlist.txt"
+PHENO_PREFIX="${OUT_DIR}/pheno"
 
 # Basic input checks
 for file in \
@@ -75,8 +80,8 @@ echo "[1/3] Building the GRM from the fixed 10,000-SNP set..."
 
 echo "[2/3] Writing the GRM list..."
 
-# MPH expects a text file listing the GRM prefix(es), one per line.
-printf '%s\n' "${GRM_PREFIX}" > "${GRM_LIST}"
+# MPH expects a text file listing the GRM prefix and weight, with variance weight 0.5 per historical grmlist.
+printf '%s 0.5\n' "${GRM_PREFIX}" > "${GRM_LIST}"
 
 echo "[3/3] Simulating ${NUM_PHENOTYPES} phenotypes at h2=${HERITABILITY}..."
 
@@ -84,6 +89,7 @@ echo "[3/3] Simulating ${NUM_PHENOTYPES} phenotypes at h2=${HERITABILITY}..."
     --simulate \
     --num_threads "${NUM_THREADS}" \
     --num_phenotypes "${NUM_PHENOTYPES}" \
+    --seed 0 \
     --grm_list "${GRM_LIST}" \
     --heritability "${HERITABILITY}" \
     --output "${PHENO_PREFIX}"

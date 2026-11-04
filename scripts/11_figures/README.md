@@ -1,3 +1,3 @@
-# Placeholder workflow notes
+# Figure entry points
 
-This directory is reserved for the corresponding analysis stage.
+Current generators are in `scripts/13_figures`. See `docs/figure_map.md` for inputs, outputs and validation scope. Figure 7 uses cached Equation 13 predictions and is not an upstream Equation 12 reproduction.

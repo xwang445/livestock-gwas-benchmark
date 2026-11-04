@@ -1,0 +1,17 @@
+schema_version: 1
+methods:
+  BOLT-LMM: {software: BOLT-LMM, version: 2.5, loco: true, statistic: P_BOLT_LMM_INF}
+  REGENIE_LOCO: {software: REGENIE, version: 4.1.2, loco: true, statistic: LOG10P}
+  REGENIE_woLOCO: {software: REGENIE, version: 4.1.2, loco: false, statistic: LOG10P}
+  fastGWA: {software: GCTA, version: 1.94.1, sparse_grm_cutoff: 0.05, statistic: P}
+  SLEMM: {software: SLEMM, version: 0.90.1, loco: false, statistic: P}
+  BLINK_Kansas: {software: GAPIT_BLINK, output_stage: before_local_refinement, statistic: P.value}
+  BLINK_NYC: {software: GAPIT_BLINK, output_stage: after_local_refinement, statistic: P.value}
+  FarmCPU_Kansas: {software: GAPIT_FarmCPU, output_stage: before_local_refinement, statistic: P.value}
+  FarmCPU_NYC: {software: GAPIT_FarmCPU, output_stage: after_local_refinement, statistic: P.value}
+gapit:
+  manuscript_version: '3.5'
+  retained_source_version_string: '2025.10.03, GAPIT 4.0'
+  retained_source_sha256: deae8d49b625b9ea7cd356c163c62c5fa41b405243dc17888765b03dc592ae02
+  provenance_status: version_discrepancy_requires_review
+  source_distribution: external_required_not_vendored
