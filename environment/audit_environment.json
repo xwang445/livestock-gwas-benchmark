@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-04",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.10.4",
+  "git": "git version 2.22.0",
+  "R": "R version 4.3.2 (2023-10-31) -- \"Eye Holes\"",
+  "local_plink": null,
+  "local_plink2": null,
+  "ssh": "SUCCESS",
+  "remote": {
+    "sbatch": null,
+    "qsub": null,
+    "srun": null,
+    "Rscript": "/usr/bin/Rscript",
+    "python3": "/usr/bin/python3",
+    "plink": "/usr/local/bin/plink",
+    "plink2": "/usr/local/bin/plink2"
+  }
+}

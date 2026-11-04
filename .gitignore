@@ -40,3 +40,10 @@ config/local*
 private_data/
 raw_data/
 individual_level_data/
+
+# Private reconstruction audit metadata / restricted caches
+audit/inventory_local.tsv
+audit/inventory_hpcc.tsv
+audit/inventory_manuscript.tsv
+audit/private/
+.reconstruction-cache/
