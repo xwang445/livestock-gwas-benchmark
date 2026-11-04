@@ -77,3 +77,5 @@ python scripts/build_result_config.py --check
 ```
 
 Configuration verification passed: all 15 tests, script/schema checks, result-source equality and the 90-file Mac input check. HPCC source presence was verified separately through read-only SSH. See audit/configuration_checks.txt. No analysis results were changed and no model jobs were launched. Publication targets are main and reconstruct/20261104 under the user's continuing authorization; verify both remote refs after the push.
+
+Publication verified on 2026-11-04: configuration commit 020832eb241a52116f5f300e645d3728af1a5717 reached both remote main and reconstruct/20261104. The private profile was installed locally and remains ignored by Git. Installed verification passed for all 90 Mac GWAS files, all 94 artifact hashes and exact result-snapshot equality. The tracked working tree was clean; no jobs remain active. The commands above are the next checks for any later configuration change.
