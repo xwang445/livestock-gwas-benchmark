@@ -1,17 +1,85 @@
 schema_version: 1
 methods:
-  BOLT-LMM: {software: BOLT-LMM, version: 2.5, loco: true, statistic: P_BOLT_LMM_INF}
-  REGENIE_LOCO: {software: REGENIE, version: 4.1.2, loco: true, statistic: LOG10P}
-  REGENIE_woLOCO: {software: REGENIE, version: 4.1.2, loco: false, statistic: LOG10P}
-  fastGWA: {software: GCTA, version: 1.94.1, sparse_grm_cutoff: 0.05, statistic: P}
-  SLEMM: {software: SLEMM, version: 0.90.1, loco: false, statistic: P}
-  BLINK_Kansas: {software: GAPIT_BLINK, output_stage: before_local_refinement, statistic: P.value}
-  BLINK_NYC: {software: GAPIT_BLINK, output_stage: after_local_refinement, statistic: P.value}
-  FarmCPU_Kansas: {software: GAPIT_FarmCPU, output_stage: before_local_refinement, statistic: P.value}
-  FarmCPU_NYC: {software: GAPIT_FarmCPU, output_stage: after_local_refinement, statistic: P.value}
+  BOLT-LMM:
+    software: BOLT-LMM
+    version: '2.5'
+    loco: true
+    statistic: P_BOLT_LMM_INF
+    output_patterns:
+      mac: BOLTLMM/bolt_pheno{phenotype}.stats
+      hpcc: BOLTLMM/bolt_pheno{phenotype}.stats
+    verified_saved_runs: 10
+  REGENIE_LOCO:
+    software: REGENIE
+    version: 4.1.2
+    loco: true
+    statistic: LOG10P
+    output_patterns:
+      mac: REGENIE/regenie_pheno{phenotype}_pheno{phenotype}.regenie
+      hpcc: REGENIE/regenie_pheno{phenotype}_pheno{phenotype}.regenie
+    verified_saved_runs: 10
+  REGENIE_woLOCO:
+    software: REGENIE
+    version: 4.1.2
+    loco: false
+    statistic: LOG10P
+    output_patterns:
+      mac: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
+      hpcc: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
+    verified_saved_runs: 10
+  fastGWA:
+    software: GCTA
+    version: 1.94.1
+    sparse_grm_cutoff: 0.05
+    statistic: P
+    output_patterns:
+      mac: fastGWA/spg.even.100k.pheno{phenotype}.fastgwa.fastGWA
+      hpcc: fastGWA/spg.even.100k.pheno{phenotype}.fastgwa.fastGWA
+    verified_saved_runs: 10
+  SLEMM:
+    software: SLEMM
+    version: 0.90.1
+    loco: false
+    statistic: P
+    output_patterns:
+      mac: SLEMM/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
+      hpcc: SLEMM/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
+    verified_saved_runs: 10
+  BLINK_Kansas:
+    software: GAPIT_BLINK
+    output_stage: before_local_refinement
+    statistic: P.value
+    output_patterns:
+      mac: BLINK/GAPIT.Association.GWAS_Results.BLINK.pheno{phenotype}(Kansas).csv
+      hpcc: GAPIT/GAPIT.Association.GWAS_Results.BLINK.pheno{phenotype}(Kansas).csv
+    verified_saved_runs: 10
+  BLINK_NYC:
+    software: GAPIT_BLINK
+    output_stage: after_local_refinement
+    statistic: P.value
+    output_patterns:
+      mac: BLINK/GAPIT.Association.GWAS_Results.BLINK.pheno{phenotype}(NYC).csv
+      hpcc: GAPIT/GAPIT.Association.GWAS_Results.BLINK.pheno{phenotype}(NYC).csv
+    verified_saved_runs: 10
+  FarmCPU_Kansas:
+    software: GAPIT_FarmCPU
+    output_stage: before_local_refinement
+    statistic: P.value
+    output_patterns:
+      mac: FarmCPU/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(Kansas).csv
+      hpcc: GAPIT/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(Kansas).csv
+    verified_saved_runs: 10
+  FarmCPU_NYC:
+    software: GAPIT_FarmCPU
+    output_stage: after_local_refinement
+    statistic: P.value
+    output_patterns:
+      mac: FarmCPU/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(NYC).csv
+      hpcc: GAPIT/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(NYC).csv
+    verified_saved_runs: 10
 gapit:
   manuscript_version: '3.5'
-  retained_source_version_string: '2025.10.03, GAPIT 4.0'
+  retained_source_version_string: 2025.10.03, GAPIT 4.0
   retained_source_sha256: deae8d49b625b9ea7cd356c163c62c5fa41b405243dc17888765b03dc592ae02
   provenance_status: version_discrepancy_requires_review
   source_distribution: external_required_not_vendored

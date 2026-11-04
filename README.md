@@ -4,7 +4,7 @@ This repository supports a benchmark of SNP localization under diffuse polygenic
 
 The November 2026 reconstruction follows the author-supplied October 22 manuscript. **Downstream results have been independently regenerated from saved GWAS and fine-mapping outputs. Full model fitting and the upstream Equation 12 calculation have not been reproduced.** Two confirmed manuscript numerical discrepancies and unresolved methodological provenance are retained in the [validation report](repository_validation_report.md).
 
-[Browse the real result tables in derived_data](derived_data/README.md).
+[Browse the real result tables in derived_data](derived_data/README.md) and [verified configurations](config/README.md).
 
 ## Start here
 
@@ -25,7 +25,7 @@ Static checks also require R on PATH; no R packages are required merely to parse
 | Area | Content |
 |---|---|
 | `scripts/` | Public analysis code, harmonization, recovered fitting commands and figure generators |
-| `config/` | Scientific constants and example machine paths; unresolved parameters remain null |
+| `config/` | Verified design, method filenames, result paths and generated result snapshot; private machine roots in ignored local_paths.yaml |
 | `derived_data/` | Non-identifying counts, rates, binned summaries and input fingerprints; 27 populated TSV files; schema examples are separate in `example/schemas/` |
 | `figures/reconstructed/` | Eight main-figure redraws, S1–S10 Manhattan supplements, and a central-null Equation 13 supplement, each PDF and PNG |
 | `audit/` | Provenance, numerical claim ledger, discrepancies and reference aggregates |

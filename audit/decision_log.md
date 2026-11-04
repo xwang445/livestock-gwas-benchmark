@@ -18,3 +18,5 @@
 - 2026-11-04 publication update: after the completion report, the user explicitly authorized pushing the reviewed package to GitHub. Pushed the five reviewed commits through d49a978 to origin/reconstruct/20261104. No raw restricted data were included. Scientific unresolved items remain unchanged.
 
 - 2026-11-04 default-branch correction: the user found only templates because the prior authorized push updated the review branch, not main. Publish the reviewed package to main, preserve all five templates under example/schemas, and make derived_data contain executed results only. Original data and numeric results remain unchanged.
+
+- 2026-11-04 configuration update: generated the result snapshot from executed tables, verified all 90 Mac/HPCC GWAS paths, and recorded machine-specific input availability. Absolute roots/SSH host are kept in ignored local_paths.yaml; public scripts consume relative paths. Unknown historical settings and original simulation identity remain unresolved.

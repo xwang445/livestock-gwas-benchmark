@@ -39,3 +39,9 @@ Equation 13 reproduction verifies cached NCP algebra, joins, all 1,600 replicate
 The finite-SNP PVE claim is unresolved. Recovered LSMR reconstruction of effects from genetic values is not a recovery of original sampled causal effects. Do not substitute it to force agreement.
 
 Manhattan plots are visual redraws; colors/layout differ from historical artwork. Their counts are checked against regenerated strict-threshold counts, and full-range supplements prevent the main display cap from hiding the existence of extreme results. No editable manuscript or author approval was created by this task.
+
+## Verified configurations
+
+`config/paths.yaml` resolves the exact result files and restricted-source filenames; `config/methods.yaml` lists the distinct Mac and HPCC GWAS layouts. `config/verified_results.yaml` is generated directly from executed tables, with source hashes and the validation status. Run `python scripts/build_result_config.py --check` to detect stale results configuration.
+
+The actual machine roots are installed locally in Git-ignored `config/local_paths.yaml`. `python scripts/check_config.py --profile mac --check-inputs` resolves and checks the 90 local panels and shared inputs. `--profile hpcc` resolves HPCC paths without SSH or computation. The Equation 13 cache is verified on the Mac; phenotype/LD/fine-mapping inputs are verified on HPCC. See config/README.md and audit/config_path_verification.tsv. Files absent on a machine are explicitly excluded from that profile.

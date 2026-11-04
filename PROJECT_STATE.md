@@ -61,3 +61,19 @@ git status --short --branch
 No analysis jobs are active. Existing scientific limitations and two manuscript discrepancies remain unchanged.
 
 Verification for this update: all 12 tests and static/schema checks passed; the numerical ledger is unchanged at 95 PASS and two documented manuscript discrepancies. No numeric analysis table changed.
+
+## Configuration update
+
+Replaced the active placeholder path example with config/paths.yaml and moved the original example to example/schemas. Added config/verified_results.yaml generated from executed result tables, versioned Mac/HPCC method filename patterns, and path validation. The local machine roots are installed in Git-ignored config/local_paths.yaml. Public configuration contains real repository-relative and source-relative paths, with no personal machine paths or credentials.
+
+Read-only filesystem checks confirmed all 90 GWAS outputs on both machines. The cached Equation 13 predictions are present only in the checked Mac location; phenotype/LD/fine-mapping inputs are present on HPCC. The fine-mapping genotype files contain 20,000 animals and 135,358 SNPs. The original simulation genotype identity remains unresolved and has no active default.
+
+Exact next configuration checks:
+
+```bash
+python scripts/check_config.py
+python scripts/check_config.py --profile mac --check-inputs
+python scripts/build_result_config.py --check
+```
+
+Configuration verification passed: all 15 tests, script/schema checks, result-source equality and the 90-file Mac input check. HPCC source presence was verified separately through read-only SSH. See audit/configuration_checks.txt. No analysis results were changed and no model jobs were launched. Publication targets are main and reconstruct/20261104 under the user's continuing authorization; verify both remote refs after the push.

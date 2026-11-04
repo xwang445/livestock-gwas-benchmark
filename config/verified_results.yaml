@@ -1,0 +1,485 @@
+schema_version: 1
+scope: Executed downstream reanalysis of saved GWAS, cached theory, LD and converged
+  fine-mapping results; no fresh model fits.
+regenerate_command: python scripts/build_result_config.py
+study_checks:
+  methods: 9
+  phenotypes: 10
+  gwas_panels: 90
+  snps_per_panel:
+  - 135358
+  equation13_replicate_bin_rows: 1600
+  finemapping_phenotype_pipeline_rows: 40
+validation:
+  ledger: audit/manuscript_validation.tsv
+  status_counts:
+    AMBIGUOUS: 4
+    FAIL: 2
+    NOT_RUN: 3
+    PASS: 95
+    REQUIRES_RECOMPUTATION: 1
+  manuscript_discrepancies:
+  - manuscript_item: Figure4 maximum minus log10 P approximately 102
+    expected: '102'
+    observed: '107.517'
+    source: figures/reconstructed/manhattan/manhattan_manifest.tsv
+    note: Untruncated statistic across all 90 panels.
+  - manuscript_item: Results REGENIE maximum SNP count
+    expected: '21484'
+    observed: '20461'
+    source: method_summary/significant_snps_by_pheno.tsv
+    note: Figure3 is correct at 20461; 21484 belongs to BOLT-LMM.
+methods:
+  BLINK_Kansas:
+    significant_snps_and_loci:
+      mean_sig_snps: 179.3
+      sd_sig_snps: 50.6777400180132
+      min_sig_snps: 135
+      max_sig_snps: 314
+      mean_sig_loci: 154.6
+      sd_sig_loci: 11.1872943804816
+      min_sig_loci: 135
+      max_sig_loci: 172
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0104054054054054
+      sd_spillover_rate: 0.0022567522612388
+      min_spillover_rate: 0.006081081081081
+      max_spillover_rate: 0.0141891891891892
+      mean_spillover_loci: 15.4
+      sd_spillover_loci: 3.33999334663343
+      min_spillover_loci: 9
+      max_spillover_loci: 21
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 1.74119702258781
+      sd_lambda_gc: 0.139502350811775
+      min_lambda_gc: 1.55123555394205
+      max_lambda_gc: 1.99985572580706
+      n_phenotypes: 10
+  BLINK_NYC:
+    significant_snps_and_loci:
+      mean_sig_snps: 674.6
+      sd_sig_snps: 59.2231186090177
+      min_sig_snps: 601
+      max_sig_snps: 786
+      mean_sig_loci: 176.9
+      sd_sig_loci: 11.8363845831402
+      min_sig_loci: 158
+      max_sig_loci: 196
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0114864864864865
+      sd_spillover_rate: 0.0024047473540611
+      min_spillover_rate: 0.0074324324324324
+      max_spillover_rate: 0.0141891891891892
+      mean_spillover_loci: 17.0
+      sd_spillover_loci: 3.55902608401044
+      min_spillover_loci: 11
+      max_spillover_loci: 21
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 1.75351313605065
+      sd_lambda_gc: 0.139689934925783
+      min_lambda_gc: 1.56015095189849
+      max_lambda_gc: 2.00960819282958
+      n_phenotypes: 10
+  BOLT-LMM:
+    significant_snps_and_loci:
+      mean_sig_snps: 17429.0
+      sd_sig_snps: 2449.94303788657
+      min_sig_snps: 14289
+      max_sig_snps: 21484
+      mean_sig_loci: 1598.3
+      sd_sig_loci: 144.490714811252
+      min_sig_loci: 1405
+      max_sig_loci: 1804
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.306891891891892
+      sd_spillover_rate: 0.0294068599490103
+      min_spillover_rate: 0.262162162162162
+      max_spillover_rate: 0.358783783783784
+      mean_spillover_loci: 454.2
+      sd_spillover_loci: 43.5221527245353
+      min_spillover_loci: 388
+      max_spillover_loci: 531
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 8.19894522539844
+      sd_lambda_gc: 0.785647186300019
+      min_lambda_gc: 6.64907323480934
+      max_lambda_gc: 9.44079876760672
+      n_phenotypes: 10
+  FarmCPU_Kansas:
+    significant_snps_and_loci:
+      mean_sig_snps: 585.0
+      sd_sig_snps: 187.256805246461
+      min_sig_snps: 201
+      max_sig_snps: 845
+      mean_sig_loci: 183.6
+      sd_sig_loci: 27.2812511932035
+      min_sig_loci: 126
+      max_sig_loci: 214
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0189864864864865
+      sd_spillover_rate: 0.0046969045406112
+      min_spillover_rate: 0.0108108108108108
+      max_spillover_rate: 0.0256756756756757
+      mean_spillover_loci: 28.1
+      sd_spillover_loci: 6.95141872010471
+      min_spillover_loci: 16
+      max_spillover_loci: 38
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 3.24189058344231
+      sd_lambda_gc: 0.23268869570521
+      min_lambda_gc: 2.95563363188315
+      max_lambda_gc: 3.60930184575054
+      n_phenotypes: 10
+  FarmCPU_NYC:
+    significant_snps_and_loci:
+      mean_sig_snps: 718.7
+      sd_sig_snps: 152.459867214658
+      min_sig_snps: 483
+      max_sig_snps: 985
+      mean_sig_loci: 257.8
+      sd_sig_loci: 31.1334047108389
+      min_sig_loci: 202
+      max_sig_loci: 297
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0291891891891892
+      sd_spillover_rate: 0.0069477510186527
+      min_spillover_rate: 0.0175675675675676
+      max_spillover_rate: 0.0405405405405405
+      mean_spillover_loci: 43.2
+      sd_spillover_loci: 10.2826715076061
+      min_spillover_loci: 26
+      max_spillover_loci: 60
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 3.2190117876171
+      sd_lambda_gc: 0.231580110791569
+      min_lambda_gc: 2.91778406257339
+      max_lambda_gc: 3.58949922373033
+      n_phenotypes: 10
+  REGENIE_LOCO:
+    significant_snps_and_loci:
+      mean_sig_snps: 16392.6
+      sd_sig_snps: 2461.7743916849
+      min_sig_snps: 12738
+      max_sig_snps: 20461
+      mean_sig_loci: 1545.0
+      sd_sig_loci: 162.771823933587
+      min_sig_loci: 1285
+      max_sig_loci: 1785
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.302972972972973
+      sd_spillover_rate: 0.0345207897964605
+      min_spillover_rate: 0.245945945945946
+      max_spillover_rate: 0.353378378378378
+      mean_spillover_loci: 448.4
+      sd_spillover_loci: 51.0907688987616
+      min_spillover_loci: 364
+      max_spillover_loci: 523
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 8.26799014268209
+      sd_lambda_gc: 0.933897430932236
+      min_lambda_gc: 6.68327202260546
+      max_lambda_gc: 10.1855839735528
+      n_phenotypes: 10
+  REGENIE_woLOCO:
+    significant_snps_and_loci:
+      mean_sig_snps: 464.2
+      sd_sig_snps: 428.096250859547
+      min_sig_snps: 77
+      max_sig_snps: 1435
+      mean_sig_loci: 83.8
+      sd_sig_loci: 57.2922333305309
+      min_sig_loci: 22
+      max_sig_loci: 216
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0107432432432432
+      sd_spillover_rate: 0.009315997064986
+      min_spillover_rate: 0.002027027027027
+      max_spillover_rate: 0.0337837837837838
+      mean_spillover_loci: 15.9
+      sd_spillover_loci: 13.7876756561793
+      min_spillover_loci: 3
+      max_spillover_loci: 50
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 2.16884559605633
+      sd_lambda_gc: 0.325344053206001
+      min_lambda_gc: 1.81578891237563
+      max_lambda_gc: 2.72394851453713
+      n_phenotypes: 10
+  SLEMM:
+    significant_snps_and_loci:
+      mean_sig_snps: 11.6
+      sd_sig_snps: 14.9011558090117
+      min_sig_snps: 0
+      max_sig_snps: 46
+      mean_sig_loci: 2.6
+      sd_sig_loci: 2.83627298482435
+      min_sig_loci: 0
+      max_sig_loci: 9
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0
+      sd_spillover_rate: 0.0
+      min_spillover_rate: 0.0
+      max_spillover_rate: 0.0
+      mean_spillover_loci: 0.0
+      sd_spillover_loci: 0.0
+      min_spillover_loci: 0
+      max_spillover_loci: 0
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 0.595518985202767
+      sd_lambda_gc: 0.0168820341469671
+      min_lambda_gc: 0.560307555627297
+      max_lambda_gc: 0.617645298934516
+      n_phenotypes: 10
+  fastGWA:
+    significant_snps_and_loci:
+      mean_sig_snps: 1484.0
+      sd_sig_snps: 222.841747534982
+      min_sig_snps: 1162
+      max_sig_snps: 1831
+      mean_sig_loci: 226.4
+      sd_sig_loci: 26.4289403663652
+      min_sig_loci: 192
+      max_sig_loci: 288
+      n_phenotypes: 10
+    spillover:
+      mean_spillover_rate: 0.0147297297297297
+      sd_spillover_rate: 0.0040640517364468
+      min_spillover_rate: 0.0094594594594594
+      max_spillover_rate: 0.0209459459459459
+      mean_spillover_loci: 21.8
+      sd_spillover_loci: 6.01479656994131
+      min_spillover_loci: 14
+      max_spillover_loci: 31
+      n_phenotypes: 10
+    lambda_gc:
+      mean_lambda_gc: 2.49737962491142
+      sd_lambda_gc: 0.095545719482342
+      min_lambda_gc: 2.36582794325699
+      max_lambda_gc: 2.60701607460141
+      n_phenotypes: 10
+heritability_from_saved_logs:
+- method: SLEMM
+  mean: 0.529104
+  min: 0.506029
+  max: 0.550321
+  count: 10
+- method: fastGWA
+  mean: 0.1453433
+  min: 0.134519
+  max: 0.153038
+  count: 10
+finemapping:
+  pooled:
+  - method: BOLT-LMM
+    pipeline: SuSiE-RSS
+    n_high_pip: 2009
+    n_causal: 261
+    n_null: 1170
+    n_effect: 839
+    expected_causal: 177.346013100131
+    null_percent: 58.2379293180687
+    causal_percent: 12.9915380786461
+    noncausal_percent: 87.0084619213539
+    maf_expected_percent: 8.82757656048437
+    enrichment: 1.47169928118225
+  - method: BOLT-LMM
+    pipeline: SuSiE-adj
+    n_high_pip: 1974
+    n_causal: 263
+    n_null: 1153
+    n_effect: 821
+    expected_causal: 174.539469759758
+    null_percent: 58.4093211752786
+    causal_percent: 13.323201621074
+    noncausal_percent: 86.676798378926
+    maf_expected_percent: 8.84191842754601
+    enrichment: 1.50682249901413
+  - method: REGENIE_LOCO
+    pipeline: SuSiE-RSS
+    n_high_pip: 2064
+    n_causal: 253
+    n_null: 1247
+    n_effect: 817
+    expected_causal: 180.327879504156
+    null_percent: 60.4166666666667
+    causal_percent: 12.2577519379845
+    noncausal_percent: 87.7422480620155
+    maf_expected_percent: 8.73681586744944
+    enrichment: 1.40299991712689
+  - method: REGENIE_LOCO
+    pipeline: SuSiE-adj
+    n_high_pip: 2101
+    n_causal: 256
+    n_null: 1274
+    n_effect: 827
+    expected_causal: 183.248169230589
+    null_percent: 60.6377915278439
+    causal_percent: 12.1846739647787
+    noncausal_percent: 87.8153260352213
+    maf_expected_percent: 8.721949987177
+    enrichment: 1.39701259267625
+  converged_loci:
+  - method: BOLT-LMM
+    pipeline: SuSiE-adj
+    n_converged_loci: 6732
+  - method: REGENIE_LOCO
+    pipeline: SuSiE-adj
+    n_converged_loci: 6569
+  - method: BOLT-LMM
+    pipeline: SuSiE-RSS
+    n_converged_loci: 6732
+  - method: REGENIE_LOCO
+    pipeline: SuSiE-RSS
+    n_converged_loci: 6569
+ld:
+  n_bins: 1000
+  selected_bin_means:
+  - bin_id: 1
+    bin_start: 0.0
+    bin_end: 0.01
+    mid_mb: 0.005
+    n_pairs: 31209
+    mean_r2: 0.592525238698867
+  - bin_id: 200
+    bin_start: 1.99
+    bin_end: 2.0
+    mid_mb: 1.995
+    n_pairs: 80789
+    mean_r2: 0.160877115183354
+  - bin_id: 1000
+    bin_start: 9.99
+    bin_end: 10.0
+    mid_mb: 9.995
+    n_pairs: 73001
+    mean_r2: 0.0395887918480463
+equation13_cached_checks:
+- n_theory_snps: 135358
+  max_ncp_algebra_error: 2.91322521661641e-13
+  max_expectation_error: 5.15143483426073e-14
+  theory_sha256: 9ab54e274dcfc5a6480416878532f7ca69d325fce2242ee1a8e23a8b5c977ac7
+  upstream_equation12_validation: NOT_RUN
+source_tables:
+  equation13_summary/cached_theory_validation.tsv:
+    path: derived_data/equation13_summary/cached_theory_validation.tsv
+    rows: 1
+    sha256: 82c210fb223913362b32ba1895e25b6de726d5730abe88d6c732278786143c99
+  equation13_summary/equation13_by_pheno.tsv:
+    path: derived_data/equation13_summary/equation13_by_pheno.tsv
+    rows: 1600
+    sha256: ffea29d65896e28d93962a167f626042a018efee3fd4f6c6d8c311570b3b4981
+  equation13_summary/equation13_summary.tsv:
+    path: derived_data/equation13_summary/equation13_summary.tsv
+    rows: 160
+    sha256: c80c8144f7eeaf284caf9976181cf6f6e99a8a86e18bd7ceee058412590130d1
+  finemapping_summary/converged_loci.tsv:
+    path: derived_data/finemapping_summary/converged_loci.tsv
+    rows: 4
+    sha256: 961681d18ee74c2de3ee0ff7dfef0feb8e722120d72a7cb9eba096db1c8d9171
+  finemapping_summary/high_pip_by_pheno.tsv:
+    path: derived_data/finemapping_summary/high_pip_by_pheno.tsv
+    rows: 40
+    sha256: 9ad4fc7815a24ec13664ae3cfbd2b81e16f24d77ad83d3ab732c90307e5e9b55
+  finemapping_summary/high_pip_summary.tsv:
+    path: derived_data/finemapping_summary/high_pip_summary.tsv
+    rows: 4
+    sha256: 41fed8f7050015144895bd16a5f85fe938d058aa6a258d8b71381c2b378db09a
+  finemapping_summary/null_vs_effect_summary.tsv:
+    path: derived_data/finemapping_summary/null_vs_effect_summary.tsv
+    rows: 4
+    sha256: 53d1e845ad28636986ee8daf4d0065af9786243198a7e36b5371ac65092c5603
+  input_manifest.tsv:
+    path: derived_data/input_manifest.tsv
+    rows: 90
+    sha256: 6e9b2a34de22e73d05c3f5e028dc26352ee02bb05904393e3c485f9e7ad8308d
+  lambda_gc_summary/lambda_gc_by_pheno.tsv:
+    path: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+    rows: 90
+    sha256: e440c1bf9cf81a1164e4c67802a12d20ee90bfbb36d536ed88e9ef2838bc47b9
+  lambda_gc_summary/lambda_gc_summary.tsv:
+    path: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+    rows: 9
+    sha256: 407ffee4a9cbf0fc87f0655be64ef70e8cb764aa6c809cae122217162c4e960a
+  ld_summary/ld_decay_10kb.tsv:
+    path: derived_data/ld_summary/ld_decay_10kb.tsv
+    rows: 1000
+    sha256: 47d206999aac475a41a175911a9467821ae253bff463ad7d97e1c5a782e0408d
+  ld_summary/ld_decay_fitted_mean.tsv:
+    path: derived_data/ld_summary/ld_decay_fitted_mean.tsv
+    rows: 7998
+    sha256: 89b785d30cb59970ded93d08e14682435b177dd90d2d2a5b365f5039fed3fa52
+  method_summary/heritability_from_logs.tsv:
+    path: derived_data/method_summary/heritability_from_logs.tsv
+    rows: 20
+    sha256: e948cdc1bf20e1a17af2dda329aeb60c057ec0bf034071cf58d44b84e1be6131
+  method_summary/method_summary.tsv:
+    path: derived_data/method_summary/method_summary.tsv
+    rows: 9
+    sha256: 69bf149bc10612820553536b1603d7084bd2723e70cc4d06be1aaf80622ba4c5
+  method_summary/significant_loci_by_pheno.tsv:
+    path: derived_data/method_summary/significant_loci_by_pheno.tsv
+    rows: 90
+    sha256: 70d67366b84173ada3ec35df6546dbb7f0226a02f69ee089f078019faadc3975
+  method_summary/significant_snps_by_pheno.tsv:
+    path: derived_data/method_summary/significant_snps_by_pheno.tsv
+    rows: 90
+    sha256: 295616f9b365ef535afeb96aa8de5e8af580e2f2cf388476464ab029bd3d61d4
+  overlap_summary/cross_replicate_stability.tsv:
+    path: derived_data/overlap_summary/cross_replicate_stability.tsv
+    rows: 900
+    sha256: 5b1e9388371e1c6413e7a1d55f84a6887f294d971eaf2064b534edec0fee9bbe
+  overlap_summary/locus_overlap_by_pheno.tsv:
+    path: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
+    rows: 810
+    sha256: 4defff1c37ed8fc19d0f934c9e1b56e88b8f1eb3f5887c6a81060f4cd511d6a6
+  overlap_summary/locus_overlap_summary.tsv:
+    path: derived_data/overlap_summary/locus_overlap_summary.tsv
+    rows: 81
+    sha256: 00fa37138ab1822169556a525c0adbbc33e135e1bad8571233114fb7a8c064f8
+  power_summary/fpr_by_pheno.tsv:
+    path: derived_data/power_summary/fpr_by_pheno.tsv
+    rows: 6120
+    sha256: 0024b6018868cc71d4eb8c5e0deb43df4bc6897ad3d2036f7bbedc777df35cae
+  power_summary/fpr_summary.tsv:
+    path: derived_data/power_summary/fpr_summary.tsv
+    rows: 612
+    sha256: 8a0a652bb48f223b1f281e443734a93ad0e1d46d2a3eb9f388075399cd15eb39
+  power_summary/power_by_pheno.tsv:
+    path: derived_data/power_summary/power_by_pheno.tsv
+    rows: 3060
+    sha256: 1a594e4f4044f129461e8f8834c51317eedceb34800050f6fe2e2136f927bbcd
+  power_summary/power_summary.tsv:
+    path: derived_data/power_summary/power_summary.tsv
+    rows: 306
+    sha256: a8fe91ef34a6772d947a1b23c6408a5176e7c0873aeb7170076a34317a5835dc
+  power_summary/spatial_enrichment_by_pheno.tsv:
+    path: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
+    rows: 3600
+    sha256: f38d8ff6b8817df46b8aee263ad5df5ee1921762788b3e6db9a15fc4903b3563
+  power_summary/spatial_enrichment_summary.tsv:
+    path: derived_data/power_summary/spatial_enrichment_summary.tsv
+    rows: 360
+    sha256: 2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40
+  spillover_summary/spillover_by_pheno.tsv:
+    path: derived_data/spillover_summary/spillover_by_pheno.tsv
+    rows: 90
+    sha256: 6ad56888294d39ea005a0b045ca47f801b28735ff74264961d59f9dd4cd7f242
+  spillover_summary/spillover_summary.tsv:
+    path: derived_data/spillover_summary/spillover_summary.tsv
+    rows: 9
+    sha256: 14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702

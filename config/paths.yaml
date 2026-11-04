@@ -1,0 +1,125 @@
+schema_version: 1
+path_convention: All public artifact paths are relative to repository root. Restricted
+  input paths are relative to a private machine profile benchmark_root.
+repository_paths:
+  derived_data: derived_data
+  figures: figures/reconstructed
+  schemas: example/schemas
+result_paths:
+  equation13_summary/cached_theory_validation: derived_data/equation13_summary/cached_theory_validation.tsv
+  equation13_summary/equation13_by_pheno: derived_data/equation13_summary/equation13_by_pheno.tsv
+  equation13_summary/equation13_summary: derived_data/equation13_summary/equation13_summary.tsv
+  finemapping_summary/converged_loci: derived_data/finemapping_summary/converged_loci.tsv
+  finemapping_summary/high_pip_by_pheno: derived_data/finemapping_summary/high_pip_by_pheno.tsv
+  finemapping_summary/high_pip_summary: derived_data/finemapping_summary/high_pip_summary.tsv
+  finemapping_summary/null_vs_effect_summary: derived_data/finemapping_summary/null_vs_effect_summary.tsv
+  input_manifest: derived_data/input_manifest.tsv
+  lambda_gc_summary/lambda_gc_by_pheno: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+  lambda_gc_summary/lambda_gc_summary: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+  ld_summary/ld_decay_10kb: derived_data/ld_summary/ld_decay_10kb.tsv
+  ld_summary/ld_decay_fitted_mean: derived_data/ld_summary/ld_decay_fitted_mean.tsv
+  method_summary/heritability_from_logs: derived_data/method_summary/heritability_from_logs.tsv
+  method_summary/method_summary: derived_data/method_summary/method_summary.tsv
+  method_summary/significant_loci_by_pheno: derived_data/method_summary/significant_loci_by_pheno.tsv
+  method_summary/significant_snps_by_pheno: derived_data/method_summary/significant_snps_by_pheno.tsv
+  overlap_summary/cross_replicate_stability: derived_data/overlap_summary/cross_replicate_stability.tsv
+  overlap_summary/locus_overlap_by_pheno: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
+  overlap_summary/locus_overlap_summary: derived_data/overlap_summary/locus_overlap_summary.tsv
+  power_summary/fpr_by_pheno: derived_data/power_summary/fpr_by_pheno.tsv
+  power_summary/fpr_summary: derived_data/power_summary/fpr_summary.tsv
+  power_summary/power_by_pheno: derived_data/power_summary/power_by_pheno.tsv
+  power_summary/power_summary: derived_data/power_summary/power_summary.tsv
+  power_summary/spatial_enrichment_by_pheno: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
+  power_summary/spatial_enrichment_summary: derived_data/power_summary/spatial_enrichment_summary.tsv
+  spillover_summary/spillover_by_pheno: derived_data/spillover_summary/spillover_by_pheno.tsv
+  spillover_summary/spillover_summary: derived_data/spillover_summary/spillover_summary.tsv
+evidence_paths:
+  validation: audit/manuscript_validation.tsv
+  input_hashes: derived_data/input_manifest.tsv
+  run_manifest: derived_data/run_manifest.json
+  fine_mapping_verification: derived_data/finemapping_summary/verification_manifest.json
+restricted_inputs:
+  effect_windows:
+    path: eligible_regions.csv
+    kind: file
+    available_on:
+    - mac
+    - hpcc
+  causal_snp_list:
+    path: snp.info.chr1_18.10k.csv
+    kind: file
+    available_on:
+    - mac
+    - hpcc
+  equation13_cached_theory:
+    path: equation13_analysis/framework_ncp_variant.tsv
+    kind: file
+    available_on:
+    - mac
+  combined_phenotypes:
+    path: simu_pheno/pheno_combined.txt
+    kind: file
+    available_on:
+    - hpcc
+  gwas_sample_ids:
+    path: simu_pheno/IID.txt
+    kind: file
+    available_on:
+    - hpcc
+  fastgwa_phenotype_directory:
+    path: simu_pheno/fastGWA_data
+    kind: directory
+    available_on:
+    - hpcc
+  slemm_phenotypes:
+    path: SLEMM/pheno.slemm.csv
+    kind: file
+    available_on:
+    - hpcc
+  ld_pairs_10mb:
+    path: geno_data/ld_analysis/ld_10Mb.ld.gz
+    kind: file
+    available_on:
+    - hpcc
+  finemapping_genotype_prefix:
+    path: SuSiE_adj_finemapping/genotype/spg.20k
+    kind: plink_bed_prefix
+    available_on:
+    - hpcc
+    verified_samples: 20000
+    verified_snps: 135358
+    scope: Saved fine-mapping subset; not proof of original simulation input identity.
+  susie_adj_saved_pips:
+    path: SuSiE_adj_finemapping/loco/results/snp_level_all.tsv.gz
+    kind: file
+    available_on:
+    - hpcc
+  susie_adj_diagnostics:
+    path: SuSiE_adj_finemapping/loco/results/per_locus_diagnostics.tsv
+    kind: file
+    available_on:
+    - hpcc
+  susie_rss_saved_pips:
+    path: SuSiE_finemapping/results/snp_level_all.tsv.gz
+    kind: file
+    available_on:
+    - hpcc
+  susie_rss_diagnostics:
+    path: SuSiE_finemapping/results/per_locus_diagnostics.tsv
+    kind: file
+    available_on:
+    - hpcc
+  saved_maf_annotations:
+    path: SuSiE_finemapping/publication/maf_matched/snp_annotations.tsv.gz
+    kind: file
+    available_on:
+    - hpcc
+profiles:
+- mac
+- hpcc
+private_profile_file: config/local_paths.yaml
+unresolved_inputs:
+  original_simulation_genotype: Historical identity/order unresolved; no active default
+    prefix is assigned.
+  equation12_generator: Not recovered; cached Equation13 downstream results do not
+    establish upstream reproduction.

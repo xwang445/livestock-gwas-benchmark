@@ -6,6 +6,8 @@ README.md	MODIFIED
 audit/README.md	ADDED
 audit/artifact_manifest.tsv	ADDED
 audit/change_manifest.tsv	ADDED
+audit/config_path_verification.tsv	ADDED
+audit/configuration_checks.txt	ADDED
 audit/decision_log.md	ADDED
 audit/discrepancies.tsv	ADDED
 audit/figure_validation.tsv	ADDED
@@ -32,8 +34,12 @@ audit/reference_values/spillover.tsv	ADDED
 audit/run_registry.tsv	ADDED
 audit/script_provenance.tsv	ADDED
 audit/skeptical_review.md	ADDED
+config/README.md	ADDED
 config/analysis_parameters.yaml	ADDED
+config/example_paths.yaml	RELOCATED_TO_EXAMPLE_SCHEMAS
 config/methods.yaml	ADDED
+config/paths.yaml	ADDED
+config/verified_results.yaml	ADDED
 derived_data/README.md	MODIFIED
 derived_data/equation13_summary/cached_theory_validation.tsv	ADDED
 derived_data/equation13_summary/equation13_by_pheno.tsv	ADDED
@@ -89,6 +95,7 @@ environment/requirements-validation.txt	ADDED
 environment/software_versions.md	MODIFIED
 example/schemas/README.md	ADDED
 example/schemas/equation13_summary_template.tsv	ADDED
+example/schemas/example_paths.yaml	ADDED
 example/schemas/lambda_gc_summary_template.tsv	ADDED
 example/schemas/method_summary_template.tsv	ADDED
 example/schemas/overlap_summary_template.tsv	ADDED
@@ -160,10 +167,13 @@ scripts/13_figures/plot_ld.R	ADDED
 scripts/13_figures/plot_manhattan.py	ADDED
 scripts/benchmark_core.py	ADDED
 scripts/build_artifact_manifest.py	ADDED
+scripts/build_result_config.py	ADDED
+scripts/check_config.py	ADDED
 scripts/export_verification.py	ADDED
 scripts/hpcc/run_stage.sbatch	ADDED
 scripts/validate_manuscript.py	ADDED
 tests/check_static.py	ADDED
 tests/check_validation_status.py	ADDED
 tests/test_benchmark.py	ADDED
+tests/test_configuration.py	ADDED
 tests/test_runners.py	ADDED
