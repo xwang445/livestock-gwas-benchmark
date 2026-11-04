@@ -1,0 +1,106 @@
+manuscript_item	expected	observed	absolute_difference	tolerance	status	source	note
+Figure3 matched rows	90	90	0	0	PASS	derived_data/method_summary/significant_snps_by_pheno.tsv; audit/reference_values/figure3.tsv	Not applicable
+Figure3 n_significant_snps	0	0.0	0	0	PASS	derived_data/method_summary/significant_snps_by_pheno.tsv; audit/reference_values/figure3.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure3 n_significant_loci	0	0.0	0	0	PASS	derived_data/method_summary/significant_snps_by_pheno.tsv; audit/reference_values/figure3.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+GWAS configurations	9	9	0	0	PASS	method_summary/significant_snps_by_pheno.tsv	Not applicable
+Phenotypes	10	10	0	0	PASS	method_summary/significant_snps_by_pheno.tsv	Not applicable
+All GWAS panels have 135358 SNPs	90	90	0	0	PASS	method_summary/significant_snps_by_pheno.tsv	Not applicable
+Figure4 and supplements counts matched rows	90	90	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Not applicable
+Figure4 and supplements counts n_significant	0	0.0	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure4 and supplements counts n_plotted	0	0.0	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure4 maximum minus log10 P approximately 102	102	107.517	5.517	1	FAIL	figures/reconstructed/manhattan/manhattan_manifest.tsv	Untruncated statistic across all 90 panels.
+Figure6A historical spillover matched rows	90	90	0	0	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Not applicable
+Figure6A historical spillover spillover_rate	0	0.0	0	1e-10	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure6A historical spillover n_spillover_loci	0	0.0	0	1e-10	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure6A percent BOLT-LMM	30.7	30.689189189189182	0.0108108108108169	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent REGENIE_LOCO	30.3	30.297297297297288	0.00270270270271311	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent REGENIE_woLOCO	1.1	1.0743243243243221	0.025675675675678	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent fastGWA	1.5	1.472972972972971	0.027027027027029	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent FarmCPU_NYC	2.9	2.918918918918919	0.0189189189189189	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent FarmCPU_Kansas	1.9	1.8986486486486498	0.00135135135135012	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent BLINK_NYC	1.1	1.148648648648647	0.0486486486486468	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent BLINK_Kansas	1.0	1.040540540540538	0.0405405405405379	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6A percent SLEMM	0.0	0.0	0	0.05000001	PASS	spillover_summary/spillover_by_pheno.tsv	Manuscript rounded to one decimal percentage point.
+Figure6B historical lambda matched rows	90	90	0	0	PASS	derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv; audit/reference_values/lambda.tsv	Not applicable
+Figure6B historical lambda lambda_gc	0	2.1316282072803006e-14	2.1316282072803e-14	1e-10	PASS	derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv; audit/reference_values/lambda.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Historical power matched rows	2970	2970	0	0	PASS	derived_data/power_summary/power_by_pheno.tsv; audit/reference_values/power.tsv	Not applicable
+Historical power power	0	0.0	0	1e-10	PASS	derived_data/power_summary/power_by_pheno.tsv; audit/reference_values/power.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Historical fpr matched rows	2970	2970	0	0	PASS	derived_data/power_summary/fpr_by_pheno.tsv; audit/reference_values/fpr.tsv	Not applicable
+Historical fpr fpr	0	9.992007221626409e-16	9.99200722162641e-16	1e-10	PASS	derived_data/power_summary/fpr_by_pheno.tsv; audit/reference_values/fpr.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure6CD 50kb enrichment matched rows	3600	3600	0	0	PASS	derived_data/power_summary/spatial_enrichment_by_pheno.tsv; audit/reference_values/spatial.tsv	Not applicable
+Figure6CD 50kb enrichment observed_expected	0	1.0244548320770264e-08	1.02445483207703e-08	1e-07	PASS	derived_data/power_summary/spatial_enrichment_by_pheno.tsv; audit/reference_values/spatial.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure5 displayed spot checks matched rows	30	30	0	0	PASS	derived_data/overlap_summary/locus_overlap_by_pheno.tsv; audit/reference_values/figure5_spot_checks.tsv	Not applicable
+Figure5 displayed spot checks jaccard	0	0.004908896034298005	0.004908896034298	0.00500001	PASS	derived_data/overlap_summary/locus_overlap_by_pheno.tsv; audit/reference_values/figure5_spot_checks.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide replicate bins matched rows	800	800	0	0	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_full.tsv	Not applicable
+Figure7 Genome-wide replicate bins mean_observed_chisq	0	4.014566457044566e-13	4.01456645704457e-13	1e-09	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_full.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide replicate bins n_obs	0	0.0	0	1e-09	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_full.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide means and intervals matched rows	80	80	0	0	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_full_summary.tsv	Not applicable
+Figure7 Genome-wide means and intervals mean_observed_chisq	0	9.947598300641403e-14	9.9475983006414e-14	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_full_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide means and intervals predicted_chisq	0	9.947598300641403e-14	9.9475983006414e-14	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_full_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide means and intervals ci_lower	0	4.3069903199466353e-10	4.30699031994664e-10	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_full_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Genome-wide means and intervals ci_upper	0	4.306031087253359e-10	4.30603108725336e-10	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_full_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null replicate bins matched rows	800	800	0	0	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_central.tsv	Not applicable
+Figure7 Central-null replicate bins mean_observed_chisq	0	1.9895196601282805e-13	1.98951966012828e-13	1e-09	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_central.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null replicate bins n_obs	0	0.0	0	1e-09	PASS	derived_data/equation13_summary/equation13_by_pheno.tsv; audit/reference_values/eq13_central.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null means and intervals matched rows	80	80	0	0	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_central_summary.tsv	Not applicable
+Figure7 Central-null means and intervals mean_observed_chisq	0	9.947598300641403e-14	9.9475983006414e-14	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_central_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null means and intervals predicted_chisq	0	1.0302869668521453e-13	1.03028696685215e-13	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_central_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null means and intervals ci_lower	0	4.910987172479508e-10	4.91098717247951e-10	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_central_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure7 Central-null means and intervals ci_upper	0	4.910987172479508e-10	4.91098717247951e-10	1e-09	PASS	derived_data/equation13_summary/equation13_summary.tsv; audit/reference_values/eq13_central_summary.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure1 LD bins matched rows	1000	1000	0	0	PASS	derived_data/ld_summary/ld_decay_10kb.tsv; audit/reference_values/ld.tsv	Not applicable
+Figure1 LD bins n_pairs	0	0.0	0	1e-10	PASS	derived_data/ld_summary/ld_decay_10kb.tsv; audit/reference_values/ld.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure1 LD bins mean_r2	0	1.8096635301390052e-14	1.80966353013901e-14	1e-10	PASS	derived_data/ld_summary/ld_decay_10kb.tsv; audit/reference_values/ld.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Figure1 LD bin 1	0.59	0.592525238698867	0.00252523869886701	0.01	PASS	ld_summary/ld_decay_10kb.tsv	Approximate manuscript value; tolerance 0.01 in R squared.
+Figure1 LD bin 200	0.16	0.160877115183354	0.00087711518335401	0.01	PASS	ld_summary/ld_decay_10kb.tsv	Approximate manuscript value; tolerance 0.01 in R squared.
+Figure1 LD bin 1000	0.04	0.0395887918480463	0.000411208151953703	0.01	PASS	ld_summary/ld_decay_10kb.tsv	Approximate manuscript value; tolerance 0.01 in R squared.
+Figure8 BOLT-LMM SuSiE-adj n_high_pip	1974	1974.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj n_null	1153	1153.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj n_causal	263	263.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj null_percent	58.41	58.4093211752786	0.000678824721397575	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj causal_percent	13.3	13.323201621074	0.0232016210739996	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj maf_expected_percent	8.8	8.84191842754601	0.0419184275460101	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-adj enrichment	1.51	1.50682249901413	0.00317750098587011	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS n_high_pip	2009	2009.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS n_null	1170	1170.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS n_causal	261	261.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS null_percent	58.24	58.2379293180687	0.00207068193130056	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS causal_percent	13.0	12.9915380786461	0.00846192135390034	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS maf_expected_percent	8.8	8.82757656048437	0.0275765604843698	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 BOLT-LMM SuSiE-RSS enrichment	1.47	1.47169928118225	0.00169928118225005	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj n_high_pip	2101	2101.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj n_null	1274	1274.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj n_causal	256	256.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj null_percent	60.64	60.6377915278439	0.00220847215609865	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj causal_percent	12.2	12.1846739647787	0.0153260352212996	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj maf_expected_percent	8.7	8.721949987177	0.0219499871770008	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-adj enrichment	1.4	1.39701259267625	0.00298740732374991	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS n_high_pip	2064	2064.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS n_null	1247	1247.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS n_causal	253	253.0	0	0	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS null_percent	60.42	60.4166666666667	0.00333333333330188	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS causal_percent	12.3	12.2577519379845	0.042248062015501	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS maf_expected_percent	8.7	8.73681586744944	0.036815867449441	0.05000001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 REGENIE_LOCO SuSiE-RSS enrichment	1.4	1.40299991712689	0.00299991712689018	0.00500001	PASS	finemapping_summary/high_pip_summary.tsv	Independent recount of saved converged PIPs; MAF uses saved annotations.
+Figure8 converged BOLT-LMM SuSiE-adj	6732	6732	0	0	PASS	finemapping_summary/converged_loci.tsv	Not applicable
+Figure8 converged REGENIE_LOCO SuSiE-adj	6569	6569	0	0	PASS	finemapping_summary/converged_loci.tsv	Not applicable
+Figure8 converged BOLT-LMM SuSiE-RSS	6732	6732	0	0	PASS	finemapping_summary/converged_loci.tsv	Not applicable
+Figure8 converged REGENIE_LOCO SuSiE-RSS	6569	6569	0	0	PASS	finemapping_summary/converged_loci.tsv	Not applicable
+High-PIP calls approximately 87% noncausal	87	87.32204221894943	0.322042218949434	1	PASS	finemapping_summary/high_pip_summary.tsv	Pooled across four pipelines; overlaps are not independent animals or unique SNPs.
+fastGWA h2 log estimates	10	10	0	0	PASS	method_summary/heritability_from_logs.tsv	Not applicable
+fastGWA h2 mean	0.145	0.1453433	0.000343300000000019	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+fastGWA h2 min	0.135	0.134519	0.000481000000000009	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+fastGWA h2 max	0.153	0.153038	3.80000000000102e-05	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+SLEMM h2 log estimates	10	10	0	0	PASS	method_summary/heritability_from_logs.tsv	Not applicable
+SLEMM h2 mean	0.529	0.529104	0.000103999999999993	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+SLEMM h2 min	0.506	0.506029	2.89999999999457e-05	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+SLEMM h2 max	0.55	0.550321	0.000320999999999905	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
+Idealized expected causal detections	1.2	1.1589124657672154	0.0410875342327846	0.05	PASS	scripts/validate_manuscript.py	Analytic normal-mixture calculation only: 10000 × Pr[2 chi-square(1) > critical]. Does not verify recovered maximum PVE.
+Results REGENIE maximum SNP count	21484	20461	1023	0	FAIL	method_summary/significant_snps_by_pheno.tsv	Figure3 is correct at 20461; 21484 belongs to BOLT-LMM.
+Maximum SNP PVE 0.063%-0.093%	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Recovered LSMR estimates use 31301 animals and give 0.209%-0.433%; exact manuscript source not found.
+Equation12 covariance prediction generator	See October Methods	See note	NA	NA	REQUIRES_RECOMPUTATION	docs/statistical_definitions.md	Cached theory algebra and downstream bins verified; original generator unavailable.
+Independent explicit SNP-effect sampling	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	MPH draws independent Gaussian genetic vectors from a GRM Cholesky factor; no original explicit effect draws recovered.
+Historical 31301 to 20000 sample identity/order	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Counts and order-selection code recovered; historical source genotype labels/order changed in place.
+GAPIT executed version 3.5	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Retained source identifies 4.0, but historical logs do not prove which source version executed.
+New GWAS fits and SuSiE fits	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Validation recounts saved results; expensive fitting was not repeated.
+10k fixed causal panel regeneration	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Saved truth has 10000 distinct positions and a shared input hash; genotype-based resampling not repeated.
+Target h2=0.5 and independent residual draws	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Recovered command, weight and versioned MPH source support the design; original random sequence was not re-executed.

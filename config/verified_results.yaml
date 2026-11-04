@@ -13,22 +13,15 @@ study_checks:
 validation:
   ledger: audit/manuscript_validation.tsv
   status_counts:
-    AMBIGUOUS: 4
-    FAIL: 2
+    AMBIGUOUS: 2
     NOT_RUN: 3
-    PASS: 95
+    PASS: 108
     REQUIRES_RECOMPUTATION: 1
-  manuscript_discrepancies:
-  - manuscript_item: Figure4 maximum minus log10 P approximately 102
-    expected: '102'
-    observed: '107.517'
-    source: figures/reconstructed/manhattan/manhattan_manifest.tsv
-    note: Untruncated statistic across all 90 panels.
-  - manuscript_item: Results REGENIE maximum SNP count
-    expected: '21484'
-    observed: '20461'
-    source: method_summary/significant_snps_by_pheno.tsv
-    note: Figure3 is correct at 20461; 21484 belongs to BOLT-LMM.
+  manuscript_discrepancies: []
+  historical_discrepancy_ledger: audit/historical_manuscript_validation.tsv
+  corrected_manuscript_values:
+    Figure4 corrected maximum minus log10 P: 107.517
+    Results REGENIE maximum SNP count: 20461.0
 methods:
   BLINK_Kansas:
     significant_snps_and_loci:

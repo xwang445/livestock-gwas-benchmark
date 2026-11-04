@@ -1,0 +1,18 @@
+{
+  "version": "0.55.1",
+  "commit": "13ffe633e0170d35e01e6164fc2bb4e01f35e2f2",
+  "files": {
+    "src/option.cpp": "d3cc4852e76991aab8cb2f62c23b885a5d48a1e26f60aed32cabe9a9a6421e72",
+    "src/grm.cpp": "d244e4f655a9b52457588faf4bb06cff712fec2ef6af71fd7d368f5b2ed5e8cb",
+    "src/input.cpp": "608cf74f4010f74c9b99ada0d6231a060fdf48987755c46f44c884ccdb87638c"
+  },
+  "source_url": "https://github.com/jiang18/mph/tree/13ffe633e0170d35e01e6164fc2bb4e01f35e2f2",
+  "genetic_covariance": "0.5 G + 0.00005 I",
+  "residual_variance": 0.5,
+  "generated_replicates": 1000,
+  "analyzed_replicates": 10,
+  "seed_argument": 0,
+  "mt19937_seed": 54321,
+  "explicit_snp_effect_draws": false,
+  "phenotypes_rescaled": false
+}

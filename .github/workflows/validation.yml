@@ -12,10 +12,4 @@ jobs:
         with:
           r-version: '4.3.2'
       - run: python -m pip install -r environment/requirements-validation.txt
-      - run: python tests/check_static.py
-      - run: python scripts/check_config.py
-      - run: python scripts/build_result_config.py --check
-      - run: python -m unittest discover -s tests -v
-      - run: python scripts/validate_manuscript.py
-      - name: Confirm documented manuscript discrepancy is unchanged
-        run: python tests/check_validation_status.py
+      - run: python scripts/workflow.py check

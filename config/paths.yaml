@@ -119,7 +119,7 @@ profiles:
 - hpcc
 private_profile_file: config/local_paths.yaml
 unresolved_inputs:
-  original_simulation_genotype: Historical identity/order unresolved; no active default
-    prefix is assigned.
-  equation12_generator: Not recovered; cached Equation13 downstream results do not
-    establish upstream reproduction.
+  original_simulation_genotype: Retained chip/GRM order verified; see audit/sample_order_verification.json.
+    Upstream reruns require the retained prefix supplied explicitly.
+  equation12_generator: Provenance deferred to Professor Jicai Jiang at author request;
+    cached Equation13 downstream results do not establish upstream reproduction.

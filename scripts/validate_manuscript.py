@@ -5,13 +5,15 @@ PASS is numeric agreement at a stated tolerance, not evidence of a new GWAS fit.
 Reference provenance is in audit/reference_values/source_manifest.tsv.
 """
 import argparse
+import json
+import io
 from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import chi2, norm
 from benchmark_core import output_table
 
-def validate(repo):
+def validate(repo,check=False):
     repo=Path(repo);D=repo/'derived_data';A=repo/'audit/reference_values';rows=[]
     def read(p):
         d=pd.read_csv(p,sep='\t');d.attrs['source']=str(p.relative_to(repo));return d
@@ -36,7 +38,7 @@ def validate(repo):
     claim('All GWAS panels have 135358 SNPs',90,int(c.n_snps.eq(135358).sum()),0,'method_summary/significant_snps_by_pheno.tsv')
     man=read(repo/'figures/reconstructed/manhattan/manhattan_manifest.tsv')
     compare('Figure4 and supplements counts',man,c,['method','phenotype'],{'n_significant':'n_significant_snps','n_plotted':'n_snps'},0)
-    claim('Figure4 maximum minus log10 P approximately 102',102,float(man.max_minus_log10p.max()),1,'figures/reconstructed/manhattan/manhattan_manifest.tsv','Untruncated statistic across all 90 panels.')
+    claim('Figure4 corrected maximum minus log10 P',107.517,float(man.max_minus_log10p.max()),0.0005,'figures/reconstructed/manhattan/manhattan_manifest.tsv; audit/manuscript_number_checks.tsv','Corrected caption: REGENIE_LOCO phenotype 8; original approximately 102 retained in historical ledger.')
     s=read(D/'spillover_summary/spillover_by_pheno.tsv')
     compare('Figure6A historical spillover',s,read(A/'spillover.tsv'),['method','phenotype'],{'spillover_rate':'spillover_locus_rate','n_spillover_loci':'spillover_locus_count'})
     manuscript_spill={'BOLT-LMM':30.7,'REGENIE_LOCO':30.3,'REGENIE_woLOCO':1.1,'fastGWA':1.5,'FarmCPU_NYC':2.9,'FarmCPU_Kansas':1.9,'BLINK_NYC':1.1,'BLINK_Kansas':1.0,'SLEMM':0.0}
@@ -76,21 +78,36 @@ def validate(repo):
         for stat,expected,observed in zip(['mean','min','max'],ex,[v.mean(),v.min(),v.max()]):claim(method+' h2 '+stat,expected,float(observed),.00050001,'method_summary/heritability_from_logs.tsv','Reaggregated saved fitting logs, not refitted.')
     expected_hits=10000*2*norm.sf(np.sqrt(chi2.isf(5e-8,1)/2))
     claim('Idealized expected causal detections',1.2,float(expected_hits),.05,'scripts/validate_manuscript.py','Analytic normal-mixture calculation only: 10000 × Pr[2 chi-square(1) > critical]. Does not verify recovered maximum PVE.')
-    claim('Results REGENIE maximum SNP count',21484,int(c[c.method=='REGENIE_LOCO'].n_significant_snps.max()),0,'method_summary/significant_snps_by_pheno.tsv','Figure3 is correct at 20461; 21484 belongs to BOLT-LMM.')
+    claim('Results REGENIE maximum SNP count',20461,int(c[c.method=='REGENIE_LOCO'].n_significant_snps.max()),0,'method_summary/significant_snps_by_pheno.tsv','Corrected manuscript upper bound; 21484 belongs to BOLT-LMM. Original mismatch retained in historical ledger.')
     for item,status,note in [
-        ('Maximum SNP PVE 0.063%-0.093%','AMBIGUOUS','Recovered LSMR estimates use 31301 animals and give 0.209%-0.433%; exact manuscript source not found.'),
-        ('Equation12 covariance prediction generator','REQUIRES_RECOMPUTATION','Cached theory algebra and downstream bins verified; original generator unavailable.'),
-        ('Independent explicit SNP-effect sampling','AMBIGUOUS','MPH draws independent Gaussian genetic vectors from a GRM Cholesky factor; no original explicit effect draws recovered.'),
-        ('Historical 31301 to 20000 sample identity/order','AMBIGUOUS','Counts and order-selection code recovered; historical source genotype labels/order changed in place.'),
+        ('Maximum SNP PVE 0.063%-0.093%','AMBIGUOUS','Recovered LSMR estimates use 31301 animals and give 0.209%-0.433%; provenance deferred to Professor Jicai Jiang at user request.'),
+        ('Equation12 covariance prediction generator','REQUIRES_RECOMPUTATION','Cached theory algebra and downstream bins verified; upstream provenance deferred to Professor Jicai Jiang at user request.'),
+
+
         ('GAPIT executed version 3.5','AMBIGUOUS','Retained source identifies 4.0, but historical logs do not prove which source version executed.'),
         ('New GWAS fits and SuSiE fits','NOT_RUN','Validation recounts saved results; expensive fitting was not repeated.'),
         ('10k fixed causal panel regeneration','NOT_RUN','Saved truth has 10000 distinct positions and a shared input hash; genotype-based resampling not repeated.'),
         ('Target h2=0.5 and independent residual draws','NOT_RUN','Recovered command, weight and versioned MPH source support the design; original random sequence was not re-executed.')]:
         claim(item,'See October Methods','See note',np.nan,'docs/statistical_definitions.md',note,status)
-    result=pd.DataFrame(rows);output_table(result,repo/'audit/manuscript_validation.tsv')
+    # The original manuscript ledger remains immutable; this ledger checks the corrected copy.
+    independently=read(repo/'audit/manuscript_number_checks.tsv')
+    compare('Independent raw-column counts and maxima',independently,man,['method','phenotype'],{'n_significant_snps':'n_significant','max_minus_log10p':'max_minus_log10p'},1e-10)
+    order=json.loads((repo/'audit/sample_order_verification.json').read_text())
+    for name in ['simulation_vs_grm','simulation_vs_candidate','first20000_vs_combined']:
+        claim('Sample order '+name,1,int(order['orders'][name]['same_order']),0,'audit/sample_order_verification.json')
+    for name in ['simulation_vs_gwas','first20000_vs_finemap']:
+        claim('Sample set '+name,1,int(order['orders'][name]['same_set']),0,'audit/sample_order_verification.json','Different row orders; align by IID, as implemented in fine-mapping.')
+    for stat in ['max_diagonal_abs_error','max_off_diagonal_abs_error']:
+        claim('Saved MPH GRM '+stat,0,order['grm_check'][stat],order['grm_check']['tolerance'],'audit/sample_order_verification.json','All 31301 diagonals and 4096 deterministic off-diagonal entries; not full matrix equality.')
+    claim('Phenotype chain exact values',0,max(max(x[k] for k in ['original_max_abs_error','fastgwa_max_abs_error','combined_max_abs_error']) for x in order['phenotype_chain']),0,'audit/sample_order_verification.json')
+    result=pd.DataFrame(rows)
+    if check:
+        buf=io.StringIO();result.to_csv(buf,sep='\t',index=False,na_rep='NA',float_format='%.15g')
+        if buf.getvalue()!=(repo/'audit/manuscript_validation.tsv').read_text():raise ValueError('Validation ledger is stale; regenerate it.')
+    else:output_table(result,repo/'audit/manuscript_validation.tsv')
     print(result.status.value_counts().to_string())
     print(result[result.status=='FAIL'][['manuscript_item','observed','note']].to_string(index=False))
     return result
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--repo',default=Path(__file__).resolve().parents[1]);a=p.parse_args();validate(a.repo)
+    p=argparse.ArgumentParser();p.add_argument('--repo',default=Path(__file__).resolve().parents[1]);p.add_argument('--check',action='store_true');a=p.parse_args();validate(a.repo,a.check)

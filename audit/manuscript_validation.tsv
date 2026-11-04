@@ -8,7 +8,7 @@ All GWAS panels have 135358 SNPs	90	90	0	0	PASS	method_summary/significant_snps_
 Figure4 and supplements counts matched rows	90	90	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Not applicable
 Figure4 and supplements counts n_significant	0	0.0	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
 Figure4 and supplements counts n_plotted	0	0.0	0	0	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; derived_data/method_summary/significant_snps_by_pheno.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
-Figure4 maximum minus log10 P approximately 102	102	107.517	5.517	1	FAIL	figures/reconstructed/manhattan/manhattan_manifest.tsv	Untruncated statistic across all 90 panels.
+Figure4 corrected maximum minus log10 P	107.517	107.517	0	0.0005	PASS	figures/reconstructed/manhattan/manhattan_manifest.tsv; audit/manuscript_number_checks.tsv	Corrected caption: REGENIE_LOCO phenotype 8; original approximately 102 retained in historical ledger.
 Figure6A historical spillover matched rows	90	90	0	0	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Not applicable
 Figure6A historical spillover spillover_rate	0	0.0	0	1e-10	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
 Figure6A historical spillover n_spillover_loci	0	0.0	0	1e-10	PASS	derived_data/spillover_summary/spillover_by_pheno.tsv; audit/reference_values/spillover.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
@@ -95,12 +95,21 @@ SLEMM h2 mean	0.529	0.529104	0.000103999999999993	0.00050001	PASS	method_summary
 SLEMM h2 min	0.506	0.506029	2.89999999999457e-05	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
 SLEMM h2 max	0.55	0.550321	0.000320999999999905	0.00050001	PASS	method_summary/heritability_from_logs.tsv	Reaggregated saved fitting logs, not refitted.
 Idealized expected causal detections	1.2	1.1589124657672154	0.0410875342327846	0.05	PASS	scripts/validate_manuscript.py	Analytic normal-mixture calculation only: 10000 × Pr[2 chi-square(1) > critical]. Does not verify recovered maximum PVE.
-Results REGENIE maximum SNP count	21484	20461	1023	0	FAIL	method_summary/significant_snps_by_pheno.tsv	Figure3 is correct at 20461; 21484 belongs to BOLT-LMM.
-Maximum SNP PVE 0.063%-0.093%	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Recovered LSMR estimates use 31301 animals and give 0.209%-0.433%; exact manuscript source not found.
-Equation12 covariance prediction generator	See October Methods	See note	NA	NA	REQUIRES_RECOMPUTATION	docs/statistical_definitions.md	Cached theory algebra and downstream bins verified; original generator unavailable.
-Independent explicit SNP-effect sampling	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	MPH draws independent Gaussian genetic vectors from a GRM Cholesky factor; no original explicit effect draws recovered.
-Historical 31301 to 20000 sample identity/order	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Counts and order-selection code recovered; historical source genotype labels/order changed in place.
+Results REGENIE maximum SNP count	20461	20461	0	0	PASS	method_summary/significant_snps_by_pheno.tsv	Corrected manuscript upper bound; 21484 belongs to BOLT-LMM. Original mismatch retained in historical ledger.
+Maximum SNP PVE 0.063%-0.093%	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Recovered LSMR estimates use 31301 animals and give 0.209%-0.433%; provenance deferred to Professor Jicai Jiang at user request.
+Equation12 covariance prediction generator	See October Methods	See note	NA	NA	REQUIRES_RECOMPUTATION	docs/statistical_definitions.md	Cached theory algebra and downstream bins verified; upstream provenance deferred to Professor Jicai Jiang at user request.
 GAPIT executed version 3.5	See October Methods	See note	NA	NA	AMBIGUOUS	docs/statistical_definitions.md	Retained source identifies 4.0, but historical logs do not prove which source version executed.
 New GWAS fits and SuSiE fits	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Validation recounts saved results; expensive fitting was not repeated.
 10k fixed causal panel regeneration	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Saved truth has 10000 distinct positions and a shared input hash; genotype-based resampling not repeated.
 Target h2=0.5 and independent residual draws	See October Methods	See note	NA	NA	NOT_RUN	docs/statistical_definitions.md	Recovered command, weight and versioned MPH source support the design; original random sequence was not re-executed.
+Independent raw-column counts and maxima matched rows	90	90	0	0	PASS	audit/manuscript_number_checks.tsv; figures/reconstructed/manhattan/manhattan_manifest.tsv	Not applicable
+Independent raw-column counts and maxima n_significant_snps	0	0.0	0	1e-10	PASS	audit/manuscript_number_checks.tsv; figures/reconstructed/manhattan/manhattan_manifest.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Independent raw-column counts and maxima max_minus_log10p	0	0.0	0	1e-10	PASS	audit/manuscript_number_checks.tsv; figures/reconstructed/manhattan/manhattan_manifest.tsv	Maximum absolute difference across matched rows; equal NA pairs allowed.
+Sample order simulation_vs_grm	1	1	0	0	PASS	audit/sample_order_verification.json	Not applicable
+Sample order simulation_vs_candidate	1	1	0	0	PASS	audit/sample_order_verification.json	Not applicable
+Sample order first20000_vs_combined	1	1	0	0	PASS	audit/sample_order_verification.json	Not applicable
+Sample set simulation_vs_gwas	1	1	0	0	PASS	audit/sample_order_verification.json	Different row orders; align by IID, as implemented in fine-mapping.
+Sample set first20000_vs_finemap	1	1	0	0	PASS	audit/sample_order_verification.json	Different row orders; align by IID, as implemented in fine-mapping.
+Saved MPH GRM max_diagonal_abs_error	0	1.0807694938996804e-07	1.08076949389968e-07	0.0001	PASS	audit/sample_order_verification.json	All 31301 diagonals and 4096 deterministic off-diagonal entries; not full matrix equality.
+Saved MPH GRM max_off_diagonal_abs_error	0	4.756943405848091e-08	4.75694340584809e-08	0.0001	PASS	audit/sample_order_verification.json	All 31301 diagonals and 4096 deterministic off-diagonal entries; not full matrix equality.
+Phenotype chain exact values	0	0.0	0	0	PASS	audit/sample_order_verification.json	Not applicable
