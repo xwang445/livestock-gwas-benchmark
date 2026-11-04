@@ -8,3 +8,9 @@
 - Use evidence-supported GAPIT Kansas/NYC branches; do not infer from names or modify p-values.
 - Do not report the recovered PVE estimator as an original sampled effect or force it to match the manuscript.
 - Do not call downstream Equation13 checks an end-to-end validation of missing Equation12 code.
+
+- Independent reconstruction matched strict Figure 3, historical lambda, power/FPR/spatial, Equation 13 downstream and fine-mapping metrics; retain original rules and disclose their limitations.
+- Current GAPIT source version does not prove executed version. Pin retained bytes for future reviewable runs, and keep historical version unresolved.
+- Two numerical manuscript discrepancies remain FAIL: REGENIE maximum count and full-range Manhattan maximum. No result editing to force agreement.
+- Rebuilt outputs after adding source-tree write guards; original source folders remain untouched.
+- Added local-review figures and aggregates only; any eventual push requires separate human review/authorization and data-rights confirmation.

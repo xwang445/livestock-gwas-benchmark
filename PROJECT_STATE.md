@@ -1,15 +1,47 @@
 # Project state
 
-Status: initial audit documented; independent aggregate validation and implementation next. Not complete. No push.
+Status: local reconstruction/review package finished; end-to-end scientific reproduction remains PARTIAL. Review branch reconstruct/20261104. No push, deposit, submission, or external message. Original data, original manuscript, original local main, and historical HPCC outputs were preserved.
 
-Baseline: local clean ec6cb32; public14ff11e. Review branch reconstruct/20261104. Original Mac and HPCC sources remain unchanged. Private audit workspace: /private/tmp/livestock-reconstruction-20261104.
+## Completed work and outputs
 
-Completed: environment/SSH checks; recursive inventories (590 local,502804HPCC,69public files); upstream source/log selection; user-confirmed October22 manuscript snapshot and full text/equation inspection; representative figure rendering; candidate provenance and discrepancy ledger.
+- Audited 590 local and 502,804 HPCC files; inspected the author-confirmed October manuscript and selected historical code.
+- Recomputed all 90 GWAS downstream panels and 40 Equation 13 jobs. Final source-write-guard rebuild produced 20 byte-identical TSVs.
+- Recounted 40 fine-mapping method/pipeline/phenotype groups on HPCC; streamed and independently checked 1,000 LD bins. No expensive model fits were rerun.
+- Numerical ledger: 95 PASS, 2 FAIL, 4 AMBIGUOUS, 3 NOT_RUN, 1 REQUIRES_RECOMPUTATION. Two FAIL rows describe manuscript count/statistic discrepancies, not test failures.
+- Generated 19 figures (eight main, S1–S10, central-null Equation 13 supplement), each PDF and PNG; inspected their layout and verified PDF/PNG files.
+- All 12 unit/synthetic/mock tests and shell/Python/R/YAML/schema checks passed, including from this installed clone. GitHub-hosted CI is configured but NOT_RUN.
+- Detailed outputs: derived_data/, figures/reconstructed/, audit/manuscript_validation.tsv, audit/run_registry.tsv, docs/stage_status.md, repository_validation_report.md, docs/author_review.md.
 
-Active jobs: none. No expensive GWAS or fine-mapping fits submitted.
+## Local commits
 
-Failures: git switch unsupported by Git2.22; recovered using checkout. fitz absent from document runtime; used bundled pypdf and official renderer successfully. Initial sandbox network denial resolved by approved read-only network commands.
+Public baseline 14ff11e; original local main ec6cb32 remains preserved.
 
-Open: upstream Equation12 generator, exact maximum-PVE claim provenance, array metadata and production imputation version; current source order discrepancy; stage-specific significance/interval definitions.
+- 32ffb12: initial inventory and manuscript provenance.
+- 00e08b0: recovered runners, harmonization and downstream implementation.
+- 1deaa16: verified aggregate results and 19 figure redraws.
+- b8524cf: synthetic example, tests and CI.
+- Documentation/review records are the branch's final HEAD commit; use git log below for its exact hash (a file cannot contain its own commit hash).
 
-Next: implement scripts/benchmark_core.py, run all90existing local GWAS through independent downstream calculations into a new output directory, then compare against saved manuscript tables. Resume using source hashes/cache, never restart completed jobs blindly.
+Active jobs: NONE. Remote verification jobs and local rendering/rebuilds exited successfully.
+
+## Failures and corrections
+
+System Python SciPy import failed; an existing working scientific environment was used read-only. Git 2.22 lacks switch; checkout was used. Renderer fallback used pypdf instead of unavailable fitz. Initial comparison labels were canonicalized explicitly. One mock test initially compared /var and /private/var literally; resolving paths fixed the test. TSV line endings/trailing empty fields were normalized without changing numeric results. Historical lambda and simulation packaging errors were corrected using source evidence.
+
+## Scientific blockers and human decisions
+
+Original Equation 12 generator, maximum-PVE claim source, exact executed GAPIT library, original genotype/sample ordering and chip/imputation metadata remain unresolved. Authors must review the two numeric discrepancies, simulation description, interval/threshold/lambda distinctions, rights to publish aggregates/figures, citation and ethics/access metadata. These are listed in docs/author_review.md. No author approval is inferred.
+
+## Recovery
+
+The durable review clone is this repository. Full path inventories are here under audit/ but Git-ignored. Private source snapshots, original manuscript snapshot/render, execution logs and caches are retained at /private/tmp/livestock-reconstruction-20261104; do not publish them. Original research directories remain the source of truth if temporary storage expires.
+
+Exact next review commands from this repository root:
+
+```bash
+git log --oneline 14ff11e..HEAD
+git diff --stat 14ff11e..HEAD
+python tests/check_validation_status.py
+```
+
+Continue from this state. Do not rerun completed experiments simply because a session resumes. Use docs/reproducibility.md only when a new verification is needed; use new output directories. Do not push without separate explicit approval.

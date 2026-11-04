@@ -47,3 +47,10 @@ audit/inventory_hpcc.tsv
 audit/inventory_manuscript.tsv
 audit/private/
 .reconstruction-cache/
+
+# Local validation environments and caches
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage

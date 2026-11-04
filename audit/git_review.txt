@@ -1,0 +1,160 @@
+Review recorded 2026-11-04T17:47:32.421269+00:00
+Baseline: public 14ff11e. Original local main ec6cb32 preserved.
+Branch: reconstruct/20261104. No push.
+
+Completed logical commits before the final documentation commit:
+b8524cf test: add synthetic validation and data-free continuous integration
+1deaa16 feat: add verified aggregate results and manuscript figure redraws
+00e08b0 feat: reconstruct benchmark runners and verified downstream analyses
+32ffb12 audit: inventory historical sources and map October manuscript provenance
+
+The final documentation commit is identified by this branch HEAD; inspect git log --oneline 14ff11e..HEAD.
+
+Tracked diff snapshot before newly added documentation was staged:
+ .github/workflows/validation.yml                   |   19 +
+ .gitignore                                         |    7 +
+ PROJECT_STATE.md                                   |   23 +
+ README.md                                          |  169 +-
+ audit/README.md                                    |    9 +
+ audit/artifact_manifest.tsv                        |   91 +
+ audit/decision_log.md                              |   16 +
+ audit/discrepancies.tsv                            |   14 +
+ audit/figure_validation.tsv                        |   20 +
+ audit/inventory_github.tsv                         |   70 +
+ audit/inventory_summary.tsv                        |    5 +
+ audit/manuscript_validation.tsv                    |  106 +
+ audit/reference_values/eq13_central.tsv            |  801 ++
+ audit/reference_values/eq13_central_summary.tsv    |   81 +
+ audit/reference_values/eq13_full.tsv               |  801 ++
+ audit/reference_values/eq13_full_summary.tsv       |   81 +
+ audit/reference_values/figure3.tsv                 |   91 +
+ audit/reference_values/figure5_spot_checks.tsv     |   31 +
+ audit/reference_values/fpr.tsv                     | 2971 ++++++++
+ audit/reference_values/lambda.tsv                  |   91 +
+ audit/reference_values/ld.tsv                      | 1001 +++
+ audit/reference_values/power.tsv                   | 2971 ++++++++
+ audit/reference_values/source_manifest.tsv         |   13 +
+ audit/reference_values/spatial.tsv                 | 3601 +++++++++
+ audit/reference_values/spillover.tsv               |   91 +
+ audit/script_provenance.tsv                        |  209 +
+ config/analysis_parameters.yaml                    |   68 +
+ config/methods.yaml                                |   17 +
+ derived_data/README.md                             |   14 +-
+ .../cached_theory_validation.tsv                   |    2 +
+ .../equation13_summary/equation13_by_pheno.tsv     | 1601 ++++
+ .../equation13_summary/equation13_summary.tsv      |  161 +
+ .../finemapping_summary/converged_loci.tsv         |    5 +
+ .../finemapping_summary/high_pip_by_pheno.tsv      |   41 +
+ .../finemapping_summary/high_pip_summary.tsv       |    5 +
+ .../finemapping_summary/null_vs_effect_summary.tsv |    5 +
+ .../finemapping_summary/verification_manifest.json |   15 +
+ derived_data/input_manifest.tsv                    |   91 +
+ .../lambda_gc_summary/lambda_gc_by_pheno.tsv       |   91 +
+ .../lambda_gc_summary/lambda_gc_summary.tsv        |   10 +
+ derived_data/ld_summary/ld_decay_10kb.tsv          | 1001 +++
+ derived_data/ld_summary/ld_decay_fitted_mean.tsv   | 7999 ++++++++++++++++++++
+ .../method_summary/heritability_from_logs.tsv      |   21 +
+ derived_data/method_summary/method_summary.tsv     |   10 +
+ .../method_summary/significant_loci_by_pheno.tsv   |   91 +
+ .../method_summary/significant_snps_by_pheno.tsv   |   91 +
+ .../overlap_summary/cross_replicate_stability.tsv  |  901 +++
+ .../overlap_summary/locus_overlap_by_pheno.tsv     |  811 ++
+ .../overlap_summary/locus_overlap_summary.tsv      |   82 +
+ derived_data/power_summary/fpr_by_pheno.tsv        | 6121 +++++++++++++++
+ derived_data/power_summary/fpr_summary.tsv         |  613 ++
+ derived_data/power_summary/power_by_pheno.tsv      | 3061 ++++++++
+ derived_data/power_summary/power_summary.tsv       |  307 +
+ .../power_summary/spatial_enrichment_by_pheno.tsv  | 3601 +++++++++
+ .../power_summary/spatial_enrichment_summary.tsv   |  361 +
+ derived_data/run_manifest.json                     |   10 +
+ .../spillover_summary/spillover_by_pheno.tsv       |   91 +
+ .../spillover_summary/spillover_summary.tsv        |   10 +
+ docs/data_availability.md                          |   15 +-
+ docs/input_file_formats.md                         |   56 +-
+ docs/license_review.md                             |    8 +-
+ docs/manuscript_analysis_map.md                    |   11 +-
+ docs/manuscript_to_code_map.md                     |   24 +
+ docs/reconstruction_workflow.md                    |   13 +
+ docs/workflow.md                                   |  142 +-
+ environment/audit_environment.json                 |   19 +
+ environment/python_requirements.txt                |    6 +-
+ environment/r_packages.txt                         |    2 +
+ environment/requirements-validation.txt            |    5 +
+ environment/software_versions.md                   |   25 +-
+ example/synthetic/README.md                        |   12 +
+ example/synthetic/generate.py                      |   55 +
+ figures/reconstructed/figure1_ld.pdf               |  Bin 0 -> 71980 bytes
+ figures/reconstructed/figure1_ld.png               |  Bin 0 -> 66556 bytes
+ figures/reconstructed/figure2_windows.pdf          |  Bin 0 -> 12258 bytes
+ figures/reconstructed/figure2_windows.png          |  Bin 0 -> 32667 bytes
+ figures/reconstructed/figure3_counts.pdf           |  Bin 0 -> 23088 bytes
+ figures/reconstructed/figure3_counts.png           |  Bin 0 -> 236725 bytes
+ figures/reconstructed/figure5_jaccard.pdf          |  Bin 0 -> 46860 bytes
+ figures/reconstructed/figure5_jaccard.png          |  Bin 0 -> 724080 bytes
+ .../reconstructed/figure6_spillover_inflation.pdf  |  Bin 0 -> 26723 bytes
+ .../reconstructed/figure6_spillover_inflation.png  |  Bin 0 -> 343497 bytes
+ figures/reconstructed/figure7_equation13.pdf       |  Bin 0 -> 22789 bytes
+ figures/reconstructed/figure7_equation13.png       |  Bin 0 -> 162060 bytes
+ figures/reconstructed/figure8_finemapping.pdf      |  Bin 0 -> 16055 bytes
+ figures/reconstructed/figure8_finemapping.png      |  Bin 0 -> 89144 bytes
+ .../reconstructed/manhattan/figure4_manhattan.pdf  |  Bin 0 -> 1909712 bytes
+ .../reconstructed/manhattan/figure4_manhattan.png  |  Bin 0 -> 2061797 bytes
+ .../manhattan/figureS01_manhattan.pdf              |  Bin 0 -> 375874 bytes
+ .../manhattan/figureS01_manhattan.png              |  Bin 0 -> 784134 bytes
+ .../manhattan/figureS02_manhattan.pdf              |  Bin 0 -> 343531 bytes
+ .../manhattan/figureS02_manhattan.png              |  Bin 0 -> 736425 bytes
+ .../manhattan/figureS03_manhattan.pdf              |  Bin 0 -> 350487 bytes
+ .../manhattan/figureS03_manhattan.png              |  Bin 0 -> 747267 bytes
+ .../manhattan/figureS04_manhattan.pdf              |  Bin 0 -> 519019 bytes
+ .../manhattan/figureS04_manhattan.png              |  Bin 0 -> 1059017 bytes
+ .../manhattan/figureS05_manhattan.pdf              |  Bin 0 -> 334927 bytes
+ .../manhattan/figureS05_manhattan.png              |  Bin 0 -> 722972 bytes
+ .../manhattan/figureS06_manhattan.pdf              |  Bin 0 -> 426784 bytes
+ .../manhattan/figureS06_manhattan.png              |  Bin 0 -> 888177 bytes
+ .../manhattan/figureS07_manhattan.pdf              |  Bin 0 -> 448691 bytes
+ .../manhattan/figureS07_manhattan.png              |  Bin 0 -> 924901 bytes
+ .../manhattan/figureS08_manhattan.pdf              |  Bin 0 -> 302722 bytes
+ .../manhattan/figureS08_manhattan.png              |  Bin 0 -> 678815 bytes
+ .../manhattan/figureS09_manhattan.pdf              |  Bin 0 -> 337497 bytes
+ .../manhattan/figureS09_manhattan.png              |  Bin 0 -> 724386 bytes
+ .../manhattan/figureS10_manhattan.pdf              |  Bin 0 -> 444186 bytes
+ .../manhattan/figureS10_manhattan.png              |  Bin 0 -> 926634 bytes
+ .../reconstructed/manhattan/manhattan_manifest.tsv |   91 +
+ .../supplement_equation13_central.pdf              |  Bin 0 -> 22812 bytes
+ .../supplement_equation13_central.png              |  Bin 0 -> 158803 bytes
+ repository_validation_report.md                    |  114 +-
+ scripts/01_genotype_preparation/README.md          |    6 +-
+ scripts/01_genotype_preparation/prepare_panel.sh   |   30 +
+ scripts/02_ld_analysis/README.md                   |    8 +-
+ scripts/02_ld_analysis/run_plink_ld.sh             |   13 +
+ scripts/02_ld_analysis/verify_ld_means.py          |   17 +
+ scripts/03_simulation/README.md                    |   59 +-
+ .../03_simulation/prepare_benchmark_phenotypes.R   |   18 +
+ scripts/03_simulation/select_causal_snps.R         |   27 +
+ .../03_simulation/simulate_polygenic_phenotypes.sh |   14 +-
+ scripts/04_gwas/README.md                          |  142 +-
+ scripts/04_gwas/gapit.R                            |  148 +-
+ scripts/04_gwas/run_boltlmm.sh                     |   40 +-
+ scripts/04_gwas/run_fastGWA.sh                     |   72 +-
+ scripts/04_gwas/run_regenie.sh                     |   55 +-
+ scripts/04_gwas/run_regenie_wo_loco.sh             |   57 +-
+ scripts/04_gwas/run_slemm_gwas.sh                  |  117 +-
+ scripts/09_locus_overlap/README.md                 |    4 +-
+ scripts/10_equation13_ncp/calculate_ncp.R          |   88 +-
+ scripts/11_figures/README.md                       |    4 +-
+ scripts/12_finemapping/verify_saved_results.py     |   59 +
+ scripts/13_figures/plot_aggregates.py              |   89 +
+ scripts/13_figures/plot_ld.R                       |   21 +
+ scripts/13_figures/plot_manhattan.py               |   49 +
+ scripts/benchmark_core.py                          |  331 +
+ scripts/build_artifact_manifest.py                 |   13 +
+ scripts/export_verification.py                     |   17 +
+ scripts/hpcc/run_stage.sbatch                      |   10 +
+ scripts/validate_manuscript.py                     |   96 +
+ tests/check_static.py                              |   27 +
+ tests/check_validation_status.py                   |    8 +
+ tests/test_benchmark.py                            |   77 +
+ tests/test_runners.py                              |   27 +
+ 144 files changed, 42033 insertions(+), 999 deletions(-)
+
+Complete prepared path list: audit/change_manifest.tsv. Full private inventories are ignored.

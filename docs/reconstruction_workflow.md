@@ -1,4 +1,4 @@
-# Proposed authoritative workflow after the initial audit
+# Initial audit workflow (historical planning record)
 
 1. Recover original genotype QC and causal-selection commands from the upstream paths referenced by HPCC logs. Pin input hashes and sample order. Do not rerun an altered genotype source.
 2. Preserve GRM-based MPH generation with 1,000 draws and the historical first-ten / first-20,000 subset; verify the software RNG before claiming exact regeneration.
@@ -9,3 +9,5 @@
 7. Compare independently regenerated aggregates to the manuscript and saved outputs, make figures from aggregates, and add synthetic/static tests and CI. Disagreements remain in the discrepancy ledger rather than being tuned away.
 
 The supplied server has no scheduler executable on PATH. No expensive jobs are warranted yet: GWAS and fine-mapping outputs already exist. Full fit regeneration is distinct from aggregate validation and must not be implied by a successful count comparison.
+
+The implementation and verification are now recorded in docs/workflow.md and repository_validation_report.md; this file preserves the initial audit decisions, not current execution status.

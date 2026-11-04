@@ -1,0 +1,10 @@
+Local validation completed 2026-11-04T17:42:23.647804+00:00
+12 unittest cases PASS
+Python compilation PASS
+bash -n PASS
+R parsing PASS
+YAML/schema/method labels PASS
+Known scientific-status checks PASS (two manuscript discrepancies remain FAIL)
+19 PDF/PNG pairs parse and render
+Final 20 TSV rebuilds byte-identical to prior independently compared outputs
+GitHub-hosted Actions NOT_RUN

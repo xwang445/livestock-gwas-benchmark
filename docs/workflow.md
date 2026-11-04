@@ -1,121 +1,21 @@
-# Workflow
+# Recovered execution workflow
 
-1. Prepare or thin the genotype panel.
-   - Script: scripts/01_genotype_preparation/README.md
-   - Inputs: genotype resources, SNP list, phenotype sample IDs
-   - Outputs: thinned genotype panel and sample subset
-   - Requirements: proprietary data required
+The selected manuscript is the scientific specification. The shared `scripts/benchmark_core.py` implements stages 05–11 in one validated pass to avoid nine separate parsers and repeated loading of all 90 files. Older numbered directories remain for compatibility; do not assume their numeric prefixes describe the current order.
 
-2. Calculate LD decay.
-   - Script: scripts/02_ld_analysis/README.md
-   - Inputs: genotype panel
-   - Outputs: LD-decay summaries
-   - Requirements: proprietary data required
+| Stage | Input → implementation → output | Next stage |
+|---|---|---|
+| 01 Genotype preparation | Restricted chromosome pgens + original chip list → `01_genotype_preparation/prepare_panel.sh` → 31,301-animal / 135,358-SNP panel | LD, simulation, GWAS |
+| 02 LD | Full resource PLINK panel → `02_ld_analysis/run_plink_ld.sh`, `verify_ld_means.py` → restricted LD / public 10 kb means | Figure 1 |
+| 03 Simulation | Ordered QC chip SNPs + chromosome lengths → `select_causal_snps.R`; historical ordered genotype → `simulate_polygenic_phenotypes.sh`; `prepare_benchmark_phenotypes.R` → restricted ten-trait subset | GWAS |
+| 04 GWAS | Authorized genotypes + ten traits → five shell runners and `04_gwas/gapit.R` → 90 method-specific outputs | Harmonization; fine-mapping |
+| 05 Harmonization | Saved outputs → `benchmark_core.py harmonize` → restricted common schema | Downstream statistics |
+| 06 Power/FPR | Shared truth, windows, harmonized P → `benchmark_core.py summarize` → `power_summary/` | Tables/figures |
+| 07 Significant loci | Strict P and chromosome-position bins → same command → `method_summary/` | Figure 3, overlap |
+| 08 Spillover | Inclusive P and central-null window IDs → same command → `spillover_summary/` | Figure 6A |
+| 09 Lambda | Historical statistic and central-null mask → same command → `lambda_gc_summary/` | Figure 6B |
+| 10 Overlap | Strict significant-locus sets → same command → `overlap_summary/` | Figure 5 |
+| 11 Equation 13 | Cached theory + four methods × ten traits → `benchmark_core.py equation13` → `equation13_summary/` | Figure 7; upstream Equation 12 unresolved |
+| 12 Fine-mapping | Restricted genotypes/GWAS/LOCO inputs → installed `12_finemapping` pipelines → restricted fits; `verify_saved_results.py` → aggregate JSON | Figure 8 |
+| 13 Figures | Verified aggregates → `13_figures/plot_aggregates.py`, `plot_ld.R`; restricted GWAS → `plot_manhattan.py` | Reviewable PDF/PNG |
 
-3. Define effect and null windows.
-   - Script: scripts/03_simulation/README.md
-   - Inputs: effect-window definitions
-   - Outputs: effect and null window tables
-   - Requirements: no proprietary data if provided as a public example
-
-4. Select causal variants.
-   - Script: scripts/03_simulation/README.md
-   - Inputs: analysis panel and window definitions
-   - Outputs: causal SNP list
-   - Requirements: proprietary data required
-
-5. Simulate phenotypes.
-   - Script: scripts/03_simulation/simulate_polygenic_phenotypes.sh
-   - Inputs: causal variant list, genotype panel
-   - Outputs: phenotype replicates
-   - Requirements: proprietary data required
-
-6. Prepare the 20,000-animal subset.
-   - Script: scripts/03_simulation/README.md
-   - Inputs: phenotype file and genotype sample list
-   - Outputs: subset genotype/phenotype files
-   - Requirements: proprietary data required
-
-7. Run all GWAS methods.
-   - Scripts: scripts/04_gwas/*
-   - Inputs: prepared genotype and phenotype data
-   - Outputs: GWAS summary statistics
-   - Requirements: proprietary data required
-
-8. Harmonize GWAS outputs.
-   - Script: scripts/06_significant_loci/summarize_significant_snps_and_loci.R
-   - Inputs: method-specific GWAS outputs
-   - Outputs: harmonized summary tables
-   - Requirements: proprietary data required
-
-9. Summarize significant SNPs and 500 kb loci.
-   - Script: scripts/06_significant_loci/summarize_significant_snps_and_loci.R
-   - Inputs: harmonized GWAS results
-   - Outputs: significant SNP and locus counts
-   - Requirements: proprietary data required
-
-10. Calculate method overlap.
-    - Script: scripts/09_locus_overlap/README.md
-    - Inputs: significant loci by method
-    - Outputs: Jaccard summaries
-    - Requirements: proprietary data required
-
-11. Calculate spillover-locus rates.
-    - Script: scripts/07_spillover/figure6A_spillover_locus_500kb.R
-    - Inputs: GWAS results and window definitions
-    - Outputs: spillover summaries
-    - Requirements: proprietary data required
-
-12. Calculate central-null lambda GC.
-    - Script: scripts/08_lambda_gc/lambda_gc_range.R
-    - Inputs: GWAS results and null windows
-    - Outputs: lambda GC summaries
-    - Requirements: proprietary data required
-
-13. Calculate 50 kb observed-to-expected ratios.
-    - Script: scripts/07_spillover/fpr_50kb_window.R
-    - Inputs: GWAS results and null windows
-    - Outputs: FPR summaries
-    - Requirements: proprietary data required
-
-14. Calculate cross-replicate locus stability.
-    - Script: scripts/09_locus_overlap/README.md
-    - Inputs: significant loci across 10 replicates
-    - Outputs: overlap and stability summaries
-    - Requirements: proprietary data required
-
-15. Calculate realized maximum PVE and power.
-    - Scripts: scripts/05_effect_size_power/calculate_max_snp_pve.sh and scripts/05_effect_size_power/power_analysis.R
-    - Inputs: causal variant lists and GWAS outputs
-    - Outputs: realized PVE and power summaries
-    - Requirements: proprietary data required
-
-16. Calculate Equation 12 LOCO coefficients.
-    - Script: scripts/10_equation13_ncp/calculate_ncp.R
-    - Inputs: GWAS results and causal LD summaries
-    - Outputs: LOCO coefficient summaries
-    - Requirements: proprietary data required
-
-17. Calculate causal LD scores.
-    - Script: scripts/10_equation13_ncp/calculate_ncp.R
-    - Inputs: genotype data and causal SNP list
-    - Outputs: LD-score summaries
-    - Requirements: proprietary data required
-
-18. Calculate Equation 13 NCP.
-    - Script: scripts/10_equation13_ncp/calculate_ncp.R
-    - Inputs: causal LD scores and effect sizes
-    - Outputs: non-centrality summaries
-    - Requirements: proprietary data required
-
-19. Compare predicted and observed chi-square.
-    - Script: scripts/10_equation13_ncp/calculate_ncp.R
-    - Inputs: theoretical NCP and GWAS results
-    - Outputs: chi-square comparison tables
-    - Requirements: proprietary data required
-
-20. Generate manuscript figures.
-    - Scripts: scripts/11_figures/README.md
-    - Inputs: derived summary tables
-    - Outputs: figure files
-    - Requirements: proprietary data required for some panels
+The first four stages and new fine-mapping fits are prepared but were not re-executed. Current verification starts from saved GWAS, existing pairwise LD and converged fitted PIPs. Old exploratory NCP code was replaced by an explicit downstream compatibility wrapper; its prior content remains in Git history and historical source directories.

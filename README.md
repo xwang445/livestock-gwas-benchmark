@@ -1,154 +1,47 @@
-# livestock-gwas-benchmark
+# Livestock GWAS benchmark
 
-[![bioRxiv](https://img.shields.io/badge/bioRxiv-10.64898%2F2026.07.20.739621-B31B1B.svg)](https://doi.org/10.64898/2026.07.20.739621)
+This repository supports a benchmark of SNP localization under diffuse polygenic architecture using restricted Duroc pig genotypes and simulated phenotypes. The design analyzes 20,000 animals, 135,358 SNPs, ten phenotypes, 10,000 fixed causal positions and target heritability 0.5. It compares BOLT-LMM, REGENIE with/without LOCO, fastGWA, SLEMM, and FarmCPU/BLINK Kansas and NYC outputs, followed by SuSiE-adj and SuSiE-RSS.
 
-Repository for the manuscript: Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock.
+The November 2026 reconstruction follows the author-supplied October 22 manuscript. **Downstream results have been independently regenerated from saved GWAS and fine-mapping outputs. Full model fitting and the upstream Equation 12 calculation have not been reproduced.** Two confirmed manuscript numerical discrepancies and unresolved methodological provenance are retained in the [validation report](repository_validation_report.md).
 
-GitHub repository: https://github.com/xwang445/livestock-gwas-benchmark
+## Start here
 
-## Project title
-
-Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock
-
-## Scientific question
-
-This repository contains analysis code for benchmarking GWAS localization under diffuse polygenic architecture in Duroc pigs. The focus is on how commonly used GWAS methods can overstate the precision of causal localization when the signal is distributed across many loci.
-
-## Simulation design summary
-
-The analysis workflow was designed around a large-scale Duroc pig resource with:
-
-- 31,301 genotyped animals as the genomic resource;
-- 20,000 phenotyped animals used for GWAS;
-- a 135,358-SNP analysis panel;
-- 10,000 causal SNPs;
-- heritability $h^2 = 0.5$;
-- 10 phenotype replicates;
-- alternating 2 Mb effect windows and 4 Mb null windows;
-- central-null regions;
-- 500 kb locus windows; and
-- a genome-wide significance threshold of $P \le 5 \times 10^{-8}$.
-
-## Methods evaluated
-
-- BOLT-LMM
-- REGENIE with LOCO
-- REGENIE without LOCO
-- fastGWA
-- FarmCPU (Kansas)
-- FarmCPU (NYC)
-- BLINK (Kansas)
-- BLINK (NYC)
-- SLEMM
-
-## Repository structure
-
-```text
-livestock-gwas-benchmark/
-├── config/                 # Example local-path configuration
-├── derived_data/           # Non-identifying derived summary templates
-├── docs/                   # Workflow, input-format, and manuscript mapping documentation
-├── environment/            # Software versions and package requirements
-├── example/                # Minimal usage examples
-└── scripts/                # Analysis scripts grouped by workflow stage
-    ├── 01_genotype_preparation/
-    ├── 02_ld_analysis/
-    ├── 03_simulation/       # MPH-based polygenic phenotype simulation
-    ├── 04_gwas/             # Runners for BOLT-LMM, fastGWA, REGENIE, SLEMM, and GAPIT/BLINK
-    ├── 05_effect_size_power/
-    ├── 06_significant_loci/
-    ├── 07_spillover/
-    ├── 08_lambda_gc/
-    ├── 09_locus_overlap/
-    ├── 10_equation13_ncp/
-    ├── 11_figures/
-    └── 12_finemapping/     # LOCO SuSiE-adj, SuSiE-RSS, and comparison analyses
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r environment/requirements-validation.txt
+python -m unittest discover -s tests -v
+python tests/check_static.py
+python scripts/validate_manuscript.py
+python tests/check_validation_status.py
 ```
 
-## Running the GWAS scripts
+Static checks also require R on PATH; no R packages are required merely to parse scripts. Figure 1 rendering requires data.table, ggplot2 and patchwork. The unit tests need no proprietary inputs and fit no external GWAS model. CI is configured in [.github/workflows/validation.yml](.github/workflows/validation.yml); its local equivalent was executed, but the new GitHub workflow has not run because this branch has not been pushed.
 
-The method-specific runners are in [`scripts/04_gwas/`](scripts/04_gwas/). Each script contains placeholder paths that must be changed for the local genotype, phenotype, software, and output locations before execution.
+## Contents
 
-| Script | Method | Main workflow |
-| --- | --- | --- |
-| [`run_boltlmm.sh`](scripts/04_gwas/run_boltlmm.sh) | BOLT-LMM | Runs the linear mixed-model association test for phenotypes 1–10 |
-| [`run_fastGWA.sh`](scripts/04_gwas/run_fastGWA.sh) | fastGWA | Builds a GRM and sparse GRM, then runs fastGWA-MLM |
-| [`run_regenie.sh`](scripts/04_gwas/run_regenie.sh) | REGENIE with LOCO | Fits the step-1 model and performs step-2 association testing |
-| [`run_regenie_wo_loco.sh`](scripts/04_gwas/run_regenie_wo_loco.sh) | REGENIE without LOCO | Fits the model and performs association testing using PRS predictions |
-| [`run_slemm_gwas.sh`](scripts/04_gwas/run_slemm_gwas.sh) | SLEMM | Fits the null LMM, computes GRAMMAR-Gamma, runs chromosomes 1–18, and merges results |
-| [`gapit.R`](scripts/04_gwas/gapit.R) | GAPIT/BLINK | Loads phenotype, genotype, and map files; validates marker alignment; and runs BLINK |
+| Area | Content |
+|---|---|
+| `scripts/` | Public analysis code, harmonization, recovered fitting commands and figure generators |
+| `config/` | Scientific constants and example machine paths; unresolved parameters remain null |
+| `derived_data/` | Non-identifying counts, rates, binned summaries and input fingerprints; real results alongside explicitly named schema templates |
+| `figures/reconstructed/` | Eight main-figure redraws, S1–S10 Manhattan supplements, and a central-null Equation 13 supplement, each PDF and PNG |
+| `audit/` | Provenance, numerical claim ledger, discrepancies and reference aggregates |
+| `example/synthetic/` | Generator for artificial code-validation fixtures; not benchmark evidence |
+| `tests/` | Boundary/statistic/schema tests and mock-command tests |
 
-See the [GWAS scripts README](scripts/04_gwas/README.md) for required variables, input expectations, output types, and example commands. The supplied runners default to 10 phenotype replicates; adjust their phenotype loops if a different number of replicates is required.
+Restricted genotypes, animal phenotypes/IDs, raw GWAS, GRMs, raw LD, fitted SNP PIPs and the manuscript DOCX are not included. Public-data eligibility still requires the authors' data-agreement review before publication; no data-rights approval is implied by this local package.
 
-## Fine-mapping code
+## Scientific distinctions
 
-The [fine-mapping workflow](scripts/12_finemapping/README.md) contains the LOCO-adjusted SuSiE-adj and ordinary-LD SuSiE-RSS implementations, shared genotype/locus preparation, and comparison and high-PIP evaluation scripts for BOLT-LMM and REGENIE-LOCO inputs.
+Historical Figure 3 uses strict P < 5e-8; spillover uses P ≤ 5e-8. Loci are chromosome-specific floor(bp/500000) bins, not LD-clumped peaks. Central-null spillover uses 1,480 windows. Historical lambda calculations use beta/SE statistics for mixed models and finite-only inverse-CDF statistics for GAPIT; a stable P-based diagnostic is separate. See [exact definitions](docs/statistical_definitions.md).
 
-Both pipelines use susieR 0.14.2 with `L = 10` and 95% credible-set coverage. SuSiE-adj uses LOCO-adjusted LD, effective sample size, and estimated residual variance; SuSiE-RSS uses ordinary in-sample LD, `n = 20000`, and fixed residual variance. The comparison therefore evaluates the complete pipelines rather than changing LD alone.
+The simulation executed MPH Gaussian genetic-value draws from a causal-SNP GRM. It generated 1,000 replicates, then retained the first ten phenotypes and first 20,000 animals in historical order. Explicit per-SNP effect draws were not saved. The corrected wrapper retains the original 0.5 GRM weight, seed argument 0 and generation count. It must not be used against the replaced historical genotype path without verifying identity and order.
 
-See the [installation and execution instructions](scripts/12_finemapping/README.md) for required inputs and execution order. Code is included; genotype data, fitted objects, and LD/GRM matrices are not.
+## Reproduction and limitations
 
-## Required software
+Follow [workflow](docs/workflow.md), [reproducibility](docs/reproducibility.md), [input schemas](docs/input_file_formats.md), [HPCC execution](docs/hpcc_execution.md), [figure map](docs/figure_map.md) and [manuscript-to-code map](docs/manuscript_to_code_map.md).
 
-- PLINK / PLINK2
-- REGENIE v4.1.2
-- BOLT-LMM v2.5
-- GCTA v1.94.1
-- GAPIT v3.5
-- SLEMM v0.90.1
-- R with data.table, ggplot2, scales, dplyr, and stringr
-- Python with numpy, pandas, scipy, and matplotlib
+Unresolved: the original Equation 12 covariance generator, the source of the manuscript maximum-PVE range, the executed GAPIT version (manuscript 3.5 versus retained source identifying 4.0), original genotype/sample ordering and array/imputation metadata. These limitations prevent a claim of complete end-to-end reproducibility. No expensive GWAS/SuSiE fitting was repeated, and no repository changes were pushed.
 
-## Configuring paths
-
-Copy the example configuration in config/example_paths.yaml and edit the placeholders to match your local execution environment. The scripts are written to accept command-line arguments or environment variables in place of hard-coded paths.
-
-## Reproduction order
-
-1. Prepare or thin the genotype panel.
-2. Calculate LD decay.
-3. Define effect and null windows.
-4. Simulate phenotypes with [`simulate_polygenic_phenotypes.sh`](scripts/03_simulation/simulate_polygenic_phenotypes.sh).
-5. Prepare the 20,000-animal subset.
-6. Run the method-specific workflows in [`scripts/04_gwas/`](scripts/04_gwas/).
-7. Harmonize GWAS outputs and SNP identifiers.
-8. Summarize significant SNPs and 500 kb loci.
-9. Calculate spillover-locus rates and genomic inflation.
-10. Calculate realized PVE and power.
-11. Calculate Equation 12 / Equation 13 non-centrality summaries.
-12. Generate manuscript figures.
-
-## Figure-to-script map
-
-- Figure 6A: scripts/07_spillover/figure6A_spillover_locus_500kb.R
-- Figure 6B: scripts/08_lambda_gc/lambda_gc_range.R
-- Figure 6C / 6D: scripts/07_spillover/fpr_50kb_window.R
-- Equation 13 / Figure 8: scripts/10_equation13_ncp/calculate_ncp.R
-- Significant SNP summaries: scripts/06_significant_loci/summarize_significant_snps_and_loci.R
-- Power and realized PVE: scripts/05_effect_size_power/power_analysis.R and scripts/05_effect_size_power/calculate_max_snp_pve.sh
-
-## Data availability
-
-The individual-level Duroc pig genotype data used in this study are proprietary to Smithfield Premium Genetics and are not publicly available. Access to these data may be available from the corresponding author and Smithfield Premium Genetics upon reasonable request and subject to a data-sharing agreement and any applicable institutional approvals.
-
-This repository contains the public-safe analysis code, documentation, and non-identifying derived summary templates needed to inspect the workflow and adapt the analysis for similar projects. Complete reruns require access to the underlying Duroc data and authorized computational resources.
-
-## Citation
-
-Please cite the following preprint when using this repository:
-
-Wang, X.; Wang, J.; Tiezzi, F.; Huang, Y.; Huang, W.; Maltecca, C.; Jiang, J. (2026).
-
-Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock.
-
-bioRxiv. https://doi.org/10.64898/2026.07.20.739621
-
-A machine-readable citation is available in [`CITATION.cff`](CITATION.cff).
-
-## Contact
-
-Please contact the corresponding author of the manuscript for data access requests and collaboration inquiries. For repository-related questions, please open an issue or contact the repository maintainer through the GitHub project page.
-
-## Notes on data sharing
-
-This repository does not include individual-level genotype or phenotype data. Scripts can be inspected and reused, but complete reruns require authorized access to the Duroc data.
+Citation metadata from the existing repository is preserved in [CITATION.cff](CITATION.cff). Authors should reconcile the cited preprint title/version with the current manuscript. The existing MIT license applies as recorded; this audit does not establish rights to third-party software or restricted data. See [license review](docs/license_review.md).
