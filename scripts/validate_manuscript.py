@@ -18,7 +18,7 @@ def validate(repo):
     def claim(item,expected,observed,tolerance,source,note='',status=None):
         difference=abs(float(observed)-float(expected)) if isinstance(observed,(float,int,np.number)) else np.nan
         if status is None:status='PASS' if np.isfinite(difference) and difference<=tolerance else 'FAIL'
-        rows.append(dict(manuscript_item=item,expected=expected,observed=observed,absolute_difference=difference,tolerance=tolerance,status=status,source=source,note=note))
+        rows.append(dict(manuscript_item=item,expected=expected,observed=observed,absolute_difference=difference,tolerance=tolerance,status=status,source=source,note=note or 'Not applicable'))
     def compare(label,actual,reference,keys,values,tolerance=1e-10):
         if actual.duplicated(keys).any() or reference.duplicated(keys).any():raise ValueError('Nonunique validation keys: '+label)
         z=reference.merge(actual,on=keys,how='left',suffixes=('_ref','_new'),validate='one_to_one',indicator=True)
