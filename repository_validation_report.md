@@ -1,6 +1,6 @@
 # Repository reconstruction and validation report
 
-Review package prepared on 2026-11-04 from the author-confirmed October manuscript. Original Mac/HPCC files and the manuscript were preserved. **The downstream reconstruction is complete; end-to-end scientific reproducibility remains partial. Following explicit user authorization on 2026-11-04, the reviewed commits were pushed to GitHub branch `reconstruct/20261104`.**
+Review package prepared on 2026-11-04 from the author-confirmed October manuscript. Original Mac/HPCC files and the manuscript were preserved. **The downstream reconstruction is complete; end-to-end scientific reproducibility remains partial. Following explicit user authorization on 2026-11-04, the reviewed commits were first pushed to `reconstruct/20261104`; the subsequent user request makes the verified results available on default branch `main`.**
 
 Publication note: the remaining report records the pre-push audit and review findings. Statements that remote CI had not run or that publication authorization was pending describe that audit snapshot; scientific limitations remain unresolved.
 
@@ -45,7 +45,7 @@ Thirteen candidates were classified SUPERSEDED, including pre-harmonization LD c
 
 ## 5. GitHub files added
 
-New public-review code covers genotype preparation, causal selection, phenotype formatting, streaming LD verification, common GWAS harmonization/statistics, independent fine-mapping recount, aggregate exports, scientific validation, figure rendering, synthetic fixtures, automated tests and CI. New audit/reference/derived tables and 19 PDF/PNG figure pairs provide evidence rather than placeholders. Exact added paths and hashes appear in audit/change_manifest.tsv and audit/artifact_manifest.tsv.
+New public-review code covers genotype preparation, causal selection, phenotype formatting, streaming LD verification, common GWAS harmonization/statistics, independent fine-mapping recount, aggregate exports, scientific validation, figure rendering, synthetic fixtures, automated tests and CI. New audit/reference/derived tables and 19 PDF/PNG figure pairs provide evidence rather than placeholders. The 27 populated TSV files are indexed in derived_data/README.md; the original five templates are preserved under example/schemas. Exact added paths and hashes appear in audit/change_manifest.tsv and audit/artifact_manifest.tsv.
 
 ## 6. GitHub files modified
 

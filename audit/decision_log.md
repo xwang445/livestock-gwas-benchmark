@@ -16,3 +16,5 @@
 - Added local-review figures and aggregates only; any eventual push requires separate human review/authorization and data-rights confirmation.
 
 - 2026-11-04 publication update: after the completion report, the user explicitly authorized pushing the reviewed package to GitHub. Pushed the five reviewed commits through d49a978 to origin/reconstruct/20261104. No raw restricted data were included. Scientific unresolved items remain unchanged.
+
+- 2026-11-04 default-branch correction: the user found only templates because the prior authorized push updated the review branch, not main. Publish the reviewed package to main, preserve all five templates under example/schemas, and make derived_data contain executed results only. Original data and numeric results remain unchanged.

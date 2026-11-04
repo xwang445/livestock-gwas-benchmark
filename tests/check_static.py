@@ -16,12 +16,27 @@ config=yaml.safe_load((ROOT/'config/methods.yaml').read_text())
 assert set(config['methods'])==set(METHODS)
 params=yaml.safe_load((ROOT/'config/analysis_parameters.yaml').read_text())
 assert params['simulation']['causal_snps']==10000 and params['windows']['central_null_locus_denominator']==1480
+required_results={
+    'method_summary/method_summary.tsv',
+    'power_summary/power_summary.tsv',
+    'power_summary/fpr_summary.tsv',
+    'spillover_summary/spillover_summary.tsv',
+    'lambda_gc_summary/lambda_gc_summary.tsv',
+    'overlap_summary/locus_overlap_summary.tsv',
+    'equation13_summary/equation13_summary.tsv',
+    'finemapping_summary/high_pip_summary.tsv',
+    'ld_summary/ld_decay_10kb.tsv',
+}
+for name in required_results:assert (ROOT/'derived_data'/name).is_file(), 'Missing executed result: '+name
 for p in (ROOT/'derived_data').rglob('*.tsv'):
+    assert 'template' not in p.name, 'Keep schema templates under example/schemas: '+str(p)
     d=pd.read_csv(p,sep='\t')
     assert not {'FID','IID','snp','SNP','animal_id','genotype','beta','se','PIP','pip'}.intersection(d.columns),str(p)
     for col in ['method','method_a','method_b']:
-        if col in d and 'template' not in p.name:assert set(d[col].dropna()).issubset(METHODS),(str(p),col)
-    if 'template' not in p.name:assert len(d)>0,str(p)
+        if col in d:assert set(d[col].dropna()).issubset(METHODS),(str(p),col)
+    assert len(d)>0,str(p)
+    numeric=d.select_dtypes(include='number')
+    assert not numeric.empty and numeric.notna().any().any(), 'Missing executed numeric results: '+str(p)
 rfiles=[str(p) for p in (ROOT/'scripts').rglob('*.R')]
 subprocess.run(['Rscript','-e','for (f in commandArgs(TRUE)) { parse(file=f); }; cat("R parse checks passed\\n")',*rfiles],check=True)
 print('Python compilation, shell syntax, YAML, R parsing, aggregate schemas and method labels passed.')

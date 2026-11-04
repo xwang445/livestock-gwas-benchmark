@@ -4,6 +4,8 @@ This repository supports a benchmark of SNP localization under diffuse polygenic
 
 The November 2026 reconstruction follows the author-supplied October 22 manuscript. **Downstream results have been independently regenerated from saved GWAS and fine-mapping outputs. Full model fitting and the upstream Equation 12 calculation have not been reproduced.** Two confirmed manuscript numerical discrepancies and unresolved methodological provenance are retained in the [validation report](repository_validation_report.md).
 
+[Browse the real result tables in derived_data](derived_data/README.md).
+
 ## Start here
 
 ```bash
@@ -24,7 +26,7 @@ Static checks also require R on PATH; no R packages are required merely to parse
 |---|---|
 | `scripts/` | Public analysis code, harmonization, recovered fitting commands and figure generators |
 | `config/` | Scientific constants and example machine paths; unresolved parameters remain null |
-| `derived_data/` | Non-identifying counts, rates, binned summaries and input fingerprints; real results alongside explicitly named schema templates |
+| `derived_data/` | Non-identifying counts, rates, binned summaries and input fingerprints; 27 populated TSV files; schema examples are separate in `example/schemas/` |
 | `figures/reconstructed/` | Eight main-figure redraws, S1–S10 Manhattan supplements, and a central-null Equation 13 supplement, each PDF and PNG |
 | `audit/` | Provenance, numerical claim ledger, discrepancies and reference aggregates |
 | `example/synthetic/` | Generator for artificial code-validation fixtures; not benchmark evidence |
@@ -42,6 +44,6 @@ The simulation executed MPH Gaussian genetic-value draws from a causal-SNP GRM. 
 
 Follow [workflow](docs/workflow.md), [reproducibility](docs/reproducibility.md), [input schemas](docs/input_file_formats.md), [HPCC execution](docs/hpcc_execution.md), [figure map](docs/figure_map.md) and [manuscript-to-code map](docs/manuscript_to_code_map.md).
 
-Unresolved: the original Equation 12 covariance generator, the source of the manuscript maximum-PVE range, the executed GAPIT version (manuscript 3.5 versus retained source identifying 4.0), original genotype/sample ordering and array/imputation metadata. These limitations prevent a claim of complete end-to-end reproducibility. No expensive GWAS/SuSiE fitting was repeated, and the reviewed package is now published on branch `reconstruct/20261104` following explicit user authorization.
+Unresolved: the original Equation 12 covariance generator, the source of the manuscript maximum-PVE range, the executed GAPIT version (manuscript 3.5 versus retained source identifying 4.0), original genotype/sample ordering and array/imputation metadata. These limitations prevent a claim of complete end-to-end reproducibility. No expensive GWAS/SuSiE fitting was repeated, and the reviewed package is now available on the default `main` branch following explicit user authorization.
 
 Citation metadata from the existing repository is preserved in [CITATION.cff](CITATION.cff). Authors should reconcile the cited preprint title/version with the current manuscript. The existing MIT license applies as recorded; this audit does not establish rights to third-party software or restricted data. See [license review](docs/license_review.md).

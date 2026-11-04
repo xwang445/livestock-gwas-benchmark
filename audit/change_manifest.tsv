@@ -38,6 +38,7 @@ derived_data/README.md	MODIFIED
 derived_data/equation13_summary/cached_theory_validation.tsv	ADDED
 derived_data/equation13_summary/equation13_by_pheno.tsv	ADDED
 derived_data/equation13_summary/equation13_summary.tsv	ADDED
+derived_data/equation13_summary/equation13_summary_template.tsv	RELOCATED_TO_EXAMPLE_SCHEMAS
 derived_data/finemapping_summary/converged_loci.tsv	ADDED
 derived_data/finemapping_summary/high_pip_by_pheno.tsv	ADDED
 derived_data/finemapping_summary/high_pip_summary.tsv	ADDED
@@ -46,15 +47,18 @@ derived_data/finemapping_summary/verification_manifest.json	ADDED
 derived_data/input_manifest.tsv	ADDED
 derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv	ADDED
 derived_data/lambda_gc_summary/lambda_gc_summary.tsv	ADDED
+derived_data/lambda_gc_summary/lambda_gc_summary_template.tsv	RELOCATED_TO_EXAMPLE_SCHEMAS
 derived_data/ld_summary/ld_decay_10kb.tsv	ADDED
 derived_data/ld_summary/ld_decay_fitted_mean.tsv	ADDED
 derived_data/method_summary/heritability_from_logs.tsv	ADDED
 derived_data/method_summary/method_summary.tsv	ADDED
+derived_data/method_summary/method_summary_template.tsv	RELOCATED_TO_EXAMPLE_SCHEMAS
 derived_data/method_summary/significant_loci_by_pheno.tsv	ADDED
 derived_data/method_summary/significant_snps_by_pheno.tsv	ADDED
 derived_data/overlap_summary/cross_replicate_stability.tsv	ADDED
 derived_data/overlap_summary/locus_overlap_by_pheno.tsv	ADDED
 derived_data/overlap_summary/locus_overlap_summary.tsv	ADDED
+derived_data/overlap_summary/overlap_summary_template.tsv	RELOCATED_TO_EXAMPLE_SCHEMAS
 derived_data/power_summary/fpr_by_pheno.tsv	ADDED
 derived_data/power_summary/fpr_summary.tsv	ADDED
 derived_data/power_summary/power_by_pheno.tsv	ADDED
@@ -64,6 +68,7 @@ derived_data/power_summary/spatial_enrichment_summary.tsv	ADDED
 derived_data/run_manifest.json	ADDED
 derived_data/spillover_summary/spillover_by_pheno.tsv	ADDED
 derived_data/spillover_summary/spillover_summary.tsv	ADDED
+derived_data/spillover_summary/spillover_summary_template.tsv	RELOCATED_TO_EXAMPLE_SCHEMAS
 docs/author_review.md	ADDED
 docs/data_availability.md	MODIFIED
 docs/figure_map.md	ADDED
@@ -82,6 +87,12 @@ environment/python_requirements.txt	MODIFIED
 environment/r_packages.txt	MODIFIED
 environment/requirements-validation.txt	ADDED
 environment/software_versions.md	MODIFIED
+example/schemas/README.md	ADDED
+example/schemas/equation13_summary_template.tsv	ADDED
+example/schemas/lambda_gc_summary_template.tsv	ADDED
+example/schemas/method_summary_template.tsv	ADDED
+example/schemas/overlap_summary_template.tsv	ADDED
+example/schemas/spillover_summary_template.tsv	ADDED
 example/synthetic/README.md	ADDED
 example/synthetic/generate.py	ADDED
 figures/reconstructed/figure1_ld.pdf	ADDED

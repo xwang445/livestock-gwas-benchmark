@@ -1,6 +1,6 @@
 # Project state
 
-Status: reconstruction/review package published to GitHub on branch reconstruct/20261104 after explicit user authorization on 2026-11-04. End-to-end scientific reproduction remains PARTIAL. No manuscript deposit, submission, or external message. Original data, original manuscript, original local main, and historical HPCC outputs were preserved.
+Status: reconstruction/review package published to GitHub main following the user request for real results on the default branch on 2026-11-04. End-to-end scientific reproduction remains PARTIAL. No manuscript deposit, submission, or external message. Original data, original manuscript, original local main, and historical HPCC outputs were preserved.
 
 ## Completed work and outputs
 
@@ -46,3 +46,18 @@ python tests/check_validation_status.py
 ```
 
 Continue from this state. Do not rerun completed experiments simply because a session resumes. Use docs/reproducibility.md only when a new verification is needed; use new output directories. The reviewed package push was explicitly authorized and completed. Any future publication outside that scope requires the applicable authorization.
+
+## Default-branch results update
+
+The earlier push published only reconstruct/20261104, leaving main at the template-only baseline. The user requested real derived_data on GitHub. All 27 populated TSV files were verified against their fingerprints; the five schema templates were relocated intact to example/schemas. The results index now links every analysis. No numerical result was altered or invented.
+
+Publication: fast-forward remote main and the review branch to this update, without force. The default-branch update includes all 27 populated TSV files and preserves the former templates under example/schemas. The original local main remains preserved at ec6cb32. After publication, verify with:
+
+```bash
+git ls-remote --heads origin main reconstruct/20261104
+git status --short --branch
+```
+
+No analysis jobs are active. Existing scientific limitations and two manuscript discrepancies remain unchanged.
+
+Verification for this update: all 12 tests and static/schema checks passed; the numerical ledger is unchanged at 95 PASS and two documented manuscript discrepancies. No numeric analysis table changed.
