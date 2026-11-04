@@ -4,7 +4,13 @@ We compare how well widely used GWAS methods locate causal signals under diffuse
 
 This repository contains the analysis scripts, result tables, figures, and configuration files. The published tables were calculated from saved GWAS outputs, pairwise LD, cached theoretical predictions, and saved fine-mapping fits.
 
-[Result tables](derived_data/README.md) · [Figures](figures/reconstructed) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
+[Publication](#publication) · [Result tables](derived_data/README.md) · [Figures](figures/reconstructed) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
+
+## Publication
+
+Wang, X., Wang, J., Tiezzi, F., Huang, Y., Huang, W., Maltecca, C., & Jiang, J. (2026). **[Widely used GWAS methods can be poorly suited to SNP-level localization under diffuse polygenic architecture in livestock](https://www.biorxiv.org/content/10.64898/2026.07.20.739621v1)**. *bioRxiv* preprint. DOI: [10.64898/2026.07.20.739621](https://doi.org/10.64898/2026.07.20.739621).
+
+Please cite this paper if you use the code or results from this repository.
 
 ## Study design
 

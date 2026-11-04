@@ -83,3 +83,5 @@ Publication verified on 2026-11-04: configuration commit 020832eb241a52116f5f300
 ## README maintenance — 2026-11-04
 
 Rewrote README.md in direct research prose with study design, an eight-step workflow, result locations, setup commands, configuration, repository structure, and data/citation details. Removed audit commentary from the main page while retaining links to the detailed records. The source of the published tables and use of simulated phenotypes remain explicit. All 34 local links and all Bash command blocks passed checks. No code, data, configuration, or scientific results changed; no jobs are active. Publication targets remain main and reconstruct/20261104. Next check: `git ls-remote --heads origin main reconstruct/20261104` followed by `git status --short --branch`.
+
+Added the bioRxiv preprint citation near the top of README.md, with all seven authors, title, year, article link, and DOI. The citation matches CITATION.cff and the bioRxiv record checked on 2026-11-04. This is a documentation-only update; no analysis jobs or data changes. Publication targets and the next verification command remain as above.
