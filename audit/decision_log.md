@@ -14,3 +14,5 @@
 - Two numerical manuscript discrepancies remain FAIL: REGENIE maximum count and full-range Manhattan maximum. No result editing to force agreement.
 - Rebuilt outputs after adding source-tree write guards; original source folders remain untouched.
 - Added local-review figures and aggregates only; any eventual push requires separate human review/authorization and data-rights confirmation.
+
+- 2026-11-04 publication update: after the completion report, the user explicitly authorized pushing the reviewed package to GitHub. Pushed the five reviewed commits through d49a978 to origin/reconstruct/20261104. No raw restricted data were included. Scientific unresolved items remain unchanged.

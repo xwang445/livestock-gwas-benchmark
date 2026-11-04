@@ -1,6 +1,8 @@
 # Repository reconstruction and validation report
 
-Review package prepared on 2026-11-04 from the author-confirmed October manuscript. Original Mac/HPCC files and the manuscript were preserved. **The downstream reconstruction is complete for local review; end-to-end scientific reproducibility remains partial. Nothing has been pushed.**
+Review package prepared on 2026-11-04 from the author-confirmed October manuscript. Original Mac/HPCC files and the manuscript were preserved. **The downstream reconstruction is complete; end-to-end scientific reproducibility remains partial. Following explicit user authorization on 2026-11-04, the reviewed commits were pushed to GitHub branch `reconstruct/20261104`.**
+
+Publication note: the remaining report records the pre-push audit and review findings. Statements that remote CI had not run or that publication authorization was pending describe that audit snapshot; scientific limitations remain unresolved.
 
 The numerical ledger contains 95 PASS checks, two FAIL, four AMBIGUOUS, three NOT_RUN and one REQUIRES_RECOMPUTATION. PASS means numeric agreement with a stated manuscript value or a historical manuscript-supporting aggregate, at the recorded tolerance. It does not mean a new GWAS fit succeeded. Every PASS gives expected, observed, difference, tolerance and source in [audit/manuscript_validation.tsv](audit/manuscript_validation.tsv).
 
