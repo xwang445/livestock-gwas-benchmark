@@ -132,4 +132,4 @@ Individual-level genotypes, phenotypes, animal IDs, raw GWAS results, GRMs, pair
 
 Citation information is in [CITATION.cff](CITATION.cff). Repository code is distributed under the [MIT license](LICENSE).
 
-The [validation report](repository_validation_report.md) and [manuscript-to-code map](docs/manuscript_to_code_map.md) provide the detailed analysis record.
+The [workflow documentation](docs/workflow.md) and [manuscript-to-code map](docs/manuscript_to_code_map.md) provide the detailed analysis record.

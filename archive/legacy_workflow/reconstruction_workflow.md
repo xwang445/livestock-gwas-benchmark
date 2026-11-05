@@ -10,4 +10,4 @@
 
 The supplied server has no scheduler executable on PATH. No expensive jobs are warranted yet: GWAS and fine-mapping outputs already exist. Full fit regeneration is distinct from aggregate validation and must not be implied by a successful count comparison.
 
-The implementation and verification are now recorded in docs/workflow.md and repository_validation_report.md; this file preserves the initial audit decisions, not current execution status.
+The implementation and verification are now recorded in docs/workflow.md; this file preserves the initial audit decisions, not current execution status.
