@@ -75,8 +75,8 @@ def render_individual(d,configuration,phenotype,offsets,lengths,out):
            title='%s: phenotype %d'%(configuration.replace('_',' '),phenotype))
     ax.set_xticks(centers/1e6);ax.set_xticklabels(centers.index)
     ax.tick_params(axis='x',labelsize=8)
-    ax.text(.995,.98,'P ≤ 5 × 10⁻⁸; %s significant SNPs'%format(int(sig.sum()),','),
-            transform=ax.transAxes,ha='right',va='top',fontsize=8)
+    ax.set_title('%s: phenotype %d\nP ≤ 5 × 10⁻⁸; %s significant SNPs'%(
+        configuration.replace('_',' '),phenotype,format(int(sig.sum()),',')),fontsize=10)
     for key in ['individual_pdf','individual_png']:
         fig.savefig(out/paths[key],dpi=300,bbox_inches='tight')
     plt.close(fig)
