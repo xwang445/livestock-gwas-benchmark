@@ -7,7 +7,7 @@ import yaml
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
 from benchmark_core import METHODS
-for p in sorted(p for folder in ['scripts','tests','example'] for p in (ROOT/folder).rglob('*')):
+for p in sorted(p for folder in ['scripts','tests','example','finemapping'] for p in (ROOT/folder).rglob('*')):
     if p.suffix=='.py':compile(p.read_text(),str(p),'exec')
     if p.suffix in ['.sh','.sbatch','.bash']:subprocess.run(['bash','-n',str(p)],check=True)
 for p in ROOT.rglob('*.yaml'):yaml.safe_load(p.read_text())
@@ -28,15 +28,20 @@ required_results={
     'ld_summary/ld_decay_10kb.tsv',
 }
 for name in required_results:assert (ROOT/'derived_data'/name).is_file(), 'Missing executed result: '+name
-for p in (ROOT/'derived_data').rglob('*.tsv'):
+revision_methods=set(pd.read_csv(ROOT/'config/revision_methods.tsv',sep='\t').configuration)
+allowed_methods=set(METHODS)|revision_methods|{'SLEMM_previous','REGENIE-LOCO'}
+for p in sorted(list((ROOT/'derived_data').rglob('*.tsv'))+list((ROOT/'derived_data').rglob('*.csv'))):
     assert 'template' not in p.name, 'Keep schema templates under example/schemas: '+str(p)
-    d=pd.read_csv(p,sep='\t')
+    d=pd.read_csv(p,sep=',' if p.suffix=='.csv' else '\t',keep_default_na=False,na_values=['NA',''])
     assert not {'FID','IID','snp','SNP','animal_id','genotype','beta','se','PIP','pip'}.intersection(d.columns),str(p)
-    for col in ['method','method_a','method_b']:
-        if col in d:assert set(d[col].dropna()).issubset(METHODS),(str(p),col)
+    for col in ['method','method_a','method_b','configuration','configuration_a','configuration_b','GWAS_method']:
+        if col in d:assert set(d[col].dropna()).issubset(allowed_methods),(str(p),col)
     assert len(d)>0,str(p)
     numeric=d.select_dtypes(include='number')
-    assert not numeric.empty and numeric.notna().any().any(), 'Missing executed numeric results: '+str(p)
+    if p.name=='numerical_claims_reconciliation.tsv':
+        assert 'validation_status' in d or 'status' in d, 'Reconciliation requires validation status'
+    else:
+        assert not numeric.empty and numeric.notna().any().any(), 'Missing executed numeric results: '+str(p)
 rfiles=[str(p) for p in (ROOT/'scripts').rglob('*.R')]
 subprocess.run(['Rscript','-e','for (f in commandArgs(TRUE)) { parse(file=f); }; cat("R parse checks passed\\n")',*rfiles],check=True)
 print('Python compilation, shell syntax, YAML, R parsing, aggregate schemas and method labels passed.')

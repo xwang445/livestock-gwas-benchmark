@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-05T19:45:19.788545+00:00",
+  "checks_passed": 111,
+  "checks_total": 111,
+  "sample_and_missingness_summary": {
+    "phenotype_order_equals_fam_filtered_order": false,
+    "sample_set_size": 20000,
+    "phenotype_column_order": [
+      "FID",
+      "IID",
+      "pheno10",
+      "pheno1",
+      "pheno2",
+      "pheno3",
+      "pheno4",
+      "pheno5",
+      "pheno6",
+      "pheno7",
+      "pheno8",
+      "pheno9"
+    ],
+    "analysis_subset_genotype_cells": 2707160000,
+    "analysis_subset_missing_genotype_cells": 0,
+    "analysis_subset_missing_rate": 0.0,
+    "causal_genotype_comparison_cells": 200000000,
+    "causal_genotype_mismatches_after_allele_alignment": 0
+  },
+  "preserve_inputs": true,
+  "simulation_seed_status": "no explicit command seed; current repository source verification records default argument 0 -> mt19937 seed 54321 (MPH source commit 13ffe633e0170d35e01e6164fc2bb4e01f35e2f2)",
+  "missing_data_policy": "no phenotype missing values; observed genotype missingness reported from BED scan; original tool-specific handling retained"
+}

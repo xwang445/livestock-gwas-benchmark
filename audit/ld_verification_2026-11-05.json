@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "raw_ld_sha256": "5de45d4bae82fcdb73768ae76452112ecb6fe372a43956f615ffacc851f77e59",
+  "n_bins": 1000,
+  "n_pairs": 78082232,
+  "max_pair_count_difference": 0,
+  "max_mean_r2_difference": 5.551115123125783e-16,
+  "shared_2mb_bins": 200,
+  "n_samples_ld": 31301,
+  "n_markers_ld": 135358,
+  "start_mean_r2": 0.5925252386988665,
+  "first_bin_pairs": 31209,
+  "weighting": "arithmetic mean over eligible pairs in each bin; spline weighted equally across bins",
+  "boundary": "left-closed right-open 10kb bins; final10Mb endpoint included",
+  "source": "ld_10Mb.ld.gz and ld_10Mb.log",
+  "recomputed_2026_11_05": true
+}

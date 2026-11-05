@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "scope": "Complete PGEN-to-BED hardcall conversion: all 31,301 samples and 135,358 markers; bytewise comparison with established BED/BIM/FAM. Does not compare original imputation dosages to hardcalls.",
+  "plink_version": "2.00a3.3LM AVX2 Intel (3 Jun2022)",
+  "threads": 4,
+  "checks": [
+    {
+      "extension": ".bed",
+      "original_sha256": "f86d8f5071a3999f8c4b46b01556f90b5b85ca83973951e58eaa211edcf06d8e",
+      "roundtrip_sha256": "f86d8f5071a3999f8c4b46b01556f90b5b85ca83973951e58eaa211edcf06d8e"
+    },
+    {
+      "extension": ".bim",
+      "original_sha256": "85f23bc33ee79bbc596d9fb318ad9d0518032ba0cd78fbc21711dae02457adf8",
+      "roundtrip_sha256": "85f23bc33ee79bbc596d9fb318ad9d0518032ba0cd78fbc21711dae02457adf8"
+    },
+    {
+      "extension": ".fam",
+      "original_sha256": "98790d88cedaaba79c95138428eb1d44738da41ec296dd391068579989eea334",
+      "roundtrip_sha256": "98790d88cedaaba79c95138428eb1d44738da41ec296dd391068579989eea334"
+    }
+  ],
+  "command": "plink2 --pfile PANEL --make-bed --threads 4 --out PRIVATE_ROUNDTRIP_PREFIX"
+}

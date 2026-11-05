@@ -1,0 +1,4 @@
+# Empty terminal table fields and generated SVG path lines are intentional.
+*.tsv whitespace=-blank-at-eol
+*.csv whitespace=-blank-at-eol
+*.svg whitespace=-blank-at-eol

@@ -2,7 +2,7 @@
 
 We compare how well widely used GWAS methods locate causal signals under diffuse polygenic architecture in livestock. The benchmark uses Duroc pig genotypes and simulated phenotypes, followed by SuSiE-adj and SuSiE-RSS fine-mapping.
 
-This repository contains the analysis scripts, result tables, figures, and configuration files. The published tables were calculated from saved GWAS outputs, pairwise LD, cached theoretical predictions, and saved fine-mapping fits.
+This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision includes updated SLEMM summaries, a completed paired SuSiE-RSS residual-variance rerun, and an incomplete GCTA MLMA extension. Its review figures are labeled accordingly.
 
 [Publication](#publication) · [Result tables](derived_data/README.md) · [Figures](figures/reconstructed) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
 
@@ -26,7 +26,7 @@ Please cite this paper if you use the code or results from this repository.
 | Null gaps | 4 Mb, with the central 2 Mb used for central-null analyses |
 | Locus size | 500 kb |
 
-The comparison includes nine GWAS configurations:
+The original comparison includes nine GWAS configurations:
 
 - BOLT-LMM
 - REGENIE with and without leave-one-chromosome-out (LOCO) analysis
@@ -36,6 +36,8 @@ The comparison includes nine GWAS configurations:
 - BLINK: Kansas and NYC outputs
 
 Kansas and NYC refer to the GAPIT outputs before and after local refinement. The nine configurations across ten phenotypes give 90 GWAS result files. Full settings are in [analysis_parameters.yaml](config/analysis_parameters.yaml) and [methods.yaml](config/methods.yaml).
+
+The revision registry adds GCTA MLMA, giving seven method families and ten planned configurations. Completion counts come from [the registry and canonical tables](docs/revision_2026-11-05.md), rather than assuming all planned fits have completed.
 
 ## Workflow
 
@@ -74,7 +76,7 @@ MPH generated genetic values from the fixed causal-SNP relationship matrix and a
 
 The corrected REGENIE_LOCO maximum is 20,461 significant SNPs. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. [Independent checks](audit/manuscript_number_checks.tsv) support both values.
 
-The machine-readable [results summary](config/verified_results.yaml) records the calculated values and source-file hashes. [Statistical definitions](docs/statistical_definitions.md) document the thresholds, window boundaries, and denominators used in each analysis.
+The machine-readable [results summary](config/verified_results.yaml) records the historical calculated values and source-file hashes. [Statistical definitions](docs/statistical_definitions.md) document the thresholds, window boundaries, and denominators used in each analysis. The [November 5 revision record](docs/revision_2026-11-05.md) distinguishes new analyses from these preserved historical results.
 
 ## Set up and check the repository
 

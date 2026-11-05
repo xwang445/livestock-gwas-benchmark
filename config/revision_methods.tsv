@@ -1,0 +1,11 @@
+configuration	method_family	model	color	planned_phenotypes
+BOLT-LMM	BOLT-LMM	LOCO mixed model	#0072B2	10
+REGENIE_LOCO	REGENIE	LOCO	#D55E00	10
+REGENIE_WO_LOCO	REGENIE	without LOCO	#E69F00	10
+fastGWA	fastGWA	sparse GRM	#009E73	10
+FarmCPU_NYC	FarmCPU	after local refinement	#CC79A7	10
+FarmCPU_Kansas	FarmCPU	before local refinement	#7B3294	10
+BLINK_NYC	BLINK	after local refinement	#56B4E9	10
+BLINK_Kansas	BLINK	before local refinement	#999933	10
+SLEMM	SLEMM	full GRM; qf90 window3000	#222222	10
+GCTA_MLMA	GCTA MLMA	full GRM	#A6761D	10

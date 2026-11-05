@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "n_full_samples": 31301,
+  "n_markers": 135358,
+  "n_valid_markers": 135358,
+  "full_panel_missing_genotype_calls": 0,
+  "n_offdiagonal_entries_checked": 21,
+  "max_abs_difference": 2.3162240181395788e-09,
+  "pair_marker_counts_match": true,
+  "formula": "Mean over jointly observed markers of (g_i-2p)*(g_j-2p)/(2p*(1-p)); p from all panel animals",
+  "limitation": "Spot-check of selected off-diagonal entries, not a complete recomputation of every GRM entry"
+}

@@ -9,8 +9,8 @@ def build(repo):
     repo=Path(repo);data=repo/'derived_data'
     def read(name):return pd.read_csv(data/name,sep='\t')
     sources={}
-    for path in sorted(data.rglob('*.tsv')):
-        frame=pd.read_csv(path,sep='\t')
+    for path in sorted(list(data.rglob('*.tsv'))+list(data.rglob('*.csv'))):
+        frame=pd.read_csv(path,sep=',' if path.suffix=='.csv' else '\t')
         sources[str(path.relative_to(data))]={'path':str(path.relative_to(repo)),
             'rows':len(frame),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
     counts=read('method_summary/significant_snps_by_pheno.tsv')
@@ -28,9 +28,9 @@ def build(repo):
     ledger=pd.read_csv(repo/'audit/manuscript_validation.tsv',sep='\t')
     ld=read('ld_summary/ld_decay_10kb.tsv')
     result={'schema_version':1,
-        'scope':'Executed downstream reanalysis of saved GWAS, cached theory, LD and converged fine-mapping results; no fresh model fits.',
+        'scope':'The original summary blocks preserve the November 4 historical reconstruction. source_tables also fingerprints the separate November 5 revision results, including new ERV_TRUE SuSiE fits and partial GCTA MLMA; revision checks identify completed coverage. Historical and revised results must not be mixed.',
         'regenerate_command':'python scripts/build_result_config.py',
-        'study_checks':{'methods':int(counts.method.nunique()),'phenotypes':int(counts.phenotype.nunique()),
+        'study_checks':{'historical_configurations':int(counts.method.nunique()),'phenotypes':int(counts.phenotype.nunique()),
             'gwas_panels':len(counts),'snps_per_panel':sorted(int(x) for x in counts.n_snps.unique()),
             'equation13_replicate_bin_rows':sources['equation13_summary/equation13_by_pheno.tsv']['rows'],
             'finemapping_phenotype_pipeline_rows':sources['finemapping_summary/high_pip_by_pheno.tsv']['rows']},
@@ -46,6 +46,23 @@ def build(repo):
         'ld':{'n_bins':len(ld),'selected_bin_means':ld[ld.bin_id.isin([1,200,1000])].to_dict('records')},
         'equation13_cached_checks':read('equation13_summary/cached_theory_validation.tsv').to_dict('records'),
         'source_tables':sources}
+    revision=data/'revision_2026-11-05/association/association_by_phenotype.tsv'
+    if revision.exists():
+        registry=pd.read_csv(repo/'config/revision_methods.tsv',sep='\t')
+        panels=pd.read_csv(revision,sep='\t')
+        panels=panels[panels.configuration.isin(registry.configuration)]
+        observed=panels.groupby('configuration').phenotype.nunique().to_dict()
+        result['revision_checks']={
+            'registry':'config/revision_methods.tsv',
+            'planned_method_families':int(registry.method_family.nunique()),
+            'planned_configurations':len(registry),
+            'planned_panels':int(registry.planned_phenotypes.sum()),
+            'completed_panels':len(panels),
+            'completed_phenotypes_by_configuration':{m:int(observed.get(m,0)) for m in registry.configuration},
+            'fully_completed_configurations':sum(observed.get(r.configuration,0)==r.planned_phenotypes for r in registry.itertuples()),
+            'association_source':'derived_data/revision_2026-11-05/association/association_by_phenotype.tsv',
+            'fine_mapping_source':'derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv',
+            'status_document':'docs/revision_2026-11-05.md'}
     # Preserve parsed table precision and integer counts; normalize only scalar types.
     import math
     def normalize(value):

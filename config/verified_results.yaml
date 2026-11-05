@@ -1,9 +1,11 @@
 schema_version: 1
-scope: Executed downstream reanalysis of saved GWAS, cached theory, LD and converged
-  fine-mapping results; no fresh model fits.
+scope: The original summary blocks preserve the November 4 historical reconstruction.
+  source_tables also fingerprints the separate November 5 revision results, including
+  new ERV_TRUE SuSiE fits and partial GCTA MLMA; revision checks identify completed
+  coverage. Historical and revised results must not be mixed.
 regenerate_command: python scripts/build_result_config.py
 study_checks:
-  methods: 9
+  historical_configurations: 9
   phenotypes: 10
   gwas_panels: 90
   snps_per_panel:
@@ -468,6 +470,138 @@ source_tables:
     path: derived_data/power_summary/spatial_enrichment_summary.tsv
     rows: 360
     sha256: 2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40
+  revision_2026-11-05/analysis_manifest.tsv:
+    path: derived_data/revision_2026-11-05/analysis_manifest.tsv
+    rows: 110
+    sha256: 181f3426b3bce29591a175d00cb30e86285633875136965f8613f0662b5c7882
+  revision_2026-11-05/association/association_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
+    rows: 101
+    sha256: 8c0e8bf85a7e188939c6dfdca102a4e5708ba0f6b88fa374c59b92357023b23b
+  revision_2026-11-05/association/association_summary.tsv:
+    path: derived_data/revision_2026-11-05/association/association_summary.tsv
+    rows: 11
+    sha256: f1c7a21949d679a6f8fac6a725205cca19398a3aa2f35e5aa07c8b9bee246044
+  revision_2026-11-05/association/genomic_background.tsv:
+    path: derived_data/revision_2026-11-05/association/genomic_background.tsv
+    rows: 3
+    sha256: b41fadd32868fd5c55033ebcda9b8bbfb4bd3d7883fe00e64e57735f3cbbe8e9
+  revision_2026-11-05/association/null_inventory_50kb.tsv:
+    path: derived_data/revision_2026-11-05/association/null_inventory_50kb.tsv
+    rows: 29600
+    sha256: d966e1cbffa97b5dcbebfbe30276cf05067417ec7a1c2f17ced3990cd33a0322
+  revision_2026-11-05/association/numerical_claims_reconciliation.tsv:
+    path: derived_data/revision_2026-11-05/association/numerical_claims_reconciliation.tsv
+    rows: 12
+    sha256: eb11c97607b8bf9a5883a23757083f9f4863fc0e3d61936fa14d616eee7d631d
+  revision_2026-11-05/association/pairwise_locus_overlap.tsv:
+    path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap.tsv
+    rows: 829
+    sha256: b4be5840260637ad1b15e8f783424d79b709c98cc277db6e78b1a238e0fe58db
+  revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv:
+    path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv
+    rows: 100
+    sha256: 3a067384b0ab0fc9263a0448a608185393c48ba58b8b3bffb253ad417e4c1113
+  revision_2026-11-05/association/parent_regions.tsv:
+    path: derived_data/revision_2026-11-05/association/parent_regions.tsv
+    rows: 767
+    sha256: c73e3f5bb3844cbef1bada3c15045bfd72fd33ac019fba707f85ffb4a4fbcbff
+  revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv
+    rows: 10302
+    sha256: 239813962e23081dcd5f6152f64a6532abc5c7474b864c7ba86730999716c794
+  revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv:
+    path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv
+    rows: 1122
+    sha256: ffbc18ca94786cc9b43b5d9144e3bf940372f8e8dc08c2b8b443e5635c450bb2
+  revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv
+    rows: 20
+    sha256: 9dcf64cb65713d3c8130ed3f9bbb7ff0864ae612574d1c6cf9ea340b7c080871
+  revision_2026-11-05/association/slemm_old_new_reconciliation.tsv:
+    path: derived_data/revision_2026-11-05/association/slemm_old_new_reconciliation.tsv
+    rows: 220
+    sha256: 7a2168df92ecb7793aa4f5fc0d6e873401afe2d4f743e2dcc067e8fcca8d35a7
+  revision_2026-11-05/association/spatial_boundary_audit.tsv:
+    path: derived_data/revision_2026-11-05/association/spatial_boundary_audit.tsv
+    rows: 91
+    sha256: 3f336cd470ecd71d6a8a95eec0d70da0306e58dee8d4d5f3aaf6efba2df799cd
+  revision_2026-11-05/association/spatial_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/association/spatial_by_phenotype.tsv
+    rows: 3640
+    sha256: 2cb71754b25b55a084bb3c93911260290282e587d0b3ce3364609a881da130f3
+  revision_2026-11-05/association/supplementary_table_S1.tsv:
+    path: derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv
+    rows: 11
+    sha256: d5befcd4ef9da9f1ace8658ac735e58fbadce1c12863042246cf227ae598b53a
+  revision_2026-11-05/association/window_inventory_500kb.tsv:
+    path: derived_data/revision_2026-11-05/association/window_inventory_500kb.tsv
+    rows: 4538
+    sha256: 40f4c8e6bf0749e97cf6116e26c337b881444a4ed000e960732164a00db022bc
+  revision_2026-11-05/input_checksums.tsv:
+    path: derived_data/revision_2026-11-05/input_checksums.tsv
+    rows: 54
+    sha256: c81a0e390f8f90a62d71a0078d6b8ef4515c9232621f2d66a93a67c279a107c6
+  revision_2026-11-05/pr_display_curves.tsv:
+    path: derived_data/revision_2026-11-05/pr_display_curves.tsv
+    rows: 19940
+    sha256: a4accda73726151e62c878c7f05e61da9276621a30b351b6ba3476bfb1fb9852
+  revision_2026-11-05/susie/fit_diagnostics_comparison.tsv:
+    path: derived_data/revision_2026-11-05/susie/fit_diagnostics_comparison.tsv
+    rows: 40
+    sha256: dc4244d668c396197eb97ba84fe0c9db7d7fe840df99ec6ada2d20bc9872aeb1
+  revision_2026-11-05/susie/localization_precision/Table_3_numeric.csv:
+    path: derived_data/revision_2026-11-05/susie/localization_precision/Table_3_numeric.csv
+    rows: 4
+    sha256: 5b25a460288a23dccdba2fb6e45dfe977409ae382a9897ce9f262e16b8dc4918
+  revision_2026-11-05/susie/localization_precision/precision_by_phenotype.csv:
+    path: derived_data/revision_2026-11-05/susie/localization_precision/precision_by_phenotype.csv
+    rows: 40
+    sha256: f09f5496832de4622eaa6884eedb9103842f12bc2731e79d9571359a1f358402
+  revision_2026-11-05/susie/maf_matched/Table_2_numeric.csv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched/Table_2_numeric.csv
+    rows: 12
+    sha256: e377892d39fe0213981fc37cf0dce1e1bd1a3b1adefab13a9986cf548d191adb
+  revision_2026-11-05/susie/maf_matched/counts_by_phenotype.csv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched/counts_by_phenotype.csv
+    rows: 120
+    sha256: 13638b797bb49e5ef8444bb9b69b9f812d3815f445547a26b56a2030e0a03a5a
+  revision_2026-11-05/susie/maf_matched/maf_bin_expectations.csv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched/maf_bin_expectations.csv
+    rows: 1200
+    sha256: 80ac906cc5ae55da93e0d51bf5dcb03efb72cbee336a24bdc027016f44a65aa8
+  revision_2026-11-05/susie/maf_matched/pool_qc.csv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched/pool_qc.csv
+    rows: 40
+    sha256: 01a3552f5839a9abd5decac2c10016a1243a0465dfd97ac3595cc5d7d1f1fafe
+  revision_2026-11-05/susie/precision_threshold/precision_by_threshold_phenotype.csv:
+    path: derived_data/revision_2026-11-05/susie/precision_threshold/precision_by_threshold_phenotype.csv
+    rows: 7680
+    sha256: ed7e0bcdfca4194b4b858df591f915d154bb52f91a3b066d7e49b1024ad7e4d2
+  revision_2026-11-05/susie/precision_threshold/precision_by_threshold_pooled.csv:
+    path: derived_data/revision_2026-11-05/susie/precision_threshold/precision_by_threshold_pooled.csv
+    rows: 768
+    sha256: badebae27e99e3cdbce82b6480da00a01a3c898879442ffec8731d00de1a6b23
+  revision_2026-11-05/susie/precision_threshold/selected_thresholds.csv:
+    path: derived_data/revision_2026-11-05/susie/precision_threshold/selected_thresholds.csv
+    rows: 24
+    sha256: 9324406d023804546db77170be72504829996d796f61d3650c84503420a9d7f1
+  revision_2026-11-05/susie/sensitivity_comparison_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/susie/sensitivity_comparison_by_phenotype.tsv
+    rows: 80
+    sha256: a843a56883c8e3bdda4c6bb38907e061673d264501f61512508f3bcdcbd9f753
+  revision_2026-11-05/susie/sensitivity_comparison_summary.tsv:
+    path: derived_data/revision_2026-11-05/susie/sensitivity_comparison_summary.tsv
+    rows: 8
+    sha256: 3ef05afd42c87ffa47d8dead0600cc50a48e7fb07684808ed59b79fae72978b5
+  revision_2026-11-05/susie/sensitivity_comparison_table.tsv:
+    path: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
+    rows: 4
+    sha256: 026dfe4d5f827788eac21f992fd688f6a8c4e32eb6185dcdf9e81577af24b363
+  revision_2026-11-05/susie/sensitivity_paired_changes.tsv:
+    path: derived_data/revision_2026-11-05/susie/sensitivity_paired_changes.tsv
+    rows: 40
+    sha256: 8c4ed5003fa78c45586bc4376ec719145589a328956477167a34b3f53c5089aa
   spillover_summary/spillover_by_pheno.tsv:
     path: derived_data/spillover_summary/spillover_by_pheno.tsv
     rows: 90
@@ -476,3 +610,24 @@ source_tables:
     path: derived_data/spillover_summary/spillover_summary.tsv
     rows: 9
     sha256: 14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702
+revision_checks:
+  registry: config/revision_methods.tsv
+  planned_method_families: 7
+  planned_configurations: 10
+  planned_panels: 100
+  completed_panels: 91
+  completed_phenotypes_by_configuration:
+    BOLT-LMM: 10
+    REGENIE_LOCO: 10
+    REGENIE_WO_LOCO: 10
+    fastGWA: 10
+    FarmCPU_NYC: 10
+    FarmCPU_Kansas: 10
+    BLINK_NYC: 10
+    BLINK_Kansas: 10
+    SLEMM: 10
+    GCTA_MLMA: 1
+  fully_completed_configurations: 9
+  association_source: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
+  fine_mapping_source: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
+  status_document: docs/revision_2026-11-05.md

@@ -1,0 +1,16 @@
+Paired comparison uses the same loci converged under both residual-variance settings.
+Each SNP occurs once per GWAS method/phenotype, retaining its largest PIP across overlapping loci.
+High PIP means PIP >=0.9; precision denominator is all high-PIP unique SNP calls.
+Effect: position modulo 6 Mb <2 Mb; null: remainder >=2 Mb; central null: [3,5) Mb.
+Central null is a subset of null. Genome classification uses SNP position, not lead locus.
+Average precision is the noninterpolated, stepwise area; trapezoid AUPRC is supplied separately.
+The conditional universe is all analyzed unique SNPs. The full-panel universe assigns score zero
+to SNPs not fine-mapped; this is a ranking convention, not a fitted posterior probability.
+Random precision baseline is causal SNP prevalence in the stated universe.
+CS coverage is sets containing >=1 causal SNP / all reported CSs. Conditional recovery uses
+unique analyzed causal SNPs; genome-wide recovery uses the complete 10,000 causal set.
+Explicit counts: CS coverage = n_cs_with_causal/n_cs; conditional recovery =
+n_causal_cs_recovered/n_causal_analyzed; random precision = n_causal_evaluated/n_evaluated.
+Mean summaries weight each of the ten phenotypes equally; counts are not pooled unless explicit.
+Effect-size deciles are sensitivity summaries from historical ridge-reconstructed coefficients.
+They must not be represented as verified original simulation effects.

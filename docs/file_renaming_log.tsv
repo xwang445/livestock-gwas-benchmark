@@ -15,4 +15,3 @@ scripts/08_lambda_gc/lambda_gc_range.R	archive/legacy_workflow/scripts/08_lambda
 scripts/09_locus_overlap/README.md	archive/legacy_workflow/scripts/09_locus_overlap/README.md	Consolidation: preserved intact outside the supported active workflow.
 scripts/10_equation13_ncp/calculate_ncp.R	archive/legacy_workflow/scripts/10_equation13_ncp/calculate_ncp.R	Consolidation: preserved intact outside the supported active workflow.
 scripts/11_figures/README.md	archive/legacy_workflow/scripts/11_figures/README.md	Consolidation: preserved intact outside the supported active workflow.
-docs/reconstruction_workflow.md	archive/legacy_workflow/reconstruction_workflow.md	Consolidation: preserved intact outside the supported active workflow.

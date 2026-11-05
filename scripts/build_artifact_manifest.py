@@ -4,7 +4,7 @@ import argparse,csv,hashlib
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--repo',default=Path(__file__).resolve().parents[1]);a=p.parse_args();root=Path(a.repo)
 rows=[]
-for folder in ['derived_data','figures/reconstructed','audit/reference_values','config','example/schemas']:
+for folder in ['derived_data','figures','audit/reference_values','config','example/schemas']:
     for f in sorted((root/folder).rglob('*')):
         if f.is_file():
             if folder=='config' and f.name.startswith('local'):continue

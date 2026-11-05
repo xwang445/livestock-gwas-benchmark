@@ -1,0 +1,29 @@
+{
+  "status": "PASS_WITH_EXPLICIT_DEPENDENCIES",
+  "tests_passed": 19,
+  "static_checks": "Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method labels",
+  "markdown_broken_links": 0,
+  "manhattan_completed_panels_matching_canonical_snp_counts": 91,
+  "manhattan_pending_panels": 9,
+  "ld_bins_recounted": 1000,
+  "ld_pair_counts_match": true,
+  "rss_published_fit_function_matches_executed": true,
+  "gcta_existing_output_validated_snps": 135358,
+  "historical_ledger_status": {
+    "PASS": 108,
+    "NOT_RUN": 3,
+    "AMBIGUOUS": 2,
+    "REQUIRES_RECOMPUTATION": 1
+  },
+  "historical_ledger_scope": "October manuscript and November4 reconstruction, not unavailable November5 PI-edited DOCX",
+  "publication_content_review": "No individual sample IDs, raw genotype/GRM/LD, variant identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new publication content",
+  "incomplete_dependencies": [
+    "GCTA phenotypes2-10 outstanding",
+    "PI manuscript, latest response letter and authoritative supplementary documents unavailable",
+    "Paperpile refresh unavailable",
+    "cached Equation13 and Equation12 implementation unavailable",
+    "original SNP-effect/PVE definition unavailable",
+    "GitHub authentication unavailable"
+  ],
+  "new_slemm_table_checks": "independent8checks and spatial3200rowcomparison passed"
+}
