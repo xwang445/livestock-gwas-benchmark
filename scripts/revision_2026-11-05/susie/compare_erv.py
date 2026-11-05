@@ -171,6 +171,7 @@ pair.to_csv(OUT/'sensitivity_paired_changes.tsv',sep='\t',index=False)
     'Explicit counts: CS coverage = n_cs_with_causal/n_cs; conditional recovery =\n'
     'n_causal_cs_recovered/n_causal_analyzed; random precision = n_causal_evaluated/n_evaluated.\n'
     'Mean summaries weight each of the ten phenotypes equally; counts are not pooled unless explicit.\n'
+    'Primary manuscript pooled AP is in pooled_finemapping_metrics.tsv, a separate single-ranking estimator.\n'
     'Effect-size deciles are sensitivity summaries from historical ridge-reconstructed coefficients.\n'
     'They must not be represented as verified original simulation effects.\n')
 print(pd.DataFrame(diag).groupby(['fit_mode','method'])[['n_attempted','n_converged','n_warnings','n_cs']].sum().to_string())

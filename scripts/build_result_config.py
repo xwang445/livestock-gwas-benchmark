@@ -71,10 +71,11 @@ def build(repo):
         result['finemapping']={
             'rss_configuration':'estimate_residual_variance=TRUE; original loci unchanged',
             'pooled':pd.read_csv(data/'revision_2026-11-05/susie/localization_precision/Table_3_numeric.csv').to_dict('records'),
+            'pooled_ranking_metrics':read('revision_2026-11-05/susie/pooled_finemapping_metrics.tsv').to_dict('records'),
             'paired_sensitivity':read('revision_2026-11-05/susie/sensitivity_comparison_table.tsv').to_dict('records')}
         result['validation']={'record':'audit/revision_validation.json',
             'result':json.loads((repo/'audit/revision_validation.json').read_text()),
-            'scope':'Current inclusive revision; original manuscript ledger is historical_validation. Unavailable PI-edited document is not certified.'}
+            'scope':'Current inclusive numerical revision; original manuscript ledger is historical_validation. The received PI document has a private working revision; final GCTA integration, citations, layout and resubmission are not certified.'}
     # Preserve parsed table precision and integer counts; normalize only scalar types.
     import math
     def normalize(value):

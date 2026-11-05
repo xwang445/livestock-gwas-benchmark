@@ -12,5 +12,6 @@ unique analyzed causal SNPs; genome-wide recovery uses the complete 10,000 causa
 Explicit counts: CS coverage = n_cs_with_causal/n_cs; conditional recovery =
 n_causal_cs_recovered/n_causal_analyzed; random precision = n_causal_evaluated/n_evaluated.
 Mean summaries weight each of the ten phenotypes equally; counts are not pooled unless explicit.
+Primary manuscript pooled AP is in pooled_finemapping_metrics.tsv, a separate single-ranking estimator.
 Effect-size deciles are sensitivity summaries from historical ridge-reconstructed coefficients.
 They must not be represented as verified original simulation effects.

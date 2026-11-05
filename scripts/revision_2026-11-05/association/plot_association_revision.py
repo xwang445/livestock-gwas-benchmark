@@ -44,8 +44,12 @@ def main():
         for ext in ['pdf','svg','png']:fig.savefig(a.output/(name+'.'+ext),dpi=300,facecolor='white',bbox_inches='tight')
         plt.close(fig)
     def note(fig):
-        pending=', '.join(LABEL[ORDER.index(m)] for m in incomplete)
-        fig.text(.5,.008,'Review version: '+('incomplete configurations: '+pending+'; ' if pending else '')+'manuscript correspondence awaits source documents.',ha='center',fontsize=8,color='#666666')
+        pending=[]
+        for m in incomplete:
+            missing=[str(ph) for ph in range(1,11) if (m,ph) not in available]
+            phlabel='2–10' if missing==[str(ph) for ph in range(2,11)] else ', '.join(missing)
+            pending.append(LABEL[ORDER.index(m)]+' phenotypes '+phlabel+' remain pending')
+        fig.text(.5,.008,'Review version: '+('; '.join(pending)+'.' if pending else 'all configurations complete.'),ha='center',fontsize=8,color='#666666')
     c=by.pivot(index='phenotype',columns='configuration',values='loci').reindex(index=range(1,11),columns=ORDER)
     s=by.pivot(index='phenotype',columns='configuration',values='significant_snps').reindex(index=range(1,11),columns=ORDER)
     fig,ax=plt.subplots(figsize=(12.7,8));fig.subplots_adjust(left=.09,right=.91,bottom=.23,top=.94)
@@ -120,7 +124,7 @@ def main():
         fmt=lambda k,f=1:'%.2f ± %.2f'%(r[k+'_mean']*f,r[k+'_sd']*f)
         rows.append([label,fmt('loci'),fmt('effect_locus_fraction',100),fmt('null_locus_fraction',100),fmt('central_null_locus_fraction',100),str(int(r.effect_locus_fraction_n_defined)),'10/10 complete'])
     caption=('A locus is a non-overlapping, chromosome-specific 500 kb genomic window containing at least one SNP with P ≤ 5 × 10⁻⁸. Windows are anchored at zero, [start,end), with terminal fragments retained. Counts are mean ± sample SD across all ten phenotypes. Percentages are the equally weighted mean ± sample SD of phenotype-specific percentages: detected loci of the stated region divided by all detected loci. Phenotypes with zero detected loci have undefined percentages and are excluded from percentage summaries; their number is reported. Central-null is a subset of null, not a third disjoint category. These percentages are not the central-null window detection rate in Figure 6a, which has a fixed denominator of 1,480 windows per phenotype. Pooled percentages are separate columns in the source TSV. GCTA aggregates remain pending until all ten phenotypes are complete.')
-    notes=['Review status: latest response-letter peak table and PI-revised manuscript were unavailable in this environment; table identity and citations require reconciliation before submission.',
+    notes=['Review status: source statistics are verified; reconciliation with the latest response-letter peak table and its citations remains pending.',
         'Source: association_by_phenotype.tsv and association_summary.tsv. No effect-allele orientation or generating causal-effect size is inferred from the reported association coefficient.']
     if a.write_table_docx:docx_table(rows,a.output/'Supplementary_Table_S1_review.docx',caption,notes)
     (a.output/'captions_and_definitions.txt').write_text('Figure 3. Significant loci and SNPs\nCells show detected 500 kb loci and significant SNPs in parentheses; P ≤ 5 × 10⁻⁸. Zero-anchored half-open windows retain chromosome-end fragments. GCTA phenotypes 2–10 are pending.\n\nFigure 5. Pairwise overlap of significant loci\nJaccard indices use the inclusive-threshold locus sets of Figure 3. As in the historical plotting convention, comparisons are undefined (NA) if either set is empty; pending fits are also NA. A set-theoretic alternative with zero for one empty set is supplied separately in the canonical table.\n\nFigure 6. Regional spillover and genomic inflation\n(a) Detected central-null 500 kb windows divided by 1,480 eligible windows, mean ± sample SD across ten phenotypes. (b) Historical central-null genomic inflation: median finite one-df association chi-square divided by 0.4549364, then mean ± SD across phenotypes; the P-inverse-survival estimate is supplied separately. (c,d) Significant/(tested × 5 × 10⁻⁸) is computed within nonempty 50 kb null windows, averaged across windows at mirrored distance indices, then equally across phenotypes. Panel d excludes BOLT-LMM and REGENIE LOCO. Complete configurations only are aggregated; GCTA is pending. Closed versus half-open endpoint conventions have no effect because no tested marker lies at a relevant boundary.\n\nTable S1\n'+caption+'\n')

@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "primary_RSS": "estimate_residual_variance=TRUE",
+  "n_display_rows": 11908,
+  "display_data_contains_no_individual_identifiers": true,
+  "figure_caption_words": 198,
+  "y_axis_max_percent": 16.0,
+  "source_sha256": {
+    "pooled_precision_recall_curves.tsv.gz": "f6a4dab11b0d9eb5c95a80c84d5c59fc49dcb3a5ea33fc7cb4b50f81ac8cbefa",
+    "pooled_finemapping_metrics.tsv": "f98306b277aa77d458219033c1fab3f4562115b6c6f627252eeb6b4e779b1422",
+    "Figure_8_display_vertices.tsv": "b5462ae30f03b47f5fe21fb4feea2c33575d891157683dde482d723d103faa58"
+  },
+  "note": "Original embedded Figure8 panels preserved separately; unverified realized-PVE panel is not presented as an updated result."
+}

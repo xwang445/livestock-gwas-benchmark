@@ -550,6 +550,10 @@ source_tables:
     path: derived_data/revision_2026-11-05/pr_display_curves.tsv
     rows: 19940
     sha256: a4accda73726151e62c878c7f05e61da9276621a30b351b6ba3476bfb1fb9852
+  revision_2026-11-05/susie/Figure_8_display_vertices.tsv:
+    path: derived_data/revision_2026-11-05/susie/Figure_8_display_vertices.tsv
+    rows: 11908
+    sha256: b5462ae30f03b47f5fe21fb4feea2c33575d891157683dde482d723d103faa58
   revision_2026-11-05/susie/fit_diagnostics_comparison.tsv:
     path: derived_data/revision_2026-11-05/susie/fit_diagnostics_comparison.tsv
     rows: 40
@@ -578,6 +582,10 @@ source_tables:
     path: derived_data/revision_2026-11-05/susie/maf_matched/pool_qc.csv
     rows: 40
     sha256: 01a3552f5839a9abd5decac2c10016a1243a0465dfd97ac3595cc5d7d1f1fafe
+  revision_2026-11-05/susie/pooled_finemapping_metrics.tsv:
+    path: derived_data/revision_2026-11-05/susie/pooled_finemapping_metrics.tsv
+    rows: 6
+    sha256: f98306b277aa77d458219033c1fab3f4562115b6c6f627252eeb6b4e779b1422
   revision_2026-11-05/susie/precision_threshold/precision_by_threshold_phenotype.csv:
     path: derived_data/revision_2026-11-05/susie/precision_threshold/precision_by_threshold_phenotype.csv
     rows: 7680
@@ -1486,6 +1494,133 @@ finemapping:
     phenotype_precision_sd: 2.149752349557676
     phenotype_precision_min: 9.387755102040815
     phenotype_precision_max: 15.714285714285714
+  pooled_ranking_metrics:
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_FALSE
+    method: BOLT-LMM
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 611196
+    n_causal_evaluated: 52685
+    random_precision_baseline: 0.0861998442398183
+    average_precision: 0.0954656607634321
+    trapezoid_auprc: 0.0954862762428314
+    n_high_pip: 2009
+    n_high_pip_causal: 261
+    high_pip_precision: 0.1299153807864609
+    n_high_pip_effect: 839
+    n_high_pip_null: 1170
+    high_pip_null_fraction: 0.5823792931806869
+    n_high_pip_central_null: 561
+    high_pip_central_null_fraction: 0.2792434046789447
+    n_central_null_evaluated: 175218
+    central_null_pool_fraction: 0.2866805411030177
+    mean_assigned_high_pip: 0.9828373920336888
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_FALSE
+    method: REGENIE-LOCO
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 596724
+    n_causal_evaluated: 50623
+    random_precision_baseline: 0.0848348650297289
+    average_precision: 0.0904526990472741
+    trapezoid_auprc: 0.0904844104192087
+    n_high_pip: 2064
+    n_high_pip_causal: 253
+    high_pip_precision: 0.1225775193798449
+    n_high_pip_effect: 817
+    n_high_pip_null: 1247
+    high_pip_null_fraction: 0.6041666666666666
+    n_high_pip_central_null: 619
+    high_pip_central_null_fraction: 0.2999031007751938
+    n_central_null_evaluated: 174411
+    central_null_pool_fraction: 0.292280853459891
+    mean_assigned_high_pip: 0.9827256476805044
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    method: BOLT-LMM
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 611196
+    n_causal_evaluated: 52685
+    random_precision_baseline: 0.0861998442398183
+    average_precision: 0.0953007256889707
+    trapezoid_auprc: 0.0953213913903328
+    n_high_pip: 2021
+    n_high_pip_causal: 261
+    high_pip_precision: 0.1291439881246907
+    n_high_pip_effect: 843
+    n_high_pip_null: 1178
+    high_pip_null_fraction: 0.5828797624938149
+    n_high_pip_central_null: 567
+    high_pip_central_null_fraction: 0.2805541810984661
+    n_central_null_evaluated: 175218
+    central_null_pool_fraction: 0.2866805411030177
+    mean_assigned_high_pip: 0.9827817772796512
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    method: REGENIE-LOCO
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 596724
+    n_causal_evaluated: 50623
+    random_precision_baseline: 0.0848348650297289
+    average_precision: 0.0903564558334228
+    trapezoid_auprc: 0.090388262323791
+    n_high_pip: 2072
+    n_high_pip_causal: 254
+    high_pip_precision: 0.1225868725868725
+    n_high_pip_effect: 820
+    n_high_pip_null: 1252
+    high_pip_null_fraction: 0.6042471042471043
+    n_high_pip_central_null: 620
+    high_pip_central_null_fraction: 0.2992277992277992
+    n_central_null_evaluated: 174411
+    central_null_pool_fraction: 0.292280853459891
+    mean_assigned_high_pip: 0.9828060762799454
+  - pipeline: SuSiE-adj
+    fit_mode: ERV_TRUE
+    method: BOLT-LMM
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 611196
+    n_causal_evaluated: 52685
+    random_precision_baseline: 0.0861998442398183
+    average_precision: 0.0956236851134508
+    trapezoid_auprc: 0.0956447753745568
+    n_high_pip: 1974
+    n_high_pip_causal: 263
+    high_pip_precision: 0.1332320162107396
+    n_high_pip_effect: 821
+    n_high_pip_null: 1153
+    high_pip_null_fraction: 0.5840932117527862
+    n_high_pip_central_null: 552
+    high_pip_central_null_fraction: 0.2796352583586626
+    n_central_null_evaluated: 175218
+    central_null_pool_fraction: 0.2866805411030177
+    mean_assigned_high_pip: 0.9825010142353908
+  - pipeline: SuSiE-adj
+    fit_mode: ERV_TRUE
+    method: REGENIE-LOCO
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 596724
+    n_causal_evaluated: 50623
+    random_precision_baseline: 0.0848348650297289
+    average_precision: 0.0909684154204345
+    trapezoid_auprc: 0.0909914610462466
+    n_high_pip: 2101
+    n_high_pip_causal: 256
+    high_pip_precision: 0.1218467396477867
+    n_high_pip_effect: 827
+    n_high_pip_null: 1274
+    high_pip_null_fraction: 0.6063779152784389
+    n_high_pip_central_null: 639
+    high_pip_central_null_fraction: 0.3041408852927177
+    n_central_null_evaluated: 174411
+    central_null_pool_fraction: 0.292280853459891
+    mean_assigned_high_pip: 0.98234901232997
   paired_sensitivity:
   - fit_mode: ERV_FALSE
     method: BOLT-LMM
@@ -1596,5 +1731,6 @@ validation:
       bounded actual rendering smoke tested; --require-complete --individual produces
       final individual exports after all inputs validate. Existing 91-panel composites
       were not rerun for this optional feature.
-  scope: Current inclusive revision; original manuscript ledger is historical_validation.
-    Unavailable PI-edited document is not certified.
+  scope: Current inclusive numerical revision; original manuscript ledger is historical_validation.
+    The received PI document has a private working revision; final GCTA integration,
+    citations, layout and resubmission are not certified.

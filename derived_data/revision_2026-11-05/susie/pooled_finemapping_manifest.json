@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "primary_RSS": "ERV_TRUE",
+  "historical_RSS_sensitivity": "ERV_FALSE",
+  "adjusted_pipeline": "unchanged LOCO SuSiE-adj ERV_TRUE",
+  "n_locus_fits": 13301,
+  "metric": "average precision over one pooled ranking of unique SNP-phenotype pairs",
+  "source_sha256": {
+    "SuSiE-RSS_ERV_FALSE_per_locus_diagnostics.tsv": "f5c77d16055fa2337809ca0f7f46837722e79aa441e60f3fd834fda76a855f73",
+    "SuSiE-RSS_ERV_FALSE_snp_level_all.tsv.gz": "d7471ae901cd527633f8c5a31ad59ccb41803a279369c4c38407c9bf0c9a6ffb",
+    "SuSiE-RSS_ERV_TRUE_per_locus_diagnostics.tsv": "96f95eaa1e30d0b07edb97e13d4f36a208cab264596aa4cb61291446397c2532",
+    "SuSiE-RSS_ERV_TRUE_snp_level_all.tsv.gz": "3b68f55faa03088fe073a2f7cb4bff8af47a05163b04d79a6e23a2cf0a28dfec",
+    "SuSiE-adj_ERV_TRUE_per_locus_diagnostics.tsv": "af7dda4071487d10353de778ede9967176eaae8148831582afb27f0f5e40ce84",
+    "SuSiE-adj_ERV_TRUE_snp_level_all.tsv.gz": "e1efb190096a6aebeba20d0336afcb02ff27849f5c49bd68d6630bffd5acb2f5"
+  },
+  "causal_truth_sha256": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446",
+  "identical_analyzed_pools": true,
+  "definitions": {
+    "random_precision_baseline": "n_causal_evaluated/n_evaluated",
+    "high_pip_precision": "n_high_pip_causal/n_high_pip",
+    "high_pip_null_fraction": "n_high_pip_null/n_high_pip",
+    "high_pip_central_null_fraction": "n_high_pip_central_null/n_high_pip",
+    "central_null_pool_fraction": "n_central_null_evaluated/n_evaluated",
+    "average_precision": "stepwise PR area; not a count ratio and not mean phenotype AP",
+    "central_null": "position modulo6Mb in [3Mb,5Mb), nested in null [2Mb,6Mb)"
+  }
+}
