@@ -257,7 +257,7 @@ def main():
         r['pooled_loci']=g.loci.sum();r['max_loci']=g.loci.max();r['max_loci_phenotypes']=','.join(g[g.loci==g.loci.max()].phenotype.astype(str));r['zero_loci_phenotypes']=','.join(g[g.loci==0].phenotype.astype(str))
         ss.append(r)
     summary=pd.DataFrame(ss);save(summary,tables,'association_summary.tsv')
-    save(summary[['configuration','n_phenotypes','complete_ten_phenotypes','loci_mean','loci_sd','effect_locus_fraction_mean','effect_locus_fraction_sd','effect_locus_fraction_n_defined','null_locus_fraction_mean','null_locus_fraction_sd','central_null_locus_fraction_mean','central_null_locus_fraction_sd','pooled_effect_locus_fraction','pooled_null_locus_fraction','pooled_central_null_locus_fraction']],tables,'supplementary_table_S1.tsv')
+    save(summary[summary.configuration != "SLEMM_previous"][['configuration','n_phenotypes','complete_ten_phenotypes','loci_mean','loci_sd','effect_locus_fraction_mean','effect_locus_fraction_sd','effect_locus_fraction_n_defined','null_locus_fraction_mean','null_locus_fraction_sd','central_null_locus_fraction_mean','central_null_locus_fraction_sd','pooled_effect_locus_fraction','pooled_null_locus_fraction','pooled_central_null_locus_fraction']],tables,'supplementary_table_S1.tsv')
     overlaps=[]
     for ph,g in by[by.configuration!='SLEMM_previous'].groupby('phenotype'):
         ms=list(g.configuration)

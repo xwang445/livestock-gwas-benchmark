@@ -30,6 +30,11 @@ required_results={
 for name in required_results:assert (ROOT/'derived_data'/name).is_file(), 'Missing executed result: '+name
 revision_methods=set(pd.read_csv(ROOT/'config/revision_methods.tsv',sep='\t').configuration)
 allowed_methods=set(METHODS)|revision_methods|{'SLEMM_previous','REGENIE-LOCO'}
+s1=pd.read_csv(ROOT/'derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv',sep='\t')
+assert len(s1)==len(revision_methods) and set(s1.configuration)==revision_methods, 'S1 must contain each current configuration exactly once'
+summary=pd.read_csv(ROOT/'derived_data/revision_2026-11-05/association/association_summary.tsv',sep='\t')
+expected_s1=summary[summary.configuration.isin(revision_methods)][s1.columns].reset_index(drop=True)
+pd.testing.assert_frame_equal(s1,expected_s1,check_exact=False,rtol=1e-12,atol=1e-12)
 for p in sorted(list((ROOT/'derived_data').rglob('*.tsv'))+list((ROOT/'derived_data').rglob('*.csv'))):
     assert 'template' not in p.name, 'Keep schema templates under example/schemas: '+str(p)
     d=pd.read_csv(p,sep=',' if p.suffix=='.csv' else '\t',keep_default_na=False,na_values=['NA',''])

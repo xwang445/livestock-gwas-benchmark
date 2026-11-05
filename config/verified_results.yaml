@@ -532,8 +532,8 @@ source_tables:
     sha256: 2cb71754b25b55a084bb3c93911260290282e587d0b3ce3364609a881da130f3
   revision_2026-11-05/association/supplementary_table_S1.tsv:
     path: derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv
-    rows: 11
-    sha256: d5befcd4ef9da9f1ace8658ac735e58fbadce1c12863042246cf227ae598b53a
+    rows: 10
+    sha256: 806fd10ceb9dae9cd29d2ac29d65d38a2b522e5e82ab513b5c2500aadc346fae
   revision_2026-11-05/association/window_inventory_500kb.tsv:
     path: derived_data/revision_2026-11-05/association/window_inventory_500kb.tsv
     rows: 4538
