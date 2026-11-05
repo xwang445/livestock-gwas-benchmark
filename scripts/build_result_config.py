@@ -73,6 +73,10 @@ def build(repo):
             'pooled':pd.read_csv(data/'revision_2026-11-05/susie/localization_precision/Table_3_numeric.csv').to_dict('records'),
             'pooled_ranking_metrics':read('revision_2026-11-05/susie/pooled_finemapping_metrics.tsv').to_dict('records'),
             'paired_sensitivity':read('revision_2026-11-05/susie/sensitivity_comparison_table.tsv').to_dict('records')}
+        result['gcta_heritability']={
+            'precision':'ratio of five-decimal printed final REML variances; no unrounded estimate/SE inferred',
+            'by_phenotype':read('revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv').to_dict('records'),
+            'summary':read('revision_2026-11-05/association/gcta_heritability_summary.tsv').to_dict('records')}
         result['validation']={'record':'audit/revision_validation.json',
             'result':json.loads((repo/'audit/revision_validation.json').read_text()),
             'scope':'Current inclusive numerical revision; original manuscript ledger is historical_validation. The received PI document has a private working revision; final GCTA integration, citations, layout and resubmission are not certified.'}

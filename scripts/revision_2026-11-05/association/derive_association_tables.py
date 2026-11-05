@@ -256,6 +256,8 @@ def main():
     by=pd.DataFrame(rows);lead=pd.concat(peaks,ignore_index=True);man=pd.DataFrame(manifest)
     save(by,tables,'association_by_phenotype.tsv');save(lead,tables,'detected_loci.tsv');save(pd.DataFrame(spatial),tables,'spatial_by_phenotype.tsv')
     save(man,qc,'input_manifest.tsv');save(pd.DataFrame(audit),qc,'association_qc.tsv');save(pd.DataFrame(vc),tables,'slemm_heritability_by_phenotype.tsv')
+    from gcta_heritability import derive as derive_gcta_heritability
+    derive_gcta_heritability(gcta,tables,qc)
     metrics=[c for c in by if c not in ['configuration','phenotype']]
     ss=[]
     for m,g in by.groupby('configuration',sort=False):

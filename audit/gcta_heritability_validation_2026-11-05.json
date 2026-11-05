@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "completed_logs": 1,
+  "required": 10,
+  "aggregate_available": false,
+  "derivation_script_sha256": "9e94fa49b0ae6295a2b6cfd6d1c09803d5292452c4d75f8b98c20a4f3ce8729e",
+  "source": "completed GCTA MLMA final REML iteration",
+  "input_paths_published": false,
+  "precision": "printed variances, five decimal places; no confidence interval or unrounded precision inferred"
+}
