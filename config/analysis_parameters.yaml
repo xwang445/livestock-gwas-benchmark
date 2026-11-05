@@ -2,13 +2,31 @@ schema_version: 1
 resource_animals: 31301
 gwas_animals: 20000
 panel_snps: 135358
-chromosomes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+chromosomes:
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+- 10
+- 11
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+- 18
 qc:
   maf_min: 0.01
-  hwe_p_min: 1.0e-9
+  hwe_p_min: 1.0e-09
   info_min: 0.8
   thinning_bp: 20000
-  sample_missingness_threshold: null  # not recovered; do not invent
+  sample_missingness_threshold: null
   variant_missingness_threshold: null
 simulation:
   target_h2: 0.5
@@ -24,7 +42,7 @@ simulation:
   mt19937_seed: 54321
   grm_variance_weight: 0.5
   residual_variance: 0.5
-  diagonal_ridge: 0.00005
+  diagonal_ridge: 5.0e-05
   explicit_per_snp_effects_generated: false
 windows:
   effect_bp: 2000000
@@ -35,10 +53,14 @@ windows:
   full_null_gaps: 370
   central_null_locus_denominator: 1480
 significance:
-  alpha: 5.0e-8
-  figure3_comparator: lt
+  alpha: 5.0e-08
+  figure3_comparator: le
   spillover_comparator: le
   fine_mapping_locus_comparator: le
+  rule: P <= 5e-8
+  locus_overlap_comparator: le
+  manhattan_comparator: le
+  native_log10p_comparator: ge_negative_log10_alpha
 equation13:
   bins: 20
   binning: stable_equal_count_prediction_only
@@ -64,5 +86,9 @@ finemapping:
   maf_quantile_bins: 10
   pooled_percentages: ratio_of_summed_counts
   rss_seed: 20261014
-  adj_explicit_seed: null  # no set.seed call in primary L4 fitter
+  adj_explicit_seed: null
   prior_settings: susieR_0.14.2_defaults_except_explicit_fitter_arguments
+historical_audit:
+  enabled_only_by_explicit_flag: true
+  figure3_comparator: lt
+  original_finemapping_locus_manifest: preserved unchanged; originally inclusive

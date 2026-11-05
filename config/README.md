@@ -1,33 +1,26 @@
-# Verified project configuration
+# Verified configuration
 
-| File | Contents |
-|---|---|
-| [analysis_parameters.yaml](analysis_parameters.yaml) | Recovered scientific design, thresholds and seeds. Unknown historical settings remain explicitly null with explanations. |
-| [methods.yaml](methods.yaml) | All nine configurations, recovered versions/settings, and verified source filenames for all ten phenotypes on Mac and HPCC. |
-| [paths.yaml](paths.yaml) | Real repository-relative paths to all 27 populated TSV files and evidence, plus exact restricted-input filenames and their verified machine availability. |
-| [verified_results.yaml](verified_results.yaml) | Actual method counts, spillover, lambda, h2 summaries, fine-mapping totals, LD and Equation 13 checks generated from executed tables, with source hashes. |
-| `local_paths.yaml` (Git-ignored) | Installed locally with the actual Mac/HPCC source roots, SSH host and repository location. No credentials or dataset contents are stored. |
+`analysis_parameters.yaml` defines one current rule, P ≤ 5 × 10⁻⁸, with direct native-log comparison. Its separate `historical_audit` section applies only to explicit legacy reproduction. `methods.yaml` contains the ten current configurations, including updated SLEMM and partial GCTA MLMA; `historical_output_patterns` retains the original SLEMM paths. `revision_methods.tsv` defines the method-family grouping and plotting colors.
 
-The old `/path/to/...` example has moved to [example/schemas/example_paths.yaml](../example/schemas/example_paths.yaml). Published code resolves real filenames relative to each machine profile, so it does not depend on a particular user's absolute paths.
+`paths.yaml` points primary result and figure paths to the current revision. The previous 27-table paths remain under `historical_result_paths`. `verified_results.yaml` is generated from the actual canonical tables: primary blocks describe the current revision, and `historical_*` blocks preserve the old strict snapshot. Planned configurations and validated completed panels are reported separately.
 
-## Check and use
+The ignored `config/local_paths.yaml` contains `repository_root` and `profiles.mac` / `profiles.hpcc`. Each profile requires `benchmark_root` and can supply these additional verified revision inputs:
+
+```yaml
+simulation_directory: VERIFIED_ORIGINAL_SIMULATION_DIRECTORY
+genotype_prefix: VERIFIED_FULL_PANEL_PREFIX
+gcta_directory: VALIDATED_GCTA_OUTPUT_DIRECTORY
+rss_directory: COMPLETED_ERV_TRUE_RSS_RUN_DIRECTORY
+```
+
+These symbolic labels illustrate keys only; install actual authorized paths privately. Command-line arguments override these optional keys. The simulation directory contains the saved chromosome lengths and `data_20000` phenotype files. The genotype prefix is supplied explicitly rather than substituting an unverified panel. Current fine-mapping verification refuses the old FALSE run unless `--historical` is supplied.
 
 ```bash
 python scripts/check_config.py
+python scripts/check_config.py --profile hpcc --check-inputs
 python scripts/build_result_config.py --check
-python scripts/check_config.py --profile mac --check-inputs
-python scripts/check_config.py --profile hpcc
 ```
 
-The Mac check confirms 90 GWAS files, causal/window metadata and the cached theory file. The HPCC profile resolves its exact paths without attempting SSH; run `--check-inputs` on the host holding that root for a fresh filesystem check. This reconstruction verified HPCC paths through read-only SSH on 2026-11-04. [Verification records](../audit/config_path_verification.tsv) distinguish present and absent inputs.
+The checker does not launch fits or SSH. Restricted stages check their relevant inputs rather than failing on unrelated unavailable resources. Missing GCTA outputs are optional for independent reanalysis and are reported as missing, never counted as completed. Publication-quality complete Manhattan comparisons still require every planned panel; diagnostic plots require explicit `--allow-incomplete`.
 
-The cached Equation 13 table is on the Mac. Phenotypes, raw pairwise LD, fine-mapping saved fits and the 20,000-animal / 135,358-SNP fine-mapping genotype subset are on HPCC. The two profiles are deliberately different. The retained chip genotype and sample chain are verified in [scientific_provenance.md](../docs/scientific_provenance.md). Upstream fitting paths are supplied explicitly for a new run.
-
-To regenerate the results configuration after a genuinely new executed analysis:
-
-```bash
-python scripts/build_result_config.py
-python scripts/build_artifact_manifest.py
-```
-
-Do not edit result values to match a preferred conclusion. The generated configuration records the corrected-claim status; the original two discrepancies remain in audit/historical_manuscript_validation.tsv. Equation 12 provenance is deferred to Professor Jicai Jiang. It is a results snapshot, not a set of tuning targets. The checker reads metadata only and does not run a model, transfer data or launch remote jobs.
+Regenerate the result snapshot and artifact hashes after validated canonical tables change. Never edit a result to match an expected conclusion. The original provenance questions and historical ledgers remain separate scientific evidence.

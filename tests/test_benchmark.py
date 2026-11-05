@@ -17,8 +17,8 @@ class ScientificDefinitions(unittest.TestCase):
         b.protect_source('/tmp/source','/tmp/new_outputs')
     def test_locus_threshold_and_boundaries(self):
         d=pd.DataFrame({'chr':[1,1,1,2],'bp':[499999,500000,1000000,500000],'p':[1e-9,1e-9,5e-8,1e-9]})
-        self.assertEqual(b.locus_keys(d),{(1,0),(1,1),(2,1)})
-        self.assertIn((1,2),b.locus_keys(d,inclusive=True))
+        self.assertEqual(b.locus_keys(d),{(1,0),(1,1),(1,2),(2,1)})
+        self.assertEqual(b.locus_keys(d,inclusive=False),{(1,0),(1,1),(2,1)})
     def test_central_null_closed_coordinates(self):
         d=pd.DataFrame({'chr':[1]*5,'bp':[3000000,3000001,3500000,5000000,5000001],'p':[1e-9]*5})
         null=pd.DataFrame({'chr':[1],'start':[2000000],'end':[6000000]})
@@ -54,21 +54,21 @@ class SyntheticSmoke(unittest.TestCase):
     def tearDownClass(cls):cls.temp.cleanup()
     def test_all_nine_harmonizers(self):
         for method in b.METHODS:
-            d=b.harmonize(b.input_path(self.input,method,1),method,1,36)
+            d=b.harmonize(b.input_path(self.input,method,1,historical=True),method,1,36)
             self.assertTrue(set(b.SCHEMA).issubset(d));self.assertEqual(len(d),36)
             self.assertEqual(set(d.chr),{1,2});self.assertTrue(d.p.between(0,1).all())
             if method.startswith(('BLINK_','FarmCPU_')):self.assertTrue(d.beta.isna().all())
     def test_validation_rejects_corruption(self):
-        d=b.harmonize(b.input_path(self.input,'BOLT-LMM',1),'BOLT-LMM',1,36)
+        d=b.harmonize(b.input_path(self.input,'BOLT-LMM',1,historical=True),'BOLT-LMM',1,36)
         for column,value in [('p',1.01),('bp',None),('chr',19),('method','TYPO'),('phenotype',11)]:
             corrupt=d.copy();corrupt.loc[0,column]=value
             with self.assertRaises(ValueError):b.validate_harmonized(corrupt)
         with self.assertRaises(ValueError):b.validate_harmonized(pd.concat([d,d.iloc[:1]]))
-    def test_full_downstream_and_resume(self):
+    def test_historical_downstream_and_resume(self):
         out=self.base/'outputs';cache=self.base/'cache'
-        b.summarize(self.input,out,cache,expected_snps=36,phenotypes=[1,2])
+        b.summarize(self.input,out,cache,expected_snps=36,phenotypes=[1,2],historical=True)
         first=(out/'method_summary/significant_snps_by_pheno.tsv').read_bytes()
-        b.summarize(self.input,out,cache,expected_snps=36,phenotypes=[1,2])
+        b.summarize(self.input,out,cache,expected_snps=36,phenotypes=[1,2],historical=True)
         self.assertEqual(first,(out/'method_summary/significant_snps_by_pheno.tsv').read_bytes())
         d=pd.read_csv(out/'method_summary/method_summary.tsv',sep='\t')
         self.assertEqual(set(d.method),set(b.METHODS));self.assertTrue(d.n_phenotypes.eq(2).all())

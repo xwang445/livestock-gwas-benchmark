@@ -1,12 +1,20 @@
 # Benchmark results
 
+## Current canonical revision
+
+Use [revision_2026-11-05/association](revision_2026-11-05/association) for current inclusive counts, overlaps, spillover, Table S1 and updated SLEMM; [revision_2026-11-05/susie](revision_2026-11-05/susie) contains the completed TRUE RSS comparison. The [analysis manifest](revision_2026-11-05/analysis_manifest.tsv) identifies completed and missing panels. Default workflow and plotting commands read these current sources. They apply P ≤ 5 × 10⁻⁸, comparing native LOG10P directly.
+
+## Preserved historical audit
+
+The tables described below remain immutable historical snapshots; they do not supply current primary counts. Reproduce their older strict rule only with explicit `--historical`.
+
 This directory contains **27 populated TSV files** calculated from the saved livestock GWAS benchmark, plus JSON provenance records. The former placeholder templates are preserved separately in [example/schemas](../example/schemas/README.md).
 
 ## Main result tables
 
 | Analysis | Aggregate result | Per-phenotype or supporting result |
 |---|---|---|
-| Significant SNPs and 500 kb loci | [Method summary: 9 methods](method_summary/method_summary.tsv) | [SNP counts: 90 rows](method_summary/significant_snps_by_pheno.tsv); [locus counts: 90 rows](method_summary/significant_loci_by_pheno.tsv) |
+| Significant SNPs and 500 kb loci | [Historical summary: 9 configurations](method_summary/method_summary.tsv) | [SNP counts: 90 rows](method_summary/significant_snps_by_pheno.tsv); [locus counts: 90 rows](method_summary/significant_loci_by_pheno.tsv) |
 | Power | [306 method/threshold summaries](power_summary/power_summary.tsv) | [3,060 phenotype/threshold rows](power_summary/power_by_pheno.tsv) |
 | False-positive rates | [612 method/region/threshold summaries](power_summary/fpr_summary.tsv) | [6,120 phenotype/region/threshold rows](power_summary/fpr_by_pheno.tsv) |
 | Spatial enrichment | [360 method/distance summaries](power_summary/spatial_enrichment_summary.tsv) | [3,600 phenotype/distance rows](power_summary/spatial_enrichment_by_pheno.tsv) |
@@ -24,9 +32,9 @@ For example, the pooled high-PIP table contains 1,974 calls with 1,153 in null w
 
 Use `python scripts/workflow.py check` to check the public package. Use the [supported workflow](../docs/workflow.md) to recalculate tables from saved restricted inputs in a new output directory. Figure scripts read these tables; they do not define a second set of statistics.
 
-[Input fingerprints](input_manifest.tsv), [run metadata](run_manifest.json), [cached-theory checks](equation13_summary/cached_theory_validation.tsv), and [fine-mapping metadata](finemapping_summary/verification_manifest.json) identify the source calculations. The [current ledger](../audit/manuscript_validation.tsv) validates the corrected manuscript claims; the [historical ledger](../audit/historical_manuscript_validation.tsv) preserves the two original numerical discrepancies.
+[Input fingerprints](input_manifest.tsv), [run metadata](run_manifest.json), [cached-theory checks](equation13_summary/cached_theory_validation.tsv), and [fine-mapping metadata](finemapping_summary/verification_manifest.json) identify the source calculations. The [historical corrected-claim ledger](../audit/manuscript_validation.tsv) validates the corrected manuscript claims; the [historical ledger](../audit/historical_manuscript_validation.tsv) preserves the two original numerical discrepancies.
 
-The REGENIE_LOCO significant-SNP maximum is 20,461; 21,484 belongs to BOLT-LMM. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. An independent raw-column scan reproduced the counts and maxima for all 90 panels.
+Under this historical strict rule, the REGENIE_LOCO significant-SNP maximum is 20,461; 21,484 belongs to BOLT-LMM. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. An independent raw-column scan reproduced the counts and maxima for all 90 panels.
 
 These are results from simulated phenotypes on real livestock genotypes. Saved GWAS and fine-mapping fits were evaluated without new fitting. Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang at the author's request. Legitimate NA Jaccard values denote comparisons involving an empty locus set.
 

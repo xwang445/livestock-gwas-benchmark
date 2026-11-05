@@ -15,7 +15,7 @@ def sha(p):
         for block in iter(lambda:f.read(2**20),b''):h.update(block)
     return h.hexdigest()
 
-def verify(root):
+def verify(root,rss_root=None,historical=False):
     root=Path(root);sources={};rows=[];fits=[]
     truth_path=root/'snp.info.chr1_18.10k.csv';truth=set(pd.read_csv(truth_path).SNP)
     if len(truth)!=10000:raise ValueError('Truth set size')
@@ -23,9 +23,12 @@ def verify(root):
     ann=pd.read_csv(annpath,sep='\t',usecols=['SNP','chr','position','MAF'])
     if ann.SNP.duplicated().any() or not ann.MAF.between(0,.5).all():raise ValueError('Invalid annotations')
     sources['truth']=sha(truth_path);sources['saved_MAF_annotations']=sha(annpath)
-    for pipeline,folder in [('SuSiE-adj','SuSiE_adj_finemapping/loco/results'),('SuSiE-RSS','SuSiE_finemapping/results')]:
-        dpath=root/folder/'per_locus_diagnostics.tsv';spath=root/folder/'snp_level_all.tsv.gz'
-        diagnostics=pd.read_csv(dpath,sep='\t');idcol='job_id' if 'job_id' in diagnostics else 'locus'
+    if not historical and rss_root is None:raise ValueError('Current verification requires the completed ERV_TRUE RSS results directory; old FALSE fits need historical=True')
+    rss=Path(rss_root) if rss_root is not None else root/'SuSiE_finemapping/results'
+    for pipeline,folder in [('SuSiE-adj',root/'SuSiE_adj_finemapping/loco/results'),('SuSiE-RSS',rss)]:
+        dpath=folder/'per_locus_diagnostics.tsv';spath=folder/'snp_level_all.tsv.gz'
+        diagnostics=pd.read_csv(dpath,sep='\t');idcol='job_id' if 'job_id' in diagnostics else ('locus_id' if 'locus_id' in diagnostics else 'locus')
+        if not historical and pipeline=='SuSiE-RSS' and not diagnostics.fit_mode.eq('ERV_TRUE').all():raise ValueError('Current RSS results must estimate residual variance')
         good=diagnostics.loc[diagnostics.fit_status.eq('ok')&diagnostics.converged.eq(True),idcol]
         s=pd.read_csv(spath,sep='\t',usecols=['phenotype','GWAS_method','SNP','chr','position','PIP','locus_id'])
         if not s.locus_id.isin(good).all() or not s.PIP.between(0,1).all():raise ValueError('Invalid fit provenance/PIP')
@@ -55,5 +58,5 @@ def verify(root):
     return dict(status='SAVED_FIT_AGGREGATES_RECOMPUTED',per_phenotype=per.to_dict('records'),pooled=pooled.to_dict('records'),fits=fits,input_sha256=sources,
         limitations=['No GWAS or SuSiE refitting','MAF annotations recovered; genotype MAF calculation not rerun by this independent recount'])
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--root',required=True);args=ap.parse_args()
-    print(json.dumps(verify(args.root),indent=2,allow_nan=False))
+    ap=argparse.ArgumentParser();ap.add_argument('--root',required=True);ap.add_argument('--rss-root');ap.add_argument('--historical',action='store_true');args=ap.parse_args()
+    print(json.dumps(verify(args.root,args.rss_root,args.historical),indent=2,allow_nan=False))

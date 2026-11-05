@@ -1,10 +1,10 @@
-schema_version: 1
-scope: The original summary blocks preserve the November 4 historical reconstruction.
-  source_tables also fingerprints the separate November 5 revision results, including
-  new ERV_TRUE SuSiE fits and partial GCTA MLMA; revision checks identify completed
-  coverage. Historical and revised results must not be mixed.
+schema_version: 2
+scope: Primary blocks derive from the current inclusive November 5 canonical tables,
+  updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit historical_*
+  blocks preserve the November 4 strict reconstruction. source_tables fingerprints
+  both separate datasets; historical and revised results must not be mixed.
 regenerate_command: python scripts/build_result_config.py
-study_checks:
+historical_study_checks:
   historical_configurations: 9
   phenotypes: 10
   gwas_panels: 90
@@ -12,7 +12,7 @@ study_checks:
   - 135358
   equation13_replicate_bin_rows: 1600
   finemapping_phenotype_pipeline_rows: 40
-validation:
+historical_validation:
   ledger: audit/manuscript_validation.tsv
   status_counts:
     AMBIGUOUS: 2
@@ -24,7 +24,7 @@ validation:
   corrected_manuscript_values:
     Figure4 corrected maximum minus log10 P: 107.517
     Results REGENIE maximum SNP count: 20461.0
-methods:
+historical_methods:
   BLINK_Kansas:
     significant_snps_and_loci:
       mean_sig_snps: 179.3
@@ -268,7 +268,7 @@ methods:
       min_lambda_gc: 2.36582794325699
       max_lambda_gc: 2.60701607460141
       n_phenotypes: 10
-heritability_from_saved_logs:
+historical_heritability_from_saved_logs:
 - method: SLEMM
   mean: 0.529104
   min: 0.506029
@@ -279,7 +279,7 @@ heritability_from_saved_logs:
   min: 0.134519
   max: 0.153038
   count: 10
-finemapping:
+historical_finemapping:
   pooled:
   - method: BOLT-LMM
     pipeline: SuSiE-RSS
@@ -363,7 +363,7 @@ ld:
     mid_mb: 9.995
     n_pairs: 73001
     mean_r2: 0.0395887918480463
-equation13_cached_checks:
+historical_equation13_cached_checks:
 - n_theory_snps: 135358
   max_ncp_algebra_error: 2.91322521661641e-13
   max_expectation_error: 5.15143483426073e-14
@@ -486,6 +486,10 @@ source_tables:
     path: derived_data/revision_2026-11-05/association/genomic_background.tsv
     rows: 3
     sha256: b41fadd32868fd5c55033ebcda9b8bbfb4bd3d7883fe00e64e57735f3cbbe8e9
+  revision_2026-11-05/association/inclusive_threshold_by_input.tsv:
+    path: derived_data/revision_2026-11-05/association/inclusive_threshold_by_input.tsv
+    rows: 101
+    sha256: 4746cae3c7a8fdc2d557e2035e40db7e8e5110f6e6ae42ab270c8303231b55d0
   revision_2026-11-05/association/null_inventory_50kb.tsv:
     path: derived_data/revision_2026-11-05/association/null_inventory_50kb.tsv
     rows: 29600
@@ -509,11 +513,11 @@ source_tables:
   revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv
     rows: 10302
-    sha256: 239813962e23081dcd5f6152f64a6532abc5c7474b864c7ba86730999716c794
+    sha256: d83a15da90e6bd0693ff585d81b31de5bb612d6db8ec00fda86b79f97b47f1e5
   revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv
     rows: 1122
-    sha256: ffbc18ca94786cc9b43b5d9144e3bf940372f8e8dc08c2b8b443e5635c450bb2
+    sha256: 6b2f897897d20d7937725ef9791e3fd5e23a58aeb1f95eaa7a209a2c18c0e16b
   revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv
     rows: 20
@@ -631,3 +635,962 @@ revision_checks:
   association_source: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
   fine_mapping_source: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
   status_document: docs/revision_2026-11-05.md
+significance:
+  alpha: 5.0e-08
+  rule: P <= 5e-8
+  native_log10p_rule: LOG10P >= -log10(5e-8)
+  historical_profile: explicit --historical only; original snapshots preserved
+study_checks:
+  planned_method_families: 7
+  planned_configurations: 10
+  planned_panels: 100
+  completed_panels: 91
+  fully_completed_configurations: 9
+methods:
+  BOLT-LMM:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 17450.2
+    significant_snps_sd: 2448.1263947036
+    significant_snps_n_defined: 10
+    loci_mean: 1600.2
+    loci_sd: 145.042369288732
+    loci_n_defined: 10
+    effect_loci_mean: 641.0
+    effect_loci_sd: 53.9526541412829
+    effect_loci_n_defined: 10
+    null_loci_mean: 959.2
+    null_loci_sd: 93.8649147563786
+    null_loci_n_defined: 10
+    central_null_loci_mean: 454.2
+    central_null_loci_sd: 43.5221527245353
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 17429.0
+    strict_significant_snps_sd: 2449.94303788657
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 1598.3
+    strict_loci_sd: 144.490714811252
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 21.2
+    snps_at_threshold_sd: 7.11492953037641
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.40086685312287
+    effect_locus_fraction_sd: 0.0096515387421184
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.599133146877129
+    null_locus_fraction_sd: 0.0096515387421185
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.28383705662474
+    central_null_locus_fraction_sd: 0.0087523197357603
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.306891891891892
+    central_null_spillover_rate_sd: 0.0294068599490104
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 8.19575454902872
+    lambda_gc_central_null_sd: 0.784067874094255
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 8.19894522539844
+    lambda_gc_central_null_historical_sd: 0.785647186300018
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 9.94743468850432
+    lambda_gc_all_sd: 1.03501637748791
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 151.9
+    causal_leads_sd: 19.7565741519683
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.0920752970405645
+    lead_abs_beta_mean_sd: 0.005984923566629
+    lead_abs_beta_mean_n_defined: 10
+    lead_abs_beta_median_mean: 0.08112927
+    lead_abs_beta_median_sd: 0.0041471126491277
+    lead_abs_beta_median_n_defined: 10
+    lead_abs_beta_max_mean: 0.325453
+    lead_abs_beta_max_sd: 0.0991614749968734
+    lead_abs_beta_max_n_defined: 10
+    pooled_effect_locus_fraction: 0.400574928133983
+    pooled_null_locus_fraction: 0.599425071866017
+    pooled_central_null_locus_fraction: 0.283839520059993
+    pooled_loci: 16002
+    max_loci: 1806
+    max_loci_phenotypes: 3
+    zero_loci_phenotypes: null
+  REGENIE_LOCO:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 16392.6
+    significant_snps_sd: 2461.7743916849
+    significant_snps_n_defined: 10
+    loci_mean: 1545.0
+    loci_sd: 162.771823933587
+    loci_n_defined: 10
+    effect_loci_mean: 605.8
+    effect_loci_sd: 54.5848981963978
+    effect_loci_n_defined: 10
+    null_loci_mean: 939.2
+    null_loci_sd: 109.256883841096
+    null_loci_n_defined: 10
+    central_null_loci_mean: 448.4
+    central_null_loci_sd: 51.0907688987616
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 16392.6
+    strict_significant_snps_sd: 2461.7743916849
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 1545.0
+    strict_loci_sd: 162.771823933587
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.392722776156114
+    effect_locus_fraction_sd: 0.0087919276303763
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.607277223843886
+    null_locus_fraction_sd: 0.0087919276303763
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.290001893420114
+    central_null_locus_fraction_sd: 0.004951879738697
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.302972972972973
+    central_null_spillover_rate_sd: 0.0345207897964605
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 8.26799205326378
+    lambda_gc_central_null_sd: 0.933907904456952
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 8.26799014268209
+    lambda_gc_central_null_historical_sd: 0.933897430932236
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 9.65506083640672
+    lambda_gc_all_sd: 1.14860650711821
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 143.2
+    causal_leads_sd: 18.2501141548941
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.0883388063811526
+    lead_abs_beta_mean_sd: 0.006783710599474
+    lead_abs_beta_mean_n_defined: 10
+    lead_abs_beta_median_mean: 0.077808395
+    lead_abs_beta_median_sd: 0.0055206577435951
+    lead_abs_beta_median_n_defined: 10
+    lead_abs_beta_max_mean: 0.3105712
+    lead_abs_beta_max_sd: 0.0938403089139559
+    lead_abs_beta_max_n_defined: 10
+    pooled_effect_locus_fraction: 0.39210355987055
+    pooled_null_locus_fraction: 0.60789644012945
+    pooled_central_null_locus_fraction: 0.290226537216829
+    pooled_loci: 15450
+    max_loci: 1785
+    max_loci_phenotypes: 7
+    zero_loci_phenotypes: null
+  REGENIE_WO_LOCO:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 464.2
+    significant_snps_sd: 428.096250859547
+    significant_snps_n_defined: 10
+    loci_mean: 83.8
+    loci_sd: 57.2922333305309
+    loci_n_defined: 10
+    effect_loci_mean: 43.8
+    effect_loci_sd: 25.572554732673
+    effect_loci_n_defined: 10
+    null_loci_mean: 40.0
+    null_loci_sd: 32.3693956968272
+    null_loci_n_defined: 10
+    central_null_loci_mean: 15.9
+    central_null_loci_sd: 13.7876756561793
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 464.2
+    strict_significant_snps_sd: 428.096250859547
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 83.8
+    strict_loci_sd: 57.2922333305309
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.551842942937059
+    effect_locus_fraction_sd: 0.073616651212364
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.448157057062941
+    null_locus_fraction_sd: 0.073616651212364
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.176086208198029
+    central_null_locus_fraction_sd: 0.0541213690276417
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0107432432432432
+    central_null_spillover_rate_sd: 0.009315997064986
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 2.16884870012908
+    lambda_gc_central_null_sd: 0.325344351623611
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 2.16884559605633
+    lambda_gc_central_null_historical_sd: 0.325344053206001
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 2.39623531051754
+    lambda_gc_all_sd: 0.375907088468299
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 15.4
+    causal_leads_sd: 9.22797678559908
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.067422026153192
+    lead_abs_beta_mean_sd: 0.0070163286462947
+    lead_abs_beta_mean_n_defined: 10
+    lead_abs_beta_median_mean: 0.059161115
+    lead_abs_beta_median_sd: 0.005068554778734
+    lead_abs_beta_median_n_defined: 10
+    lead_abs_beta_max_mean: 0.16354008
+    lead_abs_beta_max_sd: 0.0502977897740337
+    lead_abs_beta_max_n_defined: 10
+    pooled_effect_locus_fraction: 0.522673031026253
+    pooled_null_locus_fraction: 0.477326968973747
+    pooled_central_null_locus_fraction: 0.189737470167064
+    pooled_loci: 838
+    max_loci: 216
+    max_loci_phenotypes: 3
+    zero_loci_phenotypes: null
+  fastGWA:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 1484.0
+    significant_snps_sd: 222.841747534982
+    significant_snps_n_defined: 10
+    loci_mean: 226.4
+    loci_sd: 26.4289403663652
+    loci_n_defined: 10
+    effect_loci_mean: 152.5
+    effect_loci_sd: 14.6382300083643
+    effect_loci_n_defined: 10
+    null_loci_mean: 73.9
+    null_loci_sd: 15.066150433634
+    null_loci_n_defined: 10
+    central_null_loci_mean: 21.8
+    central_null_loci_sd: 6.01479656994131
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 1484.0
+    strict_significant_snps_sd: 222.841747534982
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 226.4
+    strict_loci_sd: 26.4289403663652
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.675503379983028
+    effect_locus_fraction_sd: 0.0356223834264726
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.324496620016972
+    null_locus_fraction_sd: 0.0356223834264726
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.0957522174803028
+    central_null_locus_fraction_sd: 0.0214962053483114
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0147297297297297
+    central_null_spillover_rate_sd: 0.0040640517364468
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 2.49737773024367
+    lambda_gc_central_null_sd: 0.0955376630575596
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 2.49737962491142
+    lambda_gc_central_null_historical_sd: 0.095545719482342
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 3.13726780283029
+    lambda_gc_all_sd: 0.12972737471786
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 55.4
+    causal_leads_sd: 3.9214509786274
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.123448155742881
+    lead_abs_beta_mean_sd: 0.0079585136763398
+    lead_abs_beta_mean_n_defined: 10
+    lead_abs_beta_median_mean: 0.10477228
+    lead_abs_beta_median_sd: 0.0049551742659791
+    lead_abs_beta_median_n_defined: 10
+    lead_abs_beta_max_mean: 0.3966239
+    lead_abs_beta_max_sd: 0.081739800083286
+    lead_abs_beta_max_n_defined: 10
+    pooled_effect_locus_fraction: 0.673586572438163
+    pooled_null_locus_fraction: 0.326413427561837
+    pooled_central_null_locus_fraction: 0.0962897526501767
+    pooled_loci: 2264
+    max_loci: 288
+    max_loci_phenotypes: 7
+    zero_loci_phenotypes: null
+  FarmCPU_NYC:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 718.7
+    significant_snps_sd: 152.459867214658
+    significant_snps_n_defined: 10
+    loci_mean: 257.8
+    loci_sd: 31.1334047108389
+    loci_n_defined: 10
+    effect_loci_mean: 149.4
+    effect_loci_sd: 16.036070452438
+    effect_loci_n_defined: 10
+    null_loci_mean: 108.4
+    null_loci_sd: 16.1946493221269
+    null_loci_n_defined: 10
+    central_null_loci_mean: 43.2
+    central_null_loci_sd: 10.2826715076061
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 718.7
+    strict_significant_snps_sd: 152.459867214658
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 257.8
+    strict_loci_sd: 31.1334047108389
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.580650682549949
+    effect_locus_fraction_sd: 0.0187292777120889
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.419349317450051
+    null_locus_fraction_sd: 0.0187292777120889
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.166388907467015
+    central_null_locus_fraction_sd: 0.0282292565731229
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0291891891891892
+    central_null_spillover_rate_sd: 0.0069477510186527
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 3.2231333594574
+    lambda_gc_central_null_sd: 0.232316306198236
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 3.2190117876171
+    lambda_gc_central_null_historical_sd: 0.231580110791569
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44320.3
+    n_historical_finite_central_statistics_sd: 10.9752246243781
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 3.71099401553567
+    lambda_gc_all_sd: 0.275036101307506
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 44.5
+    causal_leads_sd: 5.87367006223537
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: null
+    lead_abs_beta_mean_sd: null
+    lead_abs_beta_mean_n_defined: 0
+    lead_abs_beta_median_mean: null
+    lead_abs_beta_median_sd: null
+    lead_abs_beta_median_n_defined: 0
+    lead_abs_beta_max_mean: null
+    lead_abs_beta_max_sd: null
+    lead_abs_beta_max_n_defined: 0
+    pooled_effect_locus_fraction: 0.579519006982157
+    pooled_null_locus_fraction: 0.420480993017843
+    pooled_central_null_locus_fraction: 0.167571761055081
+    pooled_loci: 2578
+    max_loci: 297
+    max_loci_phenotypes: 3
+    zero_loci_phenotypes: null
+  FarmCPU_Kansas:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 585.0
+    significant_snps_sd: 187.256805246461
+    significant_snps_n_defined: 10
+    loci_mean: 183.6
+    loci_sd: 27.2812511932035
+    loci_n_defined: 10
+    effect_loci_mean: 112.6
+    effect_loci_sd: 16.2562808374691
+    effect_loci_n_defined: 10
+    null_loci_mean: 71.0
+    null_loci_sd: 12.11060141639
+    null_loci_n_defined: 10
+    central_null_loci_mean: 28.1
+    central_null_loci_sd: 6.95141872010471
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 585.0
+    strict_significant_snps_sd: 187.256805246461
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 183.6
+    strict_loci_sd: 27.2812511932035
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.614246421487534
+    effect_locus_fraction_sd: 0.0215653832258586
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.385753578512466
+    null_locus_fraction_sd: 0.0215653832258586
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.151459251954737
+    central_null_locus_fraction_sd: 0.0223371072796774
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0189864864864865
+    central_null_spillover_rate_sd: 0.0046969045406112
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 3.24247792449368
+    lambda_gc_central_null_sd: 0.232426001266934
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 3.24189058344231
+    lambda_gc_central_null_historical_sd: 0.23268869570521
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44341.3
+    n_historical_finite_central_statistics_sd: 1.25166555703457
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 3.76773245801489
+    lambda_gc_all_sd: 0.289183399026789
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 38.9
+    causal_leads_sd: 4.09471203708718
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: null
+    lead_abs_beta_mean_sd: null
+    lead_abs_beta_mean_n_defined: 0
+    lead_abs_beta_median_mean: null
+    lead_abs_beta_median_sd: null
+    lead_abs_beta_median_n_defined: 0
+    lead_abs_beta_max_mean: null
+    lead_abs_beta_max_sd: null
+    lead_abs_beta_max_n_defined: 0
+    pooled_effect_locus_fraction: 0.613289760348584
+    pooled_null_locus_fraction: 0.386710239651416
+    pooled_central_null_locus_fraction: 0.153050108932462
+    pooled_loci: 1836
+    max_loci: 214
+    max_loci_phenotypes: 7
+    zero_loci_phenotypes: null
+  BLINK_NYC:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 674.6
+    significant_snps_sd: 59.2231186090177
+    significant_snps_n_defined: 10
+    loci_mean: 176.9
+    loci_sd: 11.8363845831402
+    loci_n_defined: 10
+    effect_loci_mean: 125.0
+    effect_loci_sd: 7.84573486395988
+    effect_loci_n_defined: 10
+    null_loci_mean: 51.9
+    null_loci_sd: 5.87745220690432
+    null_loci_n_defined: 10
+    central_null_loci_mean: 17.0
+    central_null_loci_sd: 3.55902608401044
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 674.6
+    strict_significant_snps_sd: 59.2231186090177
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 176.9
+    strict_loci_sd: 11.8363845831402
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.707085999764272
+    effect_locus_fraction_sd: 0.0203288688240437
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.292914000235728
+    null_locus_fraction_sd: 0.0203288688240437
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.0961326986998132
+    central_null_locus_fraction_sd: 0.0194552694453919
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0114864864864865
+    central_null_spillover_rate_sd: 0.0024047473540611
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 1.75456491694404
+    lambda_gc_central_null_sd: 0.139908706785309
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 1.75351313605065
+    lambda_gc_central_null_historical_sd: 0.139689934925783
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44334.8
+    n_historical_finite_central_statistics_sd: 7.28468713581213
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 2.00437285874488
+    lambda_gc_all_sd: 0.154913531083241
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 44.9
+    causal_leads_sd: 4.06748625620843
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: null
+    lead_abs_beta_mean_sd: null
+    lead_abs_beta_mean_n_defined: 0
+    lead_abs_beta_median_mean: null
+    lead_abs_beta_median_sd: null
+    lead_abs_beta_median_n_defined: 0
+    lead_abs_beta_max_mean: null
+    lead_abs_beta_max_sd: null
+    lead_abs_beta_max_n_defined: 0
+    pooled_effect_locus_fraction: 0.706613906161673
+    pooled_null_locus_fraction: 0.293386093838327
+    pooled_central_null_locus_fraction: 0.0960994912379876
+    pooled_loci: 1769
+    max_loci: 196
+    max_loci_phenotypes: 8
+    zero_loci_phenotypes: null
+  BLINK_Kansas:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 179.3
+    significant_snps_sd: 50.6777400180132
+    significant_snps_n_defined: 10
+    loci_mean: 154.6
+    loci_sd: 11.1872943804816
+    loci_n_defined: 10
+    effect_loci_mean: 108.8
+    effect_loci_sd: 7.06792441637257
+    effect_loci_n_defined: 10
+    null_loci_mean: 45.8
+    null_loci_sd: 5.75036230742609
+    null_loci_n_defined: 10
+    central_null_loci_mean: 15.4
+    central_null_loci_sd: 3.33999334663343
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 179.3
+    strict_significant_snps_sd: 50.6777400180132
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 154.6
+    strict_loci_sd: 11.1872943804816
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.704451424778096
+    effect_locus_fraction_sd: 0.0228552195663118
+    effect_locus_fraction_n_defined: 10
+    null_locus_fraction_mean: 0.295548575221904
+    null_locus_fraction_sd: 0.0228552195663118
+    null_locus_fraction_n_defined: 10
+    central_null_locus_fraction_mean: 0.0995509517051901
+    central_null_locus_fraction_sd: 0.0204863678872716
+    central_null_locus_fraction_n_defined: 10
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0104054054054054
+    central_null_spillover_rate_sd: 0.0022567522612388
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 1.74139535478705
+    lambda_gc_central_null_sd: 0.139546640089185
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 1.74119702258782
+    lambda_gc_central_null_historical_sd: 0.139502350811775
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44342.0
+    n_historical_finite_central_statistics_sd: 1.4142135623731
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 1.95039983422696
+    lambda_gc_all_sd: 0.152148822613337
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 39.7
+    causal_leads_sd: 5.31350480693613
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: null
+    lead_abs_beta_mean_sd: null
+    lead_abs_beta_mean_n_defined: 0
+    lead_abs_beta_median_mean: null
+    lead_abs_beta_median_sd: null
+    lead_abs_beta_median_n_defined: 0
+    lead_abs_beta_max_mean: null
+    lead_abs_beta_max_sd: null
+    lead_abs_beta_max_n_defined: 0
+    pooled_effect_locus_fraction: 0.703751617076326
+    pooled_null_locus_fraction: 0.296248382923674
+    pooled_central_null_locus_fraction: 0.0996119016817594
+    pooled_loci: 1546
+    max_loci: 172
+    max_loci_phenotypes: 5
+    zero_loci_phenotypes: null
+  SLEMM:
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 7.1
+    significant_snps_sd: 12.556096350202
+    significant_snps_n_defined: 10
+    loci_mean: 1.6
+    loci_sd: 2.27058484879019
+    loci_n_defined: 10
+    effect_loci_mean: 1.5
+    effect_loci_sd: 2.0138409955991
+    effect_loci_n_defined: 10
+    null_loci_mean: 0.1
+    null_loci_sd: 0.316227766016838
+    null_loci_n_defined: 10
+    central_null_loci_mean: 0.0
+    central_null_loci_sd: 0.0
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 7.1
+    strict_significant_snps_sd: 12.556096350202
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 1.6
+    strict_loci_sd: 2.27058484879019
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.971428571428572
+    effect_locus_fraction_sd: 0.063887656499994
+    effect_locus_fraction_n_defined: 5
+    null_locus_fraction_mean: 0.0285714285714286
+    null_locus_fraction_sd: 0.063887656499994
+    null_locus_fraction_n_defined: 5
+    central_null_locus_fraction_mean: 0.0
+    central_null_locus_fraction_sd: 0.0
+    central_null_locus_fraction_n_defined: 5
+    central_null_windows_mean: 1480.0
+    central_null_windows_sd: 0.0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0
+    central_null_spillover_rate_sd: 0.0
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 0.587558512531417
+    lambda_gc_central_null_sd: 0.0164897072721648
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 0.587558497101515
+    lambda_gc_central_null_historical_sd: 0.0164897248756943
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 0.812192843491726
+    lambda_gc_all_sd: 0.0206878578809088
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345.0
+    n_central_null_snps_sd: 0.0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 1.1
+    causal_leads_sd: 1.44913767461894
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.14058428612381
+    lead_abs_beta_mean_sd: 0.0301813163720471
+    lead_abs_beta_mean_n_defined: 5
+    lead_abs_beta_median_mean: 0.134814851
+    lead_abs_beta_median_sd: 0.0267086461329193
+    lead_abs_beta_median_n_defined: 5
+    lead_abs_beta_max_mean: 0.198323078
+    lead_abs_beta_max_sd: 0.103386210770195
+    lead_abs_beta_max_n_defined: 5
+    pooled_effect_locus_fraction: 0.9375
+    pooled_null_locus_fraction: 0.0625
+    pooled_central_null_locus_fraction: 0.0
+    pooled_loci: 16
+    max_loci: 7
+    max_loci_phenotypes: 3
+    zero_loci_phenotypes: 2,6,8,9,10
+  GCTA_MLMA:
+    n_phenotypes: 1
+    complete_ten_phenotypes: false
+    significant_snps_mean: null
+    significant_snps_sd: null
+    significant_snps_n_defined: 1
+    loci_mean: null
+    loci_sd: null
+    loci_n_defined: 1
+    effect_loci_mean: null
+    effect_loci_sd: null
+    effect_loci_n_defined: 1
+    null_loci_mean: null
+    null_loci_sd: null
+    null_loci_n_defined: 1
+    central_null_loci_mean: null
+    central_null_loci_sd: null
+    central_null_loci_n_defined: 1
+    strict_significant_snps_mean: null
+    strict_significant_snps_sd: null
+    strict_significant_snps_n_defined: 1
+    strict_loci_mean: null
+    strict_loci_sd: null
+    strict_loci_n_defined: 1
+    snps_at_threshold_mean: null
+    snps_at_threshold_sd: null
+    snps_at_threshold_n_defined: 1
+    effect_locus_fraction_mean: null
+    effect_locus_fraction_sd: null
+    effect_locus_fraction_n_defined: 1
+    null_locus_fraction_mean: null
+    null_locus_fraction_sd: null
+    null_locus_fraction_n_defined: 1
+    central_null_locus_fraction_mean: null
+    central_null_locus_fraction_sd: null
+    central_null_locus_fraction_n_defined: 1
+    central_null_windows_mean: null
+    central_null_windows_sd: null
+    central_null_windows_n_defined: 1
+    central_null_spillover_rate_mean: null
+    central_null_spillover_rate_sd: null
+    central_null_spillover_rate_n_defined: 1
+    lambda_gc_central_null_mean: null
+    lambda_gc_central_null_sd: null
+    lambda_gc_central_null_n_defined: 1
+    lambda_gc_central_null_historical_mean: null
+    lambda_gc_central_null_historical_sd: null
+    lambda_gc_central_null_historical_n_defined: 1
+    n_historical_finite_central_statistics_mean: null
+    n_historical_finite_central_statistics_sd: null
+    n_historical_finite_central_statistics_n_defined: 1
+    lambda_gc_all_mean: null
+    lambda_gc_all_sd: null
+    lambda_gc_all_n_defined: 1
+    n_central_null_snps_mean: null
+    n_central_null_snps_sd: null
+    n_central_null_snps_n_defined: 1
+    causal_leads_mean: null
+    causal_leads_sd: null
+    causal_leads_n_defined: 1
+    lead_abs_beta_mean_mean: null
+    lead_abs_beta_mean_sd: null
+    lead_abs_beta_mean_n_defined: 1
+    lead_abs_beta_median_mean: null
+    lead_abs_beta_median_sd: null
+    lead_abs_beta_median_n_defined: 1
+    lead_abs_beta_max_mean: null
+    lead_abs_beta_max_sd: null
+    lead_abs_beta_max_n_defined: 1
+    pooled_effect_locus_fraction: null
+    pooled_null_locus_fraction: null
+    pooled_central_null_locus_fraction: null
+    pooled_loci: 2
+    max_loci: 2
+    max_loci_phenotypes: 1
+    zero_loci_phenotypes: null
+finemapping:
+  rss_configuration: estimate_residual_variance=TRUE; original loci unchanged
+  pooled:
+  - GWAS_method: BOLT-LMM
+    fine_mapping: SuSiE-adj
+    n_calls: 1974
+    n_causal: 263
+    n_noncausal_effect: 558
+    n_null: 1153
+    precision_pct: 13.32320162107396
+    noncausal_pct: 86.67679837892604
+    noncausal_effect_pct: 28.267477203647417
+    null_pct: 58.40932117527862
+    mean_assigned_PIP_pct: 98.25010142353908
+    posterior_expected_causal: 1939.4570021006616
+    maf_expected_causal: 174.54056013674264
+    maf_expected_precision_pct: 8.841973664475312
+    causal_enrichment: 1.506813085703142
+    phenotype_precision_mean: 13.336692700546894
+    phenotype_precision_sd: 1.9891445215091408
+    phenotype_precision_min: 10.04566210045662
+    phenotype_precision_max: 15.84158415841584
+  - GWAS_method: BOLT-LMM
+    fine_mapping: SuSiE-RSS
+    n_calls: 2021
+    n_causal: 261
+    n_noncausal_effect: 582
+    n_null: 1178
+    precision_pct: 12.914398812469075
+    noncausal_pct: 87.08560118753093
+    noncausal_effect_pct: 28.797624938149436
+    null_pct: 58.28797624938149
+    mean_assigned_PIP_pct: 98.27817772796512
+    posterior_expected_causal: 1986.2019718821757
+    maf_expected_causal: 178.40446017019508
+    maf_expected_precision_pct: 8.827533902533157
+    causal_enrichment: 1.4629679087115317
+    phenotype_precision_mean: 13.049871604330663
+    phenotype_precision_sd: 2.2543597757082043
+    phenotype_precision_min: 8.144796380090497
+    phenotype_precision_max: 15.476190476190476
+  - GWAS_method: REGENIE-LOCO
+    fine_mapping: SuSiE-adj
+    n_calls: 2101
+    n_causal: 256
+    n_noncausal_effect: 571
+    n_null: 1274
+    precision_pct: 12.184673964778677
+    noncausal_pct: 87.81532603522132
+    noncausal_effect_pct: 27.17753450737744
+    null_pct: 60.63779152784388
+    mean_assigned_PIP_pct: 98.234901232997
+    posterior_expected_causal: 2063.915274905267
+    maf_expected_causal: 183.24658196784807
+    maf_expected_precision_pct: 8.721874439212188
+    causal_enrichment: 1.397024693453311
+    phenotype_precision_mean: 12.240432233184574
+    phenotype_precision_sd: 1.9682252253365728
+    phenotype_precision_min: 8.906882591093117
+    phenotype_precision_max: 14.965986394557824
+  - GWAS_method: REGENIE-LOCO
+    fine_mapping: SuSiE-RSS
+    n_calls: 2072
+    n_causal: 254
+    n_noncausal_effect: 566
+    n_null: 1252
+    precision_pct: 12.258687258687258
+    noncausal_pct: 87.74131274131274
+    noncausal_effect_pct: 27.31660231660232
+    null_pct: 60.424710424710426
+    mean_assigned_PIP_pct: 98.28060762799454
+    posterior_expected_causal: 2036.374190052047
+    maf_expected_causal: 180.9938863277913
+    maf_expected_precision_pct: 8.735226174121202
+    causal_enrichment: 1.4033623187690991
+    phenotype_precision_mean: 12.3898051576635
+    phenotype_precision_sd: 2.149752349557676
+    phenotype_precision_min: 9.387755102040815
+    phenotype_precision_max: 15.714285714285714
+  paired_sensitivity:
+  - fit_mode: ERV_FALSE
+    method: BOLT-LMM
+    n_phenotypes: 10
+    average_precision_mean: 0.0957609953542923
+    trapezoid_auprc_mean: 0.0956961577673423
+    random_precision_baseline_mean: 0.0863443666457567
+    high_pip_calls_pooled: 2009
+    high_pip_causal_pooled: 261
+    high_pip_precision_pooled: 0.1299153807864609
+    high_pip_null_pooled: 1170
+    high_pip_central_null_pooled: 561
+    n_cs_pooled: 10391
+    cs_coverage_mean: 0.3202728515779096
+    conditional_cs_recovery_mean: 0.1702620150109131
+    median_cs_size_mean: 5.7
+  - fit_mode: ERV_FALSE
+    method: REGENIE-LOCO
+    n_phenotypes: 10
+    average_precision_mean: 0.0908708445984448
+    trapezoid_auprc_mean: 0.0908221346601251
+    random_precision_baseline_mean: 0.0849544538840869
+    high_pip_calls_pooled: 2064
+    high_pip_causal_pooled: 253
+    high_pip_precision_pooled: 0.1225775193798449
+    high_pip_null_pooled: 1247
+    high_pip_central_null_pooled: 619
+    n_cs_pooled: 10281
+    cs_coverage_mean: 0.3069209445226612
+    conditional_cs_recovery_mean: 0.1696312705420979
+    median_cs_size_mean: 5.5
+  - fit_mode: ERV_TRUE
+    method: BOLT-LMM
+    n_phenotypes: 10
+    average_precision_mean: 0.095580987772837
+    trapezoid_auprc_mean: 0.0955161827004976
+    random_precision_baseline_mean: 0.0863443666457567
+    high_pip_calls_pooled: 2021
+    high_pip_causal_pooled: 261
+    high_pip_precision_pooled: 0.1291439881246907
+    high_pip_null_pooled: 1178
+    high_pip_central_null_pooled: 567
+    n_cs_pooled: 10407
+    cs_coverage_mean: 0.3203955537927426
+    conditional_cs_recovery_mean: 0.1706338296545109
+    median_cs_size_mean: 5.7
+  - fit_mode: ERV_TRUE
+    method: REGENIE-LOCO
+    n_phenotypes: 10
+    average_precision_mean: 0.0907846367399612
+    trapezoid_auprc_mean: 0.090735991903204
+    random_precision_baseline_mean: 0.0849544538840869
+    high_pip_calls_pooled: 2072
+    high_pip_causal_pooled: 254
+    high_pip_precision_pooled: 0.1225868725868725
+    high_pip_null_pooled: 1252
+    high_pip_central_null_pooled: 620
+    n_cs_pooled: 10293
+    cs_coverage_mean: 0.3065233132142786
+    conditional_cs_recovery_mean: 0.1695256282046061
+    median_cs_size_mean: 5.5
+validation:
+  record: audit/revision_validation.json
+  result:
+    status: PASS_WITH_EXPLICIT_DEPENDENCIES
+    tests_passed: 25
+    static_checks: Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method
+      labels
+    markdown_broken_links: 0
+    manhattan_completed_panels_matching_canonical_snp_counts: 91
+    manhattan_pending_panels: 9
+    ld_bins_recounted: 1000
+    ld_pair_counts_match: true
+    rss_published_fit_function_matches_executed: true
+    gcta_existing_output_validated_snps: 135358
+    historical_ledger_status:
+      PASS: 108
+      NOT_RUN: 3
+      AMBIGUOUS: 2
+      REQUIRES_RECOMPUTATION: 1
+    historical_ledger_scope: October manuscript and November4 reconstruction, not
+      unavailable November5 PI-edited DOCX
+    publication_content_review: No individual sample IDs, raw genotype/GRM/LD, variant
+      identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new
+      publication content
+    incomplete_dependencies:
+    - GCTA phenotypes2-10 outstanding
+    - PI manuscript, latest response letter and authoritative supplementary documents
+      unavailable
+    - Paperpile refresh unavailable
+    - cached Equation13 and Equation12 implementation unavailable
+    - original SNP-effect/PVE definition unavailable
+    - GitHub authentication unavailable
+    new_slemm_table_checks: independent8checks and spatial3200rowcomparison passed
+    supplementary_table_S1_registry_check: PASS:10 current configurations exactly,
+      values equal canonical association summary; SLEMM_previous retained only in
+      historical comparison tables
+    significance_rule: P <= 5e-8; native LOG10P >= -log10(5e-8), no tolerance
+    default_workflow: current canonical revision; historical strict snapshots require
+      explicit --historical
+    source_scale_boundary_tests: 'PASS: exact and adjacent floating-point values in
+      raw P and native LOG10P; Manhattan reader/native y verified'
+    current_router_figures_smoke: 'PASS: reads revised canonical association tables
+      plus verified LD; no old strict figures selected'
+    historical_tables: unchanged; historical_* result snapshot blocks and explicit
+      audit profile
+  scope: Current inclusive revision; original manuscript ledger is historical_validation.
+    Unavailable PI-edited document is not certified.

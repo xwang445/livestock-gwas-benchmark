@@ -19,10 +19,20 @@ x <- unique(pmin(max(d$mid_mb),pmax(min(d$mid_mb),x)))
 curve <- data.table(mid_mb=x,mean_r2=as.numeric(predict(basis,log10(x)) %*% coef))
 stopifnot(abs(curve$mean_r2[1]-d$mean_r2[1])<1e-10)
 curve_file <- file.path(args[1],"ld_summary/ld_decay_fitted_mean.tsv")
-# Preserve identical canonical coordinates across BLAS/R rounding differences.
-same <- file.exists(curve_file) && isTRUE(all.equal(as.data.frame(fread(curve_file)),
-  as.data.frame(curve),tolerance=1e-12,check.attributes=FALSE))
-if(!same) fwrite(curve,curve_file,sep="\t")
+# Figure commands never overwrite the source dataset. Reuse its canonical
+# coordinates when the fit matches within numerical solver roundoff.
+if(file.exists(curve_file)) {
+  saved <- fread(curve_file)
+  # R versions may collapse a different number of almost-identical grid points.
+  # Check the fitted function at the canonical coordinates, not row alignment.
+  expected_saved <- as.numeric(predict(basis,log10(saved$mid_mb)) %*% coef)
+  stopifnot(identical(names(saved),names(curve)),
+            max(abs(saved$mean_r2-expected_saved))<1e-10)
+  curve <- saved
+} else {
+  dir.create(args[2],recursive=TRUE,showWarnings=FALSE)
+  fwrite(curve,file.path(args[2],"ld_decay_fitted_mean.tsv"),sep="\t")
+}
 plots <- lapply(c(2,10),function(limit) ggplot(curve,aes(mid_mb,mean_r2))+geom_line(size=.7)+
   coord_cartesian(xlim=c(0,limit),ylim=c(0,.6),expand=FALSE)+theme_bw(base_size=12)+
   labs(x="Distance (Mb)",y=expression("Mean "*R^2),title=paste("LD decay to",limit,"Mb")))

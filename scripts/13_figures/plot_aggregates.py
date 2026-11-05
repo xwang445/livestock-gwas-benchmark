@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Redraw manuscript figures from verified aggregate tables, not restricted SNP data."""
-import argparse,sys
+"""Draw current canonical revision figures; --historical selects preserved old figures."""
+import argparse,sys,subprocess
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -14,7 +14,7 @@ LABELS={m:m.replace('_',' ') for m in METHODS}
 COLORS=dict(zip(METHODS,['#0072B2','#D55E00','#E69F00','#009E73','#CC79A7','#7B3294','#56B4E9','#999933','#222222']))
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
 
-def draw(data,out):
+def draw_historical(data,out):
     data,out=Path(data),Path(out);out.mkdir(parents=True,exist_ok=True)
     def read(name):return pd.read_csv(data/name,sep='\t')
     def save(fig,name):
@@ -86,4 +86,11 @@ def draw(data,out):
     fig.suptitle('Figure 8. Recount of saved converged fine-mapping fits',fontsize=12);save(fig,'figure8_finemapping')
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--data',required=True);p.add_argument('--out',required=True);a=p.parse_args();draw(a.data,a.out)
+    p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True);p.add_argument('--out',required=True);p.add_argument('--historical',action='store_true');a=p.parse_args()
+    if a.historical:draw_historical(a.data,a.out)
+    else:
+        candidates=[a.data/'revision_2026-11-05/association',a.data/'association',a.data/'tables',a.data]
+        tables=next((q for q in candidates if (q/'association_by_phenotype.tsv').is_file()),None)
+        if tables is None:p.error('Current canonical association tables are absent; use --historical only for the explicit old audit')
+        source=Path(__file__).resolve().parents[1]/'revision_2026-11-05/association/plot_association_revision.py'
+        subprocess.run([sys.executable,str(source),'--tables',str(tables),'--output',a.out,'--write-table-docx'],check=True)

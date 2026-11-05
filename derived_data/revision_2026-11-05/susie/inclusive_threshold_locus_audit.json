@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "significance": "P <= 5e-8",
+  "equivalent_log_rule": "-log10(P) >= -log10(5e-8)",
+  "n_manifest_loci": 13301,
+  "n_regions": 12155,
+  "manifest_sha256": "616909ee4594a2e4c6f565fe1f4499a06a50121065c60b5696022352e01fe59e",
+  "total_at_threshold": 212,
+  "all_threshold_boundary_markers_in_preserved_loci": true,
+  "original_loci_preserved": true,
+  "new_fits_required": false,
+  "note": "Fine-mapping loci use greedy leads separated by >1 Mb, \u00b11 Mb flanks, clipped to the last panel marker and split at adjacent-lead midpoints. They are distinct from 500 kb association-count windows.",
+  "per_analysis": [
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno1",
+      "n_inclusive_significant_snps": 16843,
+      "n_at_threshold": 29,
+      "n_at_threshold_covered": 29,
+      "n_loci": 659,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno1",
+      "n_inclusive_significant_snps": 15956,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 642,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno2",
+      "n_inclusive_significant_snps": 18382,
+      "n_at_threshold": 15,
+      "n_at_threshold_covered": 15,
+      "n_loci": 680,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno2",
+      "n_inclusive_significant_snps": 18148,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 684,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno3",
+      "n_inclusive_significant_snps": 21500,
+      "n_at_threshold": 16,
+      "n_at_threshold_covered": 16,
+      "n_loci": 743,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno3",
+      "n_inclusive_significant_snps": 18784,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 718,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno4",
+      "n_inclusive_significant_snps": 16939,
+      "n_at_threshold": 30,
+      "n_at_threshold_covered": 30,
+      "n_loci": 681,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno4",
+      "n_inclusive_significant_snps": 15078,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 643,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno5",
+      "n_inclusive_significant_snps": 17877,
+      "n_at_threshold": 13,
+      "n_at_threshold_covered": 13,
+      "n_loci": 663,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno5",
+      "n_inclusive_significant_snps": 16700,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 641,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno6",
+      "n_inclusive_significant_snps": 15124,
+      "n_at_threshold": 29,
+      "n_at_threshold_covered": 29,
+      "n_loci": 624,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno6",
+      "n_inclusive_significant_snps": 14324,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 636,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno7",
+      "n_inclusive_significant_snps": 18089,
+      "n_at_threshold": 12,
+      "n_at_threshold_covered": 12,
+      "n_loci": 744,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno7",
+      "n_inclusive_significant_snps": 17989,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 752,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno8",
+      "n_inclusive_significant_snps": 20884,
+      "n_at_threshold": 27,
+      "n_at_threshold_covered": 27,
+      "n_loci": 738,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno8",
+      "n_inclusive_significant_snps": 20461,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 715,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno9",
+      "n_inclusive_significant_snps": 14553,
+      "n_at_threshold": 19,
+      "n_at_threshold_covered": 19,
+      "n_loci": 616,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno9",
+      "n_inclusive_significant_snps": 12738,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 562,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "BOLT-LMM",
+      "phenotype": "pheno10",
+      "n_inclusive_significant_snps": 14311,
+      "n_at_threshold": 22,
+      "n_at_threshold_covered": 22,
+      "n_loci": 584,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    },
+    {
+      "method": "REGENIE-LOCO",
+      "phenotype": "pheno10",
+      "n_inclusive_significant_snps": 13748,
+      "n_at_threshold": 0,
+      "n_at_threshold_covered": 0,
+      "n_loci": 576,
+      "exact_locus_reconstruction": true,
+      "all_significant_markers_covered": true
+    }
+  ]
+}

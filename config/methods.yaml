@@ -18,15 +18,6 @@ methods:
       mac: REGENIE/regenie_pheno{phenotype}_pheno{phenotype}.regenie
       hpcc: REGENIE/regenie_pheno{phenotype}_pheno{phenotype}.regenie
     verified_saved_runs: 10
-  REGENIE_woLOCO:
-    software: REGENIE
-    version: 4.1.2
-    loco: false
-    statistic: LOG10P
-    output_patterns:
-      mac: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
-      hpcc: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
-    verified_saved_runs: 10
   fastGWA:
     software: GCTA
     version: 1.94.1
@@ -42,9 +33,13 @@ methods:
     loco: false
     statistic: P
     output_patterns:
+      mac: SLEMM_qf90_window3000/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
+      hpcc: SLEMM_qf90_window3000/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
+    verified_saved_runs: 10
+    historical_output_patterns:
       mac: SLEMM/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
       hpcc: SLEMM/spg.even.100k.pheno{phenotype}.allchr.gwas.txt
-    verified_saved_runs: 10
+    fit_configuration: qf90_window3000
   BLINK_Kansas:
     software: GAPIT_BLINK
     output_stage: before_local_refinement
@@ -77,6 +72,26 @@ methods:
       mac: FarmCPU/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(NYC).csv
       hpcc: GAPIT/GAPIT.Association.GWAS_Results.FarmCPU.pheno{phenotype}(NYC).csv
     verified_saved_runs: 10
+  REGENIE_WO_LOCO:
+    software: REGENIE
+    version: 4.1.2
+    loco: false
+    statistic: LOG10P
+    output_patterns:
+      mac: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
+      hpcc: REGENIE_WO_LOCO/regenie_pheno_wo_loco{phenotype}_pheno{phenotype}.regenie
+    verified_saved_runs: 10
+  GCTA_MLMA:
+    software: GCTA
+    version: 1.94.1
+    analysis: MLMA full GRM; intercept only
+    statistic: p
+    output_patterns:
+      mac: GCTA_mlma/spg.even.100k.pheno{phenotype}.mlma
+      hpcc: GCTA_mlma/spg.even.100k.pheno{phenotype}.mlma
+    verified_saved_runs: 1
+    planned_runs: 10
+    required_for_saved_input_check: false
 gapit:
   manuscript_version: '3.5'
   retained_source_version_string: 2025.10.03, GAPIT 4.0

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Evidence-preserving downstream GWAS reconstruction.
+"""Historical reconstruction and shared validation helpers.
 
-Reads existing restricted inputs without altering them. Only aggregate tables are
-written by `summarize`; optional harmonized per-variant exports remain restricted.
-See docs/statistical_definitions.md for intentionally different historical rules.
+The current workflow dispatches association summaries to the revision pipeline.
+This module reproduces historical strict counts only with an explicit historical
+flag. Original tables are immutable audit snapshots. Equation 13 defaults to the
+updated SLEMM fit; --historical selects its original input.
 """
 import argparse
 import hashlib
@@ -15,6 +16,8 @@ import sys
 import numpy as np
 import pandas as pd
 from scipy.stats import chi2, t
+sys.path.insert(0,str(Path(__file__).resolve().parent/'revision_2026-11-05/association'))
+from significance import significant
 
 METHODS = ('BOLT-LMM', 'REGENIE_LOCO', 'REGENIE_woLOCO', 'fastGWA',
            'FarmCPU_NYC', 'FarmCPU_Kansas', 'BLINK_NYC', 'BLINK_Kansas', 'SLEMM')
@@ -38,14 +41,14 @@ def protect_source(root,*outputs):
         if Path(output).resolve().is_relative_to(source):
             raise ValueError('Output/cache must be outside the historical input tree')
 
-def input_path(root, method, phenotype):
+def input_path(root, method, phenotype, historical=False):
     root=Path(root);p=phenotype
     paths={
         'BOLT-LMM': f'BOLTLMM/bolt_pheno{p}.stats',
         'REGENIE_LOCO': f'REGENIE/regenie_pheno{p}_pheno{p}.regenie',
         'REGENIE_woLOCO': f'REGENIE_WO_LOCO/regenie_pheno_wo_loco{p}_pheno{p}.regenie',
         'fastGWA':f'fastGWA/spg.even.100k.pheno{p}.fastgwa.fastGWA',
-        'SLEMM':f'SLEMM/spg.even.100k.pheno{p}.allchr.gwas.txt'}
+        'SLEMM':f'{"SLEMM" if historical else "SLEMM_qf90_window3000"}/spg.even.100k.pheno{p}.allchr.gwas.txt'}
     if method in paths:
         target=root/paths[method]
         if not target.is_file():raise FileNotFoundError(target)
@@ -116,8 +119,11 @@ def harmonize(path,method,phenotype,expected_snps=None):
     validate_harmonized(d,expected_snps)
     return d[SCHEMA+[c for c in d if c not in SCHEMA]]
 
-def locus_keys(d,alpha=ALPHA,inclusive=False):
-    sig=d.p.le(alpha) if inclusive else d.p.lt(alpha)
+def locus_keys(d,alpha=ALPHA,inclusive=True):
+    if inclusive:
+        native='source_log10p' in d
+        sig=significant(d.source_log10p if native else d.p,is_log10=native,alpha=alpha)
+    else:sig=d.p.lt(alpha)  # Explicit historical audit only.
     return set(zip(d.loc[sig,'chr'].astype(int), (d.loc[sig,'bp']//500000).astype(int)))
 
 def jaccard(a,b):
@@ -192,7 +198,8 @@ def aggregate(d,groups,values):
     specs['n_phenotypes']=('phenotype','nunique')
     return d.groupby(groups,dropna=False).agg(**specs).reset_index()
 
-def summarize(root,out,cache,expected_snps=135358,phenotypes=range(1,11),methods=METHODS):
+def summarize(root,out,cache,expected_snps=135358,phenotypes=range(1,11),methods=METHODS,historical=False):
+    if not historical:raise ValueError('Use the current revision summarizer through workflow.py; this legacy audit requires historical=True')
     protect_source(root,out,cache)
     root,out,cache=map(Path,[root,out,cache]);cache.mkdir(parents=True,exist_ok=True)
     effects=pd.read_csv(root/'eligible_regions.csv')
@@ -207,7 +214,7 @@ def summarize(root,out,cache,expected_snps=135358,phenotypes=range(1,11),methods
     config_hash=hashlib.sha256((''.join(sha256(root/f) for f in ['eligible_regions.csv','snp.info.chr1_18.10k.csv'])+sha256(__file__)).encode()).hexdigest()
     for method in methods:
         for ph in phenotypes:
-            path=input_path(root,method,ph);digest=sha256(path)
+            path=input_path(root,method,ph,historical=True);digest=sha256(path)
             cache_file=cache/f'{method}_{ph}.json'
             cached=json.loads(cache_file.read_text()) if cache_file.exists() else None
             if cached and cached.get('input_sha256')==digest and cached.get('config_sha256')==config_hash and cached.get('expected_snps')==expected_snps:
@@ -216,7 +223,7 @@ def summarize(root,out,cache,expected_snps=135358,phenotypes=range(1,11),methods
                 d=harmonize(path,method,ph,expected_snps)
                 coords=sorted(zip(d.chr.astype(int),d.bp.astype(int)))
                 coords_hash=hashlib.sha256(json.dumps(coords,separators=(',',':')).encode()).hexdigest()
-                strict=locus_keys(d);inclusive=locus_keys(d,inclusive=True)
+                strict=locus_keys(d,inclusive=False);inclusive=locus_keys(d,inclusive=True)
                 central,spill=central_mask_and_keys(d,nulls)
                 hist_lam,n_hist,lam_definition=historical_lambda(d.loc[central])
                 hit=np.array([(int(c),int(p)) in causal_keys for c,p in zip(d.chr,d.bp)])
@@ -283,7 +290,7 @@ def equal_count_bins(values,n_bins=20):
     bins[order]=np.floor(np.arange(len(v))*n_bins/len(v)).astype(int)+1
     return bins
 
-def equation13(root,theory_file,out):
+def equation13(root,theory_file,out,historical=False):
     protect_source(root,out)
     root,out=Path(root),Path(out)
     theory=pd.read_csv(theory_file,sep='\t')
@@ -303,12 +310,13 @@ def equation13(root,theory_file,out):
         pr['region']=region;pred.append(pr)
     for method in ['BOLT-LMM','REGENIE_LOCO','REGENIE_woLOCO','SLEMM']:
         for ph in range(1,11):
-            d=harmonize(input_path(root,method,ph),method,ph,135358)
+            d=harmonize(input_path(root,method,ph,historical=historical),method,ph,135358)
             for region,frame in [('Genome-wide',theory),('Central-null',tc)]:
                 merged=frame[['chr','pos','bin']].merge(d[['chr','bp','chisq']],left_on=['chr','pos'],right_on=['chr','bp'],how='left',validate='one_to_one')
                 if len(merged)!=len(frame) or not np.isfinite(merged.chisq).all():raise ValueError('Incomplete Eq13 statistic join')
                 s=merged.groupby('bin').agg(n_obs=('chisq','size'),mean_observed_chisq=('chisq','mean')).reset_index()
-                s['method']=method;s['phenotype']=ph;s['region']=region;records.extend(s.to_dict('records'))
+                s['method']='REGENIE_WO_LOCO' if method=='REGENIE_woLOCO' and not historical else method
+                s['phenotype']=ph;s['region']=region;records.extend(s.to_dict('records'))
             print(f'Equation13: {method} phenotype {ph}',flush=True)
     per=pd.DataFrame(records);pred=pd.concat(pred,ignore_index=True)
     summary=per.groupby(['method','region','bin']).agg(mean_observed_chisq=('mean_observed_chisq','mean'),sd_observed_chisq=('mean_observed_chisq','std'),n_phenotypes=('phenotype','nunique')).reset_index()
@@ -321,11 +329,11 @@ def equation13(root,theory_file,out):
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__);sub=ap.add_subparsers(dest='command',required=True)
-    s=sub.add_parser('summarize');s.add_argument('--root',required=True);s.add_argument('--out',required=True);s.add_argument('--cache',required=True)
-    e=sub.add_parser('equation13');e.add_argument('--root',required=True);e.add_argument('--theory',required=True);e.add_argument('--out',required=True)
+    s=sub.add_parser('summarize');s.add_argument('--root',required=True);s.add_argument('--out',required=True);s.add_argument('--cache',required=True);s.add_argument('--historical',action='store_true',required=True)
+    e=sub.add_parser('equation13');e.add_argument('--root',required=True);e.add_argument('--theory',required=True);e.add_argument('--out',required=True);e.add_argument('--historical',action='store_true')
     h=sub.add_parser('harmonize');h.add_argument('--input',required=True);h.add_argument('--method',choices=METHODS,required=True);h.add_argument('--phenotype',type=int,required=True);h.add_argument('--out',required=True);h.add_argument('--expected-snps',type=int,default=135358)
     args=ap.parse_args()
-    if args.command=='summarize':summarize(args.root,args.out,args.cache)
-    elif args.command=='equation13':equation13(args.root,args.theory,args.out)
+    if args.command=='summarize':summarize(args.root,args.out,args.cache,historical=args.historical)
+    elif args.command=='equation13':equation13(args.root,args.theory,args.out,historical=args.historical)
     else:output_table(harmonize(args.input,args.method,args.phenotype,args.expected_snps),args.out)
 if __name__=='__main__':main()

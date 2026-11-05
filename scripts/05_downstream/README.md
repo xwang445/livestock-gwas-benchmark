@@ -1,9 +1,7 @@
-# Downstream analysis
+# Current downstream analysis
 
-Use `python scripts/workflow.py summarize --profile mac --out ../benchmark-rerun` from the repository root. The same command supports `--profile hpcc` on HPCC. Add `--resume` to continue a verified summary run.
+Use the [supported workflow](../../docs/workflow.md). Default `workflow.py summarize` calls `revision_2026-11-05/association/derive_association_tables.py` and its power-grid derivation with the verified simulation, genotype and GCTA locations. It writes one canonical set of tables under the new private output directory.
 
-`benchmark_core.py` reads the nine observed output schemas and calculates SNP/locus counts, power/FPR, spatial enrichment, spillover, lambda, Jaccard overlap and replicate stability in one pass. Outputs are aggregate tables under the new output directory's `derived_data/`. Per-variant harmonized data and the resumable cache remain restricted.
+All current SNP and locus decisions use P ≤ 5 × 10⁻⁸; REGENIE native LOG10P is compared directly. Updated SLEMM and the ten-configuration manifest supply counts, window distributions, spillover, lambda, overlap and plots. Incomplete GCTA coverage is explicit. Per-variant detailed outputs remain private.
 
-Use `python scripts/workflow.py equation13 --profile mac --out ../benchmark-equation13` for the existing cached-theory comparison. This calculates 20 prediction-only bins and intervals across the ten replicate means. It does not regenerate Equation 12.
-
-Definitions are in [statistical_definitions.md](../../docs/statistical_definitions.md); result links are in [derived_data](../../derived_data/README.md). Legacy R analyses and inverse-regression PVE utilities are archived and are not alternate production commands.
+`benchmark_core.py summarize --historical` is a gated historical audit, including the old strict cutoff and original SLEMM source. It is not an alternate current estimator. Existing strict outputs and archived R scripts remain available for scientific comparison. Current Equation 13 uses the updated SLEMM file but still requires the unavailable verified prediction cache.

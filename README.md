@@ -41,7 +41,9 @@ The revision registry adds GCTA MLMA, giving seven method families and ten plann
 
 ## Workflow
 
-Use `python scripts/workflow.py --help`. This is the supported entry point for checking the public results, recalculating summaries from saved inputs, and generating figures.
+Use `python scripts/workflow.py --help`. Default commands use the current canonical revision, updated SLEMM and **P ≤ 5 × 10⁻⁸**, with direct comparison of native LOG10P. The old strict workflow requires explicit `--historical`; it never supplies current primary results.
+
+The [threshold audit](docs/threshold_consistency.md) checks equality-boundary calls, canonical counts and the unchanged original SuSiE locus manifest.
 
 ```text
 Saved GWAS + causal SNPs + windows → counts, power/FPR, spillover, lambda, overlap
@@ -53,17 +55,19 @@ Aggregate tables                  → main and supplementary figures
 | Step | Command | Where |
 |---|---|---|
 | Check the public package | `python scripts/workflow.py check` | Any configured Python/R environment |
-| Summarize the saved GWAS panels | `summarize --profile mac --out ../benchmark-rerun` | Mac; HPCC profile also supported |
+| Summarize the saved GWAS panels | `summarize --profile hpcc --simulation VERIFIED_SIMULATION --genotype-prefix VERIFIED_PREFIX --gcta-directory VERIFIED_GCTA --out NEW_DIRECTORY` | Machine holding the verified inputs |
 | Compare cached theory and observed statistics | `equation13 --profile mac --out ../benchmark-equation13` | Mac |
-| Verify saved LD / fine-mapping results | `ld` / `fine-mapping` with `--profile hpcc --out NEW_DIRECTORY` | HPCC |
-| Draw aggregate figures | `figures --data derived_data --out ../benchmark-figures` | Mac or HPCC |
-| Draw Manhattan plots | `manhattan --profile mac --out ../benchmark-manhattan` | Mac; HPCC profile also supported |
+| Verify saved LD / fine-mapping results | `ld`; or `fine-mapping --rss-directory COMPLETED_ERV_TRUE_RUN`, with profile/output arguments | HPCC |
+| Draw revised association figures and LD | `figures --data derived_data --out NEW_DIRECTORY` | Mac or HPCC |
+| Draw Manhattan plots | `manhattan --profile hpcc --gcta-directory VERIFIED_GCTA --out NEW_DIRECTORY` | Complete configurations required; diagnostic `--allow-incomplete` is explicit |
 
 For rows after the first, prefix the command with `python scripts/workflow.py`. The [workflow guide](docs/workflow.md) gives complete commands and inputs. Upstream genotype preparation, simulation and fitting scripts are retained for a separately allocated new run. Superseded scripts are preserved in [archive](archive/README.md) and are not part of the active workflow.
 
 MPH generated genetic values from the fixed causal-SNP relationship matrix and added independent residuals. The benchmark uses the first ten of 1,000 generated phenotypes and the first 20,000 simulation rows. GWAS and fine-mapping files are aligned by individual ID. The [provenance record](docs/scientific_provenance.md) documents the source code and sample-chain checks.
 
-## Results
+## Current and historical results
+
+Current results are in [derived_data/revision_2026-11-05](derived_data/revision_2026-11-05), with updated SLEMM and separate GCTA completion status. `config/verified_results.yaml` derives its primary blocks from these tables. Its `historical_*` blocks and the original paths below preserve the older strict snapshot. The [workflow guide](docs/workflow.md) describes the exact current and audit commands.
 
 [derived_data](derived_data/README.md) contains 27 populated TSV files covering:
 
@@ -74,7 +78,7 @@ MPH generated genetic values from the fixed causal-SNP relationship matrix and a
 
 [figures/reconstructed](figures/reconstructed) contains Figures 1–8, Manhattan supplements S1–S10, and the central-null Equation 13 supplement in PDF and PNG formats. The [figure map](docs/figure_map.md) links each figure to its inputs and script.
 
-The corrected REGENIE_LOCO maximum is 20,461 significant SNPs. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. [Independent checks](audit/manuscript_number_checks.tsv) support both values.
+The preserved strict-audit REGENIE_LOCO maximum is 20,461 significant SNPs. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. [Independent historical checks](audit/manuscript_number_checks.tsv) support both values; current inclusive counts come from the revision tables.
 
 The machine-readable [results summary](config/verified_results.yaml) records the historical calculated values and source-file hashes. [Statistical definitions](docs/statistical_definitions.md) document the thresholds, window boundaries, and denominators used in each analysis. The [November 5 revision record](docs/revision_2026-11-05.md) distinguishes new analyses from these preserved historical results.
 

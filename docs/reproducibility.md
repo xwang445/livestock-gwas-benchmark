@@ -2,7 +2,11 @@
 
 The supported commands are in [workflow.md](workflow.md). Use `scripts/workflow.py` for public checks, saved-result reanalysis and figure generation. Configuration is in `config/`; actual Mac/HPCC roots are in the Git-ignored `config/local_paths.yaml`.
 
-## Recorded execution
+## Current revision
+
+Current canonical tables and the inclusive policy are documented in [the revision record](revision_2026-11-05.md). The supported main workflow defaults to these tables and updated SLEMM. Exact raw-P and native-LOG10P equality tests guard P ≤ 5 × 10⁻⁸; no numerical tolerance is used. The existing SuSiE locus manifest is unchanged.
+
+## Historical recorded execution
 
 The public tables were regenerated from 90 saved GWAS panels, cached Equation 13 predictions, saved converged fine-mapping fits and pairwise LD. Python 3.10.4 with the pinned scientific dependencies produced the aggregate results; R 4.3.2 produced the LD curve. No GWAS or SuSiE model was refitted during reconstruction or consolidation.
 
@@ -10,7 +14,7 @@ The [run registry](../audit/run_registry.tsv), [input hashes](../derived_data/in
 
 ## Reanalysis and resumption
 
-Use a new output directory outside the source tree. The summary stage accepts `--resume`; unchanged jobs use verified cache entries. Cache reuse checks input SHA256, window/truth SHA256, implementation SHA256 and SNP count. Retain restricted caches locally and publish only reviewed aggregate outputs.
+Use a new output directory outside the source tree. Only the explicitly historical summary stage accepts `--resume`; unchanged jobs use verified cache entries. Cache reuse checks input SHA256, window/truth SHA256, implementation SHA256 and SNP count. Retain restricted caches locally and publish only reviewed aggregate outputs.
 
 After a new analysis has been reviewed and its tables installed, regenerate the public snapshot and hashes:
 

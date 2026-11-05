@@ -13,9 +13,12 @@ for p in sorted(p for folder in ['scripts','tests','example','finemapping'] for 
 for p in ROOT.rglob('*.yaml'):yaml.safe_load(p.read_text())
 for p in ROOT.rglob('*.yml'):yaml.safe_load(p.read_text())
 config=yaml.safe_load((ROOT/'config/methods.yaml').read_text())
-assert set(config['methods'])==set(METHODS)
+revision_methods=set(pd.read_csv(ROOT/'config/revision_methods.tsv',sep='\t').configuration)
+assert set(config['methods'])==revision_methods
 params=yaml.safe_load((ROOT/'config/analysis_parameters.yaml').read_text())
 assert params['simulation']['causal_snps']==10000 and params['windows']['central_null_locus_denominator']==1480
+assert params['significance']['alpha']==5e-8
+assert all(params['significance'][key]=='le' for key in ['figure3_comparator','spillover_comparator','fine_mapping_locus_comparator','locus_overlap_comparator','manhattan_comparator'])
 required_results={
     'method_summary/method_summary.tsv',
     'power_summary/power_summary.tsv',
@@ -28,7 +31,6 @@ required_results={
     'ld_summary/ld_decay_10kb.tsv',
 }
 for name in required_results:assert (ROOT/'derived_data'/name).is_file(), 'Missing executed result: '+name
-revision_methods=set(pd.read_csv(ROOT/'config/revision_methods.tsv',sep='\t').configuration)
 allowed_methods=set(METHODS)|revision_methods|{'SLEMM_previous','REGENIE-LOCO'}
 s1=pd.read_csv(ROOT/'derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv',sep='\t')
 assert len(s1)==len(revision_methods) and set(s1.configuration)==revision_methods, 'S1 must contain each current configuration exactly once'

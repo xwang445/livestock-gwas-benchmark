@@ -1,48 +1,46 @@
-# Supported workflow
+# Supported current workflow
 
-Start with `python scripts/workflow.py --help`. This is the supported entry point. It uses the checked configuration and calls the analysis modules below. Historical alternatives are preserved in `archive/legacy_workflow` and are not part of this workflow.
+`python scripts/workflow.py` defaults to the November 5 revision. All active association decisions use **P ≤ 5 × 10⁻⁸**. Native REGENIE LOG10P is compared directly with −log10(5 × 10⁻⁸), without exponentiating first or adding a tolerance. The revised SLEMM qf90/window3000 files and ten-configuration registry supply current summaries and plots.
 
-## Check the published results
+## Public checks and figures
 
 ```bash
 python scripts/workflow.py check
+python scripts/workflow.py figures --data derived_data --out NEW_FIGURE_DIRECTORY
 ```
 
-This checks configuration, source-table fingerprints, schemas, script syntax, synthetic tests, and the corrected manuscript claims. It needs Python dependencies from `environment/requirements-validation.txt` and R for syntax checks. It does not require restricted inputs or fit a model.
+The check validates current configuration/table consistency, exact-threshold regressions, syntax, aggregate schemas and the separately labeled historical manuscript ledger. The default figure command reads `derived_data/revision_2026-11-05/association`, draws Figures 3/5/6 and the power supplement, and regenerates Figure 1 from its verified LD table. It does not silently redraw the unavailable revised Figure 7 or substitute old RSS results. Fine-mapping figures have their own [canonical workflow](../scripts/revision_2026-11-05/susie/README.md).
 
-## Recalculate from saved inputs
+## Restricted-input reanalysis
 
-Install the private machine profile described in [configuration](../config/README.md). Run each command on the machine holding the files. Choose new output directories outside the historical data tree.
-
-| Command | Profile | Inputs | Outputs |
-|---|---|---|---|
-| `summarize` | Mac or HPCC | 90 saved GWAS panels, causal SNP list, effect windows | SNP/locus counts, power/FPR, spillover, lambda, overlap and stability |
-| `equation13` | Mac | Saved GWAS and cached theoretical predictions | Replicate-bin means, intervals and cache checks |
-| `ld` | HPCC | Saved pairwise LD | 1,000 distance-bin counts and means |
-| `fine-mapping` | HPCC | Saved converged PIPs, locus diagnostics and MAF annotations | Per-phenotype and pooled fine-mapping summaries |
-| `figures` | Either | Public aggregate tables | Aggregate figures and LD curve |
-| `manhattan` | Mac or HPCC | Saved GWAS panels | Figure 4 and S1–S10 |
+Install an ignored machine profile as described in [configuration](../config/README.md). Use new output directories outside the source tree. Supply verified external inputs explicitly; no workstation paths are inferred.
 
 ```bash
-python scripts/workflow.py summarize --profile mac --out ../benchmark-rerun
-python scripts/workflow.py equation13 --profile mac --out ../benchmark-equation13
-python scripts/workflow.py figures --data derived_data --out ../benchmark-figures
-python scripts/workflow.py manhattan --profile mac --out ../benchmark-manhattan
+python scripts/workflow.py summarize --profile hpcc \
+  --simulation "$ORIGINAL_SIMULATION_DIRECTORY" \
+  --genotype-prefix "$VERIFIED_GENOTYPE_PREFIX" \
+  --gcta-directory "$GCTA_OUTPUT_DIRECTORY" --out NEW_SUMMARY_DIRECTORY
+python scripts/workflow.py manhattan --profile hpcc \
+  --gcta-directory "$GCTA_OUTPUT_DIRECTORY" --out NEW_MANHATTAN_DIRECTORY
+python scripts/workflow.py ld --profile hpcc --out NEW_LD_CHECK_DIRECTORY
+python scripts/workflow.py fine-mapping --profile hpcc \
+  --rss-directory "$COMPLETED_ERV_TRUE_RSS_RUN" --out NEW_FINEMAPPING_CHECK_DIRECTORY
 ```
 
-On HPCC, with the local profile installed:
+Current summaries are written under `NEW_SUMMARY_DIRECTORY/tables`. Missing GCTA outputs are recorded explicitly, and ten-phenotype means are withheld until all ten are present. Manhattan plots require complete configurations by default; `--allow-incomplete` permits clearly labeled diagnostic panels. Fine-mapping verification requires the completed TRUE run and checks its fit-mode field; it preserves the original SuSiE locus manifest and does not refit models.
+
+`equation13 --profile mac --out NEW_DIRECTORY` reads the verified cached theory and updated SLEMM input. The theoretical source remains unavailable in this execution environment; the command cannot supply missing inputs or reconstruct Equation 12.
+
+## Explicit historical audit
+
+The old strict Figure 3/Figure 5 results and original SLEMM/RSS fits remain immutable snapshots. To reproduce them deliberately:
 
 ```bash
-python scripts/workflow.py ld --profile hpcc --out ../benchmark-ld-check
-python scripts/workflow.py fine-mapping --profile hpcc --out ../benchmark-finemapping-check
+python scripts/workflow.py summarize --historical --profile hpcc --out NEW_HISTORICAL_AUDIT
+python scripts/workflow.py figures --historical --data derived_data --out NEW_HISTORICAL_FIGURES
+python scripts/workflow.py manhattan --historical --profile hpcc --out NEW_HISTORICAL_MANHATTAN
 ```
 
-Only `summarize` accepts `--resume`. Its cache is reused only when input, code and design hashes match. The `.restricted_cache` stays local. The workflow refuses outputs inside the historical source tree and does not replace committed result tables.
+Only this historical summary supports `--resume`, using its input/code/design hash-checked cache. Its strict cutoff is an audit definition and never supplies current primary columns. The legacy core refuses a summary invocation without explicit historical opt-in. Existing historical outputs are not overwritten or relabeled as current results.
 
-`benchmark_core.py` implements harmonization and summary definitions; the wrapper does not create a second statistical implementation. Equation 13 uses the existing prediction file. Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang at the author's request.
-
-## Upstream study stages
-
-The retained fitting commands are documented in [genotype preparation](../scripts/01_genotype_preparation/README.md), [simulation](../scripts/03_simulation/README.md), [GWAS](../scripts/04_gwas/README.md), and [fine-mapping](../scripts/12_finemapping/README.md). These are for a separately allocated new run. They are not invoked by the saved-result workflow and were not refitted during this update.
-
-Use [statistical definitions](statistical_definitions.md) for thresholds and boundaries, [input formats](input_file_formats.md) for schemas, and [figure map](figure_map.md) for table-to-figure links.
+Upstream fitting commands remain separate from these saved-result stages. See [statistical definitions](statistical_definitions.md), [revision status](revision_2026-11-05.md), and [figure map](figure_map.md) for the scientific scope and outstanding dependencies.

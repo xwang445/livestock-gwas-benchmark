@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Restricted-input Manhattan redraws. Outputs contain plots and aggregate counts only.
+"""Current inclusive Manhattan entry point; --historical selects the old strict audit.
 
-All tested SNPs appear in S1-S10; Figure4 uses P<5e-8 and a 31-unit display cap,
-matching the retained source's ylim_max=30 plus one display unit. It is a redraw,
-not a pixel-identical copy of the manuscript artwork. No SNP or animal IDs appear.
+The active implementation uses native P<=5e-8 (or native LOG10P >= -log10(alpha))
+and the updated SLEMM fit. The function below is an explicitly historical strict
+redraw. No SNP or animal IDs appear in generated plots.
 """
-import argparse,sys
+import argparse,sys,subprocess
 from pathlib import Path
 import numpy as np,pandas as pd
 import matplotlib
@@ -15,17 +15,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from benchmark_core import METHODS,ALPHA,harmonize,input_path,output_table
 from plot_aggregates import COLORS,LABELS
 
-def draw(root,out):
+def draw_historical(root,out):
     root,out=Path(root),Path(out);out.mkdir(parents=True,exist_ok=True)
     if (out/'manhattan_manifest.tsv').exists():raise ValueError('Completed output exists; use a new output directory')
-    ref=harmonize(input_path(root,'BOLT-LMM',1),'BOLT-LMM',1,135358)
+    ref=harmonize(input_path(root,'BOLT-LMM',1,historical=True),'BOLT-LMM',1,135358)
     lengths=ref.groupby('chr').bp.max().sort_index();offset=lengths.cumsum().shift(fill_value=0)
     centers=offset+lengths/2
     main,mainaxes=plt.subplots(2,1,figsize=(16,8),sharex=True,layout='constrained');records=[]
     for ph in range(1,11):
         fig,axes=plt.subplots(9,1,figsize=(16,20),sharex=True,layout='constrained');maximum=0.
         for method,ax in zip(METHODS,axes):
-            d=harmonize(input_path(root,method,ph),method,ph,135358)
+            d=harmonize(input_path(root,method,ph,historical=True),method,ph,135358)
             x=d.bp+d.chr.map(offset);y=-np.log10(np.maximum(d.p,1e-300));maximum=max(maximum,float(y.max()))
             for parity,color in [(0,'#0072B2'),(1,'#595959')]:
                 use=d.chr.mod(2).eq(parity);ax.scatter(x[use]/1e6,y[use],s=.65,color=color,alpha=.65,linewidths=0,rasterized=True)
@@ -46,4 +46,11 @@ def draw(root,out):
     plt.close(main);output_table(pd.DataFrame(records),out/'manhattan_manifest.tsv')
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--root',required=True);p.add_argument('--out',required=True);a=p.parse_args();draw(a.root,a.out)
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--out',required=True)
+    p.add_argument('--historical',action='store_true');p.add_argument('--gcta-dir',type=Path);p.add_argument('--require-complete',action='store_true');a=p.parse_args()
+    if a.historical:draw_historical(a.root,a.out)
+    else:
+        source=Path(__file__).resolve().parents[1]/'revision_2026-11-05/plot_manhattan.py'
+        args=[sys.executable,str(source),'--root',str(a.root),'--gcta-dir',str(a.gcta_dir or a.root/'GCTA_mlma'),'--out',a.out]
+        if a.require_complete:args.append('--require-complete')
+        subprocess.run(args,check=True)

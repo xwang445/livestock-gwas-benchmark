@@ -2,42 +2,56 @@ schema_version: 1
 path_convention: All public artifact paths are relative to repository root. Restricted
   input paths are relative to a private machine profile benchmark_root.
 repository_paths:
-  derived_data: derived_data
-  figures: figures/reconstructed
+  derived_data: derived_data/revision_2026-11-05
+  figures: figures/revision_2026-11-05
   schemas: example/schemas
 result_paths:
-  equation13_summary/cached_theory_validation: derived_data/equation13_summary/cached_theory_validation.tsv
-  equation13_summary/equation13_by_pheno: derived_data/equation13_summary/equation13_by_pheno.tsv
-  equation13_summary/equation13_summary: derived_data/equation13_summary/equation13_summary.tsv
-  finemapping_summary/converged_loci: derived_data/finemapping_summary/converged_loci.tsv
-  finemapping_summary/high_pip_by_pheno: derived_data/finemapping_summary/high_pip_by_pheno.tsv
-  finemapping_summary/high_pip_summary: derived_data/finemapping_summary/high_pip_summary.tsv
-  finemapping_summary/null_vs_effect_summary: derived_data/finemapping_summary/null_vs_effect_summary.tsv
-  input_manifest: derived_data/input_manifest.tsv
-  lambda_gc_summary/lambda_gc_by_pheno: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
-  lambda_gc_summary/lambda_gc_summary: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
-  ld_summary/ld_decay_10kb: derived_data/ld_summary/ld_decay_10kb.tsv
-  ld_summary/ld_decay_fitted_mean: derived_data/ld_summary/ld_decay_fitted_mean.tsv
-  method_summary/heritability_from_logs: derived_data/method_summary/heritability_from_logs.tsv
-  method_summary/method_summary: derived_data/method_summary/method_summary.tsv
-  method_summary/significant_loci_by_pheno: derived_data/method_summary/significant_loci_by_pheno.tsv
-  method_summary/significant_snps_by_pheno: derived_data/method_summary/significant_snps_by_pheno.tsv
-  overlap_summary/cross_replicate_stability: derived_data/overlap_summary/cross_replicate_stability.tsv
-  overlap_summary/locus_overlap_by_pheno: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
-  overlap_summary/locus_overlap_summary: derived_data/overlap_summary/locus_overlap_summary.tsv
-  power_summary/fpr_by_pheno: derived_data/power_summary/fpr_by_pheno.tsv
-  power_summary/fpr_summary: derived_data/power_summary/fpr_summary.tsv
-  power_summary/power_by_pheno: derived_data/power_summary/power_by_pheno.tsv
-  power_summary/power_summary: derived_data/power_summary/power_summary.tsv
-  power_summary/spatial_enrichment_by_pheno: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
-  power_summary/spatial_enrichment_summary: derived_data/power_summary/spatial_enrichment_summary.tsv
-  spillover_summary/spillover_by_pheno: derived_data/spillover_summary/spillover_by_pheno.tsv
-  spillover_summary/spillover_summary: derived_data/spillover_summary/spillover_summary.tsv
+  analysis_manifest: derived_data/revision_2026-11-05/analysis_manifest.tsv
+  association/association_by_phenotype: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
+  association/association_summary: derived_data/revision_2026-11-05/association/association_summary.tsv
+  association/genomic_background: derived_data/revision_2026-11-05/association/genomic_background.tsv
+  association/inclusive_threshold_audit: derived_data/revision_2026-11-05/association/inclusive_threshold_audit.json
+  association/inclusive_threshold_by_input: derived_data/revision_2026-11-05/association/inclusive_threshold_by_input.tsv
+  association/null_inventory_50kb: derived_data/revision_2026-11-05/association/null_inventory_50kb.tsv
+  association/numerical_claims_reconciliation: derived_data/revision_2026-11-05/association/numerical_claims_reconciliation.tsv
+  association/pairwise_locus_overlap: derived_data/revision_2026-11-05/association/pairwise_locus_overlap.tsv
+  association/pairwise_locus_overlap_summary: derived_data/revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv
+  association/parent_regions: derived_data/revision_2026-11-05/association/parent_regions.tsv
+  association/power_and_null_snp_rate_by_phenotype: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv
+  association/power_and_null_snp_rate_summary: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv
+  association/power_precision_fix_validation: derived_data/revision_2026-11-05/association/power_precision_fix_validation.json
+  association/slemm_heritability_by_phenotype: derived_data/revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv
+  association/slemm_old_new_reconciliation: derived_data/revision_2026-11-05/association/slemm_old_new_reconciliation.tsv
+  association/spatial_boundary_audit: derived_data/revision_2026-11-05/association/spatial_boundary_audit.tsv
+  association/spatial_by_phenotype: derived_data/revision_2026-11-05/association/spatial_by_phenotype.tsv
+  association/supplementary_table_S1: derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv
+  association/window_inventory_500kb: derived_data/revision_2026-11-05/association/window_inventory_500kb.tsv
+  full_grm_spotcheck: derived_data/revision_2026-11-05/full_grm_spotcheck.json
+  input_checksums: derived_data/revision_2026-11-05/input_checksums.tsv
+  input_validation: derived_data/revision_2026-11-05/input_validation.json
+  pgen_bed_equivalence: derived_data/revision_2026-11-05/pgen_bed_equivalence.json
+  pr_display_curves: derived_data/revision_2026-11-05/pr_display_curves.tsv
+  susie/fit_diagnostics_comparison: derived_data/revision_2026-11-05/susie/fit_diagnostics_comparison.tsv
+  susie/inclusive_threshold_locus_audit: derived_data/revision_2026-11-05/susie/inclusive_threshold_locus_audit.json
+  susie/localization_precision/Table_3_numeric: derived_data/revision_2026-11-05/susie/localization_precision/Table_3_numeric.csv
+  susie/localization_precision/precision_by_phenotype: derived_data/revision_2026-11-05/susie/localization_precision/precision_by_phenotype.csv
+  susie/maf_matched/Table_2_numeric: derived_data/revision_2026-11-05/susie/maf_matched/Table_2_numeric.csv
+  susie/maf_matched/counts_by_phenotype: derived_data/revision_2026-11-05/susie/maf_matched/counts_by_phenotype.csv
+  susie/maf_matched/maf_bin_expectations: derived_data/revision_2026-11-05/susie/maf_matched/maf_bin_expectations.csv
+  susie/maf_matched/pool_qc: derived_data/revision_2026-11-05/susie/maf_matched/pool_qc.csv
+  susie/precision_threshold/precision_by_threshold_phenotype: derived_data/revision_2026-11-05/susie/precision_threshold/precision_by_threshold_phenotype.csv
+  susie/precision_threshold/precision_by_threshold_pooled: derived_data/revision_2026-11-05/susie/precision_threshold/precision_by_threshold_pooled.csv
+  susie/precision_threshold/selected_thresholds: derived_data/revision_2026-11-05/susie/precision_threshold/selected_thresholds.csv
+  susie/sensitivity_comparison_by_phenotype: derived_data/revision_2026-11-05/susie/sensitivity_comparison_by_phenotype.tsv
+  susie/sensitivity_comparison_summary: derived_data/revision_2026-11-05/susie/sensitivity_comparison_summary.tsv
+  susie/sensitivity_comparison_table: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
+  susie/sensitivity_paired_changes: derived_data/revision_2026-11-05/susie/sensitivity_paired_changes.tsv
 evidence_paths:
-  validation: audit/manuscript_validation.tsv
-  input_hashes: derived_data/input_manifest.tsv
-  run_manifest: derived_data/run_manifest.json
-  fine_mapping_verification: derived_data/finemapping_summary/verification_manifest.json
+  validation: audit/revision_validation.json
+  input_hashes: derived_data/revision_2026-11-05/analysis_manifest.tsv
+  historical_validation: audit/manuscript_validation.tsv
+  historical_run_manifest: derived_data/run_manifest.json
+  fine_mapping_comparison: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
 restricted_inputs:
   effect_windows:
     path: eligible_regions.csv
@@ -99,21 +113,23 @@ restricted_inputs:
     kind: file
     available_on:
     - hpcc
-  susie_rss_saved_pips:
-    path: SuSiE_finemapping/results/snp_level_all.tsv.gz
-    kind: file
-    available_on:
-    - hpcc
-  susie_rss_diagnostics:
-    path: SuSiE_finemapping/results/per_locus_diagnostics.tsv
-    kind: file
-    available_on:
-    - hpcc
   saved_maf_annotations:
     path: SuSiE_finemapping/publication/maf_matched/snp_annotations.tsv.gz
     kind: file
     available_on:
     - hpcc
+  historical_susie_rss_saved_pips:
+    path: SuSiE_finemapping/results/snp_level_all.tsv.gz
+    kind: file
+    available_on:
+    - hpcc
+    role: historical_ERV_FALSE_baseline
+  historical_susie_rss_diagnostics:
+    path: SuSiE_finemapping/results/per_locus_diagnostics.tsv
+    kind: file
+    available_on:
+    - hpcc
+    role: historical_ERV_FALSE_baseline
 profiles:
 - mac
 - hpcc
@@ -123,3 +139,31 @@ unresolved_inputs:
     Upstream reruns require the retained prefix supplied explicitly.
   equation12_generator: Provenance deferred to Professor Jicai Jiang at author request;
     cached Equation13 downstream results do not establish upstream reproduction.
+historical_result_paths:
+  equation13_summary/cached_theory_validation: derived_data/equation13_summary/cached_theory_validation.tsv
+  equation13_summary/equation13_by_pheno: derived_data/equation13_summary/equation13_by_pheno.tsv
+  equation13_summary/equation13_summary: derived_data/equation13_summary/equation13_summary.tsv
+  finemapping_summary/converged_loci: derived_data/finemapping_summary/converged_loci.tsv
+  finemapping_summary/high_pip_by_pheno: derived_data/finemapping_summary/high_pip_by_pheno.tsv
+  finemapping_summary/high_pip_summary: derived_data/finemapping_summary/high_pip_summary.tsv
+  finemapping_summary/null_vs_effect_summary: derived_data/finemapping_summary/null_vs_effect_summary.tsv
+  input_manifest: derived_data/input_manifest.tsv
+  lambda_gc_summary/lambda_gc_by_pheno: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+  lambda_gc_summary/lambda_gc_summary: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+  ld_summary/ld_decay_10kb: derived_data/ld_summary/ld_decay_10kb.tsv
+  ld_summary/ld_decay_fitted_mean: derived_data/ld_summary/ld_decay_fitted_mean.tsv
+  method_summary/heritability_from_logs: derived_data/method_summary/heritability_from_logs.tsv
+  method_summary/method_summary: derived_data/method_summary/method_summary.tsv
+  method_summary/significant_loci_by_pheno: derived_data/method_summary/significant_loci_by_pheno.tsv
+  method_summary/significant_snps_by_pheno: derived_data/method_summary/significant_snps_by_pheno.tsv
+  overlap_summary/cross_replicate_stability: derived_data/overlap_summary/cross_replicate_stability.tsv
+  overlap_summary/locus_overlap_by_pheno: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
+  overlap_summary/locus_overlap_summary: derived_data/overlap_summary/locus_overlap_summary.tsv
+  power_summary/fpr_by_pheno: derived_data/power_summary/fpr_by_pheno.tsv
+  power_summary/fpr_summary: derived_data/power_summary/fpr_summary.tsv
+  power_summary/power_by_pheno: derived_data/power_summary/power_by_pheno.tsv
+  power_summary/power_summary: derived_data/power_summary/power_summary.tsv
+  power_summary/spatial_enrichment_by_pheno: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
+  power_summary/spatial_enrichment_summary: derived_data/power_summary/spatial_enrichment_summary.tsv
+  spillover_summary/spillover_by_pheno: derived_data/spillover_summary/spillover_by_pheno.tsv
+  spillover_summary/spillover_summary: derived_data/spillover_summary/spillover_summary.tsv

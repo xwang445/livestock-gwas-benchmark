@@ -1,6 +1,16 @@
-# Statistical definitions and historical distinctions
+# Statistical definitions
 
-The reconstruction preserves executed definitions. It does not unify differences merely to make the repository look consistent.
+## Current revision
+
+All current association counts, Figure 3/Table S1 loci, Figure 5 overlaps, spillover, power and Manhattan selections use **P ≤ 5 × 10⁻⁸**. For native −log10(P) columns, compare directly with −log10(5 × 10⁻⁸); do not exponentiate before the decision or widen the cutoff with a numerical tolerance. `significance.py` is the shared policy. Equality-boundary regressions cover both source scales. Current default commands use updated SLEMM and the ten-configuration registry.
+
+The original SuSiE locus manifest already used the inclusive threshold and remains unchanged; no new fine-mapping loci or fits are generated solely to unify this rule. Central-null fractions retain their distinct denominators, and current grid/boundary definitions are recorded in the revision captions and inventories.
+
+The [threshold audit](threshold_consistency.md) records the raw-source checks, including exact-threshold calls and preservation of the fine-mapping manifest.
+
+## Explicit historical audit definitions
+
+The definitions below document immutable pre-revision results. Their strict cutoff applies only when `--historical` is explicitly selected and does not supply current primary results.
 
 - Figure 3 significant SNPs: strict P<5e-8. Loci are chromosome-specific floor(bp/500000) bins; no distance-based clumping or lead-SNP selection. Inclusive sensitivity counts are also written.
 - Figure 5 uses those strict loci. Jaccard is intersection/union, with NA whenever either set is empty, as specified by the October caption. Cross-replicate stability is a separate table. Empty comparisons must not be silently converted to zero.

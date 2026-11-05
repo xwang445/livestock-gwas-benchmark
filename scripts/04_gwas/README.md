@@ -21,4 +21,4 @@ The retained GAPIT library is externally supplied and hash-checked. Its version 
 
 ## Result definitions
 
-Significant-SNP/locus counts use P < 5 × 10⁻⁸ and chromosome-specific 500 kb bins. The REGENIE_LOCO maximum is 20,461 significant SNPs; 21,484 is the BOLT-LMM maximum. The full-range maximum −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. Both were independently checked from raw result columns in [manuscript_number_checks.tsv](../../audit/manuscript_number_checks.tsv).
+Current significant-SNP/locus counts use P ≤ 5 × 10⁻⁸ and chromosome-specific 500 kb bins. The following maxima describe the preserved historical strict audit: The REGENIE_LOCO maximum is 20,461 significant SNPs; 21,484 is the BOLT-LMM maximum. The full-range maximum −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. Both were independently checked from raw result columns in [manuscript_number_checks.tsv](../../audit/manuscript_number_checks.tsv).

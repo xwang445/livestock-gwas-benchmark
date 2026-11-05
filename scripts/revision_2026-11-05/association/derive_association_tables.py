@@ -11,11 +11,15 @@ import numpy as np
 import pandas as pd
 import scipy
 from scipy.stats import chi2
+if __package__:
+    from .significance import ALPHA, RULE, significant, strict_for_historical_audit
+else:
+    from significance import ALPHA, RULE, significant, strict_for_historical_audit
 
 METHODS = ['BOLT-LMM','REGENIE_LOCO','REGENIE_WO_LOCO','fastGWA',
            'FarmCPU_NYC','FarmCPU_Kansas','BLINK_NYC','BLINK_Kansas','SLEMM','GCTA_MLMA']
 FAMILY = ['BOLT-LMM','REGENIE','REGENIE','fastGWA','FarmCPU','FarmCPU','BLINK','BLINK','SLEMM','GCTA']
-P = 5e-8
+P = ALPHA
 
 def sha(path):
     h=hashlib.sha256()
@@ -90,7 +94,12 @@ def config(bench,m,ph,gcta):
         return bench/('%s/spg.even.100k.pheno%d.allchr.gwas.txt'%(d,ph)),r'\s+',['#CHROM','POS','ID','P','BETA','SE'],False
     if m=='GCTA_MLMA':return gcta/('spg.even.100k.pheno%d.mlma'%ph),r'\s+',['Chr','bp','SNP','p','b','se'],False
     model,city=m.split('_')
-    return bench/('GAPIT/GAPIT.Association.GWAS_Results.%s.pheno%d(%s).csv'%(model,ph,city)),',',['Chr','Pos','SNP','P.value','Effect' if city=='NYC' else 'effect',None],False
+    filename='GAPIT.Association.GWAS_Results.%s.pheno%d(%s).csv'%(model,ph,city)
+    candidates=[bench/'GAPIT'/filename,bench/model/filename]
+    found=[p for p in candidates if p.is_file()]
+    if len(found)>1 and len(set(sha(p) for p in found))>1:
+        raise ValueError('Conflicting GAPIT copies; identify authoritative input: '+str(found))
+    return (found[0] if found else candidates[0]),',',['Chr','Pos','SNP','P.value','Effect' if city=='NYC' else 'effect',None],False
 
 def sample_qc(bench,sim,geno,qc):
     fam=pd.read_csv(str(geno)+'.fam',sep=r'\s+',header=None,dtype=str)
@@ -189,8 +198,8 @@ def main():
             v=d.value.values;valid=np.isfinite(v)
             assert (v[valid]>=0).all() and (islog or (v[valid]<=1).all())
             wid=assign(d.chr.values,d.pos.values,grid);assert (wid>=0).all()
-            sig=valid&(v>=-np.log10(P) if islog else v<=P)
-            strict=valid&(v>-np.log10(P) if islog else v<P)
+            sig=significant(v,is_log10=islog)
+            strict=strict_for_historical_audit(v,is_log10=islog)
             strength=v if islog else -np.log10(np.maximum(v,np.nextafter(0.,1.)))
             pval=10.**(-v) if islog else v
             d['window_id']=wid;d['strength']=strength;d['p']=pval
@@ -287,7 +296,7 @@ def main():
     (qc/'run_metadata.json').write_text(json.dumps(dict(command=sys.argv,python=platform.python_version(),numpy=np.__version__,pandas=pd.__version__,scipy=scipy.__version__,
         completed_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),methods=len(set(FAMILY)),configurations=len(METHODS),
         fully_derived_configurations=int(summary[summary.configuration!='SLEMM_previous'].complete_ten_phenotypes.sum()),
-        significance='P <= 5e-8',intervals='[start,end), floor(position/500000), clipped at saved chromosome length',
+        significance=RULE,comparison_scale='native source P or native minus-log10 P; no tolerance widening',intervals='[start,end), floor(position/500000), clipped at saved chromosome length',
         jaccard='historical intersection/union with NA if either set empty; set-theoretic alternative separately labeled'),indent=2)+'\n')
 
 if __name__=='__main__':main()

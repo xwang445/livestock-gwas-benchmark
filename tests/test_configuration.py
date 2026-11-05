@@ -10,7 +10,9 @@ class Configuration(unittest.TestCase):
     def test_results_match_executed_tables(self):
         actual=yaml.safe_load((ROOT/'config/verified_results.yaml').read_text())
         self.assertEqual(actual,build(ROOT))
-        self.assertEqual(actual['study_checks']['gwas_panels'],90)
+        self.assertEqual(actual['historical_study_checks']['gwas_panels'],90)
+        self.assertEqual(actual['study_checks']['planned_configurations'],10)
+        self.assertEqual(actual['significance']['rule'],'P <= 5e-8')
         self.assertEqual(len(actual['finemapping']['pooled']),4)
     def test_profile_availability_and_missing_input_detection(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -28,8 +30,9 @@ class Configuration(unittest.TestCase):
                 resolve_profile(ROOT,'mac',profile,check_inputs=True)
     def test_public_configuration_is_portable(self):
         config,methods=public_paths(ROOT)
-        self.assertEqual(len(config['result_paths']),27)
-        self.assertEqual(len(methods),9)
+        self.assertEqual(len(config['historical_result_paths']),27)
+        self.assertEqual(len(methods),10)
+        self.assertTrue(methods['SLEMM']['output_patterns']['hpcc'].startswith('SLEMM_qf90_window3000/'))
         for name in ['paths.yaml','verified_results.yaml','methods.yaml']:
             text=(ROOT/'config'/name).read_text()
             self.assertNotIn('/Users/',text)

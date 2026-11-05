@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "threshold_P": 5e-08,
+  "threshold_minus_log10P": 7.301029995663981,
+  "comparison_rule_P": "<=",
+  "comparison_rule_minus_log10P": ">=",
+  "n_GWAS_outputs": 101,
+  "n_primary_panels_checked": 91,
+  "n_pairwise_comparisons_checked": 829,
+  "n_power_rate_rows_checked": 10302,
+  "n_S1_statistics_checked": 36,
+  "exact_threshold_added_SNP_records": 212,
+  "additional_loci_at_equality": 19,
+  "primary_log_or_P_roundtrip_disagreements": 0,
+  "sensitivity_grid_P_roundtrip_diagnostic_disagreements": 0,
+  "serialized_alpha_roundtrip_disagreements": 0,
+  "decimal_boundary_disagreements": 0,
+  "failures": [],
+  "limitation": "Classifies reported P/LOG10P. Original unrounded REGENIE P cannot be recovered from rounded LOG10P; no artificial tolerance or epsilon is added."
+}

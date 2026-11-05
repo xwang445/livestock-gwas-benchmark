@@ -1,0 +1,13 @@
+{
+  "rows": 10302,
+  "changed_numerators": 0,
+  "changed_denominators": 0,
+  "cutoffs": 34,
+  "columns_added": [
+    "minus_log10_alpha",
+    "alpha_hex",
+    "alpha_expression"
+  ],
+  "float_serialization": "17 significant decimal digits; explicit float.hex backup",
+  "status": "PASS"
+}

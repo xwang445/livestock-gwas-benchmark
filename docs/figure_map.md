@@ -1,5 +1,13 @@
 # Figure reproduction map
 
+## Current revision
+
+Default figure commands use current inclusive canonical tables. Figures 3/5/6 and the power supplement come from `derived_data/revision_2026-11-05/association` through `scripts/revision_2026-11-05/association/plot_association_revision.py`; Figure 4/S1–S10 use the updated SLEMM inputs and native-scale inclusive significance decisions. Figure 1 retains the independently verified LD source. Figure 8 and RSS sensitivity panels use the separate TRUE-run aggregate tables and fine-mapping sources. GCTA-incomplete figures are labeled review copies, and revised Figure 7 remains dependent on unavailable theoretical input. See [revision status](revision_2026-11-05.md).
+
+## Historical snapshot below
+
+The following map describes the earlier reconstruction and applies only to explicit `--historical` figure commands. These original files are preserved for comparison.
+
 All 19 figures were generated as PDF and PNG and visually inspected. Artwork is a redraw: colors, panel arrangements and typography need not be pixel-identical. No new GWAS/SuSiE model fitting is implied.
 
 | Figure | Analysis input | Public derived table | Generator | Final base path under figures/reconstructed |
