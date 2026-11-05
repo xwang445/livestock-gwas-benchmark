@@ -1,7 +1,7 @@
 """Boundary regressions for the scientific decision rule and source-scale plots."""
 import importlib.util
 from pathlib import Path
-import sys,unittest
+import sys,unittest,tempfile
 from unittest.mock import patch
 import numpy as np
 import pandas as pd
@@ -41,5 +41,29 @@ class InclusiveAssociationBoundary(unittest.TestCase):
     def test_strict_summary_cannot_run_as_current_default(self):
         with self.assertRaisesRegex(ValueError,'legacy audit'):
             benchmark_core.summarize('/nonexistent','/nonexistent-output','/nonexistent-cache')
+
+    def test_individual_filenames_are_unique_for_all_one_hundred_cells(self):
+        pairs=[manhattan.individual_paths(m,p) for m in manhattan.METHODS for p in range(1,11)]
+        self.assertEqual(len(pairs),100)
+        for key,suffix in [('individual_pdf','.pdf'),('individual_png','.png')]:
+            names=[x[key] for x in pairs]
+            self.assertEqual(len(set(names)),100)
+            self.assertTrue(all(not Path(x).is_absolute() and '..' not in Path(x).parts and x.endswith(suffix) for x in names))
+
+    def test_individual_render_writes_real_pdf_and_png_from_loaded_markers(self):
+        y=np.array([2.,-np.log10(ALPHA),-np.log10(ALPHA)+2,1.])
+        d=pd.DataFrame({'chr':[1,1,2,2],'bp':[100,499999,100,499999],
+            'minus_log10p':y,'significant':significant(y,is_log10=True)})
+        lengths=pd.Series([500000,500000],index=[1,2]);offsets=pd.Series([0,500000],index=[1,2])
+        fig,ax=manhattan.plt.subplots()
+        x,actual_y,actual_sig=manhattan.draw_markers(ax,d,offsets)
+        np.testing.assert_array_equal(actual_y,y)
+        self.assertEqual(actual_sig.tolist(),[False,True,True,False])
+        np.testing.assert_allclose(x,[.0001,.499999,.5001,.999999])
+        manhattan.plt.close(fig)
+        with tempfile.TemporaryDirectory() as tmp:
+            paths=manhattan.render_individual(d,'GCTA_MLMA',10,offsets,lengths,tmp)
+            self.assertTrue((Path(tmp)/paths['individual_pdf']).read_bytes().startswith(b'%PDF'))
+            self.assertTrue((Path(tmp)/paths['individual_png']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n'))
 
 if __name__=='__main__':unittest.main()

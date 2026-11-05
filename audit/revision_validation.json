@@ -1,6 +1,6 @@
 {
   "status": "PASS_WITH_EXPLICIT_DEPENDENCIES",
-  "tests_passed": 25,
+  "tests_passed": 27,
   "static_checks": "Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method labels",
   "markdown_broken_links": 0,
   "manhattan_completed_panels_matching_canonical_snp_counts": 91,
@@ -31,5 +31,6 @@
   "default_workflow": "current canonical revision; historical strict snapshots require explicit --historical",
   "source_scale_boundary_tests": "PASS: exact and adjacent floating-point values in raw P and native LOG10P; Manhattan reader/native y verified",
   "current_router_figures_smoke": "PASS: reads revised canonical association tables plus verified LD; no old strict figures selected",
-  "historical_tables": "unchanged; historical_* result snapshot blocks and explicit audit profile"
+  "historical_tables": "unchanged; historical_* result snapshot blocks and explicit audit profile",
+  "optional_individual_manhattan": "100 unique planned PDF/PNG path pairs verified; bounded actual rendering smoke tested; --require-complete --individual produces final individual exports after all inputs validate. Existing 91-panel composites were not rerun for this optional feature."
 }

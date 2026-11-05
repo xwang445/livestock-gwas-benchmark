@@ -40,8 +40,9 @@ class Workflow(unittest.TestCase):
  def test_current_manhattan_route_uses_new_inputs_and_does_not_precreate_output(self):
   with tempfile.TemporaryDirectory() as td:
    source=Path(td)/'source';source.mkdir();out=Path(td)/'out'
-   with patch.object(sys,'argv',['workflow.py','manhattan','--profile','hpcc','--out',str(out)]),patch.object(workflow,'resolve_profile',return_value={'benchmark_root':str(source),'inputs':{}}),patch.object(workflow,'run') as run:
+   with patch.object(sys,'argv',['workflow.py','manhattan','--profile','hpcc','--individual','--out',str(out)]),patch.object(workflow,'resolve_profile',return_value={'benchmark_root':str(source),'inputs':{}}),patch.object(workflow,'run') as run:
     workflow.main()
    self.assertIn('--require-complete',run.call_args.args)
    self.assertIn('--gcta-dir',run.call_args.args)
+   self.assertIn('--individual',run.call_args.args)
    self.assertFalse(out.exists())

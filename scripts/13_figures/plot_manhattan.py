@@ -47,10 +47,12 @@ def draw_historical(root,out):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--out',required=True)
-    p.add_argument('--historical',action='store_true');p.add_argument('--gcta-dir',type=Path);p.add_argument('--require-complete',action='store_true');a=p.parse_args()
+    p.add_argument('--historical',action='store_true');p.add_argument('--gcta-dir',type=Path);p.add_argument('--require-complete',action='store_true');p.add_argument('--individual',action='store_true');a=p.parse_args()
+    if a.historical and a.individual:p.error('--individual applies to current plots only')
     if a.historical:draw_historical(a.root,a.out)
     else:
         source=Path(__file__).resolve().parents[1]/'revision_2026-11-05/plot_manhattan.py'
         args=[sys.executable,str(source),'--root',str(a.root),'--gcta-dir',str(a.gcta_dir or a.root/'GCTA_mlma'),'--out',a.out]
         if a.require_complete:args.append('--require-complete')
+        if a.individual:args.append('--individual')
         subprocess.run(args,check=True)

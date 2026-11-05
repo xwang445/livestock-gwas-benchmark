@@ -28,9 +28,11 @@ def main():
  p.add_argument('--simulation',type=Path);p.add_argument('--genotype-prefix',type=Path)
  p.add_argument('--gcta-directory',type=Path);p.add_argument('--rss-directory',type=Path)
  p.add_argument('--allow-incomplete',action='store_true',help='Label incomplete configuration panels in diagnostic Manhattan plots')
+ p.add_argument('--individual',action='store_true',help='Manhattan: also emit one PDF/PNG for each completed configuration/phenotype')
  p.add_argument('--resume',action='store_true');a=p.parse_args()
  if a.resume and a.stage!='summarize':p.error('--resume applies only to summarize')
  if a.resume and not a.historical:p.error('Current derivation uses a new output directory; --resume is only for the historical hash-checked cache')
+ if a.individual and (a.stage!='manhattan' or a.historical):p.error('--individual applies only to current Manhattan plots')
  if a.stage=='check':
   run('scripts/check_config.py');run('scripts/build_result_config.py','--check')
   run('tests/check_static.py')
@@ -80,6 +82,7 @@ def main():
   else:
    args.extend(['--gcta-dir',gcta])
    if not a.allow_incomplete:args.append('--require-complete')
+   if a.individual:args.append('--individual')
   run('scripts/13_figures/plot_manhattan.py',*args)
  elif a.stage in ['ld','fine-mapping']:
   name='ld' if a.stage=='ld' else 'finemapping';evidence=out/(name+'_verification.json')

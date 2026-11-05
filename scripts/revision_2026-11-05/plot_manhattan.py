@@ -46,10 +46,48 @@ def load(path,method):
     assert v.p.dropna().between(0,1).all()
     return v
 
+def individual_paths(configuration,phenotype):
+    """Unique relative artifact paths for one declared configuration/phenotype."""
+    if configuration not in METHODS or not 1<=int(phenotype)<=10:
+        raise ValueError('Unknown configuration or phenotype')
+    stem='individual/phenotype_%02d_%s_manhattan'%(int(phenotype),configuration.replace('-','_'))
+    return dict(individual_pdf=stem+'.pdf',individual_png=stem+'.png')
+
+def draw_markers(ax,d,offsets):
+    """Shared source-scale coordinates and chromosome colors for both layouts."""
+    x=(d.bp+d.chr.map(offsets))/1e6;y=d.minus_log10p;sig=d.significant
+    for parity,color in [(0,'#0072B2'),(1,'#595959')]:
+        use=d.chr.mod(2).eq(parity)
+        ax.scatter(x[use],y[use],s=.65,color=color,alpha=.65,linewidths=0,rasterized=True)
+    ax.axhline(-np.log10(ALPHA),ls='--',lw=.6,color='#D55E00')
+    return x,y,sig
+
+def render_individual(d,configuration,phenotype,offsets,lengths,out):
+    """Render already-loaded markers; no new GWAS parsing or significance test."""
+    paths=individual_paths(configuration,phenotype)
+    out=Path(out);(out/'individual').mkdir(parents=True,exist_ok=True)
+    fig,ax=plt.subplots(figsize=(7.2,3.2),constrained_layout=True)
+    _,y,sig=draw_markers(ax,d,offsets)
+    upper=max(-np.log10(ALPHA)+1,np.ceil(float(y.max())*1.03))
+    centers=offsets+lengths/2
+    ax.set(xlim=(0,float((offsets.iloc[-1]+lengths.iloc[-1])/1e6)),ylim=(0,upper),
+           xlabel='Chromosome',ylabel='−log₁₀(P)',
+           title='%s: phenotype %d'%(configuration.replace('_',' '),phenotype))
+    ax.set_xticks(centers/1e6);ax.set_xticklabels(centers.index)
+    ax.tick_params(axis='x',labelsize=8)
+    ax.text(.995,.98,'P ≤ 5 × 10⁻⁸; %s significant SNPs'%format(int(sig.sum()),','),
+            transform=ax.transAxes,ha='right',va='top',fontsize=8)
+    for key in ['individual_pdf','individual_png']:
+        fig.savefig(out/paths[key],dpi=300,bbox_inches='tight')
+    plt.close(fig)
+    return paths
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True)
     p.add_argument('--gcta-dir',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--require-complete',action='store_true');a=p.parse_args()
+    p.add_argument('--require-complete',action='store_true')
+    p.add_argument('--individual',action='store_true',help='Also write one PDF and PNG per completed configuration/phenotype')
+    a=p.parse_args()
     paths={(m,ph):source(a.root,a.gcta_dir,m,ph) for m in METHODS for ph in range(1,11)}
     missing=[(m,ph) for (m,ph),path in paths.items() if not path.is_file()]
     if missing and a.require_complete:raise ValueError(f'Incomplete analyses: {missing}')
@@ -68,17 +106,18 @@ def main():
             ax.set_title(f'{chr(97+idx)}  {m.replace("_"," ")}',loc='left',fontsize=10)
             if not path.is_file():
                 ax.text(.5,.5,'Analysis pending: no result reported',transform=ax.transAxes,ha='center')
-                records.append(dict(configuration=m,phenotype=ph,status='PENDING',n_plotted=np.nan,n_significant=np.nan,max_minus_log10p=np.nan))
+                record=dict(configuration=m,phenotype=ph,status='PENDING',n_plotted=np.nan,n_significant=np.nan,max_minus_log10p=np.nan)
+                if a.individual:record.update(individual_pdf=None,individual_png=None)
+                records.append(record)
                 continue
-            d=load(path,m);x=(d.bp+d.chr.map(offsets))/1e6
-            y=d.minus_log10p;ymax=max(ymax,float(y.max()));sig=d.significant
-            for parity,color in [(0,'#0072B2'),(1,'#595959')]:
-                use=d.chr.mod(2).eq(parity);ax.scatter(x[use],y[use],s=.65,color=color,alpha=.65,linewidths=0,rasterized=True)
-            ax.axhline(-np.log10(ALPHA),ls='--',lw=.6,color='#D55E00');ax.set_ylabel('−log₁₀(P)',fontsize=9)
+            d=load(path,m);x,y,sig=draw_markers(ax,d,offsets)
+            ymax=max(ymax,float(y.max()));ax.set_ylabel('−log₁₀(P)',fontsize=9)
             if m in complete:
                 group=int(m not in ('BOLT-LMM','REGENIE_LOCO'))
                 mainaxes[group].scatter(x[sig],y[sig],s=.8,color=COLORS[m],alpha=.45,linewidths=0,rasterized=True,label=m.replace('_',' ') if ph==1 else None)
-            records.append(dict(configuration=m,phenotype=ph,status='COMPLETED',n_plotted=len(d),n_significant=int(sig.sum()),max_minus_log10p=float(y.max())))
+            record=dict(configuration=m,phenotype=ph,status='COMPLETED',n_plotted=len(d),n_significant=int(sig.sum()),max_minus_log10p=float(y.max()))
+            if a.individual:record.update(render_individual(d,m,ph,offsets,lengths,a.out))
+            records.append(record)
         for ax in axes:ax.set_ylim(0,np.ceil(ymax*1.03));ax.set_xlim(0,(offsets.iloc[-1]+lengths.iloc[-1])/1e6)
         axes[-1].set_xticks(centers/1e6);axes[-1].set_xticklabels(centers.index);axes[-1].set_xlabel('Chromosome')
         fig.suptitle(f'Phenotype {ph}: all tested SNPs\nShared vertical scale; dashed line P = 5 × 10⁻⁸'+ ('; provisional: incomplete GCTA analysis' if missing else ''),fontsize=12)
