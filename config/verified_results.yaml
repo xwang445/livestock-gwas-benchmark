@@ -1887,6 +1887,6 @@ validation:
     public_composite_refresh: Phenotypes 2 and 3 PDF/PNG refreshed from completed
       outputs; all previously complete manifest rows retain their exact serialized
       values
-  scope: Current inclusive numerical revision; original manuscript ledger is historical_validation.
-    The received PI document has a private working revision; final GCTA integration,
-    citations, layout and resubmission are not certified.
+  scope: Current inclusive numerical revision; the older manuscript ledger is historical_validation.
+    The full ten-phenotype GCTA comparison and upstream Equation12/13 cache verification
+    remain incomplete.

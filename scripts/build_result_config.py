@@ -79,7 +79,7 @@ def build(repo):
             'summary':read('revision_2026-11-05/association/gcta_heritability_summary.tsv').to_dict('records')}
         result['validation']={'record':'audit/revision_validation.json',
             'result':json.loads((repo/'audit/revision_validation.json').read_text()),
-            'scope':'Current inclusive numerical revision; original manuscript ledger is historical_validation. The received PI document has a private working revision; final GCTA integration, citations, layout and resubmission are not certified.'}
+            'scope':'Current inclusive numerical revision; the older manuscript ledger is historical_validation. The full ten-phenotype GCTA comparison and upstream Equation12/13 cache verification remain incomplete.'}
     # Preserve parsed table precision and integer counts; normalize only scalar types.
     import math
     def normalize(value):
