@@ -31,7 +31,7 @@ Current summaries are written under `NEW_SUMMARY_DIRECTORY/tables`. Missing GCTA
 
 Add `--individual` to the current `manhattan` command to write one PDF and PNG for each completed configuration × phenotype, in addition to the composite figures. Once all ten GCTA phenotypes validate, this produces 100 individual PDF/PNG pairs plus the eleven existing composite PDF/PNG pairs. Each individual uses the same loaded SNP coordinates, native inclusive decisions, chromosome colors and threshold line; the vertical axis shows that configuration’s full range. `manhattan_manifest.tsv` records relative `individual_pdf` and `individual_png` paths. Pending rows have no individual files.
 
-The existing snapshot has 100 planned manifest rows: 91 completed GWAS panels and nine pending GCTA panels. Those are panel counts, rather than counts of composite image files. The ten supplementary composite figures contain ten method rows each; pooled Figure 4 is a separate composite. Use the complete command without `--allow-incomplete` for the final set of 100 individual analyses.
+The existing snapshot has 100 planned manifest rows: 93 completed GWAS panels and seven pending GCTA panels. Those are panel counts, rather than counts of composite image files. The ten supplementary composite figures contain ten method rows each; pooled Figure 4 is a separate composite. Use the complete command without `--allow-incomplete` for the final set of 100 individual analyses.
 
 `equation13 --profile mac --out NEW_DIRECTORY` reads the verified cached theory and updated SLEMM input. The theoretical source remains unavailable in this execution environment; the command cannot supply missing inputs or reconstruct Equation 12.
 

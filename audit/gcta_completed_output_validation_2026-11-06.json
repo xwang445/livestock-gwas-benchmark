@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "completed_phenotypes": [
+    1,
+    2,
+    3
+  ],
+  "metric_checks": 234,
+  "pairwise_comparisons": 27,
+  "all_values_match": true,
+  "all_nine_lead_SNPs_match": true,
+  "window_inventory_definitions_unchanged": true,
+  "ten_phenotype_heritability_aggregates_withheld": true,
+  "canonical_sources": {
+    "derived_data/revision_2026-11-05/association/association_by_phenotype.tsv": "f2aa37cf96556ae854b79b39a0a2bd374e3ba42c9a44d42317534f0db503ca32",
+    "derived_data/revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv": "eb37b94ae77f6cf92433f121342440a1909e442ec3865aef185ee6837b261f79",
+    "derived_data/revision_2026-11-05/association/pairwise_locus_overlap.tsv": "f990cb52e7b4fc5c5af4ed673b908b7334e19f1566a3677f3494877c522ee99d"
+  },
+  "scope": "Three completed GCTA MLMA phenotypes; no ten-phenotype aggregate conclusion"
+}

@@ -89,7 +89,7 @@ methods:
     output_patterns:
       mac: GCTA_mlma/spg.even.100k.pheno{phenotype}.mlma
       hpcc: GCTA_mlma/spg.even.100k.pheno{phenotype}.mlma
-    verified_saved_runs: 1
+    verified_saved_runs: 3
     planned_runs: 10
     required_for_saved_input_check: false
 gapit:

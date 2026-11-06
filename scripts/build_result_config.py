@@ -28,7 +28,7 @@ def build(repo):
     ledger=pd.read_csv(repo/'audit/manuscript_validation.tsv',sep='\t')
     ld=read('ld_summary/ld_decay_10kb.tsv')
     result={'schema_version':2,
-        'scope':'Primary blocks derive from the current inclusive November 5 canonical tables, updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit historical_* blocks preserve the November 4 strict reconstruction. source_tables fingerprints both separate datasets; historical and revised results must not be mixed.',
+        'scope':'Primary blocks derive from the current inclusive revision tables refreshed November 6, updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit historical_* blocks preserve the November 4 strict reconstruction. source_tables fingerprints both separate datasets; historical and revised results must not be mixed.',
         'regenerate_command':'python scripts/build_result_config.py',
         'historical_study_checks':{'historical_configurations':int(counts.method.nunique()),'phenotypes':int(counts.phenotype.nunique()),
             'gwas_panels':len(counts),'snps_per_panel':sorted(int(x) for x in counts.n_snps.unique()),

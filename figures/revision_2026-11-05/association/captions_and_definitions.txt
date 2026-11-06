@@ -1,8 +1,8 @@
 Figure 3. Significant loci and SNPs
-Cells show detected 500 kb loci and significant SNPs in parentheses; P ≤ 5 × 10⁻⁸. Zero-anchored half-open windows retain chromosome-end fragments. GCTA phenotypes 2–10 are pending.
+Cells show detected 500 kb loci and significant SNPs in parentheses; P ≤ 5 × 10⁻⁸. Zero-anchored half-open windows retain chromosome-end fragments. GCTA phenotypes 1–3 are complete; phenotypes 4–10 are pending.
 
 Figure 5. Mean overlap of significant loci
-The compact matrix shows the equal-phenotype mean Jaccard index, conditional on both locus sets being nonempty. Each cell states the number of defined phenotypes (n), excluding phenotypes with an empty locus set for either configuration. Averages are withheld until all ten phenotype outputs are available for both configurations. This mean matrix is a new review layout; manuscript correspondence is unverified. All ten phenotype-specific matrices are retained as Supplementary_phenotype_overlap_review.
+The compact matrix shows the equal-phenotype mean Jaccard index, conditional on both locus sets being nonempty. Each cell states the number of defined phenotypes (n), excluding phenotypes with an empty locus set for either configuration. Pending cells also show n, not the number of completed fits. Averages are withheld until all ten phenotype outputs are available for both configurations. The corresponding working manuscript uses this mean-matrix layout. All ten phenotype-specific matrices are retained as Supplementary_phenotype_overlap_review.
 Jaccard indices use the inclusive-threshold locus sets of Figure 3. As in the historical plotting convention, comparisons are undefined (NA) if either set is empty; in the phenotype-specific supplement, pending fits are marked by a dash. A set-theoretic alternative with zero for one empty set is supplied separately in the canonical table.
 
 Figure 6. Regional spillover and genomic inflation

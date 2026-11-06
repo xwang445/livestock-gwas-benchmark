@@ -9,5 +9,7 @@
     "alpha_expression"
   ],
   "float_serialization": "17 significant decimal digits; explicit float.hex backup",
-  "status": "PASS"
+  "status": "PASS",
+  "scope": "Historical serialization correction for the original 10,302 sensitivity rows; the current expanded grid is checked by inclusive_threshold_audit.json",
+  "current_sensitivity_grid_rows": 10506
 }

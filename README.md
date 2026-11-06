@@ -2,9 +2,9 @@
 
 We compare how well widely used GWAS methods locate causal signals under diffuse polygenic architecture in livestock. The benchmark uses Duroc pig genotypes and simulated phenotypes, followed by SuSiE-adj and SuSiE-RSS fine-mapping.
 
-This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision includes updated SLEMM summaries, a completed paired SuSiE-RSS residual-variance rerun, and an incomplete GCTA MLMA extension. Its review figures are labeled accordingly.
+This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision, refreshed on November 6, includes updated SLEMM summaries, a completed paired SuSiE-RSS residual-variance rerun, and three completed traits in an incomplete GCTA MLMA extension. Its review figures are labeled accordingly.
 
-[Publication](#publication) · [Result tables](derived_data/README.md) · [Figures](figures/reconstructed) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
+[Publication](#publication) · [Result tables](derived_data/README.md) · [Current figures](figures/revision_2026-11-05) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
 
 ## Publication
 
@@ -69,14 +69,14 @@ MPH generated genetic values from the fixed causal-SNP relationship matrix and a
 
 Current results are in [derived_data/revision_2026-11-05](derived_data/revision_2026-11-05), with updated SLEMM and separate GCTA completion status. `config/verified_results.yaml` derives its primary blocks from these tables. Its `historical_*` blocks and the original paths below preserve the older strict snapshot. The [workflow guide](docs/workflow.md) describes the exact current and audit commands.
 
-[derived_data](derived_data/README.md) contains 27 populated TSV files covering:
+The historical root set in [derived_data](derived_data/README.md) contains 27 populated TSV files; current revision tables are separately indexed above. The historical set covers:
 
 - Significant SNPs and loci, power, false-positive rates, and spatial enrichment
 - Central-null spillover and genomic inflation
 - Locus overlap between methods and stability across replicates
 - Equation 13 comparisons, fine-mapping summaries, LD decay, and heritability estimates from model logs
 
-[figures/reconstructed](figures/reconstructed) contains Figures 1–8, Manhattan supplements S1–S10, and the central-null Equation 13 supplement in PDF and PNG formats. The [figure map](docs/figure_map.md) links each figure to its inputs and script.
+The historical [figures/reconstructed](figures/reconstructed) set contains Figures 1–8, Manhattan supplements S1–S10, and the central-null Equation 13 supplement in PDF and PNG formats. The [figure map](docs/figure_map.md) links each figure to its inputs and script.
 
 The preserved strict-audit REGENIE_LOCO maximum is 20,461 significant SNPs. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. [Independent historical checks](audit/manuscript_number_checks.tsv) support both values; current inclusive counts come from the revision tables.
 

@@ -1,7 +1,7 @@
 configuration	phenotype	status	Vg_printed	Ve_printed	h2_from_printed_variances	final_iteration	n	log_sha256	mlma_sha256	precision_note
 GCTA_MLMA	1	completed_log_rounded_estimate	0.58528999999999998	0.49930999999999998	0.53963673243592103	9	20000	0837a6104f6bbe319bfa6bf84b07fd70e7d0dcf5cb0f622c0c60f0b4a578bc6a	7c09883744b5ff14df26e03eae375b7aae61acb5be164649ea2a8469fcf78de0	Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
-GCTA_MLMA	2	pending_completion	NA	NA	NA	NA	20000			Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
-GCTA_MLMA	3	pending_completion	NA	NA	NA	NA	20000			Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
+GCTA_MLMA	2	completed_log_rounded_estimate	0.55752000000000002	0.49975000000000003	0.52732036282122829	7	20000	7eb9a70c1f33c32d736af2ad13b8fb919b38533df9df17ba9b286350bf0aec69	6793add0c6e8b293fe04a3f760a8db9374e1ce3f4b707a1154633618c663d48e	Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
+GCTA_MLMA	3	completed_log_rounded_estimate	0.58182	0.49895	0.53833840687657875	7	20000	530552af2f47095eddb69695480bcc83e028c896f4486ae28a1e0ed7f7ea508b	f7740257333c725b972b87c28cc4f9a44130d2692630f4127fff0bd2fb38480a	Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
 GCTA_MLMA	4	pending_completion	NA	NA	NA	NA	20000			Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
 GCTA_MLMA	5	pending_completion	NA	NA	NA	NA	20000			Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available
 GCTA_MLMA	6	pending_completion	NA	NA	NA	NA	20000			Derived from final REML iteration printed to 5 decimal places; no unrounded estimate or SE is available

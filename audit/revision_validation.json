@@ -3,8 +3,8 @@
   "tests_passed": 27,
   "static_checks": "Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method labels",
   "markdown_broken_links": 0,
-  "manhattan_completed_panels_matching_canonical_snp_counts": 91,
-  "manhattan_pending_panels": 9,
+  "manhattan_completed_panels_matching_canonical_snp_counts": 93,
+  "manhattan_pending_panels": 7,
   "ld_bins_recounted": 1000,
   "ld_pair_counts_match": true,
   "rss_published_fit_function_matches_executed": true,
@@ -15,15 +15,12 @@
     "AMBIGUOUS": 2,
     "REQUIRES_RECOMPUTATION": 1
   },
-  "historical_ledger_scope": "October manuscript and November4 reconstruction, not unavailable November5 PI-edited DOCX",
+  "historical_ledger_scope": "October manuscript and November4 reconstruction; current numerical validation has separate source-linked audits and does not certify final manuscript layout or references",
   "publication_content_review": "No individual sample IDs, raw genotype/GRM/LD, variant identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new publication content",
   "incomplete_dependencies": [
-    "GCTA phenotypes2-10 outstanding",
-    "PI manuscript, latest response letter and authoritative supplementary documents unavailable",
-    "Paperpile refresh unavailable",
-    "cached Equation13 and Equation12 implementation unavailable",
-    "original SNP-effect/PVE definition unavailable",
-    "GitHub authentication unavailable"
+    "GCTA phenotypes4\u201310 incomplete",
+    "Actual Equation13 variant cache and benchmark Equation12 generator unavailable",
+    "Original SNP-effect/PVE definition and SLEMM effect-analysis pipeline unavailable"
   ],
   "new_slemm_table_checks": "independent8checks and spatial3200rowcomparison passed",
   "supplementary_table_S1_registry_check": "PASS:10 current configurations exactly, values equal canonical association summary; SLEMM_previous retained only in historical comparison tables",
@@ -32,5 +29,17 @@
   "source_scale_boundary_tests": "PASS: exact and adjacent floating-point values in raw P and native LOG10P; Manhattan reader/native y verified",
   "current_router_figures_smoke": "PASS: reads revised canonical association tables plus verified LD; no old strict figures selected",
   "historical_tables": "unchanged; historical_* result snapshot blocks and explicit audit profile",
-  "optional_individual_manhattan": "100 unique planned PDF/PNG path pairs verified; bounded actual rendering smoke tested; --require-complete --individual produces final individual exports after all inputs validate. Existing 91-panel composites were not rerun for this optional feature."
+  "optional_individual_manhattan": "93 completed configuration/phenotype datasets are validated. --individual regenerates one PDF/PNG pair per available dataset; --require-complete enforces all100. Only current composites and their coverage manifest are distributed here.",
+  "snapshot_date": "2026-11-06",
+  "gcta_completed_phenotypes": [
+    1,
+    2,
+    3
+  ],
+  "gcta_independent_raw_output_checks_passed": 69,
+  "gcta_independent_canonical_checks_passed": 234,
+  "gcta_pairwise_comparisons_checked": 27,
+  "public_workflow_check_for_current_export": "PASS",
+  "LOCO_normalization_status": "The actual Equation12 generator and covariance normalization remain unresolved; public author-code examples are not proof of which convention generated the retained predictions",
+  "public_composite_refresh": "Phenotypes 2 and 3 PDF/PNG refreshed from completed outputs; all previously complete manifest rows retain their exact serialized values"
 }

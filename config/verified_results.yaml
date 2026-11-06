@@ -1,8 +1,9 @@
 schema_version: 2
-scope: Primary blocks derive from the current inclusive November 5 canonical tables,
-  updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit historical_*
-  blocks preserve the November 4 strict reconstruction. source_tables fingerprints
-  both separate datasets; historical and revised results must not be mixed.
+scope: Primary blocks derive from the current inclusive revision tables refreshed
+  November 6, updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit
+  historical_* blocks preserve the November 4 strict reconstruction. source_tables
+  fingerprints both separate datasets; historical and revised results must not be
+  mixed.
 regenerate_command: python scripts/build_result_config.py
 historical_study_checks:
   historical_configurations: 9
@@ -476,28 +477,28 @@ source_tables:
     sha256: 181f3426b3bce29591a175d00cb30e86285633875136965f8613f0662b5c7882
   revision_2026-11-05/association/association_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
-    rows: 101
-    sha256: 8c0e8bf85a7e188939c6dfdca102a4e5708ba0f6b88fa374c59b92357023b23b
+    rows: 103
+    sha256: f2aa37cf96556ae854b79b39a0a2bd374e3ba42c9a44d42317534f0db503ca32
   revision_2026-11-05/association/association_summary.tsv:
     path: derived_data/revision_2026-11-05/association/association_summary.tsv
     rows: 11
-    sha256: f1c7a21949d679a6f8fac6a725205cca19398a3aa2f35e5aa07c8b9bee246044
+    sha256: 688a6531a3c066e2adae3a21667c3510091fd1a729c77956bf0aca6887c1831f
   revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv
     rows: 10
-    sha256: b7a330c8a616c8e2262a7afbd2db54c9d2cc27a8d6747bf4a0884a414973d09f
+    sha256: eb37b94ae77f6cf92433f121342440a1909e442ec3865aef185ee6837b261f79
   revision_2026-11-05/association/gcta_heritability_summary.tsv:
     path: derived_data/revision_2026-11-05/association/gcta_heritability_summary.tsv
     rows: 1
-    sha256: ed4b3264a12c790051e83021cd8a5796ded58db8a258d9c57c1d642d7220e061
+    sha256: dd0ac8a591090559b237f039a146ef6e7c91d49adca2dbe4b489a0787e2b45b5
   revision_2026-11-05/association/genomic_background.tsv:
     path: derived_data/revision_2026-11-05/association/genomic_background.tsv
     rows: 3
     sha256: b41fadd32868fd5c55033ebcda9b8bbfb4bd3d7883fe00e64e57735f3cbbe8e9
   revision_2026-11-05/association/inclusive_threshold_by_input.tsv:
     path: derived_data/revision_2026-11-05/association/inclusive_threshold_by_input.tsv
-    rows: 101
-    sha256: 4746cae3c7a8fdc2d557e2035e40db7e8e5110f6e6ae42ab270c8303231b55d0
+    rows: 103
+    sha256: 3ea25cafc1a63ba515e9103d9e0ec8b2fbe0f2501bad63536e6bd89651f02d1f
   revision_2026-11-05/association/null_inventory_50kb.tsv:
     path: derived_data/revision_2026-11-05/association/null_inventory_50kb.tsv
     rows: 29600
@@ -505,27 +506,27 @@ source_tables:
   revision_2026-11-05/association/numerical_claims_reconciliation.tsv:
     path: derived_data/revision_2026-11-05/association/numerical_claims_reconciliation.tsv
     rows: 12
-    sha256: eb11c97607b8bf9a5883a23757083f9f4863fc0e3d61936fa14d616eee7d631d
+    sha256: d5e14f92f41b624fae88b7db58b069e0d880db8b0f2585c4e130b685e183eeb8
   revision_2026-11-05/association/pairwise_locus_overlap.tsv:
     path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap.tsv
-    rows: 829
-    sha256: b4be5840260637ad1b15e8f783424d79b709c98cc277db6e78b1a238e0fe58db
+    rows: 867
+    sha256: f990cb52e7b4fc5c5af4ed673b908b7334e19f1566a3677f3494877c522ee99d
   revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv:
     path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv
     rows: 100
-    sha256: 3a067384b0ab0fc9263a0448a608185393c48ba58b8b3bffb253ad417e4c1113
+    sha256: 04e021c97f726306947e51d86e5164272e63b3ff7eb7f379a3559f8bc509b900
   revision_2026-11-05/association/parent_regions.tsv:
     path: derived_data/revision_2026-11-05/association/parent_regions.tsv
     rows: 767
     sha256: c73e3f5bb3844cbef1bada3c15045bfd72fd33ac019fba707f85ffb4a4fbcbff
   revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv
-    rows: 10302
-    sha256: d83a15da90e6bd0693ff585d81b31de5bb612d6db8ec00fda86b79f97b47f1e5
+    rows: 10506
+    sha256: bdf6f6b487554b79fd6f3bfebf8f836a2079ca46bd514616ca9c676b4fac5397
   revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv
     rows: 1122
-    sha256: 6b2f897897d20d7937725ef9791e3fd5e23a58aeb1f95eaa7a209a2c18c0e16b
+    sha256: 03d68b213aea704f929a449aed35565aa9a64e440a6ad6905fdd0ba970fb2226
   revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv
     rows: 20
@@ -536,16 +537,16 @@ source_tables:
     sha256: 7a2168df92ecb7793aa4f5fc0d6e873401afe2d4f743e2dcc067e8fcca8d35a7
   revision_2026-11-05/association/spatial_boundary_audit.tsv:
     path: derived_data/revision_2026-11-05/association/spatial_boundary_audit.tsv
-    rows: 91
-    sha256: 3f336cd470ecd71d6a8a95eec0d70da0306e58dee8d4d5f3aaf6efba2df799cd
+    rows: 93
+    sha256: f3a18cf57f26d676da3df7de701ca81a2707297905d9910201a3824db88c7a4d
   revision_2026-11-05/association/spatial_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/spatial_by_phenotype.tsv
-    rows: 3640
-    sha256: 2cb71754b25b55a084bb3c93911260290282e587d0b3ce3364609a881da130f3
+    rows: 3720
+    sha256: b28855c4e4a33be782b50cfbcf172e9ccb5360602ce20ad78a5e472c3c87b67a
   revision_2026-11-05/association/supplementary_table_S1.tsv:
     path: derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv
     rows: 10
-    sha256: 806fd10ceb9dae9cd29d2ac29d65d38a2b522e5e82ab513b5c2500aadc346fae
+    sha256: 3efeea2534dff2fba61f324026edc96cb32c6bb1e17f576c4bff6c5d6a28876b
   revision_2026-11-05/association/window_inventory_500kb.tsv:
     path: derived_data/revision_2026-11-05/association/window_inventory_500kb.tsv
     rows: 4538
@@ -635,7 +636,7 @@ revision_checks:
   planned_method_families: 7
   planned_configurations: 10
   planned_panels: 100
-  completed_panels: 91
+  completed_panels: 93
   completed_phenotypes_by_configuration:
     BOLT-LMM: 10
     REGENIE_LOCO: 10
@@ -646,7 +647,7 @@ revision_checks:
     BLINK_NYC: 10
     BLINK_Kansas: 10
     SLEMM: 10
-    GCTA_MLMA: 1
+    GCTA_MLMA: 3
   fully_completed_configurations: 9
   association_source: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
   fine_mapping_source: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
@@ -660,7 +661,7 @@ study_checks:
   planned_method_families: 7
   planned_configurations: 10
   planned_panels: 100
-  completed_panels: 91
+  completed_panels: 93
   fully_completed_configurations: 9
 methods:
   BOLT-LMM:
@@ -1348,81 +1349,81 @@ methods:
     max_loci_phenotypes: 3
     zero_loci_phenotypes: 2,6,8,9,10
   GCTA_MLMA:
-    n_phenotypes: 1
+    n_phenotypes: 3
     complete_ten_phenotypes: false
     significant_snps_mean: null
     significant_snps_sd: null
-    significant_snps_n_defined: 1
+    significant_snps_n_defined: 3
     loci_mean: null
     loci_sd: null
-    loci_n_defined: 1
+    loci_n_defined: 3
     effect_loci_mean: null
     effect_loci_sd: null
-    effect_loci_n_defined: 1
+    effect_loci_n_defined: 3
     null_loci_mean: null
     null_loci_sd: null
-    null_loci_n_defined: 1
+    null_loci_n_defined: 3
     central_null_loci_mean: null
     central_null_loci_sd: null
-    central_null_loci_n_defined: 1
+    central_null_loci_n_defined: 3
     strict_significant_snps_mean: null
     strict_significant_snps_sd: null
-    strict_significant_snps_n_defined: 1
+    strict_significant_snps_n_defined: 3
     strict_loci_mean: null
     strict_loci_sd: null
-    strict_loci_n_defined: 1
+    strict_loci_n_defined: 3
     snps_at_threshold_mean: null
     snps_at_threshold_sd: null
-    snps_at_threshold_n_defined: 1
+    snps_at_threshold_n_defined: 3
     effect_locus_fraction_mean: null
     effect_locus_fraction_sd: null
-    effect_locus_fraction_n_defined: 1
+    effect_locus_fraction_n_defined: 2
     null_locus_fraction_mean: null
     null_locus_fraction_sd: null
-    null_locus_fraction_n_defined: 1
+    null_locus_fraction_n_defined: 2
     central_null_locus_fraction_mean: null
     central_null_locus_fraction_sd: null
-    central_null_locus_fraction_n_defined: 1
+    central_null_locus_fraction_n_defined: 2
     central_null_windows_mean: null
     central_null_windows_sd: null
-    central_null_windows_n_defined: 1
+    central_null_windows_n_defined: 3
     central_null_spillover_rate_mean: null
     central_null_spillover_rate_sd: null
-    central_null_spillover_rate_n_defined: 1
+    central_null_spillover_rate_n_defined: 3
     lambda_gc_central_null_mean: null
     lambda_gc_central_null_sd: null
-    lambda_gc_central_null_n_defined: 1
+    lambda_gc_central_null_n_defined: 3
     lambda_gc_central_null_historical_mean: null
     lambda_gc_central_null_historical_sd: null
-    lambda_gc_central_null_historical_n_defined: 1
+    lambda_gc_central_null_historical_n_defined: 3
     n_historical_finite_central_statistics_mean: null
     n_historical_finite_central_statistics_sd: null
-    n_historical_finite_central_statistics_n_defined: 1
+    n_historical_finite_central_statistics_n_defined: 3
     lambda_gc_all_mean: null
     lambda_gc_all_sd: null
-    lambda_gc_all_n_defined: 1
+    lambda_gc_all_n_defined: 3
     n_central_null_snps_mean: null
     n_central_null_snps_sd: null
-    n_central_null_snps_n_defined: 1
+    n_central_null_snps_n_defined: 3
     causal_leads_mean: null
     causal_leads_sd: null
-    causal_leads_n_defined: 1
+    causal_leads_n_defined: 3
     lead_abs_beta_mean_mean: null
     lead_abs_beta_mean_sd: null
-    lead_abs_beta_mean_n_defined: 1
+    lead_abs_beta_mean_n_defined: 2
     lead_abs_beta_median_mean: null
     lead_abs_beta_median_sd: null
-    lead_abs_beta_median_n_defined: 1
+    lead_abs_beta_median_n_defined: 2
     lead_abs_beta_max_mean: null
     lead_abs_beta_max_sd: null
-    lead_abs_beta_max_n_defined: 1
+    lead_abs_beta_max_n_defined: 2
     pooled_effect_locus_fraction: null
     pooled_null_locus_fraction: null
     pooled_central_null_locus_fraction: null
-    pooled_loci: 2
-    max_loci: 2
-    max_loci_phenotypes: 1
-    zero_loci_phenotypes: null
+    pooled_loci: 9
+    max_loci: 7
+    max_loci_phenotypes: 3
+    zero_loci_phenotypes: '2'
 finemapping:
   rss_configuration: estimate_residual_variance=TRUE; original loci unchanged
   pooled:
@@ -1708,26 +1709,26 @@ gcta_heritability:
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 2
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.55752
+    Ve_printed: 0.49975
+    h2_from_printed_variances: 0.5273203628212282
+    final_iteration: 7.0
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 7eb9a70c1f33c32d736af2ad13b8fb919b38533df9df17ba9b286350bf0aec69
+    mlma_sha256: 6793add0c6e8b293fe04a3f760a8db9374e1ce3f4b707a1154633618c663d48e
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 3
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.58182
+    Ve_printed: 0.49895
+    h2_from_printed_variances: 0.5383384068765787
+    final_iteration: 7.0
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 530552af2f47095eddb69695480bcc83e028c896f4486ae28a1e0ed7f7ea508b
+    mlma_sha256: f7740257333c725b972b87c28cc4f9a44130d2692630f4127fff0bd2fb38480a
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
@@ -1816,7 +1817,7 @@ gcta_heritability:
       no unrounded estimate or SE is available
   summary:
   - configuration: GCTA_MLMA
-    n_completed: 1
+    n_completed: 3
     n_required: 10
     complete_ten_phenotypes: false
     h2_mean: null
@@ -1833,8 +1834,8 @@ validation:
     static_checks: Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method
       labels
     markdown_broken_links: 0
-    manhattan_completed_panels_matching_canonical_snp_counts: 91
-    manhattan_pending_panels: 9
+    manhattan_completed_panels_matching_canonical_snp_counts: 93
+    manhattan_pending_panels: 7
     ld_bins_recounted: 1000
     ld_pair_counts_match: true
     rss_published_fit_function_matches_executed: true
@@ -1844,19 +1845,16 @@ validation:
       NOT_RUN: 3
       AMBIGUOUS: 2
       REQUIRES_RECOMPUTATION: 1
-    historical_ledger_scope: October manuscript and November4 reconstruction, not
-      unavailable November5 PI-edited DOCX
+    historical_ledger_scope: October manuscript and November4 reconstruction; current
+      numerical validation has separate source-linked audits and does not certify
+      final manuscript layout or references
     publication_content_review: No individual sample IDs, raw genotype/GRM/LD, variant
       identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new
       publication content
     incomplete_dependencies:
-    - GCTA phenotypes2-10 outstanding
-    - PI manuscript, latest response letter and authoritative supplementary documents
-      unavailable
-    - Paperpile refresh unavailable
-    - cached Equation13 and Equation12 implementation unavailable
-    - original SNP-effect/PVE definition unavailable
-    - GitHub authentication unavailable
+    - GCTA phenotypes4–10 incomplete
+    - Actual Equation13 variant cache and benchmark Equation12 generator unavailable
+    - Original SNP-effect/PVE definition and SLEMM effect-analysis pipeline unavailable
     new_slemm_table_checks: independent8checks and spatial3200rowcomparison passed
     supplementary_table_S1_registry_check: PASS:10 current configurations exactly,
       values equal canonical association summary; SLEMM_previous retained only in
@@ -1870,10 +1868,25 @@ validation:
       plus verified LD; no old strict figures selected'
     historical_tables: unchanged; historical_* result snapshot blocks and explicit
       audit profile
-    optional_individual_manhattan: 100 unique planned PDF/PNG path pairs verified;
-      bounded actual rendering smoke tested; --require-complete --individual produces
-      final individual exports after all inputs validate. Existing 91-panel composites
-      were not rerun for this optional feature.
+    optional_individual_manhattan: 93 completed configuration/phenotype datasets are
+      validated. --individual regenerates one PDF/PNG pair per available dataset;
+      --require-complete enforces all100. Only current composites and their coverage
+      manifest are distributed here.
+    snapshot_date: '2026-11-06'
+    gcta_completed_phenotypes:
+    - 1
+    - 2
+    - 3
+    gcta_independent_raw_output_checks_passed: 69
+    gcta_independent_canonical_checks_passed: 234
+    gcta_pairwise_comparisons_checked: 27
+    public_workflow_check_for_current_export: PASS
+    LOCO_normalization_status: The actual Equation12 generator and covariance normalization
+      remain unresolved; public author-code examples are not proof of which convention
+      generated the retained predictions
+    public_composite_refresh: Phenotypes 2 and 3 PDF/PNG refreshed from completed
+      outputs; all previously complete manifest rows retain their exact serialized
+      values
   scope: Current inclusive numerical revision; original manuscript ledger is historical_validation.
     The received PI document has a private working revision; final GCTA integration,
     citations, layout and resubmission are not certified.
