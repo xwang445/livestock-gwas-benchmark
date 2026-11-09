@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "phenotypes": 10,
+  "matching_metric_cells": 210,
+  "original_raw_checks": 230,
+  "all_canonical_metrics_match_independent": true,
+  "scope": "All ten completed GCTA MLMA phenotypes; inclusive significance threshold; aggregate checks only",
+  "source": "derived_data/revision_2026-11-05/association/association_by_phenotype.tsv"
+}

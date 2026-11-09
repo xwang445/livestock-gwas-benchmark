@@ -1,6 +1,6 @@
 schema_version: 2
 scope: Primary blocks derive from the current inclusive revision tables refreshed
-  November 6, updated SLEMM, ERV_TRUE RSS and actual partial GCTA coverage. Explicit
+  November 9, updated SLEMM, ERV_TRUE RSS and all ten completed GCTA phenotypes. Explicit
   historical_* blocks preserve the November 4 strict reconstruction. source_tables
   fingerprints both separate datasets; historical and revised results must not be
   mixed.
@@ -473,32 +473,32 @@ source_tables:
     sha256: 2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40
   revision_2026-11-05/analysis_manifest.tsv:
     path: derived_data/revision_2026-11-05/analysis_manifest.tsv
-    rows: 110
-    sha256: 181f3426b3bce29591a175d00cb30e86285633875136965f8613f0662b5c7882
+    rows: 100
+    sha256: 0c7c4ec140df0599433c84485ea27a1dbe27895160026a51f223d276197456fa
   revision_2026-11-05/association/association_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
-    rows: 103
-    sha256: f2aa37cf96556ae854b79b39a0a2bd374e3ba42c9a44d42317534f0db503ca32
+    rows: 110
+    sha256: 9fade390216f21bb7651394a8d639a9ed5c85c6b5ace8a2c35440f4ce10b90ce
   revision_2026-11-05/association/association_summary.tsv:
     path: derived_data/revision_2026-11-05/association/association_summary.tsv
     rows: 11
-    sha256: 688a6531a3c066e2adae3a21667c3510091fd1a729c77956bf0aca6887c1831f
+    sha256: 059edd3f33cfa675dedbea6ce206879ca34d21fdcf4a4924822a78ce9c5a5d78
   revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv
     rows: 10
-    sha256: eb37b94ae77f6cf92433f121342440a1909e442ec3865aef185ee6837b261f79
+    sha256: d7beeee0cf1181aadddf4222a413d5f4fbe9bee936b941dcfb6ad3b0ea8e888a
   revision_2026-11-05/association/gcta_heritability_summary.tsv:
     path: derived_data/revision_2026-11-05/association/gcta_heritability_summary.tsv
     rows: 1
-    sha256: dd0ac8a591090559b237f039a146ef6e7c91d49adca2dbe4b489a0787e2b45b5
+    sha256: ffa680940a1ee1d64166dc21ee018db4219963878a70290e518466ebff65d842
   revision_2026-11-05/association/genomic_background.tsv:
     path: derived_data/revision_2026-11-05/association/genomic_background.tsv
     rows: 3
     sha256: b41fadd32868fd5c55033ebcda9b8bbfb4bd3d7883fe00e64e57735f3cbbe8e9
   revision_2026-11-05/association/inclusive_threshold_by_input.tsv:
     path: derived_data/revision_2026-11-05/association/inclusive_threshold_by_input.tsv
-    rows: 103
-    sha256: 3ea25cafc1a63ba515e9103d9e0ec8b2fbe0f2501bad63536e6bd89651f02d1f
+    rows: 101
+    sha256: 4746cae3c7a8fdc2d557e2035e40db7e8e5110f6e6ae42ab270c8303231b55d0
   revision_2026-11-05/association/null_inventory_50kb.tsv:
     path: derived_data/revision_2026-11-05/association/null_inventory_50kb.tsv
     rows: 29600
@@ -506,27 +506,27 @@ source_tables:
   revision_2026-11-05/association/numerical_claims_reconciliation.tsv:
     path: derived_data/revision_2026-11-05/association/numerical_claims_reconciliation.tsv
     rows: 12
-    sha256: d5e14f92f41b624fae88b7db58b069e0d880db8b0f2585c4e130b685e183eeb8
+    sha256: eb11c97607b8bf9a5883a23757083f9f4863fc0e3d61936fa14d616eee7d631d
   revision_2026-11-05/association/pairwise_locus_overlap.tsv:
     path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap.tsv
-    rows: 867
-    sha256: f990cb52e7b4fc5c5af4ed673b908b7334e19f1566a3677f3494877c522ee99d
+    rows: 1000
+    sha256: 971907cd79c32500c43d7584f62d4bbe0ae9a6aca30eabbb2543ceb599e9ba11
   revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv:
     path: derived_data/revision_2026-11-05/association/pairwise_locus_overlap_summary.tsv
     rows: 100
-    sha256: 04e021c97f726306947e51d86e5164272e63b3ff7eb7f379a3559f8bc509b900
+    sha256: b71777ae93f58ca05b5e16c043716b0a5b71e6928b651394d68d5ab4e0af14e4
   revision_2026-11-05/association/parent_regions.tsv:
     path: derived_data/revision_2026-11-05/association/parent_regions.tsv
     rows: 767
     sha256: c73e3f5bb3844cbef1bada3c15045bfd72fd33ac019fba707f85ffb4a4fbcbff
   revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_by_phenotype.tsv
-    rows: 10506
-    sha256: bdf6f6b487554b79fd6f3bfebf8f836a2079ca46bd514616ca9c676b4fac5397
+    rows: 11220
+    sha256: 6c13b227f91a2ca08f39013ff5c1be3700eee657a548bccf2106b4db4848e918
   revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv:
     path: derived_data/revision_2026-11-05/association/power_and_null_snp_rate_summary.tsv
     rows: 1122
-    sha256: 03d68b213aea704f929a449aed35565aa9a64e440a6ad6905fdd0ba970fb2226
+    sha256: db3001fc6d6873aa6da6181a44f7559eafd2cd9ae6279ab2565de5610af155f5
   revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/slemm_heritability_by_phenotype.tsv
     rows: 20
@@ -537,16 +537,16 @@ source_tables:
     sha256: 7a2168df92ecb7793aa4f5fc0d6e873401afe2d4f743e2dcc067e8fcca8d35a7
   revision_2026-11-05/association/spatial_boundary_audit.tsv:
     path: derived_data/revision_2026-11-05/association/spatial_boundary_audit.tsv
-    rows: 93
-    sha256: f3a18cf57f26d676da3df7de701ca81a2707297905d9910201a3824db88c7a4d
+    rows: 100
+    sha256: df61915e60ac2b74bea238506a9d79db0a18c08bf2efc43029ea12ae1d9d9bf0
   revision_2026-11-05/association/spatial_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/spatial_by_phenotype.tsv
-    rows: 3720
-    sha256: b28855c4e4a33be782b50cfbcf172e9ccb5360602ce20ad78a5e472c3c87b67a
+    rows: 4000
+    sha256: 35cc8f61ec738cda67d75e03c4c77f39a19b93b575df64f3c611307ad02b5a03
   revision_2026-11-05/association/supplementary_table_S1.tsv:
     path: derived_data/revision_2026-11-05/association/supplementary_table_S1.tsv
     rows: 10
-    sha256: 3efeea2534dff2fba61f324026edc96cb32c6bb1e17f576c4bff6c5d6a28876b
+    sha256: bf3c9678b96d808aa900adb4a18728cd55fc52d5844ec13678efcd383ff8c216
   revision_2026-11-05/association/window_inventory_500kb.tsv:
     path: derived_data/revision_2026-11-05/association/window_inventory_500kb.tsv
     rows: 4538
@@ -636,7 +636,7 @@ revision_checks:
   planned_method_families: 7
   planned_configurations: 10
   planned_panels: 100
-  completed_panels: 93
+  completed_panels: 100
   completed_phenotypes_by_configuration:
     BOLT-LMM: 10
     REGENIE_LOCO: 10
@@ -647,8 +647,8 @@ revision_checks:
     BLINK_NYC: 10
     BLINK_Kansas: 10
     SLEMM: 10
-    GCTA_MLMA: 3
-  fully_completed_configurations: 9
+    GCTA_MLMA: 10
+  fully_completed_configurations: 10
   association_source: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
   fine_mapping_source: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
   status_document: docs/revision_2026-11-05.md
@@ -661,8 +661,8 @@ study_checks:
   planned_method_families: 7
   planned_configurations: 10
   planned_panels: 100
-  completed_panels: 93
-  fully_completed_configurations: 9
+  completed_panels: 100
+  fully_completed_configurations: 10
 methods:
   BOLT-LMM:
     n_phenotypes: 10
@@ -700,8 +700,8 @@ methods:
     central_null_locus_fraction_mean: 0.28383705662474
     central_null_locus_fraction_sd: 0.0087523197357603
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.306891891891892
     central_null_spillover_rate_sd: 0.0294068599490104
@@ -718,8 +718,8 @@ methods:
     lambda_gc_all_mean: 9.94743468850432
     lambda_gc_all_sd: 1.03501637748791
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 151.9
     causal_leads_sd: 19.7565741519683
@@ -776,8 +776,8 @@ methods:
     central_null_locus_fraction_mean: 0.290001893420114
     central_null_locus_fraction_sd: 0.004951879738697
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.302972972972973
     central_null_spillover_rate_sd: 0.0345207897964605
@@ -794,8 +794,8 @@ methods:
     lambda_gc_all_mean: 9.65506083640672
     lambda_gc_all_sd: 1.14860650711821
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 143.2
     causal_leads_sd: 18.2501141548941
@@ -852,8 +852,8 @@ methods:
     central_null_locus_fraction_mean: 0.176086208198029
     central_null_locus_fraction_sd: 0.0541213690276417
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0107432432432432
     central_null_spillover_rate_sd: 0.009315997064986
@@ -870,8 +870,8 @@ methods:
     lambda_gc_all_mean: 2.39623531051754
     lambda_gc_all_sd: 0.375907088468299
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 15.4
     causal_leads_sd: 9.22797678559908
@@ -928,8 +928,8 @@ methods:
     central_null_locus_fraction_mean: 0.0957522174803028
     central_null_locus_fraction_sd: 0.0214962053483114
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0147297297297297
     central_null_spillover_rate_sd: 0.0040640517364468
@@ -946,8 +946,8 @@ methods:
     lambda_gc_all_mean: 3.13726780283029
     lambda_gc_all_sd: 0.12972737471786
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 55.4
     causal_leads_sd: 3.9214509786274
@@ -1004,8 +1004,8 @@ methods:
     central_null_locus_fraction_mean: 0.166388907467015
     central_null_locus_fraction_sd: 0.0282292565731229
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0291891891891892
     central_null_spillover_rate_sd: 0.0069477510186527
@@ -1022,8 +1022,8 @@ methods:
     lambda_gc_all_mean: 3.71099401553567
     lambda_gc_all_sd: 0.275036101307506
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 44.5
     causal_leads_sd: 5.87367006223537
@@ -1080,8 +1080,8 @@ methods:
     central_null_locus_fraction_mean: 0.151459251954737
     central_null_locus_fraction_sd: 0.0223371072796774
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0189864864864865
     central_null_spillover_rate_sd: 0.0046969045406112
@@ -1098,8 +1098,8 @@ methods:
     lambda_gc_all_mean: 3.76773245801489
     lambda_gc_all_sd: 0.289183399026789
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 38.9
     causal_leads_sd: 4.09471203708718
@@ -1156,8 +1156,8 @@ methods:
     central_null_locus_fraction_mean: 0.0961326986998132
     central_null_locus_fraction_sd: 0.0194552694453919
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0114864864864865
     central_null_spillover_rate_sd: 0.0024047473540611
@@ -1174,8 +1174,8 @@ methods:
     lambda_gc_all_mean: 2.00437285874488
     lambda_gc_all_sd: 0.154913531083241
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 44.9
     causal_leads_sd: 4.06748625620843
@@ -1232,8 +1232,8 @@ methods:
     central_null_locus_fraction_mean: 0.0995509517051901
     central_null_locus_fraction_sd: 0.0204863678872716
     central_null_locus_fraction_n_defined: 10
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0104054054054054
     central_null_spillover_rate_sd: 0.0022567522612388
@@ -1250,8 +1250,8 @@ methods:
     lambda_gc_all_mean: 1.95039983422696
     lambda_gc_all_sd: 0.152148822613337
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 39.7
     causal_leads_sd: 5.31350480693613
@@ -1308,8 +1308,8 @@ methods:
     central_null_locus_fraction_mean: 0.0
     central_null_locus_fraction_sd: 0.0
     central_null_locus_fraction_n_defined: 5
-    central_null_windows_mean: 1480.0
-    central_null_windows_sd: 0.0
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
     central_null_windows_n_defined: 10
     central_null_spillover_rate_mean: 0.0
     central_null_spillover_rate_sd: 0.0
@@ -1326,8 +1326,8 @@ methods:
     lambda_gc_all_mean: 0.812192843491726
     lambda_gc_all_sd: 0.0206878578809088
     lambda_gc_all_n_defined: 10
-    n_central_null_snps_mean: 44345.0
-    n_central_null_snps_sd: 0.0
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
     n_central_null_snps_n_defined: 10
     causal_leads_mean: 1.1
     causal_leads_sd: 1.44913767461894
@@ -1349,81 +1349,81 @@ methods:
     max_loci_phenotypes: 3
     zero_loci_phenotypes: 2,6,8,9,10
   GCTA_MLMA:
-    n_phenotypes: 3
-    complete_ten_phenotypes: false
-    significant_snps_mean: null
-    significant_snps_sd: null
-    significant_snps_n_defined: 3
-    loci_mean: null
-    loci_sd: null
-    loci_n_defined: 3
-    effect_loci_mean: null
-    effect_loci_sd: null
-    effect_loci_n_defined: 3
-    null_loci_mean: null
-    null_loci_sd: null
-    null_loci_n_defined: 3
-    central_null_loci_mean: null
-    central_null_loci_sd: null
-    central_null_loci_n_defined: 3
-    strict_significant_snps_mean: null
-    strict_significant_snps_sd: null
-    strict_significant_snps_n_defined: 3
-    strict_loci_mean: null
-    strict_loci_sd: null
-    strict_loci_n_defined: 3
-    snps_at_threshold_mean: null
-    snps_at_threshold_sd: null
-    snps_at_threshold_n_defined: 3
-    effect_locus_fraction_mean: null
-    effect_locus_fraction_sd: null
-    effect_locus_fraction_n_defined: 2
-    null_locus_fraction_mean: null
-    null_locus_fraction_sd: null
-    null_locus_fraction_n_defined: 2
-    central_null_locus_fraction_mean: null
-    central_null_locus_fraction_sd: null
-    central_null_locus_fraction_n_defined: 2
-    central_null_windows_mean: null
-    central_null_windows_sd: null
-    central_null_windows_n_defined: 3
-    central_null_spillover_rate_mean: null
-    central_null_spillover_rate_sd: null
-    central_null_spillover_rate_n_defined: 3
-    lambda_gc_central_null_mean: null
-    lambda_gc_central_null_sd: null
-    lambda_gc_central_null_n_defined: 3
-    lambda_gc_central_null_historical_mean: null
-    lambda_gc_central_null_historical_sd: null
-    lambda_gc_central_null_historical_n_defined: 3
-    n_historical_finite_central_statistics_mean: null
-    n_historical_finite_central_statistics_sd: null
-    n_historical_finite_central_statistics_n_defined: 3
-    lambda_gc_all_mean: null
-    lambda_gc_all_sd: null
-    lambda_gc_all_n_defined: 3
-    n_central_null_snps_mean: null
-    n_central_null_snps_sd: null
-    n_central_null_snps_n_defined: 3
-    causal_leads_mean: null
-    causal_leads_sd: null
-    causal_leads_n_defined: 3
-    lead_abs_beta_mean_mean: null
-    lead_abs_beta_mean_sd: null
-    lead_abs_beta_mean_n_defined: 2
-    lead_abs_beta_median_mean: null
-    lead_abs_beta_median_sd: null
-    lead_abs_beta_median_n_defined: 2
-    lead_abs_beta_max_mean: null
-    lead_abs_beta_max_sd: null
-    lead_abs_beta_max_n_defined: 2
-    pooled_effect_locus_fraction: null
-    pooled_null_locus_fraction: null
-    pooled_central_null_locus_fraction: null
-    pooled_loci: 9
+    n_phenotypes: 10
+    complete_ten_phenotypes: true
+    significant_snps_mean: 5.8
+    significant_snps_sd: 10.0862943310878
+    significant_snps_n_defined: 10
+    loci_mean: 1.5
+    loci_sd: 2.22361067735439
+    loci_n_defined: 10
+    effect_loci_mean: 1.4
+    effect_loci_sd: 1.95505043981536
+    effect_loci_n_defined: 10
+    null_loci_mean: 0.1
+    null_loci_sd: 0.316227766016838
+    null_loci_n_defined: 10
+    central_null_loci_mean: 0.0
+    central_null_loci_sd: 0.0
+    central_null_loci_n_defined: 10
+    strict_significant_snps_mean: 5.8
+    strict_significant_snps_sd: 10.0862943310878
+    strict_significant_snps_n_defined: 10
+    strict_loci_mean: 1.5
+    strict_loci_sd: 2.22361067735439
+    strict_loci_n_defined: 10
+    snps_at_threshold_mean: 0.0
+    snps_at_threshold_sd: 0.0
+    snps_at_threshold_n_defined: 10
+    effect_locus_fraction_mean: 0.971428571428572
+    effect_locus_fraction_sd: 0.063887656499994
+    effect_locus_fraction_n_defined: 5
+    null_locus_fraction_mean: 0.0285714285714286
+    null_locus_fraction_sd: 0.063887656499994
+    null_locus_fraction_n_defined: 5
+    central_null_locus_fraction_mean: 0.0
+    central_null_locus_fraction_sd: 0.0
+    central_null_locus_fraction_n_defined: 5
+    central_null_windows_mean: 1480
+    central_null_windows_sd: 0
+    central_null_windows_n_defined: 10
+    central_null_spillover_rate_mean: 0.0
+    central_null_spillover_rate_sd: 0.0
+    central_null_spillover_rate_n_defined: 10
+    lambda_gc_central_null_mean: 0.580253219657072
+    lambda_gc_central_null_sd: 0.0164763260984851
+    lambda_gc_central_null_n_defined: 10
+    lambda_gc_central_null_historical_mean: 0.580251718535516
+    lambda_gc_central_null_historical_sd: 0.016476200048794
+    lambda_gc_central_null_historical_n_defined: 10
+    n_historical_finite_central_statistics_mean: 44345.0
+    n_historical_finite_central_statistics_sd: 0.0
+    n_historical_finite_central_statistics_n_defined: 10
+    lambda_gc_all_mean: 0.802226921749128
+    lambda_gc_all_sd: 0.0213134879561351
+    lambda_gc_all_n_defined: 10
+    n_central_null_snps_mean: 44345
+    n_central_null_snps_sd: 0
+    n_central_null_snps_n_defined: 10
+    causal_leads_mean: 1.0
+    causal_leads_sd: 1.4142135623731
+    causal_leads_n_defined: 10
+    lead_abs_beta_mean_mean: 0.12811992952381
+    lead_abs_beta_mean_sd: 0.0266429150542311
+    lead_abs_beta_mean_n_defined: 5
+    lead_abs_beta_median_mean: 0.1251537
+    lead_abs_beta_median_sd: 0.0220184420118681
+    lead_abs_beta_median_n_defined: 5
+    lead_abs_beta_max_mean: 0.15050068
+    lead_abs_beta_max_sd: 0.0534852235127797
+    lead_abs_beta_max_n_defined: 5
+    pooled_effect_locus_fraction: 0.933333333333333
+    pooled_null_locus_fraction: 0.0666666666666667
+    pooled_central_null_locus_fraction: 0.0
+    pooled_loci: 15
     max_loci: 7
     max_loci_phenotypes: 3
-    zero_loci_phenotypes: '2'
+    zero_loci_phenotypes: 2,6,8,9,10
 finemapping:
   rss_configuration: estimate_residual_variance=TRUE; original loci unchanged
   pooled:
@@ -1701,7 +1701,7 @@ gcta_heritability:
     Vg_printed: 0.5852899999999999
     Ve_printed: 0.4993099999999999
     h2_from_printed_variances: 0.539636732435921
-    final_iteration: 9.0
+    final_iteration: 9
     n: 20000
     log_sha256: 0837a6104f6bbe319bfa6bf84b07fd70e7d0dcf5cb0f622c0c60f0b4a578bc6a
     mlma_sha256: 7c09883744b5ff14df26e03eae375b7aae61acb5be164649ea2a8469fcf78de0
@@ -1713,7 +1713,7 @@ gcta_heritability:
     Vg_printed: 0.55752
     Ve_printed: 0.49975
     h2_from_printed_variances: 0.5273203628212282
-    final_iteration: 7.0
+    final_iteration: 7
     n: 20000
     log_sha256: 7eb9a70c1f33c32d736af2ad13b8fb919b38533df9df17ba9b286350bf0aec69
     mlma_sha256: 6793add0c6e8b293fe04a3f760a8db9374e1ce3f4b707a1154633618c663d48e
@@ -1725,7 +1725,7 @@ gcta_heritability:
     Vg_printed: 0.58182
     Ve_printed: 0.49895
     h2_from_printed_variances: 0.5383384068765787
-    final_iteration: 7.0
+    final_iteration: 7
     n: 20000
     log_sha256: 530552af2f47095eddb69695480bcc83e028c896f4486ae28a1e0ed7f7ea508b
     mlma_sha256: f7740257333c725b972b87c28cc4f9a44130d2692630f4127fff0bd2fb38480a
@@ -1733,97 +1733,97 @@ gcta_heritability:
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 4
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.5474
+    Ve_printed: 0.49764
+    h2_from_printed_variances: 0.5238077011406262
+    final_iteration: 8
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 4a03a1f7c699df5811bb9d63e2c8e652aa3bd44dd4338580ccfdc2783a71cf71
+    mlma_sha256: b3da418ad2f59fcfedaf48b15e987e1c1a1758b0d184c11400fc040a78a46fa9
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 5
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.56479
+    Ve_printed: 0.49762
+    h2_from_printed_variances: 0.5316120894946395
+    final_iteration: 7
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 336959828d9cc484fffc6f01dbedf9cbe3923ec7e0e35d1c6c19e9c6bb291a40
+    mlma_sha256: b08353d0e0f078406bd16b36edc88e39badef5cb2394ba523b3de8df394dfc08
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 6
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.51499
+    Ve_printed: 0.4958799999999999
+    h2_from_printed_variances: 0.5094522539990304
+    final_iteration: 6
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 0728e69192c1e331d4944a1e6d069178f3ea4abeaf0632fc5d91ade105c52cc7
+    mlma_sha256: 394faad2c5d2eeb924dd38a653df2fd226ed3e26059c9cc2f1d14d538c540aa4
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 7
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.6015899999999998
+    Ve_printed: 0.49392
+    h2_from_printed_variances: 0.5491414957417093
+    final_iteration: 8
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 7423eb7a68834334bb4d64668792f6aa942576aecfffb4cb7ca0fad2918a1e09
+    mlma_sha256: 2a7e4ee1816effa6a0425ffaa1bdc971e2a0ddc60623f77309a6d0873d3175c9
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 8
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.6130799999999998
+    Ve_printed: 0.50743
+    h2_from_printed_variances: 0.5471437113457264
+    final_iteration: 8
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: 90cb0889b0fc24b806eecbb4ebac01409d91c2fa829730c55d5c3a22b4baadc4
+    mlma_sha256: c654670d6de31b276b7209e07f4b6129a1d66332fb46547bd2dd4eaf5fefd6ca
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 9
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.5277899999999999
+    Ve_printed: 0.50773
+    h2_from_printed_variances: 0.509685954882571
+    final_iteration: 8
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: bafdf4508ad08de74d76892207fd75f52a33d9733a1f2c0c1e11f44b1033d930
+    mlma_sha256: 70cde2183a4b9093a97390f16678d1311f8e34f3fcc017d56168ac9cb6f1b881
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   - configuration: GCTA_MLMA
     phenotype: 10
-    status: pending_completion
-    Vg_printed: null
-    Ve_printed: null
-    h2_from_printed_variances: null
-    final_iteration: null
+    status: completed_log_rounded_estimate
+    Vg_printed: 0.52002
+    Ve_printed: 0.5094199999999999
+    h2_from_printed_variances: 0.5051484302144855
+    final_iteration: 6
     n: 20000
-    log_sha256: null
-    mlma_sha256: null
+    log_sha256: beebb56323b79891cd972909d7a304294b2b0df79f3911e74975740b1de40ed1
+    mlma_sha256: ee1fd4dfdec1ba770845df93f91d03047db2e09217a44f2f70a602b963f7d01a
     precision_note: Derived from final REML iteration printed to 5 decimal places;
       no unrounded estimate or SE is available
   summary:
   - configuration: GCTA_MLMA
-    n_completed: 3
+    n_completed: 10
     n_required: 10
-    complete_ten_phenotypes: false
-    h2_mean: null
-    h2_sample_sd: null
-    h2_min: null
-    h2_max: null
+    complete_ten_phenotypes: true
+    h2_mean: 0.5281287138952517
+    h2_sample_sd: 0.0159453124112389
+    h2_min: 0.5051484302144855
+    h2_max: 0.5491414957417093
     precision_note: Ratios of rounded printed Vg and Ve; aggregate withheld until
       all ten MLMA analyses complete
 validation:
@@ -1834,8 +1834,8 @@ validation:
     static_checks: Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method
       labels
     markdown_broken_links: 0
-    manhattan_completed_panels_matching_canonical_snp_counts: 93
-    manhattan_pending_panels: 7
+    manhattan_completed_panels_matching_canonical_snp_counts: 100
+    manhattan_pending_panels: 0
     ld_bins_recounted: 1000
     ld_pair_counts_match: true
     rss_published_fit_function_matches_executed: true
@@ -1852,7 +1852,6 @@ validation:
       identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new
       publication content
     incomplete_dependencies:
-    - GCTA phenotypes4–10 incomplete
     - Actual Equation13 variant cache and benchmark Equation12 generator unavailable
     - Original SNP-effect/PVE definition and SLEMM effect-analysis pipeline unavailable
     new_slemm_table_checks: independent8checks and spatial3200rowcomparison passed
@@ -1868,15 +1867,21 @@ validation:
       plus verified LD; no old strict figures selected'
     historical_tables: unchanged; historical_* result snapshot blocks and explicit
       audit profile
-    optional_individual_manhattan: 93 completed configuration/phenotype datasets are
-      validated. --individual regenerates one PDF/PNG pair per available dataset;
-      --require-complete enforces all100. Only current composites and their coverage
-      manifest are distributed here.
-    snapshot_date: '2026-11-06'
+    optional_individual_manhattan: 100 completed configuration/phenotype datasets
+      independently validated; private PI handoff includes 100 individual PDF/PNG
+      pairs; public composites and coverage manifest include all ten configurations.
+    snapshot_date: '2026-11-09'
     gcta_completed_phenotypes:
     - 1
     - 2
     - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
     gcta_independent_raw_output_checks_passed: 69
     gcta_independent_canonical_checks_passed: 234
     gcta_pairwise_comparisons_checked: 27
@@ -1887,6 +1892,8 @@ validation:
     public_composite_refresh: Phenotypes 2 and 3 PDF/PNG refreshed from completed
       outputs; all previously complete manifest rows retain their exact serialized
       values
+    gcta_independent_metric_cells: 210
+    gcta_independent_raw_checks: 230
   scope: Current inclusive numerical revision; the older manuscript ledger is historical_validation.
-    The full ten-phenotype GCTA comparison and upstream Equation12/13 cache verification
-    remain incomplete.
+    The ten-phenotype GCTA comparison is complete; upstream Equation12/13 cache verification
+    remains incomplete.

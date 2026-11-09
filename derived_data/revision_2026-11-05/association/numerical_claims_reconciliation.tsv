@@ -1,13 +1,13 @@
 claim	old_value	new_value	authoritative_output	proposed_locations	status
-SLEMM mean detected loci	2.6	1.6	tables/association_summary.tsv: loci_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM mean significant SNPs	11.6	7.1	tables/association_summary.tsv: significant_snps_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM central-null P-based lambda mean	0.595518986758514	0.587558512531417	tables/association_summary.tsv: lambda_gc_central_null_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM historical lambda mean	0.5955189852027671	0.587558497101515	tables/association_summary.tsv: lambda_gc_central_null_historical_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM equal-phenotype detected loci effect fraction	0.932539682539683	0.9714285714285721	tables/association_summary.tsv: effect_locus_fraction_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM equal-phenotype detected loci null fraction	0.0674603174603175	0.0285714285714286	tables/association_summary.tsv: null_locus_fraction_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM central-null windows detection rate	0.0	0.0	tables/association_summary.tsv: central_null_spillover_rate_mean	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM maximum loci	9	7	tables/association_summary.tsv: max_loci	Figure3/6;TableS1;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM zero-locus phenotypes	6,8,10	2,6,8,9,10	tables/association_summary.tsv:zero_loci_phenotypes	Figure3;Results;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM pooled significant SNPs	116	71	tables/association_by_phenotype.tsv sum significant_snps	Figure3;Results	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM pooled loci	26	16	tables/association_summary.tsv pooled_loci	TableS1;Results	validated_data; working_document_locations_reconciled_privately; final_integration_pending
-SLEMM h2 mean	0.529104	0.529104	tables/slemm_heritability_by_phenotype.tsv	Results;Methods;responseletter	validated_data; working_document_locations_reconciled_privately; final_integration_pending
+SLEMM mean detected loci	2.6	1.6	tables/association_summary.tsv: loci_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM mean significant SNPs	11.6	7.1	tables/association_summary.tsv: significant_snps_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM central-null P-based lambda mean	0.595518986758514	0.587558512531417	tables/association_summary.tsv: lambda_gc_central_null_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM historical lambda mean	0.5955189852027671	0.587558497101515	tables/association_summary.tsv: lambda_gc_central_null_historical_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM equal-phenotype detected loci effect fraction	0.932539682539683	0.9714285714285721	tables/association_summary.tsv: effect_locus_fraction_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM equal-phenotype detected loci null fraction	0.0674603174603175	0.0285714285714286	tables/association_summary.tsv: null_locus_fraction_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM central-null windows detection rate	0.0	0.0	tables/association_summary.tsv: central_null_spillover_rate_mean	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM maximum loci	9	7	tables/association_summary.tsv: max_loci	Figure3/6;TableS1;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM zero-locus phenotypes	6,8,10	2,6,8,9,10	tables/association_summary.tsv:zero_loci_phenotypes	Figure3;Results;responseletter	validated_data; manuscript/letter_location_unavailable
+SLEMM pooled significant SNPs	116	71	tables/association_by_phenotype.tsv sum significant_snps	Figure3;Results	validated_data; manuscript/letter_location_unavailable
+SLEMM pooled loci	26	16	tables/association_summary.tsv pooled_loci	TableS1;Results	validated_data; manuscript/letter_location_unavailable
+SLEMM h2 mean	0.529104	0.529104	tables/slemm_heritability_by_phenotype.tsv	Results;Methods;responseletter	validated_data; manuscript/letter_location_unavailable

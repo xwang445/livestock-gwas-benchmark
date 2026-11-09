@@ -3,8 +3,8 @@
   "tests_passed": 27,
   "static_checks": "Python/shell/R syntax, YAML, TSV/CSV aggregate schemas, method labels",
   "markdown_broken_links": 0,
-  "manhattan_completed_panels_matching_canonical_snp_counts": 93,
-  "manhattan_pending_panels": 7,
+  "manhattan_completed_panels_matching_canonical_snp_counts": 100,
+  "manhattan_pending_panels": 0,
   "ld_bins_recounted": 1000,
   "ld_pair_counts_match": true,
   "rss_published_fit_function_matches_executed": true,
@@ -18,7 +18,6 @@
   "historical_ledger_scope": "October manuscript and November4 reconstruction; current numerical validation has separate source-linked audits and does not certify final manuscript layout or references",
   "publication_content_review": "No individual sample IDs, raw genotype/GRM/LD, variant identifiers or per-SNP GWAS/PIPs included; actual private paths absent in new publication content",
   "incomplete_dependencies": [
-    "GCTA phenotypes4\u201310 incomplete",
     "Actual Equation13 variant cache and benchmark Equation12 generator unavailable",
     "Original SNP-effect/PVE definition and SLEMM effect-analysis pipeline unavailable"
   ],
@@ -29,17 +28,26 @@
   "source_scale_boundary_tests": "PASS: exact and adjacent floating-point values in raw P and native LOG10P; Manhattan reader/native y verified",
   "current_router_figures_smoke": "PASS: reads revised canonical association tables plus verified LD; no old strict figures selected",
   "historical_tables": "unchanged; historical_* result snapshot blocks and explicit audit profile",
-  "optional_individual_manhattan": "93 completed configuration/phenotype datasets are validated. --individual regenerates one PDF/PNG pair per available dataset; --require-complete enforces all100. Only current composites and their coverage manifest are distributed here.",
-  "snapshot_date": "2026-11-06",
+  "optional_individual_manhattan": "100 completed configuration/phenotype datasets independently validated; private PI handoff includes 100 individual PDF/PNG pairs; public composites and coverage manifest include all ten configurations.",
+  "snapshot_date": "2026-11-09",
   "gcta_completed_phenotypes": [
     1,
     2,
-    3
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
   ],
   "gcta_independent_raw_output_checks_passed": 69,
   "gcta_independent_canonical_checks_passed": 234,
   "gcta_pairwise_comparisons_checked": 27,
   "public_workflow_check_for_current_export": "PASS",
   "LOCO_normalization_status": "The actual Equation12 generator and covariance normalization remain unresolved; public author-code examples are not proof of which convention generated the retained predictions",
-  "public_composite_refresh": "Phenotypes 2 and 3 PDF/PNG refreshed from completed outputs; all previously complete manifest rows retain their exact serialized values"
+  "public_composite_refresh": "Phenotypes 2 and 3 PDF/PNG refreshed from completed outputs; all previously complete manifest rows retain their exact serialized values",
+  "gcta_independent_metric_cells": 210,
+  "gcta_independent_raw_checks": 230
 }

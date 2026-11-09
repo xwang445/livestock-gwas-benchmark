@@ -1,2 +1,2 @@
 configuration	n_completed	n_required	complete_ten_phenotypes	h2_mean	h2_sample_sd	h2_min	h2_max	precision_note
-GCTA_MLMA	3	10	False	NA	NA	NA	NA	Ratios of rounded printed Vg and Ve; aggregate withheld until all ten MLMA analyses complete
+GCTA_MLMA	10	10	True	0.52812871389525173	0.015945312411238994	0.50514843021448552	0.54914149574170934	Ratios of rounded printed Vg and Ve; aggregate withheld until all ten MLMA analyses complete

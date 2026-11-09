@@ -2,7 +2,7 @@
 
 We compare how well widely used GWAS methods locate causal signals under diffuse polygenic architecture in livestock. The benchmark uses Duroc pig genotypes and simulated phenotypes, followed by SuSiE-adj and SuSiE-RSS fine-mapping.
 
-This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision, refreshed on November 6, includes updated SLEMM summaries, a completed paired SuSiE-RSS residual-variance rerun, and three completed traits in an incomplete GCTA MLMA extension. Its review figures are labeled accordingly.
+This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision, refreshed on November 9, includes updated ten-phenotype SLEMM and GCTA MLMA results, a completed paired SuSiE-RSS residual-variance rerun, and all 100 configuration–phenotype Manhattan panels.
 
 [Publication](#publication) · [Result tables](derived_data/README.md) · [Current figures](figures/revision_2026-11-05) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
 
