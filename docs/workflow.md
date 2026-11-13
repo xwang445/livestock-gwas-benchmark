@@ -4,6 +4,8 @@
 
 ## Public checks and figures
 
+The root summary folders now contain all ten configurations. Rebuild these views from committed source aggregates with `python scripts/workflow.py refresh-results`. The check verifies their contents and complete method/phenotype coverage before validating the configuration. See [the root-summary update](revision_2026-11-13.md).
+
 ```bash
 python scripts/workflow.py check
 python scripts/workflow.py figures --data derived_data --out NEW_FIGURE_DIRECTORY
@@ -37,6 +39,18 @@ python scripts/workflow.py fine-mapping --profile hpcc \
 
 Current summaries are written under `NEW_SUMMARY_DIRECTORY/tables`. Missing GCTA outputs are recorded explicitly, and ten-phenotype means are withheld until all ten are present. Manhattan plots require complete configurations by default; `--allow-incomplete` permits clearly labeled diagnostic panels. Fine-mapping verification requires the completed TRUE run and checks its fit-mode field; it preserves the original SuSiE locus manifest and does not refit models.
 
+For publication at the root summary paths, the aggregate support exporter supplies QC counts, source fingerprints and cross-replicate locus-set overlaps:
+
+```bash
+python scripts/revision_2026-11-05/association/derive_public_summary_support.py \
+  --qc "$PRIVATE_ASSOCIATION_QC_TSV" --detected-loci "$PRIVATE_DETECTED_LOCI_TSV" \
+  --input-manifest "$PRIVATE_ASSOCIATION_INPUT_MANIFEST_TSV" \
+  --benchmark-root "$GWAS_BENCHMARK_ROOT" --gcta-root "$GCTA_OUTPUT_DIRECTORY" \
+  --output "$NEW_AGGREGATE_SUPPORT_DIRECTORY"
+```
+
+Reviewed support files are stored with the dated canonical association tables. `refresh-results` reads those public aggregates and never opens restricted inputs.
+
 Add `--individual` to the current `manhattan` command to write one PDF and PNG for each completed configuration × phenotype, in addition to the composite figures. With all ten GCTA phenotypes validated, this produces 100 individual PDF/PNG pairs plus the eleven existing composite PDF/PNG pairs. Each individual uses the same loaded SNP coordinates, native inclusive decisions, chromosome colors and threshold line; the vertical axis shows that configuration’s full range. `manhattan_manifest.tsv` records relative `individual_pdf` and `individual_png` paths. Pending rows have no individual files.
 
 The existing snapshot has 100 planned manifest rows: 100 completed GWAS panels and zero pending GCTA panels. Those are panel counts, rather than counts of composite image files. The ten supplementary composite figures contain ten method rows each; pooled Figure 4 is a separate composite. Use the complete command without `--allow-incomplete` for the final set of 100 individual analyses.
@@ -45,7 +59,7 @@ The existing snapshot has 100 planned manifest rows: 100 completed GWAS panels a
 
 ## Explicit historical audit
 
-The old strict Figure 3/Figure 5 results and original SLEMM/RSS fits remain immutable snapshots. To reproduce them deliberately:
+The old strict Figure 3/Figure 5 results and original SLEMM/RSS fits remain immutable snapshots in `derived_data/historical_2026-11-04/`. Historical figure commands given the root `derived_data` path resolve that archive automatically, including its LD curve. To reproduce them deliberately:
 
 ```bash
 python scripts/workflow.py summarize --historical --profile hpcc --out NEW_HISTORICAL_AUDIT

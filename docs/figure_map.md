@@ -8,7 +8,7 @@ The earlier diagnostic figure commands use current inclusive canonical tables. F
 
 ## Historical snapshot below
 
-The following map describes the earlier reconstruction and applies only to explicit `--historical` figure commands. These original files are preserved for comparison.
+The following map describes the earlier reconstruction and applies only to explicit `--historical` figure commands. Every derived-table path in this historical map is relative to `derived_data/historical_2026-11-04/`. The original figures remain under `figures/reconstructed/`. Root summary directories now contain current ten-configuration results.
 
 All 19 figures were generated as PDF and PNG and visually inspected. Artwork is a redraw: colors, panel arrangements and typography need not be pixel-identical. No new GWAS/SuSiE model fitting is implied.
 

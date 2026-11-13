@@ -14,10 +14,17 @@ from scipy.stats import chi2, norm
 from benchmark_core import output_table
 
 def validate(repo,check=False):
-    repo=Path(repo);D=repo/'derived_data';A=repo/'audit/reference_values';rows=[]
+    repo=Path(repo);D=repo/'derived_data/historical_2026-11-04';A=repo/'audit/reference_values';rows=[]
     def read(p):
         d=pd.read_csv(p,sep='\t');d.attrs['source']=str(p.relative_to(repo));return d
     def claim(item,expected,observed,tolerance,source,note='',status=None):
+        # Bare result paths in this October ledger are relative to the preserved
+        # historical dataset, never the current ten-configuration root exports.
+        parts=[]
+        for part in source.split('; '):
+            if (D/part).is_file():part=str((D/part).relative_to(repo))
+            parts.append(part)
+        source='; '.join(parts)
         difference=abs(float(observed)-float(expected)) if isinstance(observed,(float,int,np.number)) else np.nan
         if status is None:status='PASS' if np.isfinite(difference) and difference<=tolerance else 'FAIL'
         rows.append(dict(manuscript_item=item,expected=expected,observed=observed,absolute_difference=difference,tolerance=tolerance,status=status,source=source,note=note or 'Not applicable'))

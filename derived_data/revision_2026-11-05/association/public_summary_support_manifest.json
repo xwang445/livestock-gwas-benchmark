@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "configurations": 10,
+  "phenotypes": 10,
+  "cross_replicate_rows": 1000,
+  "detailed_outputs_written": false,
+  "jaccard": "NA if either set is empty; set-theoretic alternative separately labeled",
+  "source_paths": "Explicit benchmark/ and gcta/ relative namespaces",
+  "inputs": [
+    {
+      "role": "association_qc",
+      "sha256": "f8727e3d77921d65673f1e8e5c88fee101a69a29e6c6c57b878cae5f111ba041",
+      "bytes": 7556
+    },
+    {
+      "role": "canonical_detected_loci",
+      "sha256": "d2a9f6845ac92fe57656755f7e5dfefaf8b10e6e21ace14637edb3f26c445f18",
+      "bytes": 7423849
+    },
+    {
+      "role": "source_input_manifest",
+      "sha256": "775c459a82dd0ec7a1205bbb756a4dd796a28a53888bd5b21acf2eb1f59cc1a3",
+      "bytes": 25289
+    }
+  ],
+  "source_sha256": "091af6076840f061457dc0d735f1b8a07e7c8c7cc129df62364f22b6bad46306"
+}

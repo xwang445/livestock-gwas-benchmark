@@ -1,15 +1,24 @@
 {
-  "status": "SAVED_FIT_AGGREGATES_RECOMPUTED",
+  "detailed_outputs_written": false,
+  "fit_mode": "ERV_TRUE",
   "input_sha256": {
-    "truth": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446",
-    "saved_MAF_annotations": "c5f8142989f6d35dc2d17c4c44704bdd36bbc2c946e57b21803ead044c585275",
-    "SuSiE-adj_diagnostics": "af7dda4071487d10353de778ede9967176eaae8148831582afb27f0f5e40ce84",
-    "SuSiE-adj_PIPs": "e1efb190096a6aebeba20d0336afcb02ff27849f5c49bd68d6630bffd5acb2f5",
-    "SuSiE-RSS_diagnostics": "f5c77d16055fa2337809ca0f7f46837722e79aa441e60f3fd834fda76a855f73",
-    "SuSiE-RSS_PIPs": "d7471ae901cd527633f8c5a31ad59ccb41803a279369c4c38407c9bf0c9a6ffb"
+    "derived_data/revision_2026-11-05/susie/maf_matched_counts_by_phenotype.tsv": "ce7900f2c9d4e0e672a23136da96a97a992a620102a6acdcca655698ff9db7d1",
+    "derived_data/revision_2026-11-05/susie/maf_matched_pool_qc.tsv": "07a97f0536b1620af177b08098e434391242f179e3d90a6b70cf04573e58fffd",
+    "derived_data/revision_2026-11-05/susie/pooled_finemapping_metrics.tsv": "f98306b277aa77d458219033c1fab3f4562115b6c6f627252eeb6b4e779b1422"
   },
   "limitations": [
-    "No GWAS or SuSiE refitting",
-    "MAF annotations recovered; genotype MAF calculation not rerun by this independent recount"
-  ]
+    "No new fitting; final saved fits and exact MAF-matched expectations were evaluated.",
+    "No GCTA fine-mapping run is available; its GWAS summaries are separate.",
+    "Historical RSS FALSE results remain in the historical archive and labeled revision sensitivity tables."
+  ],
+  "methods": [
+    "BOLT-LMM",
+    "REGENIE_LOCO"
+  ],
+  "n_phenotypes": 10,
+  "pipelines": [
+    "SuSiE-adj",
+    "SuSiE-RSS"
+  ],
+  "status": "CURRENT_FINAL_TRUE_AGGREGATES_REFRESHED"
 }

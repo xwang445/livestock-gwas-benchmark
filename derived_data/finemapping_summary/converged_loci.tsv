@@ -1,5 +1,5 @@
-method	pipeline	n_converged_loci
-BOLT-LMM	SuSiE-adj	6732
-REGENIE_LOCO	SuSiE-adj	6569
-BOLT-LMM	SuSiE-RSS	6732
-REGENIE_LOCO	SuSiE-RSS	6569
+method	pipeline	fit_mode	n_converged_loci
+BOLT-LMM	SuSiE-RSS	ERV_TRUE	6732
+BOLT-LMM	SuSiE-adj	ERV_TRUE	6732
+REGENIE_LOCO	SuSiE-RSS	ERV_TRUE	6569
+REGENIE_LOCO	SuSiE-adj	ERV_TRUE	6569

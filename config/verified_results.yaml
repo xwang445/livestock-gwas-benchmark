@@ -11,6 +11,7 @@ historical_study_checks:
   gwas_panels: 90
   snps_per_panel:
   - 135358
+  data_directory: derived_data/historical_2026-11-04
   equation13_replicate_bin_rows: 1600
   finemapping_phenotype_pipeline_rows: 40
 historical_validation:
@@ -351,19 +352,19 @@ ld:
     bin_end: 0.01
     mid_mb: 0.005
     n_pairs: 31209
-    mean_r2: 0.592525238698867
+    mean_r2: 0.5925252386988749
   - bin_id: 200
     bin_start: 1.99
     bin_end: 2.0
     mid_mb: 1.995
     n_pairs: 80789
-    mean_r2: 0.160877115183354
+    mean_r2: 0.1608771151833529
   - bin_id: 1000
     bin_start: 9.99
     bin_end: 10.0
     mid_mb: 9.995
     n_pairs: 73001
-    mean_r2: 0.0395887918480463
+    mean_r2: 0.0395887918480466
 historical_equation13_cached_checks:
 - n_theory_snps: 135358
   max_ncp_algebra_error: 2.91322521661641e-13
@@ -374,103 +375,211 @@ source_tables:
   equation13_summary/cached_theory_validation.tsv:
     path: derived_data/equation13_summary/cached_theory_validation.tsv
     rows: 1
-    sha256: 82c210fb223913362b32ba1895e25b6de726d5730abe88d6c732278786143c99
+    sha256: 601a7af9341d1eec4c2918257f4da7988bcf8143ba35ad0b54deb236a4c1987a
   equation13_summary/equation13_by_pheno.tsv:
     path: derived_data/equation13_summary/equation13_by_pheno.tsv
-    rows: 1600
-    sha256: ffea29d65896e28d93962a167f626042a018efee3fd4f6c6d8c311570b3b4981
+    rows: 400
+    sha256: 6f6e0bd463616622abda2449a4ce1d1229af7816ebb712f9e237a5508c99a476
   equation13_summary/equation13_summary.tsv:
     path: derived_data/equation13_summary/equation13_summary.tsv
-    rows: 160
-    sha256: c80c8144f7eeaf284caf9976181cf6f6e99a8a86e18bd7ceee058412590130d1
+    rows: 40
+    sha256: 06a6a13e06d24b8af07d8c38e01c22193d7dfae6934db0c4928203b9767c7695
   finemapping_summary/converged_loci.tsv:
     path: derived_data/finemapping_summary/converged_loci.tsv
     rows: 4
-    sha256: 961681d18ee74c2de3ee0ff7dfef0feb8e722120d72a7cb9eba096db1c8d9171
+    sha256: 0a9bedcf08df3058e9429e6395c24560a67c6bd8b929827f28715747f2cc68b6
   finemapping_summary/high_pip_by_pheno.tsv:
     path: derived_data/finemapping_summary/high_pip_by_pheno.tsv
     rows: 40
-    sha256: 9ad4fc7815a24ec13664ae3cfbd2b81e16f24d77ad83d3ab732c90307e5e9b55
+    sha256: bbeb197b2245386b94678e9a3b988afd813d03608c9c79cf8f6f3b39c61d4c79
   finemapping_summary/high_pip_summary.tsv:
     path: derived_data/finemapping_summary/high_pip_summary.tsv
     rows: 4
-    sha256: 41fed8f7050015144895bd16a5f85fe938d058aa6a258d8b71381c2b378db09a
+    sha256: b1c12aa4315dc782f98f55766693f022f9af7716fe9485d082b08cb87d691fa7
   finemapping_summary/null_vs_effect_summary.tsv:
     path: derived_data/finemapping_summary/null_vs_effect_summary.tsv
     rows: 4
+    sha256: 5123de0146baa5e18c103df31a726b4aef672c3d6aecb9edfd0da60d8dccf952
+  historical_2026-11-04/equation13_summary/cached_theory_validation.tsv:
+    path: derived_data/historical_2026-11-04/equation13_summary/cached_theory_validation.tsv
+    rows: 1
+    sha256: 82c210fb223913362b32ba1895e25b6de726d5730abe88d6c732278786143c99
+  historical_2026-11-04/equation13_summary/equation13_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/equation13_summary/equation13_by_pheno.tsv
+    rows: 1600
+    sha256: ffea29d65896e28d93962a167f626042a018efee3fd4f6c6d8c311570b3b4981
+  historical_2026-11-04/equation13_summary/equation13_summary.tsv:
+    path: derived_data/historical_2026-11-04/equation13_summary/equation13_summary.tsv
+    rows: 160
+    sha256: c80c8144f7eeaf284caf9976181cf6f6e99a8a86e18bd7ceee058412590130d1
+  historical_2026-11-04/finemapping_summary/converged_loci.tsv:
+    path: derived_data/historical_2026-11-04/finemapping_summary/converged_loci.tsv
+    rows: 4
+    sha256: 961681d18ee74c2de3ee0ff7dfef0feb8e722120d72a7cb9eba096db1c8d9171
+  historical_2026-11-04/finemapping_summary/high_pip_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/finemapping_summary/high_pip_by_pheno.tsv
+    rows: 40
+    sha256: 9ad4fc7815a24ec13664ae3cfbd2b81e16f24d77ad83d3ab732c90307e5e9b55
+  historical_2026-11-04/finemapping_summary/high_pip_summary.tsv:
+    path: derived_data/historical_2026-11-04/finemapping_summary/high_pip_summary.tsv
+    rows: 4
+    sha256: 41fed8f7050015144895bd16a5f85fe938d058aa6a258d8b71381c2b378db09a
+  historical_2026-11-04/finemapping_summary/null_vs_effect_summary.tsv:
+    path: derived_data/historical_2026-11-04/finemapping_summary/null_vs_effect_summary.tsv
+    rows: 4
     sha256: 53d1e845ad28636986ee8daf4d0065af9786243198a7e36b5371ac65092c5603
-  input_manifest.tsv:
-    path: derived_data/input_manifest.tsv
+  historical_2026-11-04/input_manifest.tsv:
+    path: derived_data/historical_2026-11-04/input_manifest.tsv
     rows: 90
     sha256: 6e9b2a34de22e73d05c3f5e028dc26352ee02bb05904393e3c485f9e7ad8308d
-  lambda_gc_summary/lambda_gc_by_pheno.tsv:
-    path: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+  historical_2026-11-04/lambda_gc_summary/lambda_gc_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_by_pheno.tsv
     rows: 90
     sha256: e440c1bf9cf81a1164e4c67802a12d20ee90bfbb36d536ed88e9ef2838bc47b9
-  lambda_gc_summary/lambda_gc_summary.tsv:
-    path: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+  historical_2026-11-04/lambda_gc_summary/lambda_gc_summary.tsv:
+    path: derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_summary.tsv
     rows: 9
     sha256: 407ffee4a9cbf0fc87f0655be64ef70e8cb764aa6c809cae122217162c4e960a
+  historical_2026-11-04/ld_summary/ld_decay_10kb.tsv:
+    path: derived_data/historical_2026-11-04/ld_summary/ld_decay_10kb.tsv
+    rows: 1000
+    sha256: 47d206999aac475a41a175911a9467821ae253bff463ad7d97e1c5a782e0408d
+  historical_2026-11-04/ld_summary/ld_decay_fitted_mean.tsv:
+    path: derived_data/historical_2026-11-04/ld_summary/ld_decay_fitted_mean.tsv
+    rows: 7998
+    sha256: 89b785d30cb59970ded93d08e14682435b177dd90d2d2a5b365f5039fed3fa52
+  historical_2026-11-04/method_summary/heritability_from_logs.tsv:
+    path: derived_data/historical_2026-11-04/method_summary/heritability_from_logs.tsv
+    rows: 20
+    sha256: e948cdc1bf20e1a17af2dda329aeb60c057ec0bf034071cf58d44b84e1be6131
+  historical_2026-11-04/method_summary/method_summary.tsv:
+    path: derived_data/historical_2026-11-04/method_summary/method_summary.tsv
+    rows: 9
+    sha256: 69bf149bc10612820553536b1603d7084bd2723e70cc4d06be1aaf80622ba4c5
+  historical_2026-11-04/method_summary/significant_loci_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/method_summary/significant_loci_by_pheno.tsv
+    rows: 90
+    sha256: 70d67366b84173ada3ec35df6546dbb7f0226a02f69ee089f078019faadc3975
+  historical_2026-11-04/method_summary/significant_snps_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/method_summary/significant_snps_by_pheno.tsv
+    rows: 90
+    sha256: 295616f9b365ef535afeb96aa8de5e8af580e2f2cf388476464ab029bd3d61d4
+  historical_2026-11-04/overlap_summary/cross_replicate_stability.tsv:
+    path: derived_data/historical_2026-11-04/overlap_summary/cross_replicate_stability.tsv
+    rows: 900
+    sha256: 5b1e9388371e1c6413e7a1d55f84a6887f294d971eaf2064b534edec0fee9bbe
+  historical_2026-11-04/overlap_summary/locus_overlap_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/overlap_summary/locus_overlap_by_pheno.tsv
+    rows: 810
+    sha256: 4defff1c37ed8fc19d0f934c9e1b56e88b8f1eb3f5887c6a81060f4cd511d6a6
+  historical_2026-11-04/overlap_summary/locus_overlap_summary.tsv:
+    path: derived_data/historical_2026-11-04/overlap_summary/locus_overlap_summary.tsv
+    rows: 81
+    sha256: 00fa37138ab1822169556a525c0adbbc33e135e1bad8571233114fb7a8c064f8
+  historical_2026-11-04/power_summary/fpr_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/fpr_by_pheno.tsv
+    rows: 6120
+    sha256: 0024b6018868cc71d4eb8c5e0deb43df4bc6897ad3d2036f7bbedc777df35cae
+  historical_2026-11-04/power_summary/fpr_summary.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/fpr_summary.tsv
+    rows: 612
+    sha256: 8a0a652bb48f223b1f281e443734a93ad0e1d46d2a3eb9f388075399cd15eb39
+  historical_2026-11-04/power_summary/power_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/power_by_pheno.tsv
+    rows: 3060
+    sha256: 1a594e4f4044f129461e8f8834c51317eedceb34800050f6fe2e2136f927bbcd
+  historical_2026-11-04/power_summary/power_summary.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/power_summary.tsv
+    rows: 306
+    sha256: a8fe91ef34a6772d947a1b23c6408a5176e7c0873aeb7170076a34317a5835dc
+  historical_2026-11-04/power_summary/spatial_enrichment_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/spatial_enrichment_by_pheno.tsv
+    rows: 3600
+    sha256: f38d8ff6b8817df46b8aee263ad5df5ee1921762788b3e6db9a15fc4903b3563
+  historical_2026-11-04/power_summary/spatial_enrichment_summary.tsv:
+    path: derived_data/historical_2026-11-04/power_summary/spatial_enrichment_summary.tsv
+    rows: 360
+    sha256: 2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40
+  historical_2026-11-04/spillover_summary/spillover_by_pheno.tsv:
+    path: derived_data/historical_2026-11-04/spillover_summary/spillover_by_pheno.tsv
+    rows: 90
+    sha256: 6ad56888294d39ea005a0b045ca47f801b28735ff74264961d59f9dd4cd7f242
+  historical_2026-11-04/spillover_summary/spillover_summary.tsv:
+    path: derived_data/historical_2026-11-04/spillover_summary/spillover_summary.tsv
+    rows: 9
+    sha256: 14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702
+  input_manifest.tsv:
+    path: derived_data/input_manifest.tsv
+    rows: 100
+    sha256: db60fe439315e5291c04d24eb56ead4ff473437fa42672e3c137f4efe78d5703
+  lambda_gc_summary/lambda_gc_by_pheno.tsv:
+    path: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+    rows: 100
+    sha256: ea89c8362fb5cdf52d4f2fa1d2893bcc0969630645f2de1384179b195bfbc94b
+  lambda_gc_summary/lambda_gc_summary.tsv:
+    path: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+    rows: 10
+    sha256: 966d8a40a63143a9164396328eec76393eaa3ca9713a778ab11aa0bbdd2bea91
   ld_summary/ld_decay_10kb.tsv:
     path: derived_data/ld_summary/ld_decay_10kb.tsv
     rows: 1000
-    sha256: 47d206999aac475a41a175911a9467821ae253bff463ad7d97e1c5a782e0408d
+    sha256: c6a686ccd54aede912a18c97fcdb26146f6cf11194179908d6418f4ad75d480c
   ld_summary/ld_decay_fitted_mean.tsv:
     path: derived_data/ld_summary/ld_decay_fitted_mean.tsv
-    rows: 7998
-    sha256: 89b785d30cb59970ded93d08e14682435b177dd90d2d2a5b365f5039fed3fa52
+    rows: 7999
+    sha256: 4fb9e70d3a06aa0d91157e13883e4280f7d78ee17acad2e8e386406c5ed0f024
   method_summary/heritability_from_logs.tsv:
     path: derived_data/method_summary/heritability_from_logs.tsv
-    rows: 20
-    sha256: e948cdc1bf20e1a17af2dda329aeb60c057ec0bf034071cf58d44b84e1be6131
+    rows: 30
+    sha256: 35585e6d3d2be2254bde4c37f9cbbcf731e17994532b163fdcdae2616b1ef381
   method_summary/method_summary.tsv:
     path: derived_data/method_summary/method_summary.tsv
-    rows: 9
-    sha256: 69bf149bc10612820553536b1603d7084bd2723e70cc4d06be1aaf80622ba4c5
+    rows: 10
+    sha256: 274107d1525225bc963b279dac0a8fdcf8ae48f0ff3bf0b88154e45dd15cf894
   method_summary/significant_loci_by_pheno.tsv:
     path: derived_data/method_summary/significant_loci_by_pheno.tsv
-    rows: 90
-    sha256: 70d67366b84173ada3ec35df6546dbb7f0226a02f69ee089f078019faadc3975
+    rows: 100
+    sha256: 234ee4016fb7615c471f8b7212ca44755051650a94923a3414bd095d0454e740
   method_summary/significant_snps_by_pheno.tsv:
     path: derived_data/method_summary/significant_snps_by_pheno.tsv
-    rows: 90
-    sha256: 295616f9b365ef535afeb96aa8de5e8af580e2f2cf388476464ab029bd3d61d4
+    rows: 100
+    sha256: c48c4452ed9e39a78cbf8bb0fc3cc65e927604a06eb55532797067c3017343b9
   overlap_summary/cross_replicate_stability.tsv:
     path: derived_data/overlap_summary/cross_replicate_stability.tsv
-    rows: 900
-    sha256: 5b1e9388371e1c6413e7a1d55f84a6887f294d971eaf2064b534edec0fee9bbe
+    rows: 1000
+    sha256: 8c57bbf1d243bb41d81629c53265e24d51b9a8cbeaf0bac32660bd79575865cd
   overlap_summary/locus_overlap_by_pheno.tsv:
     path: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
-    rows: 810
-    sha256: 4defff1c37ed8fc19d0f934c9e1b56e88b8f1eb3f5887c6a81060f4cd511d6a6
+    rows: 1000
+    sha256: 12711501d8a6d04eb599429d9e030ecf4ca2f958b318356df6ad000793c8b239
   overlap_summary/locus_overlap_summary.tsv:
     path: derived_data/overlap_summary/locus_overlap_summary.tsv
-    rows: 81
-    sha256: 00fa37138ab1822169556a525c0adbbc33e135e1bad8571233114fb7a8c064f8
+    rows: 100
+    sha256: 89322b03c37115ef8d3cd3bc4bebac708ea63a4fd8ae7a4daadaacd4d464db72
   power_summary/fpr_by_pheno.tsv:
     path: derived_data/power_summary/fpr_by_pheno.tsv
-    rows: 6120
-    sha256: 0024b6018868cc71d4eb8c5e0deb43df4bc6897ad3d2036f7bbedc777df35cae
+    rows: 6800
+    sha256: cad314b12689c15bb9935e439c6d7ab063b2522efdd4ab307dd66dd396029626
   power_summary/fpr_summary.tsv:
     path: derived_data/power_summary/fpr_summary.tsv
-    rows: 612
-    sha256: 8a0a652bb48f223b1f281e443734a93ad0e1d46d2a3eb9f388075399cd15eb39
+    rows: 680
+    sha256: cda9592768af386ca6221ff84c23da0b1081514f4fb5160dfc4d317cfbbeb8c0
   power_summary/power_by_pheno.tsv:
     path: derived_data/power_summary/power_by_pheno.tsv
-    rows: 3060
-    sha256: 1a594e4f4044f129461e8f8834c51317eedceb34800050f6fe2e2136f927bbcd
+    rows: 3400
+    sha256: fa654a01ccf946eae3a7539a47f2bc87bc035d3a08a12224d7eb39c44ecd677d
   power_summary/power_summary.tsv:
     path: derived_data/power_summary/power_summary.tsv
-    rows: 306
-    sha256: a8fe91ef34a6772d947a1b23c6408a5176e7c0873aeb7170076a34317a5835dc
+    rows: 340
+    sha256: 9b4a2aac5c6359563cb1bf1a29ee0280d8d46c2b398cadc982168b621e524afb
   power_summary/spatial_enrichment_by_pheno.tsv:
     path: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
-    rows: 3600
-    sha256: f38d8ff6b8817df46b8aee263ad5df5ee1921762788b3e6db9a15fc4903b3563
+    rows: 4000
+    sha256: db003cbb025882770def1bdda591ecb0397551f1b1c5d384ed836fed2fcd72b6
   power_summary/spatial_enrichment_summary.tsv:
     path: derived_data/power_summary/spatial_enrichment_summary.tsv
-    rows: 360
-    sha256: 2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40
+    rows: 400
+    sha256: 409b770f19d05a2c285d2d1746a72e0c1ef012afa977262f1bcb16b0d6edd0f3
   revision_2026-11-05/analysis_manifest.tsv:
     path: derived_data/revision_2026-11-05/analysis_manifest.tsv
     rows: 100
@@ -479,10 +588,22 @@ source_tables:
     path: derived_data/revision_2026-11-05/association/association_by_phenotype.tsv
     rows: 110
     sha256: 9fade390216f21bb7651394a8d639a9ed5c85c6b5ace8a2c35440f4ce10b90ce
+  revision_2026-11-05/association/association_qc.tsv:
+    path: derived_data/revision_2026-11-05/association/association_qc.tsv
+    rows: 100
+    sha256: 3f55833f621bb53a4ecfc5f32700ea9b62015247496dc89cb16482aa8bef67fb
   revision_2026-11-05/association/association_summary.tsv:
     path: derived_data/revision_2026-11-05/association/association_summary.tsv
     rows: 11
     sha256: 059edd3f33cfa675dedbea6ce206879ca34d21fdcf4a4924822a78ce9c5a5d78
+  revision_2026-11-05/association/cross_replicate_stability.tsv:
+    path: derived_data/revision_2026-11-05/association/cross_replicate_stability.tsv
+    rows: 1000
+    sha256: d9eb5fab5f191b1d4d78d72c1b5d15821db60d86db072878055c18445a7ad188
+  revision_2026-11-05/association/current_input_manifest.tsv:
+    path: derived_data/revision_2026-11-05/association/current_input_manifest.tsv
+    rows: 100
+    sha256: 2c09eac97941d0a11dedb7a9053bac0de2eb852dead8294e12f8405b4e971eb3
   revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv:
     path: derived_data/revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv
     rows: 10
@@ -591,6 +712,14 @@ source_tables:
     path: derived_data/revision_2026-11-05/susie/maf_matched/pool_qc.csv
     rows: 40
     sha256: 01a3552f5839a9abd5decac2c10016a1243a0465dfd97ac3595cc5d7d1f1fafe
+  revision_2026-11-05/susie/maf_matched_counts_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched_counts_by_phenotype.tsv
+    rows: 120
+    sha256: ce7900f2c9d4e0e672a23136da96a97a992a620102a6acdcca655698ff9db7d1
+  revision_2026-11-05/susie/maf_matched_pool_qc.tsv:
+    path: derived_data/revision_2026-11-05/susie/maf_matched_pool_qc.tsv
+    rows: 40
+    sha256: 07a97f0536b1620af177b08098e434391242f179e3d90a6b70cf04573e58fffd
   revision_2026-11-05/susie/pooled_finemapping_metrics.tsv:
     path: derived_data/revision_2026-11-05/susie/pooled_finemapping_metrics.tsv
     rows: 6
@@ -661,12 +790,12 @@ source_tables:
     sha256: 78e8accfeb6e8da91c81c4773124e7daabd34d7990aa6ac260c8edc6762f3461
   spillover_summary/spillover_by_pheno.tsv:
     path: derived_data/spillover_summary/spillover_by_pheno.tsv
-    rows: 90
-    sha256: 6ad56888294d39ea005a0b045ca47f801b28735ff74264961d59f9dd4cd7f242
+    rows: 100
+    sha256: 426b643d72d12230ff0b6cc730ae20c1896bc9f74a0d05bc1f1e33b1e743e47f
   spillover_summary/spillover_summary.tsv:
     path: derived_data/spillover_summary/spillover_summary.tsv
-    rows: 9
-    sha256: 14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702
+    rows: 10
+    sha256: 0ce1d373e1a1036fcc650224cadc6feaffbf1bc57faa4b3e277021ea61c65ae3
   submission_2026-11-12/Figure_03_counts.tsv:
     path: derived_data/submission_2026-11-12/Figure_03_counts.tsv
     rows: 100
@@ -781,6 +910,27 @@ significance:
   rule: P <= 5e-8
   native_log10p_rule: LOG10P >= -log10(5e-8)
   historical_profile: explicit --historical only; original snapshots preserved
+current_summary_exports:
+  data_directory: derived_data
+  run_manifest: derived_data/run_manifest.json
+  validation_record: audit/current_summary_update_2026-11-13.json
+  completed_panels: 100
+  completed_configurations: 10
+  completed_phenotypes_by_configuration:
+    BLINK_Kansas: 10
+    BLINK_NYC: 10
+    BOLT-LMM: 10
+    FarmCPU_Kansas: 10
+    FarmCPU_NYC: 10
+    GCTA_MLMA: 10
+    REGENIE_LOCO: 10
+    REGENIE_WO_LOCO: 10
+    SLEMM: 10
+    fastGWA: 10
+  association_rule: Inclusive P <= 5e-8; current updated SLEMM and all ten GCTA phenotypes
+  historical_data_directory: derived_data/historical_2026-11-04
+  scope: Root method, lambda, power, spillover and overlap tables are current exports.
+    Fine-mapping and cached theory retain only the methods with executed evidence.
 study_checks:
   planned_method_families: 7
   planned_configurations: 10
@@ -2500,6 +2650,9 @@ validation:
       comparison; publication_update_validation records the November13 repository
       validation
     publication_update_validation: audit/publication_update_2026-11-13.json
+    current_root_summary_validation: audit/current_summary_update_2026-11-13.json
+    current_root_summaries: 100current GWAS panels including all ten GCTA phenotypes;
+      old root29file snapshot preserved in explicit historical archive
   scope: Current inclusive numerical revision; the older manuscript ledger is historical_validation.
     The ten-phenotype GCTA comparison is complete; upstream Equation12/13 cache verification
     remains incomplete.

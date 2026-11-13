@@ -2,8 +2,9 @@ schema_version: 1
 path_convention: All public artifact paths are relative to repository root. Restricted
   input paths are relative to a private machine profile benchmark_root.
 repository_paths:
-  derived_data: derived_data/revision_2026-11-05
-  figures: figures/revision_2026-11-05
+  derived_data: derived_data
+  historical_derived_data: derived_data/historical_2026-11-04
+  figures: figures/submission_2026-11-12
   schemas: example/schemas
 result_paths:
   analysis_manifest: derived_data/revision_2026-11-05/analysis_manifest.tsv
@@ -46,11 +47,41 @@ result_paths:
   susie/sensitivity_comparison_summary: derived_data/revision_2026-11-05/susie/sensitivity_comparison_summary.tsv
   susie/sensitivity_comparison_table: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
   susie/sensitivity_paired_changes: derived_data/revision_2026-11-05/susie/sensitivity_paired_changes.tsv
+  equation13_summary/cached_theory_validation: derived_data/equation13_summary/cached_theory_validation.tsv
+  equation13_summary/equation13_by_pheno: derived_data/equation13_summary/equation13_by_pheno.tsv
+  equation13_summary/equation13_summary: derived_data/equation13_summary/equation13_summary.tsv
+  finemapping_summary/converged_loci: derived_data/finemapping_summary/converged_loci.tsv
+  finemapping_summary/high_pip_by_pheno: derived_data/finemapping_summary/high_pip_by_pheno.tsv
+  finemapping_summary/high_pip_summary: derived_data/finemapping_summary/high_pip_summary.tsv
+  finemapping_summary/null_vs_effect_summary: derived_data/finemapping_summary/null_vs_effect_summary.tsv
+  input_manifest: derived_data/input_manifest.tsv
+  lambda_gc_summary/lambda_gc_by_pheno: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
+  lambda_gc_summary/lambda_gc_summary: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
+  ld_summary/ld_decay_10kb: derived_data/ld_summary/ld_decay_10kb.tsv
+  ld_summary/ld_decay_fitted_mean: derived_data/ld_summary/ld_decay_fitted_mean.tsv
+  method_summary/heritability_from_logs: derived_data/method_summary/heritability_from_logs.tsv
+  method_summary/method_summary: derived_data/method_summary/method_summary.tsv
+  method_summary/significant_loci_by_pheno: derived_data/method_summary/significant_loci_by_pheno.tsv
+  method_summary/significant_snps_by_pheno: derived_data/method_summary/significant_snps_by_pheno.tsv
+  overlap_summary/cross_replicate_stability: derived_data/overlap_summary/cross_replicate_stability.tsv
+  overlap_summary/locus_overlap_by_pheno: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
+  overlap_summary/locus_overlap_summary: derived_data/overlap_summary/locus_overlap_summary.tsv
+  power_summary/fpr_by_pheno: derived_data/power_summary/fpr_by_pheno.tsv
+  power_summary/fpr_summary: derived_data/power_summary/fpr_summary.tsv
+  power_summary/power_by_pheno: derived_data/power_summary/power_by_pheno.tsv
+  power_summary/power_summary: derived_data/power_summary/power_summary.tsv
+  power_summary/spatial_enrichment_by_pheno: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
+  power_summary/spatial_enrichment_summary: derived_data/power_summary/spatial_enrichment_summary.tsv
+  spillover_summary/spillover_by_pheno: derived_data/spillover_summary/spillover_by_pheno.tsv
+  spillover_summary/spillover_summary: derived_data/spillover_summary/spillover_summary.tsv
 evidence_paths:
   validation: audit/revision_validation.json
   input_hashes: derived_data/revision_2026-11-05/analysis_manifest.tsv
   historical_validation: audit/manuscript_validation.tsv
-  historical_run_manifest: derived_data/run_manifest.json
+  historical_run_manifest: derived_data/historical_2026-11-04/run_manifest.json
+  historical_snapshot: derived_data/historical_2026-11-04/snapshot_manifest.json
+  current_run_manifest: derived_data/run_manifest.json
+  current_summary_validation: audit/current_summary_update_2026-11-13.json
   fine_mapping_comparison: derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv
 restricted_inputs:
   effect_windows:
@@ -140,30 +171,30 @@ unresolved_inputs:
   equation12_generator: Provenance deferred to Professor Jicai Jiang at author request;
     cached Equation13 downstream results do not establish upstream reproduction.
 historical_result_paths:
-  equation13_summary/cached_theory_validation: derived_data/equation13_summary/cached_theory_validation.tsv
-  equation13_summary/equation13_by_pheno: derived_data/equation13_summary/equation13_by_pheno.tsv
-  equation13_summary/equation13_summary: derived_data/equation13_summary/equation13_summary.tsv
-  finemapping_summary/converged_loci: derived_data/finemapping_summary/converged_loci.tsv
-  finemapping_summary/high_pip_by_pheno: derived_data/finemapping_summary/high_pip_by_pheno.tsv
-  finemapping_summary/high_pip_summary: derived_data/finemapping_summary/high_pip_summary.tsv
-  finemapping_summary/null_vs_effect_summary: derived_data/finemapping_summary/null_vs_effect_summary.tsv
-  input_manifest: derived_data/input_manifest.tsv
-  lambda_gc_summary/lambda_gc_by_pheno: derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv
-  lambda_gc_summary/lambda_gc_summary: derived_data/lambda_gc_summary/lambda_gc_summary.tsv
-  ld_summary/ld_decay_10kb: derived_data/ld_summary/ld_decay_10kb.tsv
-  ld_summary/ld_decay_fitted_mean: derived_data/ld_summary/ld_decay_fitted_mean.tsv
-  method_summary/heritability_from_logs: derived_data/method_summary/heritability_from_logs.tsv
-  method_summary/method_summary: derived_data/method_summary/method_summary.tsv
-  method_summary/significant_loci_by_pheno: derived_data/method_summary/significant_loci_by_pheno.tsv
-  method_summary/significant_snps_by_pheno: derived_data/method_summary/significant_snps_by_pheno.tsv
-  overlap_summary/cross_replicate_stability: derived_data/overlap_summary/cross_replicate_stability.tsv
-  overlap_summary/locus_overlap_by_pheno: derived_data/overlap_summary/locus_overlap_by_pheno.tsv
-  overlap_summary/locus_overlap_summary: derived_data/overlap_summary/locus_overlap_summary.tsv
-  power_summary/fpr_by_pheno: derived_data/power_summary/fpr_by_pheno.tsv
-  power_summary/fpr_summary: derived_data/power_summary/fpr_summary.tsv
-  power_summary/power_by_pheno: derived_data/power_summary/power_by_pheno.tsv
-  power_summary/power_summary: derived_data/power_summary/power_summary.tsv
-  power_summary/spatial_enrichment_by_pheno: derived_data/power_summary/spatial_enrichment_by_pheno.tsv
-  power_summary/spatial_enrichment_summary: derived_data/power_summary/spatial_enrichment_summary.tsv
-  spillover_summary/spillover_by_pheno: derived_data/spillover_summary/spillover_by_pheno.tsv
-  spillover_summary/spillover_summary: derived_data/spillover_summary/spillover_summary.tsv
+  equation13_summary/cached_theory_validation: derived_data/historical_2026-11-04/equation13_summary/cached_theory_validation.tsv
+  equation13_summary/equation13_by_pheno: derived_data/historical_2026-11-04/equation13_summary/equation13_by_pheno.tsv
+  equation13_summary/equation13_summary: derived_data/historical_2026-11-04/equation13_summary/equation13_summary.tsv
+  finemapping_summary/converged_loci: derived_data/historical_2026-11-04/finemapping_summary/converged_loci.tsv
+  finemapping_summary/high_pip_by_pheno: derived_data/historical_2026-11-04/finemapping_summary/high_pip_by_pheno.tsv
+  finemapping_summary/high_pip_summary: derived_data/historical_2026-11-04/finemapping_summary/high_pip_summary.tsv
+  finemapping_summary/null_vs_effect_summary: derived_data/historical_2026-11-04/finemapping_summary/null_vs_effect_summary.tsv
+  input_manifest: derived_data/historical_2026-11-04/input_manifest.tsv
+  lambda_gc_summary/lambda_gc_by_pheno: derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_by_pheno.tsv
+  lambda_gc_summary/lambda_gc_summary: derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_summary.tsv
+  ld_summary/ld_decay_10kb: derived_data/historical_2026-11-04/ld_summary/ld_decay_10kb.tsv
+  ld_summary/ld_decay_fitted_mean: derived_data/historical_2026-11-04/ld_summary/ld_decay_fitted_mean.tsv
+  method_summary/heritability_from_logs: derived_data/historical_2026-11-04/method_summary/heritability_from_logs.tsv
+  method_summary/method_summary: derived_data/historical_2026-11-04/method_summary/method_summary.tsv
+  method_summary/significant_loci_by_pheno: derived_data/historical_2026-11-04/method_summary/significant_loci_by_pheno.tsv
+  method_summary/significant_snps_by_pheno: derived_data/historical_2026-11-04/method_summary/significant_snps_by_pheno.tsv
+  overlap_summary/cross_replicate_stability: derived_data/historical_2026-11-04/overlap_summary/cross_replicate_stability.tsv
+  overlap_summary/locus_overlap_by_pheno: derived_data/historical_2026-11-04/overlap_summary/locus_overlap_by_pheno.tsv
+  overlap_summary/locus_overlap_summary: derived_data/historical_2026-11-04/overlap_summary/locus_overlap_summary.tsv
+  power_summary/fpr_by_pheno: derived_data/historical_2026-11-04/power_summary/fpr_by_pheno.tsv
+  power_summary/fpr_summary: derived_data/historical_2026-11-04/power_summary/fpr_summary.tsv
+  power_summary/power_by_pheno: derived_data/historical_2026-11-04/power_summary/power_by_pheno.tsv
+  power_summary/power_summary: derived_data/historical_2026-11-04/power_summary/power_summary.tsv
+  power_summary/spatial_enrichment_by_pheno: derived_data/historical_2026-11-04/power_summary/spatial_enrichment_by_pheno.tsv
+  power_summary/spatial_enrichment_summary: derived_data/historical_2026-11-04/power_summary/spatial_enrichment_summary.tsv
+  spillover_summary/spillover_by_pheno: derived_data/historical_2026-11-04/spillover_summary/spillover_by_pheno.tsv
+  spillover_summary/spillover_summary: derived_data/historical_2026-11-04/spillover_summary/spillover_summary.tsv

@@ -12,9 +12,11 @@ The [November 12 submission update](revision_2026-11-12.md) adds portable artwor
 
 The public tables were regenerated from 90 saved GWAS panels, cached Equation 13 predictions, saved converged fine-mapping fits and pairwise LD. Python 3.10.4 with the pinned scientific dependencies produced the aggregate results; R 4.3.2 produced the LD curve. No GWAS or SuSiE model was refitted during reconstruction or consolidation.
 
-The [run registry](../audit/run_registry.tsv), [input hashes](../derived_data/input_manifest.tsv), [artifact hashes](../audit/artifact_manifest.tsv), and [current validation ledger](../audit/manuscript_validation.tsv) record the execution. The [original manuscript ledger](../audit/historical_manuscript_validation.tsv) preserves the two discrepancies before text correction.
+The [run registry](../audit/run_registry.tsv), [historical input hashes](../derived_data/historical_2026-11-04/input_manifest.tsv), [artifact hashes](../audit/artifact_manifest.tsv), and [historical manuscript ledger](../audit/manuscript_validation.tsv) record that execution. [Current input hashes](../derived_data/input_manifest.tsv) and [run metadata](../derived_data/run_manifest.json) cover all 100 current GWAS panels. The [original manuscript ledger](../audit/historical_manuscript_validation.tsv) preserves the two discrepancies before text correction.
 
 ## Reanalysis and resumption
+
+`python scripts/workflow.py refresh-results` exports the current root tables from the dated canonical aggregates; `check` rejects stale exports. [Historical snapshot checksums](../derived_data/historical_2026-11-04/snapshot_manifest.json) preserve the former root tables and are checked independently.
 
 Use a new output directory outside the source tree. Only the explicitly historical summary stage accepts `--resume`; unchanged jobs use verified cache entries. Cache reuse checks input SHA256, window/truth SHA256, implementation SHA256 and SNP count. Retain restricted caches locally and publish only reviewed aggregate outputs.
 

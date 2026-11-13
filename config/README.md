@@ -1,8 +1,8 @@
 # Verified configuration
 
-`analysis_parameters.yaml` defines one current rule, P ≤ 5 × 10⁻⁸, with direct native-log comparison. Its separate `historical_audit` section applies only to explicit legacy reproduction. `methods.yaml` contains the ten current configurations, including updated SLEMM and partial GCTA MLMA; `historical_output_patterns` retains the original SLEMM paths. `revision_methods.tsv` defines the method-family grouping and plotting colors.
+`analysis_parameters.yaml` defines one current rule, P ≤ 5 × 10⁻⁸, with direct native-log comparison. Its separate `historical_audit` section applies only to explicit legacy reproduction. `methods.yaml` contains the ten current configurations, including updated SLEMM and all ten completed GCTA MLMA phenotypes; `historical_output_patterns` retains the original SLEMM paths. `revision_methods.tsv` defines the method-family grouping and plotting colors.
 
-`paths.yaml` points primary result and figure paths to the current revision. The previous 27-table paths remain under `historical_result_paths`. `verified_results.yaml` is generated from the actual canonical tables: primary blocks describe the current revision, and `historical_*` blocks preserve the old strict snapshot. Planned configurations and validated completed panels are reported separately.
+`paths.yaml` points primary summary paths to the current root exports and figures to the November 12 submission set. The previous 27-table paths under `historical_result_paths` resolve inside `derived_data/historical_2026-11-04/`. `verified_results.yaml` is generated from the actual canonical tables: primary blocks describe the current revision, and `historical_*` blocks preserve the old strict snapshot. Planned configurations and validated completed panels are reported separately.
 
 The ignored `config/local_paths.yaml` contains `repository_root` and `profiles.mac` / `profiles.hpcc`. Each profile requires `benchmark_root` and can supply these additional verified revision inputs:
 

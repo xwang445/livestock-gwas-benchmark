@@ -1,0 +1,15 @@
+{
+  "status": "SAVED_FIT_AGGREGATES_RECOMPUTED",
+  "input_sha256": {
+    "truth": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446",
+    "saved_MAF_annotations": "c5f8142989f6d35dc2d17c4c44704bdd36bbc2c946e57b21803ead044c585275",
+    "SuSiE-adj_diagnostics": "af7dda4071487d10353de778ede9967176eaae8148831582afb27f0f5e40ce84",
+    "SuSiE-adj_PIPs": "e1efb190096a6aebeba20d0336afcb02ff27849f5c49bd68d6630bffd5acb2f5",
+    "SuSiE-RSS_diagnostics": "f5c77d16055fa2337809ca0f7f46837722e79aa441e60f3fd834fda76a855f73",
+    "SuSiE-RSS_PIPs": "d7471ae901cd527633f8c5a31ad59ccb41803a279369c4c38407c9bf0c9a6ffb"
+  },
+  "limitations": [
+    "No GWAS or SuSiE refitting",
+    "MAF annotations recovered; genotype MAF calculation not rerun by this independent recount"
+  ]
+}

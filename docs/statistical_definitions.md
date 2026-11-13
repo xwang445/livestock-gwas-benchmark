@@ -8,9 +8,11 @@ The original SuSiE locus manifest already used the inclusive threshold and remai
 
 The [threshold audit](threshold_consistency.md) records the raw-source checks, including exact-threshold calls and preservation of the fine-mapping manifest.
 
+The root lambda tables retain the Figure 6 statistic estimator for current method fits, with an explicit `statistic_definition` and a stable P-based alternative. All ten configurations are included. Current root SNP/locus counts use the inclusive rule; strict comparison columns are labeled separately.
+
 ## Explicit historical audit definitions
 
-The definitions below document immutable pre-revision results. Their strict cutoff applies only when `--historical` is explicitly selected and does not supply current primary results.
+The definitions below document immutable pre-revision results in `derived_data/historical_2026-11-04/`. Their strict cutoff applies only when `--historical` is explicitly selected and does not supply current primary results.
 
 - Figure 3 significant SNPs: strict P<5e-8. Loci are chromosome-specific floor(bp/500000) bins; no distance-based clumping or lead-SNP selection. Inclusive sensitivity counts are also written.
 - Figure 5 uses those strict loci. Jaccard is intersection/union, with NA whenever either set is empty, as specified by the October caption. Cross-replicate stability is a separate table. Empty comparisons must not be silently converted to zero.

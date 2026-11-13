@@ -54,5 +54,7 @@
   "november11_recovered_effects": "Author-supplied recovered-effect table analyzed; source algorithm remains unverified; portable aggregate calculators and explicit input fingerprints included",
   "november12_submission_artwork": "Figures1\u20138/S1\u2013S20, final TRUE-run PR and recovered-PVE group Figure8, pooled four-column TableS1; source aggregates and portable scripts included",
   "validation_snapshot_scope": "Existing numerical checks below describe the November9 comparison; publication_update_validation records the November13 repository validation",
-  "publication_update_validation": "audit/publication_update_2026-11-13.json"
+  "publication_update_validation": "audit/publication_update_2026-11-13.json",
+  "current_root_summary_validation": "audit/current_summary_update_2026-11-13.json",
+  "current_root_summaries": "100current GWAS panels including all ten GCTA phenotypes; old root29file snapshot preserved in explicit historical archive"
 }

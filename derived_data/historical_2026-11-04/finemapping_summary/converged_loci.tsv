@@ -1,0 +1,5 @@
+method	pipeline	n_converged_loci
+BOLT-LMM	SuSiE-adj	6732
+REGENIE_LOCO	SuSiE-adj	6569
+BOLT-LMM	SuSiE-RSS	6732
+REGENIE_LOCO	SuSiE-RSS	6569

@@ -1,0 +1,180 @@
+{
+  "snapshot": "November4 historical strict association and ERV_FALSE RSS reconstruction",
+  "source_commit": "a67eaf4cda94e4c765bee00ac2704a6f9e7ee761",
+  "records": [
+    {
+      "original_path": "derived_data/equation13_summary/cached_theory_validation.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/equation13_summary/cached_theory_validation.tsv",
+      "bytes": 225,
+      "sha256": "82c210fb223913362b32ba1895e25b6de726d5730abe88d6c732278786143c99"
+    },
+    {
+      "original_path": "derived_data/equation13_summary/equation13_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/equation13_summary/equation13_by_pheno.tsv",
+      "bytes": 133923,
+      "sha256": "ffea29d65896e28d93962a167f626042a018efee3fd4f6c6d8c311570b3b4981"
+    },
+    {
+      "original_path": "derived_data/equation13_summary/equation13_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/equation13_summary/equation13_summary.tsv",
+      "bytes": 21978,
+      "sha256": "c80c8144f7eeaf284caf9976181cf6f6e99a8a86e18bd7ceee058412590130d1"
+    },
+    {
+      "original_path": "derived_data/finemapping_summary/converged_loci.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/finemapping_summary/converged_loci.tsv",
+      "bytes": 137,
+      "sha256": "961681d18ee74c2de3ee0ff7dfef0feb8e722120d72a7cb9eba096db1c8d9171"
+    },
+    {
+      "original_path": "derived_data/finemapping_summary/high_pip_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/finemapping_summary/high_pip_by_pheno.tsv",
+      "bytes": 2788,
+      "sha256": "9ad4fc7815a24ec13664ae3cfbd2b81e16f24d77ad83d3ab732c90307e5e9b55"
+    },
+    {
+      "original_path": "derived_data/finemapping_summary/high_pip_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/finemapping_summary/high_pip_summary.tsv",
+      "bytes": 706,
+      "sha256": "41fed8f7050015144895bd16a5f85fe938d058aa6a258d8b71381c2b378db09a"
+    },
+    {
+      "original_path": "derived_data/finemapping_summary/null_vs_effect_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/finemapping_summary/null_vs_effect_summary.tsv",
+      "bytes": 264,
+      "sha256": "53d1e845ad28636986ee8daf4d0065af9786243198a7e36b5371ac65092c5603"
+    },
+    {
+      "original_path": "derived_data/finemapping_summary/verification_manifest.json",
+      "archive_path": "derived_data/historical_2026-11-04/finemapping_summary/verification_manifest.json",
+      "bytes": 780,
+      "sha256": "4201b5acdf5de60cf8d74123318fedbae01878f3452c226b932369fa022c97d0"
+    },
+    {
+      "original_path": "derived_data/input_manifest.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/input_manifest.tsv",
+      "bytes": 18153,
+      "sha256": "6e9b2a34de22e73d05c3f5e028dc26352ee02bb05904393e3c485f9e7ad8308d"
+    },
+    {
+      "original_path": "derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_by_pheno.tsv",
+      "bytes": 9548,
+      "sha256": "e440c1bf9cf81a1164e4c67802a12d20ee90bfbb36d536ed88e9ef2838bc47b9"
+    },
+    {
+      "original_path": "derived_data/lambda_gc_summary/lambda_gc_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/lambda_gc_summary/lambda_gc_summary.tsv",
+      "bytes": 827,
+      "sha256": "407ffee4a9cbf0fc87f0655be64ef70e8cb764aa6c809cae122217162c4e960a"
+    },
+    {
+      "original_path": "derived_data/ld_summary/ld_decay_10kb.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/ld_summary/ld_decay_10kb.tsv",
+      "bytes": 44222,
+      "sha256": "47d206999aac475a41a175911a9467821ae253bff463ad7d97e1c5a782e0408d"
+    },
+    {
+      "original_path": "derived_data/ld_summary/ld_decay_fitted_mean.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/ld_summary/ld_decay_fitted_mean.tsv",
+      "bytes": 233049,
+      "sha256": "89b785d30cb59970ded93d08e14682435b177dd90d2d2a5b365f5039fed3fa52"
+    },
+    {
+      "original_path": "derived_data/method_summary/heritability_from_logs.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/method_summary/heritability_from_logs.tsv",
+      "bytes": 2350,
+      "sha256": "e948cdc1bf20e1a17af2dda329aeb60c057ec0bf034071cf58d44b84e1be6131"
+    },
+    {
+      "original_path": "derived_data/method_summary/method_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/method_summary/method_summary.tsv",
+      "bytes": 810,
+      "sha256": "69bf149bc10612820553536b1603d7084bd2723e70cc4d06be1aaf80622ba4c5"
+    },
+    {
+      "original_path": "derived_data/method_summary/significant_loci_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/method_summary/significant_loci_by_pheno.tsv",
+      "bytes": 1956,
+      "sha256": "70d67366b84173ada3ec35df6546dbb7f0226a02f69ee089f078019faadc3975"
+    },
+    {
+      "original_path": "derived_data/method_summary/significant_snps_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/method_summary/significant_snps_by_pheno.tsv",
+      "bytes": 3997,
+      "sha256": "295616f9b365ef535afeb96aa8de5e8af580e2f2cf388476464ab029bd3d61d4"
+    },
+    {
+      "original_path": "derived_data/overlap_summary/cross_replicate_stability.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/overlap_summary/cross_replicate_stability.tsv",
+      "bytes": 33729,
+      "sha256": "5b1e9388371e1c6413e7a1d55f84a6887f294d971eaf2064b534edec0fee9bbe"
+    },
+    {
+      "original_path": "derived_data/overlap_summary/locus_overlap_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/overlap_summary/locus_overlap_by_pheno.tsv",
+      "bytes": 44815,
+      "sha256": "4defff1c37ed8fc19d0f934c9e1b56e88b8f1eb3f5887c6a81060f4cd511d6a6"
+    },
+    {
+      "original_path": "derived_data/overlap_summary/locus_overlap_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/overlap_summary/locus_overlap_summary.tsv",
+      "bytes": 7344,
+      "sha256": "00fa37138ab1822169556a525c0adbbc33e135e1bad8571233114fb7a8c064f8"
+    },
+    {
+      "original_path": "derived_data/power_summary/fpr_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/fpr_by_pheno.tsv",
+      "bytes": 439941,
+      "sha256": "0024b6018868cc71d4eb8c5e0deb43df4bc6897ad3d2036f7bbedc777df35cae"
+    },
+    {
+      "original_path": "derived_data/power_summary/fpr_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/fpr_summary.tsv",
+      "bytes": 72596,
+      "sha256": "8a0a652bb48f223b1f281e443734a93ad0e1d46d2a3eb9f388075399cd15eb39"
+    },
+    {
+      "original_path": "derived_data/power_summary/power_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/power_by_pheno.tsv",
+      "bytes": 142550,
+      "sha256": "1a594e4f4044f129461e8f8834c51317eedceb34800050f6fe2e2136f927bbcd"
+    },
+    {
+      "original_path": "derived_data/power_summary/power_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/power_summary.tsv",
+      "bytes": 22034,
+      "sha256": "a8fe91ef34a6772d947a1b23c6408a5176e7c0873aeb7170076a34317a5835dc"
+    },
+    {
+      "original_path": "derived_data/power_summary/spatial_enrichment_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/spatial_enrichment_by_pheno.tsv",
+      "bytes": 200503,
+      "sha256": "f38d8ff6b8817df46b8aee263ad5df5ee1921762788b3e6db9a15fc4903b3563"
+    },
+    {
+      "original_path": "derived_data/power_summary/spatial_enrichment_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/power_summary/spatial_enrichment_summary.tsv",
+      "bytes": 26367,
+      "sha256": "2be81b4594c999e577d973428a9b424fc2ffbe18d7502f912cdd8375373f2a40"
+    },
+    {
+      "original_path": "derived_data/run_manifest.json",
+      "archive_path": "derived_data/historical_2026-11-04/run_manifest.json",
+      "bytes": 450,
+      "sha256": "f0cefca7a4a52dd236620ffb49f00134fa664e1614b44adf354be0e4458bda43"
+    },
+    {
+      "original_path": "derived_data/spillover_summary/spillover_by_pheno.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/spillover_summary/spillover_by_pheno.tsv",
+      "bytes": 3892,
+      "sha256": "6ad56888294d39ea005a0b045ca47f801b28735ff74264961d59f9dd4cd7f242"
+    },
+    {
+      "original_path": "derived_data/spillover_summary/spillover_summary.tsv",
+      "archive_path": "derived_data/historical_2026-11-04/spillover_summary/spillover_summary.tsv",
+      "bytes": 1153,
+      "sha256": "14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702"
+    }
+  ]
+}

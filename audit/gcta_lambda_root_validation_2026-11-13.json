@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "date": "2026-11-13",
+  "method": "GCTA_MLMA",
+  "n_phenotypes": 10,
+  "significance": "Native raw P <= 5e-8; no tolerance",
+  "central_null": "Verified canonical chromosome-specific [start,end) windows; complete null parents only",
+  "lambda_gc_central_null": "median(chi2.isf(P,df=1))/chi2.ppf(0.5,df=1)",
+  "lambda_gc_central_null_historical": "median(finite((b/se)^2))/chi2.ppf(0.5,df=1)",
+  "compared_against_current_canonical": true,
+  "maximum_absolute_differences": {
+    "significant_snps": 0,
+    "loci": 0,
+    "effect_loci": 0,
+    "null_loci": 0,
+    "central_null_loci": 0,
+    "lambda_gc_central_null": 9.992007221626409e-16,
+    "lambda_gc_central_null_historical": 4.440892098500626e-16,
+    "lambda_gc_all": 5.551115123125783e-16,
+    "n_central_null_snps": 0,
+    "n_historical_finite_central_statistics": 0
+  },
+  "per_phenotype": [
+    {
+      "phenotype": 1,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 2,
+      "loci": 2,
+      "effect_loci": 2,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5719569662194354,
+      "lambda_gc_central_null_historical": 0.571955150814471,
+      "lambda_gc_all": 0.777647606327514,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 2,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 0,
+      "loci": 0,
+      "effect_loci": 0,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5733056288841059,
+      "lambda_gc_central_null_historical": 0.5733025329740051,
+      "lambda_gc_all": 0.8160589980748769,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 3,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 32,
+      "loci": 7,
+      "effect_loci": 6,
+      "null_loci": 1,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.591384163564847,
+      "lambda_gc_central_null_historical": 0.5913832756751171,
+      "lambda_gc_all": 0.7854556765654486,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 4,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 4,
+      "loci": 2,
+      "effect_loci": 2,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.583337113601058,
+      "lambda_gc_central_null_historical": 0.5833380190454432,
+      "lambda_gc_all": 0.8082493897922863,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 5,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 8,
+      "loci": 1,
+      "effect_loci": 1,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5989638983838826,
+      "lambda_gc_central_null_historical": 0.5989630571381168,
+      "lambda_gc_all": 0.7939810550136714,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 6,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 0,
+      "loci": 0,
+      "effect_loci": 0,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.6069740502250628,
+      "lambda_gc_central_null_historical": 0.6069734919884497,
+      "lambda_gc_all": 0.8519440799202983,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 7,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 12,
+      "loci": 3,
+      "effect_loci": 3,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5479369318555503,
+      "lambda_gc_central_null_historical": 0.5479377268448385,
+      "lambda_gc_all": 0.7851328102758911,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 8,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 0,
+      "loci": 0,
+      "effect_loci": 0,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5756617706953604,
+      "lambda_gc_central_null_historical": 0.5756580246355949,
+      "lambda_gc_all": 0.8028329700605301,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 9,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 0,
+      "loci": 0,
+      "effect_loci": 0,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.5723155599059279,
+      "lambda_gc_central_null_historical": 0.572316334816397,
+      "lambda_gc_all": 0.7922091797954349,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    },
+    {
+      "phenotype": 10,
+      "raw_rows": 135358,
+      "n_finite_p": 135358,
+      "missing_p": 0,
+      "zero_p": 0,
+      "significant_snps": 0,
+      "loci": 0,
+      "effect_loci": 0,
+      "null_loci": 0,
+      "central_null_loci": 0,
+      "lambda_gc_central_null": 0.580696113235493,
+      "lambda_gc_central_null_historical": 0.5806895714227268,
+      "lambda_gc_all": 0.8087574516653232,
+      "n_central_null_snps": 44345,
+      "n_historical_finite_central_statistics": 44345
+    }
+  ],
+  "summary": {
+    "lambda_gc_central_null": {
+      "mean": 0.5802532196570722,
+      "sample_sd": 0.016476326098485164,
+      "minimum": 0.5479369318555503,
+      "maximum": 0.6069740502250628
+    },
+    "lambda_gc_central_null_historical": {
+      "mean": 0.5802517185355159,
+      "sample_sd": 0.016476200048793993,
+      "minimum": 0.5479377268448385,
+      "maximum": 0.6069734919884497
+    },
+    "lambda_gc_all": {
+      "mean": 0.8022269217491276,
+      "sample_sd": 0.021313487956135177,
+      "minimum": 0.777647606327514,
+      "maximum": 0.8519440799202983
+    }
+  },
+  "pooled_significant_snps": 58,
+  "pooled_loci": 15,
+  "source_fingerprints": [
+    {
+      "role": "current_public_association",
+      "bytes": 21332,
+      "sha256": "9fade390216f21bb7651394a8d639a9ed5c85c6b5ace8a2c35440f4ce10b90ce"
+    },
+    {
+      "role": "canonical_private_window_inventory",
+      "bytes": 355565,
+      "sha256": "40f4c8e6bf0749e97cf6116e26c337b881444a4ed000e960732164a00db022bc"
+    },
+    {
+      "role": "canonical_private_detected_loci",
+      "bytes": 7423849,
+      "sha256": "d2a9f6845ac92fe57656755f7e5dfefaf8b10e6e21ace14637edb3f26c445f18"
+    },
+    {
+      "role": "GCTA_MLMA_pheno1",
+      "bytes": 9107506,
+      "sha256": "7c09883744b5ff14df26e03eae375b7aae61acb5be164649ea2a8469fcf78de0"
+    },
+    {
+      "role": "GCTA_MLMA_pheno2",
+      "bytes": 9111331,
+      "sha256": "6793add0c6e8b293fe04a3f760a8db9374e1ce3f4b707a1154633618c663d48e"
+    },
+    {
+      "role": "GCTA_MLMA_pheno3",
+      "bytes": 9110291,
+      "sha256": "f7740257333c725b972b87c28cc4f9a44130d2692630f4127fff0bd2fb38480a"
+    },
+    {
+      "role": "GCTA_MLMA_pheno4",
+      "bytes": 9113061,
+      "sha256": "b3da418ad2f59fcfedaf48b15e987e1c1a1758b0d184c11400fc040a78a46fa9"
+    },
+    {
+      "role": "GCTA_MLMA_pheno5",
+      "bytes": 9110373,
+      "sha256": "b08353d0e0f078406bd16b36edc88e39badef5cb2394ba523b3de8df394dfc08"
+    },
+    {
+      "role": "GCTA_MLMA_pheno6",
+      "bytes": 9111690,
+      "sha256": "394faad2c5d2eeb924dd38a653df2fd226ed3e26059c9cc2f1d14d538c540aa4"
+    },
+    {
+      "role": "GCTA_MLMA_pheno7",
+      "bytes": 9110710,
+      "sha256": "2a7e4ee1816effa6a0425ffaa1bdc971e2a0ddc60623f77309a6d0873d3175c9"
+    },
+    {
+      "role": "GCTA_MLMA_pheno8",
+      "bytes": 9110755,
+      "sha256": "c654670d6de31b276b7209e07f4b6129a1d66332fb46547bd2dd4eaf5fefd6ca"
+    },
+    {
+      "role": "GCTA_MLMA_pheno9",
+      "bytes": 9113803,
+      "sha256": "70cde2183a4b9093a97390f16678d1311f8e34f3fcc017d56168ac9cb6f1b881"
+    },
+    {
+      "role": "GCTA_MLMA_pheno10",
+      "bytes": 9111625,
+      "sha256": "ee1fd4dfdec1ba770845df93f91d03047db2e09217a44f2f70a602b963f7d01a"
+    }
+  ],
+  "detailed_outputs_written": false
+}

@@ -32,7 +32,7 @@ def draw_historical(root,out):
             ax.axhline(-np.log10(ALPHA),ls='--',lw=.6,color='#D55E00');ax.set_title(LABELS[method],loc='left',fontsize=10);ax.set_ylabel('−log₁₀(P)',fontsize=9)
             sig=d.p.lt(ALPHA);group=0 if method in ['BOLT-LMM','REGENIE_LOCO'] else 1
             mainaxes[group].scatter(x[sig]/1e6,y[sig],s=.8,color=COLORS[method],alpha=.45,linewidths=0,rasterized=True,label=LABELS[method] if ph==1 else None)
-            records.append(dict(phenotype=ph,method=method,n_plotted=len(d),n_significant=int(sig.sum()),max_minus_log10p=float(y.max()),source='restricted GWAS panel; see derived_data/input_manifest.tsv'))
+            records.append(dict(phenotype=ph,method=method,n_plotted=len(d),n_significant=int(sig.sum()),max_minus_log10p=float(y.max()),source='restricted historical GWAS panel; see derived_data/historical_2026-11-04/input_manifest.tsv'))
         for ax in axes:ax.set_ylim(0,np.ceil(maximum*1.03));ax.set_xlim(0,(offset.iloc[-1]+lengths.iloc[-1])/1e6)
         axes[-1].set_xticks(centers/1e6,centers.index);axes[-1].set_xlabel('Chromosome')
         fig.suptitle(f'Supplementary Figure S{ph}. All tested SNPs, phenotype {ph}\nShared vertical scale; dashed line P = 5 × 10⁻⁸',fontsize=13)

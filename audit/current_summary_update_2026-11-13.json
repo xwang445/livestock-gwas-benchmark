@@ -1,0 +1,418 @@
+{
+  "status": "PASS",
+  "date": "2026-11-13",
+  "scope": "Replace old root summary snapshot with current inclusive ten-configuration results; preserve original data in explicit historical archive",
+  "base_commit": "a67eaf4cda94e4c765bee00ac2704a6f9e7ee761",
+  "workflow_check": {
+    "exit_code": 0,
+    "unittest_cases_passed": 49,
+    "static_checks": "Python/shell/R syntax, YAML, schemas and method labels",
+    "configuration_matches_committed_tables": true,
+    "exporter_check": "29root outputs verified byte-exact without writes",
+    "historical_manuscript_ledger": "108PASS/3NOT_RUN/2AMBIGUOUS/1REQUIRES_RECOMPUTATION; all values unchanged, source pointers remapped"
+  },
+  "requested_lambda_file": {
+    "path": "derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv",
+    "rows": 100,
+    "configurations": 10,
+    "GCTA_MLMA_rows": 10,
+    "GCTA_statistic_lambda_mean": 0.5802517185355162,
+    "GCTA_statistic_lambda_sample_sd": 0.016476200048793955,
+    "GCTA_P_based_lambda_mean": 0.5802532196570721,
+    "raw_validation_record": "audit/gcta_lambda_root_validation_2026-11-13.json",
+    "maximum_raw_canonical_lambda_difference": 9.992007221626409e-16
+  },
+  "current_root_table_coverage": [
+    {
+      "path": "derived_data/method_summary/heritability_from_logs.tsv",
+      "rows": 30,
+      "method_values": [
+        "GCTA_MLMA",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 10
+    },
+    {
+      "path": "derived_data/method_summary/method_summary.tsv",
+      "rows": 10,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 1
+    },
+    {
+      "path": "derived_data/method_summary/significant_loci_by_pheno.tsv",
+      "rows": 100,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 10
+    },
+    {
+      "path": "derived_data/method_summary/significant_snps_by_pheno.tsv",
+      "rows": 100,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 10
+    },
+    {
+      "path": "derived_data/lambda_gc_summary/lambda_gc_by_pheno.tsv",
+      "rows": 100,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 10
+    },
+    {
+      "path": "derived_data/lambda_gc_summary/lambda_gc_summary.tsv",
+      "rows": 10,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 1
+    },
+    {
+      "path": "derived_data/spillover_summary/spillover_by_pheno.tsv",
+      "rows": 100,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 10
+    },
+    {
+      "path": "derived_data/spillover_summary/spillover_summary.tsv",
+      "rows": 10,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 1
+    },
+    {
+      "path": "derived_data/power_summary/fpr_by_pheno.tsv",
+      "rows": 6800,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 680
+    },
+    {
+      "path": "derived_data/power_summary/fpr_summary.tsv",
+      "rows": 680,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 68
+    },
+    {
+      "path": "derived_data/power_summary/power_by_pheno.tsv",
+      "rows": 3400,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 340
+    },
+    {
+      "path": "derived_data/power_summary/power_summary.tsv",
+      "rows": 340,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 34
+    },
+    {
+      "path": "derived_data/power_summary/spatial_enrichment_by_pheno.tsv",
+      "rows": 4000,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 400
+    },
+    {
+      "path": "derived_data/power_summary/spatial_enrichment_summary.tsv",
+      "rows": 400,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 40
+    },
+    {
+      "path": "derived_data/overlap_summary/cross_replicate_stability.tsv",
+      "rows": 1000,
+      "method_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "GCTA_MLMA_rows": 100
+    },
+    {
+      "path": "derived_data/overlap_summary/locus_overlap_by_pheno.tsv",
+      "rows": 1000,
+      "method_a_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "method_b_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ]
+    },
+    {
+      "path": "derived_data/overlap_summary/locus_overlap_summary.tsv",
+      "rows": 100,
+      "method_a_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ],
+      "method_b_values": [
+        "BLINK_Kansas",
+        "BLINK_NYC",
+        "BOLT-LMM",
+        "FarmCPU_Kansas",
+        "FarmCPU_NYC",
+        "GCTA_MLMA",
+        "REGENIE_LOCO",
+        "REGENIE_woLOCO",
+        "SLEMM",
+        "fastGWA"
+      ]
+    },
+    {
+      "path": "derived_data/finemapping_summary/converged_loci.tsv",
+      "rows": 4,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/finemapping_summary/high_pip_by_pheno.tsv",
+      "rows": 40,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/finemapping_summary/high_pip_summary.tsv",
+      "rows": 4,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/finemapping_summary/null_vs_effect_summary.tsv",
+      "rows": 4,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/equation13_summary/cached_theory_validation.tsv",
+      "rows": 1
+    },
+    {
+      "path": "derived_data/equation13_summary/equation13_by_pheno.tsv",
+      "rows": 400,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/equation13_summary/equation13_summary.tsv",
+      "rows": 40,
+      "method_values": [
+        "BOLT-LMM",
+        "REGENIE_LOCO"
+      ],
+      "GCTA_MLMA_rows": 0
+    },
+    {
+      "path": "derived_data/ld_summary/ld_decay_10kb.tsv",
+      "rows": 1000
+    },
+    {
+      "path": "derived_data/ld_summary/ld_decay_fitted_mean.tsv",
+      "rows": 7999
+    }
+  ],
+  "scope_exceptions": {
+    "fine_mapping": "Only BOLT-LMM and REGENIE_LOCO were fine-mapped; both pipelines final ERV_TRUE; no GCTA fit claimed",
+    "equation13": "Current Figure7 retained genome-wide BOLT/LOCO bins only; theoretical generator unavailable",
+    "heritability": "fastGWA, updated SLEMM, GCTA MLMA only; GCTA ratio retains rounded-log precision"
+  },
+  "historical_archive": {
+    "path": "derived_data/historical_2026-11-04",
+    "files_verified_against_original_sha256": 29,
+    "snapshot_bytes_unchanged": true,
+    "historical_figures_smoke_exit_code": 0,
+    "historical_PDFs_regenerated": 8,
+    "artwork_unchanged": true,
+    "retained_Manhattan_manifest_changes": "90source-column prose pointers repointed to archived inputmanifest; numerical cells unchanged"
+  },
+  "publication_review": {
+    "text_files_scanned_for_private_roots": 100,
+    "private_path_leaks": 0,
+    "raw_restricted_data_added": false,
+    "markdown_broken_links": 0,
+    "independent_review": "PASS; no blocking findings"
+  }
+}

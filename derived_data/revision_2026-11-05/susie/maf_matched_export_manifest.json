@@ -1,0 +1,28 @@
+{
+  "status": "EXPORTED_AGGREGATES_FROM_FINAL_TRUE_FITS",
+  "fit_mode": "ERV_TRUE",
+  "n_phenotypes": 10,
+  "pipelines": [
+    "SuSiE-adj",
+    "SuSiE-RSS"
+  ],
+  "methods": [
+    "BOLT-LMM",
+    "REGENIE-LOCO"
+  ],
+  "detailed_outputs_written": false,
+  "inputs": [
+    {
+      "role": "counts_by_phenotype.csv",
+      "bytes": 9214,
+      "sha256": "13638b797bb49e5ef8444bb9b69b9f812d3815f445547a26b56a2030e0a03a5a",
+      "public_output": "maf_matched_counts_by_phenotype.tsv"
+    },
+    {
+      "role": "pool_qc.csv",
+      "bytes": 1974,
+      "sha256": "01a3552f5839a9abd5decac2c10016a1243a0465dfd97ac3595cc5d7d1f1fafe",
+      "public_output": "maf_matched_pool_qc.tsv"
+    }
+  ]
+}

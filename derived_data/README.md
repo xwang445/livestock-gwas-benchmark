@@ -1,43 +1,48 @@
 # Benchmark results
 
-## Current canonical revision
+The root summary folders contain the current results: all ten GWAS configurations and ten phenotypes, updated SLEMM, completed GCTA MLMA, and inclusive P ≤ 5 × 10⁻⁸. The previous root tables are preserved byte for byte in [historical_2026-11-04](historical_2026-11-04/README.md). The [November 13 summary update](../docs/revision_2026-11-13.md) records this migration.
 
-The [November 12 submission sources](submission_2026-11-12) contain figure aggregates and the current pooled four-column Table S1. [November 11 results](revision_2026-11-11) contain recovered-effect lead/PVE summaries and separately labeled GWAS-coefficient PVE summaries. Their [scientific update](../docs/revision_2026-11-12.md) explains which estimator and aggregation each table uses.
+## Current result tables
 
-Use [revision_2026-11-05/association](revision_2026-11-05/association) for current inclusive counts, overlaps, spillover, Table S1 and updated SLEMM; [revision_2026-11-05/susie](revision_2026-11-05/susie) contains the completed TRUE RSS comparison. The [analysis manifest](revision_2026-11-05/analysis_manifest.tsv) identifies completed and missing panels. Default workflow and plotting commands read these current sources. They apply P ≤ 5 × 10⁻⁸, comparing native LOG10P directly.
-
-## Preserved historical audit
-
-The tables described below remain immutable historical snapshots; they do not supply current primary counts. Reproduce their older strict rule only with explicit `--historical`.
-
-This directory contains **27 populated TSV files** calculated from the saved livestock GWAS benchmark, plus JSON provenance records. The former placeholder templates are preserved separately in [example/schemas](../example/schemas/README.md).
-
-## Main result tables
-
-| Analysis | Aggregate result | Per-phenotype or supporting result |
+| Analysis | Summary | Phenotype-level or supporting result |
 |---|---|---|
-| Significant SNPs and 500 kb loci | [Historical summary: 9 configurations](method_summary/method_summary.tsv) | [SNP counts: 90 rows](method_summary/significant_snps_by_pheno.tsv); [locus counts: 90 rows](method_summary/significant_loci_by_pheno.tsv) |
-| Power | [306 method/threshold summaries](power_summary/power_summary.tsv) | [3,060 phenotype/threshold rows](power_summary/power_by_pheno.tsv) |
-| False-positive rates | [612 method/region/threshold summaries](power_summary/fpr_summary.tsv) | [6,120 phenotype/region/threshold rows](power_summary/fpr_by_pheno.tsv) |
-| Spatial enrichment | [360 method/distance summaries](power_summary/spatial_enrichment_summary.tsv) | [3,600 phenotype/distance rows](power_summary/spatial_enrichment_by_pheno.tsv) |
-| Central-null spillover | [9 method summaries](spillover_summary/spillover_summary.tsv) | [90 phenotype/method rows](spillover_summary/spillover_by_pheno.tsv) |
-| Genomic inflation | [9 method summaries](lambda_gc_summary/lambda_gc_summary.tsv) | [90 historical lambda values and stable P-based diagnostics](lambda_gc_summary/lambda_gc_by_pheno.tsv) |
-| Locus overlap | [81 method-pair summaries](overlap_summary/locus_overlap_summary.tsv) | [810 phenotype-specific pairs](overlap_summary/locus_overlap_by_pheno.tsv); [900 cross-replicate comparisons](overlap_summary/cross_replicate_stability.tsv) |
-| Equation 13 downstream | [160 method/region/bin summaries](equation13_summary/equation13_summary.tsv) | [1,600 replicate-bin means](equation13_summary/equation13_by_pheno.tsv) |
-| Fine-mapping | [4 pooled high-PIP summaries](finemapping_summary/high_pip_summary.tsv) | [40 phenotype/pipeline rows](finemapping_summary/high_pip_by_pheno.tsv); [null/effect counts](finemapping_summary/null_vs_effect_summary.tsv); [converged loci](finemapping_summary/converged_loci.tsv) |
-| LD decay | [1,000 independently recounted 10 kb bins](ld_summary/ld_decay_10kb.tsv) | [7,998 fitted curve coordinates](ld_summary/ld_decay_fitted_mean.tsv) |
-| Heritability | [20 estimates recovered from fitting logs](method_summary/heritability_from_logs.tsv) | Means/ranges are checked in the validation ledger |
+| Significant SNPs and 500 kb loci | [Ten configurations](method_summary/method_summary.tsv) | [100 SNP-count rows](method_summary/significant_snps_by_pheno.tsv); [100 locus-count rows](method_summary/significant_loci_by_pheno.tsv) |
+| Genomic inflation | [Ten configuration summaries](lambda_gc_summary/lambda_gc_summary.tsv) | [100 current lambda rows, including GCTA MLMA](lambda_gc_summary/lambda_gc_by_pheno.tsv) |
+| Central-null spillover | [Ten summaries](spillover_summary/spillover_summary.tsv) | [100 phenotype/configuration rows](spillover_summary/spillover_by_pheno.tsv) |
+| Power | [Method/threshold summaries](power_summary/power_summary.tsv) | [Current causal-SNP rates and exact thresholds](power_summary/power_by_pheno.tsv) |
+| Null-region SNP rates | [Region/threshold summaries](power_summary/fpr_summary.tsv) | [Outside-effect and central-null rates](power_summary/fpr_by_pheno.tsv) |
+| Spatial enrichment | [400 configuration/distance summaries](power_summary/spatial_enrichment_summary.tsv) | [4,000 phenotype/configuration/distance rows](power_summary/spatial_enrichment_by_pheno.tsv) |
+| Locus overlap | [100 method-pair summaries](overlap_summary/locus_overlap_summary.tsv) | [1,000 phenotype-specific pairs](overlap_summary/locus_overlap_by_pheno.tsv); [1,000 cross-replicate comparisons](overlap_summary/cross_replicate_stability.tsv) |
+| Heritability | [30 estimates from fastGWA, current SLEMM and GCTA MLMA](method_summary/heritability_from_logs.tsv) | GCTA ratios retain rounded-log precision; no unrounded values or standard errors are inferred |
+| Fine-mapping | [Four current GWAS/pipeline combinations](finemapping_summary/high_pip_summary.tsv) | [40 phenotype-specific rows](finemapping_summary/high_pip_by_pheno.tsv); [null/effect counts](finemapping_summary/null_vs_effect_summary.tsv); [converged loci](finemapping_summary/converged_loci.tsv) |
+| Equation 13 / current Figure 7 | [Retained BOLT-LMM and REGENIE_LOCO bin summaries](equation13_summary/equation13_summary.tsv) | [Phenotype/bin observations](equation13_summary/equation13_by_pheno.tsv); [scope and provenance](equation13_summary/cached_theory_validation.tsv) |
+| LD | [1,000 verified 10 kb bins](ld_summary/ld_decay_10kb.tsv) | [Shared fitted spline used by current artwork](ld_summary/ld_decay_fitted_mean.tsv) |
 
-For example, the pooled high-PIP table contains 1,974 calls with 1,153 in null windows for BOLT-LMM/SuSiE-adj, and 2,101 calls with 1,274 in null windows for REGENIE_LOCO/SuSiE-adj. These are independently recounted saved results, not template values.
+`n_significant_snps` and `n_significant_loci` are current inclusive counts. Explicit `strict_*` fields retain comparisons at the older strict cutoff. The root files retain the established method key `REGENIE_woLOCO`; dated association sources use `REGENIE_WO_LOCO`. GCTA's stable key is `GCTA_MLMA`.
 
-## Recalculate and verify
+`lambda_gc` retains the central-null statistic estimator used in Figure 6, with the current inputs for each method. Its `statistic_definition` column identifies the estimator; `lambda_gc_p_based` provides the stable P-based alternative. The word "historical" in an estimator name describes that calculation, rather than an old SLEMM or incomplete GCTA fit. Method summaries use sample SD across ten phenotypes.
 
-Use `python scripts/workflow.py check` to check the public package. Use the [supported workflow](../docs/workflow.md) to recalculate tables from saved restricted inputs in a new output directory. Figure scripts read these tables; they do not define a second set of statistics.
+Power/null-rate tables retain the exact audited threshold grid and its hexadecimal representation. Spatial enrichment retains the established closed-endpoint 50 kb bins. Empty locus-set comparisons remain undefined where specified; overlap tables distinguish the number of paired phenotypes from the number with defined Jaccard values.
 
-[Input fingerprints](input_manifest.tsv), [run metadata](run_manifest.json), [cached-theory checks](equation13_summary/cached_theory_validation.tsv), and [fine-mapping metadata](finemapping_summary/verification_manifest.json) identify the source calculations. The [historical corrected-claim ledger](../audit/manuscript_validation.tsv) validates the corrected manuscript claims; the [historical ledger](../audit/historical_manuscript_validation.tsv) preserves the two original numerical discrepancies.
+Fine-mapping was performed for BOLT-LMM and REGENIE_LOCO inputs only. Both current pipelines estimate residual variance; RSS high-PIP counts are 2,021 and 2,072. No GCTA fine-mapping results are claimed. Current Equation 13 exports cover the two inputs shown in Figure 7 using retained genome-wide bins. The original four-method/central-null theory audit is archived; the upstream theoretical generator remains unverified.
 
-Under this historical strict rule, the REGENIE_LOCO significant-SNP maximum is 20,461; 21,484 belongs to BOLT-LMM. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. An independent raw-column scan reproduced the counts and maxima for all 90 panels.
+## Dated canonical analyses and submission sources
 
-These are results from simulated phenotypes on real livestock genotypes. Saved GWAS and fine-mapping fits were evaluated without new fitting. These historical PVE provenance questions are superseded only to the extent documented by the supplied recovered-effect table; original generating-effect and Equation 12 provenance remain unverified. Legitimate NA Jaccard values denote comparisons involving an empty locus set.
+[revision_2026-11-05/association](revision_2026-11-05/association) supplies the detailed current counts, lambda, overlap, spatial and sensitivity sources. [revision_2026-11-05/susie](revision_2026-11-05/susie) retains both final TRUE and paired historical FALSE fine-mapping analyses. [revision_2026-11-11](revision_2026-11-11/README.md) contains recovered-effect lead/PVE summaries and separately labeled GWAS-coefficient PVE. [submission_2026-11-12](submission_2026-11-12/README.md) contains figure aggregates and the current pooled four-column Table S1. Their dated definitions remain intact.
 
-Individual-level inputs, raw GWAS, GRMs, raw LD and per-SNP PIPs remain restricted. [Synthetic examples](../example/synthetic/README.md) and [schema examples](../example/schemas/README.md) are separate from the benchmark results.
+## Rebuild and verify
+
+```bash
+python scripts/workflow.py refresh-results
+python scripts/workflow.py check
+```
+
+The first command exports the root views from committed aggregate sources and refreshes result/artifact fingerprints. The check compares root exports with those sources, requires complete ten-configuration GWAS coverage, verifies the historical snapshot checksums and runs the numerical tests. [Current input fingerprints](input_manifest.tsv) and [run metadata](run_manifest.json) describe all 100 GWAS panels.
+
+The portable [support derivation](../scripts/revision_2026-11-05/association/derive_public_summary_support.py) produces aggregate QC, cross-replicate overlap and relative source fingerprints from authorized private records. Detailed loci, SNP IDs and individual-level data remain excluded.
+
+## Historical audit
+
+The [historical snapshot manifest](historical_2026-11-04/snapshot_manifest.json) records the original bytes and checksums of 29 files, including 27 TSVs and two metadata files. Its nine-configuration strict association results, original SLEMM, RSS FALSE results and cached four-method theory comparison support the historical manuscript ledger. Use explicit `--historical` commands to reproduce that audit. Historical files never supply current primary summary rows.
+
+Individual-level inputs, raw GWAS, GRMs, raw LD, causal variant identifiers and per-SNP PIPs remain restricted. [Synthetic examples](../example/synthetic/README.md) are separate from study results.

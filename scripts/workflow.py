@@ -21,7 +21,7 @@ def new_output(path,source=None,resume=False,create=True):
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
- p.add_argument('stage',choices=['check','summarize','equation13','ld','fine-mapping','figures','submission','manhattan'])
+ p.add_argument('stage',choices=['check','refresh-results','summarize','equation13','ld','fine-mapping','figures','submission','manhattan'])
  p.add_argument('--profile',choices=['mac','hpcc']);p.add_argument('--local-config',type=Path)
  p.add_argument('--out',type=Path);p.add_argument('--data',type=Path,default=ROOT/'derived_data')
  p.add_argument('--historical',action='store_true',help='Explicitly reproduce the preserved pre-revision nine-configuration audit')
@@ -34,10 +34,14 @@ def main():
  if a.resume and not a.historical:p.error('Current derivation uses a new output directory; --resume is only for the historical hash-checked cache')
  if a.individual and (a.stage!='manhattan' or a.historical):p.error('--individual applies only to current Manhattan plots')
  if a.stage=='check':
-  run('scripts/check_config.py');run('scripts/build_result_config.py','--check')
+  run('scripts/check_config.py');run('scripts/publish_current_summaries.py','--check');run('scripts/build_result_config.py','--check')
   run('tests/check_static.py')
   subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],cwd=ROOT,check=True)
   run('scripts/validate_manuscript.py','--check');run('tests/check_validation_status.py');return
+ if a.stage=='refresh-results':
+  if a.historical:p.error('refresh-results exports the current summary views; the historical archive is preserved separately')
+  run('scripts/publish_current_summaries.py')
+  run('scripts/build_result_config.py');run('scripts/build_artifact_manifest.py');return
  if a.out is None:p.error('--out is required for analysis and figures')
  if a.stage=='submission':
   source=a.data.resolve()
@@ -53,6 +57,7 @@ def main():
  if a.stage=='figures':
   data=a.data.resolve()
   if not data.is_dir():p.error('--data directory does not exist')
+  if a.historical and (data/'historical_2026-11-04').is_dir():data=data/'historical_2026-11-04'
   out=new_output(a.out)
   args=['--data',data,'--out',out]
   if a.historical:args.append('--historical')

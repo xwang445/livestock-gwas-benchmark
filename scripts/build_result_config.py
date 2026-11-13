@@ -8,22 +8,24 @@ import yaml
 def build(repo):
     repo=Path(repo);data=repo/'derived_data'
     def read(name):return pd.read_csv(data/name,sep='\t')
+    historical='historical_2026-11-04'
+    def read_historical(name):return read(historical+'/'+name)
     sources={}
     for path in sorted(list(data.rglob('*.tsv'))+list(data.rglob('*.csv'))):
         frame=pd.read_csv(path,sep=',' if path.suffix=='.csv' else '\t')
         sources[str(path.relative_to(data))]={'path':str(path.relative_to(repo)),
             'rows':len(frame),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
-    counts=read('method_summary/significant_snps_by_pheno.tsv')
-    methods=read('method_summary/method_summary.tsv')
-    spill=read('spillover_summary/spillover_summary.tsv').set_index('method').to_dict(orient='index')
-    inflation=read('lambda_gc_summary/lambda_gc_summary.tsv').set_index('method').to_dict(orient='index')
+    counts=read_historical('method_summary/significant_snps_by_pheno.tsv')
+    methods=read_historical('method_summary/method_summary.tsv')
+    spill=read_historical('spillover_summary/spillover_summary.tsv').set_index('method').to_dict(orient='index')
+    inflation=read_historical('lambda_gc_summary/lambda_gc_summary.tsv').set_index('method').to_dict(orient='index')
     per_method={}
     for row in methods.to_dict('records'):
         method=row.pop('method')
         per_method[method]={'significant_snps_and_loci':row,
             'spillover':spill[method],
             'lambda_gc':inflation[method]}
-    h=read('method_summary/heritability_from_logs.tsv')
+    h=read_historical('method_summary/heritability_from_logs.tsv')
     h=h.groupby('method').h2.agg(['mean','min','max','count']).reset_index()
     ledger=pd.read_csv(repo/'audit/manuscript_validation.tsv',sep='\t')
     ld=read('ld_summary/ld_decay_10kb.tsv')
@@ -32,8 +34,9 @@ def build(repo):
         'regenerate_command':'python scripts/build_result_config.py',
         'historical_study_checks':{'historical_configurations':int(counts.method.nunique()),'phenotypes':int(counts.phenotype.nunique()),
             'gwas_panels':len(counts),'snps_per_panel':sorted(int(x) for x in counts.n_snps.unique()),
-            'equation13_replicate_bin_rows':sources['equation13_summary/equation13_by_pheno.tsv']['rows'],
-            'finemapping_phenotype_pipeline_rows':sources['finemapping_summary/high_pip_by_pheno.tsv']['rows']},
+            'data_directory':'derived_data/'+historical,
+            'equation13_replicate_bin_rows':sources[historical+'/equation13_summary/equation13_by_pheno.tsv']['rows'],
+            'finemapping_phenotype_pipeline_rows':sources[historical+'/finemapping_summary/high_pip_by_pheno.tsv']['rows']},
         'historical_validation':{'ledger':'audit/manuscript_validation.tsv',
             'status_counts':{k:int(v) for k,v in ledger.status.value_counts().sort_index().items()},
             'manuscript_discrepancies':ledger[ledger.status=='FAIL'][['manuscript_item','expected','observed','source','note']].to_dict('records'),
@@ -41,10 +44,10 @@ def build(repo):
             'corrected_manuscript_values':{row.manuscript_item:float(row.observed) for row in ledger.itertuples() if row.manuscript_item in ['Results REGENIE maximum SNP count','Figure4 corrected maximum minus log10 P']}},
         'historical_methods':per_method,
         'historical_heritability_from_saved_logs':h.to_dict('records'),
-        'historical_finemapping':{'pooled':read('finemapping_summary/high_pip_summary.tsv').to_dict('records'),
-            'converged_loci':read('finemapping_summary/converged_loci.tsv').to_dict('records')},
+        'historical_finemapping':{'pooled':read_historical('finemapping_summary/high_pip_summary.tsv').to_dict('records'),
+            'converged_loci':read_historical('finemapping_summary/converged_loci.tsv').to_dict('records')},
         'ld':{'n_bins':len(ld),'selected_bin_means':ld[ld.bin_id.isin([1,200,1000])].to_dict('records')},
-        'historical_equation13_cached_checks':read('equation13_summary/cached_theory_validation.tsv').to_dict('records'),
+        'historical_equation13_cached_checks':read_historical('equation13_summary/cached_theory_validation.tsv').to_dict('records'),
         'source_tables':sources}
     revision=data/'revision_2026-11-05/association/association_by_phenotype.tsv'
     if revision.exists():
@@ -64,6 +67,18 @@ def build(repo):
             'fine_mapping_source':'derived_data/revision_2026-11-05/susie/sensitivity_comparison_table.tsv',
             'status_document':'docs/revision_2026-11-05.md'}
         result['significance']={'alpha':5e-8,'rule':'P <= 5e-8','native_log10p_rule':'LOG10P >= -log10(5e-8)','historical_profile':'explicit --historical only; original snapshots preserved'}
+        root_counts=read('method_summary/significant_snps_by_pheno.tsv')
+        root_methods=root_counts.method.replace({'REGENIE_woLOCO':'REGENIE_WO_LOCO'})
+        result['current_summary_exports']={
+            'data_directory':'derived_data',
+            'run_manifest':'derived_data/run_manifest.json',
+            'validation_record':'audit/current_summary_update_2026-11-13.json',
+            'completed_panels':len(root_counts),
+            'completed_configurations':int(root_methods.nunique()),
+            'completed_phenotypes_by_configuration':{m:int(n) for m,n in root_counts.assign(configuration=root_methods).groupby('configuration').phenotype.nunique().items()},
+            'association_rule':'Inclusive P <= 5e-8; current updated SLEMM and all ten GCTA phenotypes',
+            'historical_data_directory':'derived_data/'+historical,
+            'scope':'Root method, lambda, power, spillover and overlap tables are current exports. Fine-mapping and cached theory retain only the methods with executed evidence.'}
         result['study_checks']={key:result['revision_checks'][key] for key in ['planned_method_families','planned_configurations','planned_panels','completed_panels','fully_completed_configurations']}
         current_summary=read('revision_2026-11-05/association/association_summary.tsv')
         current_summary=current_summary[current_summary.configuration.isin(registry.configuration)]

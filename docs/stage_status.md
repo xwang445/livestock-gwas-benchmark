@@ -4,6 +4,7 @@
 |---|---|---|
 | Current association decision rule | One inclusive rule across active analyses | Shared exact P/native-LOG10P helper; boundary regression tests |
 | Saved GWAS summaries | All 100 configuration–phenotype panels complete | Ten-phenotype SLEMM and GCTA MLMA tables and manifest |
+| Root summary exports | All ten configurations current | 100 count/lambda/spillover rows; complete power, overlap and GCTA heritability |
 | Original strict summaries | Preserved historical audit only | Explicit `--historical`; immutable old tables |
 | LD | Independently recounted and regenerated | 1,000 bins / 78,082,232 pairs |
 | Standard RSS residual variance TRUE | All 13,301 fits completed | Paired canonical comparisons and unchanged locus manifest |

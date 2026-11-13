@@ -1,0 +1,10 @@
+{
+  "status": "AGGREGATES_REGENERATED_NOT_YET_MANUSCRIPT_VALIDATED",
+  "n_jobs": 90,
+  "code_sha256": "faa98fe876fd9382b199d11bcd07f9a481ae43676cb8a66035489cafbdc888f5",
+  "config_sha256": "61c25da241df1d5b1e4e487a08dff776968e5d9fe54e540fcd74ae56588a47ab",
+  "expected_snps": 135358,
+  "central_windows": 1480,
+  "validation_status": "DOWNSTREAM_VERIFIED_WITH_TWO_MANUSCRIPT_DISCREPANCIES",
+  "validation_ledger": "audit/manuscript_validation.tsv"
+}

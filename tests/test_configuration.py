@@ -1,5 +1,5 @@
 from pathlib import Path
-import sys,tempfile,unittest
+import hashlib,json,sys,tempfile,unittest
 import yaml
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
@@ -12,6 +12,8 @@ class Configuration(unittest.TestCase):
         self.assertEqual(actual,build(ROOT))
         self.assertEqual(actual['historical_study_checks']['gwas_panels'],90)
         self.assertEqual(actual['study_checks']['planned_configurations'],10)
+        self.assertEqual(actual['current_summary_exports']['completed_panels'],100)
+        self.assertEqual(actual['current_summary_exports']['completed_configurations'],10)
         self.assertEqual(actual['significance']['rule'],'P <= 5e-8')
         self.assertEqual(len(actual['finemapping']['pooled']),4)
     def test_profile_availability_and_missing_input_detection(self):
@@ -31,6 +33,8 @@ class Configuration(unittest.TestCase):
     def test_public_configuration_is_portable(self):
         config,methods=public_paths(ROOT)
         self.assertEqual(len(config['historical_result_paths']),27)
+        self.assertTrue(all(p.startswith('derived_data/historical_2026-11-04/') for p in config['historical_result_paths'].values()))
+        self.assertEqual(config['repository_paths']['derived_data'],'derived_data')
         self.assertEqual(len(methods),10)
         self.assertTrue(methods['SLEMM']['output_patterns']['hpcc'].startswith('SLEMM_qf90_window3000/'))
         for name in ['paths.yaml','verified_results.yaml','methods.yaml']:
@@ -38,5 +42,12 @@ class Configuration(unittest.TestCase):
             self.assertNotIn('/Users/',text)
             self.assertNotIn('/mnt/archive2/',text)
             self.assertNotIn('/path/to/',text)
+
+    def test_historical_snapshot_content_is_preserved(self):
+        manifest=json.loads((ROOT/'derived_data/historical_2026-11-04/snapshot_manifest.json').read_text())
+        for row in manifest['records']:
+            path=ROOT/row['archive_path']
+            self.assertEqual(path.stat().st_size,row['bytes'])
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),row['sha256'])
 
 if __name__=='__main__':unittest.main()

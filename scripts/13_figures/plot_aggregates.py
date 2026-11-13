@@ -15,7 +15,13 @@ COLORS=dict(zip(METHODS,['#0072B2','#D55E00','#E69F00','#009E73','#CC79A7','#7B3
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
 
 def draw_historical(data,out):
-    data,out=Path(data),Path(out);out.mkdir(parents=True,exist_ok=True)
+    data,out=Path(data),Path(out)
+    archived=data/'historical_2026-11-04'
+    if archived.is_dir():data=archived
+    counts=pd.read_csv(data/'method_summary/significant_snps_by_pheno.tsv',sep='\t')
+    if set(counts.method)!=set(METHODS) or len(counts)!=90:
+        raise ValueError('Historical figures require the preserved nine-configuration snapshot or an explicit historical reanalysis directory.')
+    out.mkdir(parents=True,exist_ok=True)
     def read(name):return pd.read_csv(data/name,sep='\t')
     def save(fig,name):
         fig.savefig(out/(name+'.pdf'),bbox_inches='tight');fig.savefig(out/(name+'.png'),dpi=180,bbox_inches='tight');plt.close(fig)

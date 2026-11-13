@@ -20,7 +20,12 @@ def main():
     old=by[by.configuration!='SLEMM'].copy();old.loc[old.configuration=='SLEMM_previous','configuration']='SLEMM';old=old[old.configuration!='GCTA_MLMA']
     comparison=old.merge(cache,left_on=['configuration','phenotype'],right_on=['method','phenotype'],validate='one_to_one')
     check('previous_cached_counts',len(comparison)==90 and bool((comparison.loci==comparison.N_total_peaks).all()),'All 90 historical inclusive locus counts reproduced from source GWAS')
-    hist=read(a.historical_repository/'derived_data/method_summary/significant_snps_by_pheno.tsv');hist['configuration']=hist.method.replace({'REGENIE_woLOCO':'REGENIE_WO_LOCO'})
+    historical=a.historical_repository/'derived_data/historical_2026-11-04'
+    # An explicit pre-migration checkout is also a valid historical source.
+    if not historical.is_dir():historical=a.historical_repository/'derived_data'
+    hist=read(historical/'method_summary/significant_snps_by_pheno.tsv')
+    if len(hist)!=90 or hist.method.nunique()!=9:raise ValueError('Expected the preserved nine-configuration historical snapshot.')
+    hist['configuration']=hist.method.replace({'REGENIE_woLOCO':'REGENIE_WO_LOCO'})
     c=old.merge(hist,on=['configuration','phenotype'],validate='one_to_one')
     check('historical_strict_counts',len(c)==90 and bool((c.strict_loci==c.n_significant_loci).all()) and bool((c.strict_significant_snps==c.n_significant_snps).all()),'All 90 prior strict SNP/locus counts reproduce public main before revision')
     ngcta=int(s.loc['GCTA_MLMA','n_phenotypes'])
