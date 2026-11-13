@@ -28,7 +28,7 @@ def build(repo):
     ledger=pd.read_csv(repo/'audit/manuscript_validation.tsv',sep='\t')
     ld=read('ld_summary/ld_decay_10kb.tsv')
     result={'schema_version':2,
-        'scope':'Primary blocks derive from the current inclusive revision tables refreshed November 9, updated SLEMM, ERV_TRUE RSS and all ten completed GCTA phenotypes. Explicit historical_* blocks preserve the November 4 strict reconstruction. source_tables fingerprints both separate datasets; historical and revised results must not be mixed.',
+        'scope':'Primary blocks derive from the inclusive revision tables with updated SLEMM, ERV_TRUE RSS and all ten completed GCTA phenotypes. November 11 recovered-effect results and November 12 submission aggregates are separately indexed. Explicit historical_* blocks preserve the November 4 strict reconstruction. source_tables fingerprints each dataset; historical and revised estimators must not be mixed.',
         'regenerate_command':'python scripts/build_result_config.py',
         'historical_study_checks':{'historical_configurations':int(counts.method.nunique()),'phenotypes':int(counts.phenotype.nunique()),
             'gwas_panels':len(counts),'snps_per_panel':sorted(int(x) for x in counts.n_snps.unique()),
@@ -77,9 +77,29 @@ def build(repo):
             'precision':'ratio of five-decimal printed final REML variances; no unrounded estimate/SE inferred',
             'by_phenotype':read('revision_2026-11-05/association/gcta_heritability_by_phenotype.tsv').to_dict('records'),
             'summary':read('revision_2026-11-05/association/gcta_heritability_summary.tsv').to_dict('records')}
+        submission=data/'submission_2026-11-12'
+        if submission.is_dir():
+            result['submission']={
+                'snapshot_date':'2026-11-12',
+                'status_document':'docs/revision_2026-11-12.md',
+                'artwork':'figures/submission_2026-11-12',
+                'figure8_pooled_metrics':read('submission_2026-11-12/figure08_pooled_metrics.tsv').to_dict('records'),
+                'figure8_recovered_pve_groups':read('submission_2026-11-12/figure08_pve_group_summary.tsv').to_dict('records'),
+                'table_S1_aggregation':'Ratios of pooled detected-locus counts across all ten phenotypes; central-null is a subset of null',
+                'table_S1':read('submission_2026-11-12/tables/Table_S1.tsv').to_dict('records')}
+        recovered=data/'revision_2026-11-11/recovered_effects/recovered_lead_pve_summary.tsv'
+        if recovered.is_file():
+            result['recovered_effects']={
+                'definition':'Author-supplied recovered-effect PVE; original generating effects and recovery algorithm unverified',
+                'status_document':'docs/recovered_effects_2026-11-11.md',
+                'lead_summary':read('revision_2026-11-11/recovered_effects/recovered_lead_pve_summary.tsv').to_dict('records')}
         result['validation']={'record':'audit/revision_validation.json',
             'result':json.loads((repo/'audit/revision_validation.json').read_text()),
             'scope':'Current inclusive numerical revision; the older manuscript ledger is historical_validation. The ten-phenotype GCTA comparison is complete; upstream Equation12/13 cache verification remains incomplete.'}
+        publication_validation=repo/'audit/publication_update_2026-11-13.json'
+        if publication_validation.is_file():
+            result['validation']['publication_update_record']='audit/publication_update_2026-11-13.json'
+            result['validation']['publication_update']=json.loads(publication_validation.read_text())
     # Preserve parsed table precision and integer counts; normalize only scalar types.
     import math
     def normalize(value):

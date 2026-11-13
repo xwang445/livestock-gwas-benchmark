@@ -2,6 +2,8 @@
 
 ## Current canonical revision
 
+The [November 12 submission sources](submission_2026-11-12) contain figure aggregates and the current pooled four-column Table S1. [November 11 results](revision_2026-11-11) contain recovered-effect lead/PVE summaries and separately labeled GWAS-coefficient PVE summaries. Their [scientific update](../docs/revision_2026-11-12.md) explains which estimator and aggregation each table uses.
+
 Use [revision_2026-11-05/association](revision_2026-11-05/association) for current inclusive counts, overlaps, spillover, Table S1 and updated SLEMM; [revision_2026-11-05/susie](revision_2026-11-05/susie) contains the completed TRUE RSS comparison. The [analysis manifest](revision_2026-11-05/analysis_manifest.tsv) identifies completed and missing panels. Default workflow and plotting commands read these current sources. They apply P ≤ 5 × 10⁻⁸, comparing native LOG10P directly.
 
 ## Preserved historical audit
@@ -36,6 +38,6 @@ Use `python scripts/workflow.py check` to check the public package. Use the [sup
 
 Under this historical strict rule, the REGENIE_LOCO significant-SNP maximum is 20,461; 21,484 belongs to BOLT-LMM. The largest −log10(P) is 107.517 for REGENIE_LOCO phenotype 8. An independent raw-column scan reproduced the counts and maxima for all 90 panels.
 
-These are results from simulated phenotypes on real livestock genotypes. Saved GWAS and fine-mapping fits were evaluated without new fitting. Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang at the author's request. Legitimate NA Jaccard values denote comparisons involving an empty locus set.
+These are results from simulated phenotypes on real livestock genotypes. Saved GWAS and fine-mapping fits were evaluated without new fitting. These historical PVE provenance questions are superseded only to the extent documented by the supplied recovered-effect table; original generating-effect and Equation 12 provenance remain unverified. Legitimate NA Jaccard values denote comparisons involving an empty locus set.
 
 Individual-level inputs, raw GWAS, GRMs, raw LD and per-SNP PIPs remain restricted. [Synthetic examples](../example/synthetic/README.md) and [schema examples](../example/schemas/README.md) are separate from the benchmark results.

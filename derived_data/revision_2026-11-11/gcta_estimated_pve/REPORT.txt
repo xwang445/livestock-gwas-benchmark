@@ -1,0 +1,11 @@
+GCTA-MLMA GWAS-estimated single-SNP component PVE
+Formula: b_MLMA^2 * sample Var(G) / sample Var(y), both on matched 20,000 animals.
+Observed genotype variance is used; no missing genotype calls were found.
+PVE fraction 0.01 corresponds to 1% of phenotypic variance.
+
+all_leads: n=15; median=0.0058143916 (0.581439%); range=0.360087%–0.968487%.
+causal_leads: n=10; median=0.0052532794 (0.525328%); range=0.40232%–0.968487%.
+noncausal_leads: n=5; median=0.0067079034 (0.67079%); range=0.360087%–0.76397%.
+
+These estimates cannot replace generating-effect PVE ratios or causal-effect percentiles.
+Do not sum these components across correlated SNPs.

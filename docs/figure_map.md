@@ -2,7 +2,9 @@
 
 ## Current revision
 
-Default figure commands use current inclusive canonical tables. Figures 3/5/6 and the power supplement come from `derived_data/revision_2026-11-05/association` through `scripts/revision_2026-11-05/association/plot_association_revision.py`; Figure 4/S1–S10 use the updated SLEMM inputs and native-scale inclusive significance decisions. Figure 1 retains the independently verified LD source. Figure 8 and RSS sensitivity panels use the separate TRUE-run aggregate tables and fine-mapping sources. GCTA-incomplete figures are labeled review copies, and revised Figure 7 remains dependent on unavailable theoretical input. See [revision status](revision_2026-11-05.md).
+The [November 12 submission package](../figures/submission_2026-11-12) is the current artwork set. Its [aggregate source package](../derived_data/submission_2026-11-12) and [portable scripts](../scripts/submission_2026-11-12) cover Figures 1–8, S1–S20 and pooled Table S1. Figure 8 adds recovered-PVE groups to the final TRUE-run pooled PR curves. Figure 7 redraws retained bin summaries; upstream theoretical prediction generation remains unverified. All 100 Manhattan panels are complete and use a common 0–110 scale.
+
+The earlier diagnostic figure commands use current inclusive canonical tables. Figures 3/5/6 and the power supplement come from `derived_data/revision_2026-11-05/association` through `scripts/revision_2026-11-05/association/plot_association_revision.py`; Figure 4/S1–S10 use the updated SLEMM inputs and native-scale inclusive significance decisions. Figure 1 retains the independently verified LD source. Figure 8 and RSS sensitivity panels use the separate TRUE-run aggregate tables and fine-mapping sources. The earlier directory names retain review labels, but all ten GCTA phenotypes are complete. Upstream Figure 7 prediction provenance remains dependent on unavailable theoretical inputs. See [revision status](revision_2026-11-05.md).
 
 ## Historical snapshot below
 

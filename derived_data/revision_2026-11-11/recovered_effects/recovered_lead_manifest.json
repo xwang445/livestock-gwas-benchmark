@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "n_causal_snps": 10000,
+  "n_causal_snp_phenotype_pairs": 100000,
+  "expected_pve_fraction": 5e-05,
+  "expected_pve_percent": 0.005,
+  "median_all_causal_ratio": 0.39483888941324496,
+  "mean_all_causal_ratio": 0.8967950609161511,
+  "percentile_definition": "Average ranks across all 100,000 supplied causal SNP-phenotype PVE ratios, rank/n*100",
+  "lead_selection": "Input canonical fixed 500 kb loci; minimum P, ties by position then SNP ID",
+  "effect_source": "Author-supplied recovered effects; recovery generator not supplied",
+  "normalization": "Supplied pve=alpha^2/phenotype variance of 31,301 simulation animals",
+  "n_perfectLD_flagged_causal_snps": 947,
+  "detailed_outputs_written": false,
+  "inputs": [
+    {
+      "role": "recovered_effects",
+      "bytes": 1881052,
+      "sha256": "3c1378617a86976ef41da600e9b1686e71c48055cc83a1663828b8ab1d82bee4"
+    },
+    {
+      "role": "canonical_loci",
+      "bytes": 7423849,
+      "sha256": "d2a9f6845ac92fe57656755f7e5dfefaf8b10e6e21ace14637edb3f26c445f18"
+    },
+    {
+      "role": "fixed_causal_truth",
+      "bytes": 135407,
+      "sha256": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446"
+    },
+    {
+      "role": "reference_variances",
+      "bytes": 3003,
+      "sha256": "f35f729a7bcd43ba4642f21218ab4eb4ed69464737bd289dfbe9c580446e21db"
+    }
+  ],
+  "source_sha256": "2ca57062827c1cc0001e3f3a91fabd49ddd0550e807c775a5fbd630236ee070c"
+}

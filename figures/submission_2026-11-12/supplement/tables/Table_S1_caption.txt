@@ -1,0 +1,9 @@
+Supplementary Table S1. Distribution of detected loci across polygenic-effect windows, null windows, and central-null regions.
+
+Loci are fixed, chromosome-specific, non-overlapping 500-kb windows containing at least one SNP with P ≤ 5 × 10⁻⁸.
+
+Percentages pool locus detections across ten simulated phenotypes. The denominator is all detected locus–phenotype pairs for each method; a window detected in two phenotypes counts twice. These are not averages of phenotype-specific percentages.
+
+Central-null loci are a subset of null loci, not an additional mutually exclusive category.
+
+Values are rounded to two decimal places. Full pooled counts and phenotype-level results are provided in the supporting TSVs.

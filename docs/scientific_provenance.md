@@ -30,7 +30,7 @@ To check the retained chip file against the saved MPH GRM, the audit decoded its
 
 ## Deferred inputs
 
-The author identified Professor Jicai Jiang as the source of the Equation 12/theory and maximum-SNP PVE inputs and requested that their provenance investigation be skipped for now. These questions are deferred, not resolved by new calculations. Existing tables and manuscript PVE wording remain unchanged. The inverse-regression PVE scripts are archived because they estimate a different quantity and cannot establish the original realized-effect claim.
+The author-supplied recovered-effect table was incorporated in the [November 11 analysis](recovered_effects_2026-11-11.md) and November 12 Figure 8. It defines recovered-effect PVE and does not establish original simulated SNP-effect draws: MPH generated genetic values through a GRM, and the recovery algorithm was not supplied. The Equation 12/theory generator and original variant-level theoretical cache remain unavailable. Archived inverse-regression PVE estimates are a different estimator and cannot establish original generating effects.
 
 ## Manuscript corrections
 

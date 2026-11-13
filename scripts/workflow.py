@@ -21,7 +21,7 @@ def new_output(path,source=None,resume=False,create=True):
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
- p.add_argument('stage',choices=['check','summarize','equation13','ld','fine-mapping','figures','manhattan'])
+ p.add_argument('stage',choices=['check','summarize','equation13','ld','fine-mapping','figures','submission','manhattan'])
  p.add_argument('--profile',choices=['mac','hpcc']);p.add_argument('--local-config',type=Path)
  p.add_argument('--out',type=Path);p.add_argument('--data',type=Path,default=ROOT/'derived_data')
  p.add_argument('--historical',action='store_true',help='Explicitly reproduce the preserved pre-revision nine-configuration audit')
@@ -39,6 +39,17 @@ def main():
   subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-v'],cwd=ROOT,check=True)
   run('scripts/validate_manuscript.py','--check');run('tests/check_validation_status.py');return
  if a.out is None:p.error('--out is required for analysis and figures')
+ if a.stage=='submission':
+  source=a.data.resolve()
+  if (source/'submission_2026-11-12').is_dir():source=source/'submission_2026-11-12'
+  if not (source/'figure08_pooled_metrics.tsv').is_file():p.error('--data must contain the submission_2026-11-12 aggregate sources')
+  if a.historical:p.error('--historical does not apply to submission artwork')
+  out=new_output(a.out)
+  for name in ['plot_figures_1_2_7.py','plot_figures_3_5_6.py','plot_figure8.py']:
+   run('scripts/submission_2026-11-12/'+name,'--source',source,'--output',out)
+  run('scripts/submission_2026-11-12/make_supplementary_table_s1.py','--tables',source/'tables','--output',out/'supplement/tables')
+  print('Public aggregate figures and Table S1 complete. Figure 4/S1–S10 require the documented restricted-input Manhattan command.',flush=True)
+  return
  if a.stage=='figures':
   data=a.data.resolve()
   if not data.is_dir():p.error('--data directory does not exist')

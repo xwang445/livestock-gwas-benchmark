@@ -1,0 +1,79 @@
+Figure S1. Genome-wide association results for simulated phenotype 1
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S2. Genome-wide association results for simulated phenotype 2
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S3. Genome-wide association results for simulated phenotype 3
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S4. Genome-wide association results for simulated phenotype 4
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S5. Genome-wide association results for simulated phenotype 5
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S6. Genome-wide association results for simulated phenotype 6
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S7. Genome-wide association results for simulated phenotype 7
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S8. Genome-wide association results for simulated phenotype 8
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S9. Genome-wide association results for simulated phenotype 9
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S10. Genome-wide association results for simulated phenotype 10
+
+Each panel is identified by its method name. The ten configurations are BOLT-LMM, REGENIE_LOCO, REGENIE_woLOCO, fastGWA, FarmCPU (NYC), FarmCPU (Kansas), BLINK (NYC), BLINK (Kansas), SLEMM and GCTA-MLMA. Every one of the 135,358 tested SNPs appears in each panel. Chromosomes 1–18 share the same concatenated coordinates and alternate gray shades; a subset of chromosome numbers is labelled. Significant SNPs (P ≤ 5 × 10⁻⁸) are highlighted in the method color. The dashed gray line marks the significance threshold. All 100 panels in Figures S1–S10 share the ordinate range 0–110, matching Figure 4. Every observed value is displayed without truncation; method names appear above the axes. Significant SLEMM and GCTA-MLMA SNPs use larger circles for visibility. REGENIE LOG10P values are read directly; other values use −log₁₀(P).
+
+Figure S11. Detected-locus overlap for phenotype 1
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S12. Detected-locus overlap for phenotype 2
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S13. Detected-locus overlap for phenotype 3
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S14. Detected-locus overlap for phenotype 4
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S15. Detected-locus overlap for phenotype 5
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S16. Detected-locus overlap for phenotype 6
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S17. Detected-locus overlap for phenotype 7
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S18. Detected-locus overlap for phenotype 8
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S19. Detected-locus overlap for phenotype 9
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.
+
+Figure S20. Detected-locus overlap for phenotype 10
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.

@@ -1,0 +1,1432 @@
+{
+  "status": "PASS",
+  "expected_figures": 28,
+  "checked_figures": 28,
+  "passed_figures": 28,
+  "methodology": "Actual PDF graphics-state/content-operator inspection, including Form XObjects, q/Q, stroke opacity and affine scale. Only painted strokes count; filled markers without edges are not strokes. Poppler confirms embedding/raster PPI; context-qualified math scripts are checked against the independent exported-artwork audit.",
+  "linewidth_limit_pt": 0.25,
+  "comparison": "strictly greater than",
+  "records": [
+    {
+      "actual_font_sizes_pt": [
+        5.95,
+        8.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.45,
+        0.6,
+        0.65,
+        1.0,
+        1.25
+      ],
+      "visible_stroke_count": 48,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.6": 24,
+        "0.35": 14,
+        "0.65": 4,
+        "1.25": 4,
+        "0.45": 2
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 4,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 1200,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_01",
+      "pdf": "pdfs/Figure_01.pdf",
+      "sha256": "76d0f63448bcd5a115f53f6fad035bc5f426f45e29eda4db481dde912a2aea07",
+      "mathematical_script_sizes_below_8pt": [
+        5.95
+      ],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.65,
+        0.7,
+        0.8,
+        1.0
+      ],
+      "visible_stroke_count": 44,
+      "minimum_visible_stroke_pt": 0.65,
+      "visible_stroke_width_histogram": {
+        "0.7": 6,
+        "0.65": 30,
+        "0.8": 8
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 6,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_02",
+      "pdf": "pdfs/Figure_02.pdf",
+      "sha256": "79de5761e82cf7cc24884e832e2e577e499c664bfdeb71a79f677bdd3b56f29c",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.4,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 106,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.4": 100,
+        "0.35": 1,
+        "0.6": 4,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_03",
+      "pdf": "pdfs/Figure_03.pdf",
+      "sha256": "e0a43b3ea0a754b036007569fe8262b02150235fc52ea06fad24fd941f6365b4",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.6,
+        1.0
+      ],
+      "visible_stroke_count": 233,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 60,
+        "0.5": 163,
+        "0.6": 10
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 30,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_04",
+      "pdf": "pdfs/Figure_04.pdf",
+      "sha256": "5108b7ebb887729a620989ce147e433e02da3d01c1cbaf8136070b3cebad8bea",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 180,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.0,
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.4,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 1006,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 1001,
+        "0.6": 3,
+        "0.65": 1,
+        "0.4": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_05",
+      "pdf": "pdfs/Figure_05.pdf",
+      "sha256": "bd6f6f43941d0dcf6b14b8d58946edd5d7c10faad3a5eb34744d5b2479fa6ba1",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.0,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        5.6,
+        5.95,
+        8.0,
+        8.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.6,
+        0.65,
+        0.7,
+        0.8,
+        1.0
+      ],
+      "visible_stroke_count": 323,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 25,
+        "0.6": 25,
+        "0.4": 10,
+        "0.65": 60,
+        "0.7": 1,
+        "0.8": 10,
+        "0.45": 20,
+        "1.0": 28,
+        "0.5": 144
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 4,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 164,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_06",
+      "pdf": "pdfs/Figure_06.pdf",
+      "sha256": "97a42d3152dc8e2edef1d377e428faf2f3ef2377afe87be5df6dc02a0f4accf2",
+      "mathematical_script_sizes_below_8pt": [
+        5.6,
+        5.95
+      ],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.0,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        5.95,
+        8.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.45,
+        0.5,
+        0.6,
+        0.65,
+        0.8,
+        1.0
+      ],
+      "visible_stroke_count": 202,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.8": 44,
+        "0.35": 16,
+        "0.6": 16,
+        "0.65": 4,
+        "0.5": 120,
+        "0.45": 2
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 2,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 120,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_07",
+      "pdf": "pdfs/Figure_07.pdf",
+      "sha256": "49823688497f15136b2244606bc594bbe23f75d1ebb29ac4f7a7c1b4e6509d4e",
+      "mathematical_script_sizes_below_8pt": [
+        5.95
+      ],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.0,
+        8.5,
+        9.0,
+        11.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.45,
+        0.5,
+        0.6,
+        0.65,
+        0.9,
+        1.0,
+        1.1,
+        1.25
+      ],
+      "visible_stroke_count": 159,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.6": 38,
+        "0.35": 18,
+        "1.25": 4,
+        "0.9": 27,
+        "0.65": 8,
+        "0.5": 60,
+        "1.1": 2,
+        "0.45": 2
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 4,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 20,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_08",
+      "pdf": "pdfs/Figure_08.pdf",
+      "sha256": "5101ddd52f1e9eb186dbd005ec3ba2f7887ef1a387ad1745749c2bee28b97bcf",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.0,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S01",
+      "pdf": "supplement/pdfs/Figure_S01.pdf",
+      "sha256": "a296ac5542b57c7ce2cf23ffe8d26895da5b2a950c8dac7cbdaaa832b7e17fa9",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 64,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S02",
+      "pdf": "supplement/pdfs/Figure_S02.pdf",
+      "sha256": "8598283f2a764639f31d00388006b7c02e19867d2c78246083ba15f7ae4b2ae9",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 56,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S03",
+      "pdf": "supplement/pdfs/Figure_S03.pdf",
+      "sha256": "e29beda423ec654e18090ce29d369034adcb42ffe2ea4d4eac3ea8aa39152fae",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 64,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S04",
+      "pdf": "supplement/pdfs/Figure_S04.pdf",
+      "sha256": "d6150d4bbc9529e4995fdfca93c0ec032c342e4780f7e581b0ba45861a303e6c",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 64,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S05",
+      "pdf": "supplement/pdfs/Figure_S05.pdf",
+      "sha256": "001a0cd548a60e4eeede77d5aef428da8e5bcce6fc8bce8cbdcc413583be78f2",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 64,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S06",
+      "pdf": "supplement/pdfs/Figure_S06.pdf",
+      "sha256": "d3b5cf5df43892446c508de97202714ad389a540144ee797f3f6d35cc952b9da",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 56,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S07",
+      "pdf": "supplement/pdfs/Figure_S07.pdf",
+      "sha256": "5c9a2edc78061780f8fb413e6e1c9921438780c908ff3890138d03c0072cf80b",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 64,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S08",
+      "pdf": "supplement/pdfs/Figure_S08.pdf",
+      "sha256": "d46fa6f6b9903121c4e1e55199199613520fe9763125fd49c2d48ed68e9a242d",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 56,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S09",
+      "pdf": "supplement/pdfs/Figure_S09.pdf",
+      "sha256": "fede4de70955e03f18673ea725fc61d04c3f58c21f5f7c6de1add50eb4d53f09",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 56,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5,
+        9.5,
+        10.0
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.5,
+        0.55,
+        1.0
+      ],
+      "visible_stroke_count": 109,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 30,
+        "0.5": 68,
+        "0.55": 11
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 10,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S10",
+      "pdf": "supplement/pdfs/Figure_S10.pdf",
+      "sha256": "de0be483d7b04b0ed85389328a6725bf7fade03e640f5a8cdf1fef2bcf71b009",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 56,
+      "minimum_raster_dpi": 300.0,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S11",
+      "pdf": "supplement/pdfs/Figure_S11.pdf",
+      "sha256": "5d698a44b83d8c3dddbbcccc2dc93368d63f59a91c79674e33a6ac7308ead10b",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S12",
+      "pdf": "supplement/pdfs/Figure_S12.pdf",
+      "sha256": "d807bf9b81bb096cb7094727a307324ebd733d7459b434d557156fc98648833d",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S13",
+      "pdf": "supplement/pdfs/Figure_S13.pdf",
+      "sha256": "7c2eb73f14a233ad5e562b14402f5413f3b93f82d8a7ba13479ed5ded0cf9839",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S14",
+      "pdf": "supplement/pdfs/Figure_S14.pdf",
+      "sha256": "916d63b82b489ddf82ec210a0f307864504cbf9ea484f21b81c24f132b5699e2",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S15",
+      "pdf": "supplement/pdfs/Figure_S15.pdf",
+      "sha256": "a6ddc560754545d880bb775ac975d635c05b6866100e947809166a273b9d45eb",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S16",
+      "pdf": "supplement/pdfs/Figure_S16.pdf",
+      "sha256": "e68ea8f1b959e481348c1c7450604943eb6cd2560280ed8094962cd60d30e61c",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S17",
+      "pdf": "supplement/pdfs/Figure_S17.pdf",
+      "sha256": "277a65727318b804fb794d1a683cbd5d1ad1ef472da85fcfe6d991389d06b599",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S18",
+      "pdf": "supplement/pdfs/Figure_S18.pdf",
+      "sha256": "46afd03274a33f1fc4b6b701c1793364f99fb5c5ef42a9ae733351cbb72f4376",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S19",
+      "pdf": "supplement/pdfs/Figure_S19.pdf",
+      "sha256": "49f7f9cc4beb3043085f6b672d2b3396b50765a562a36005a3820cfb91bf2165",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    },
+    {
+      "actual_font_sizes_pt": [
+        8.5
+      ],
+      "declared_linewidths_pt": [
+        0.0,
+        0.35,
+        0.6,
+        0.65,
+        1.0
+      ],
+      "visible_stroke_count": 107,
+      "minimum_visible_stroke_pt": 0.35,
+      "visible_stroke_width_histogram": {
+        "0.35": 101,
+        "0.6": 5,
+        "0.65": 1
+      },
+      "visible_strokes_at_or_below_025pt": [],
+      "visible_zero_width_strokes": [],
+      "transparent_stroke_count": 0,
+      "zero_width_declarations": 1,
+      "zero_width_note": "Width-zero declarations for fill-only objects are not visible strokes; a width-zero painted stroke would fail.",
+      "form_xobject_calls": 0,
+      "parsed_page_content_streams": 1,
+      "figure": "Figure_S20",
+      "pdf": "supplement/pdfs/Figure_S20.pdf",
+      "sha256": "2cb6cfd3f3247144ec2e478706ceffda13fc934162418ffe53c1989ec773ef13",
+      "mathematical_script_sizes_below_8pt": [],
+      "mathematical_script_context_verified": true,
+      "minimum_base_font_pt": 8.5,
+      "raster_image_count": 0,
+      "minimum_raster_dpi": null,
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "checks": {
+        "visible_lines_strictly_above_025pt": true,
+        "no_visible_zero_width_strokes": true,
+        "embedded_fonts": true,
+        "no_type3_fonts": true,
+        "base_fonts_at_least_8pt": true,
+        "raster_points_at_least_300dpi": true,
+        "png_300dpi": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

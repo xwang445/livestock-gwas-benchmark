@@ -1,0 +1,3 @@
+Figure 1. Linkage disequilibrium decay across the pig genome
+
+Mean pairwise r² was calculated in identical 10 kb distance bins from the 135,358-SNP panel in all 31,301 animals. Each retained SNP pair receives equal weight within its bin. Gray points show bin means; the black line is the shared fitted curve. The spline was fitted once to the complete 0–10 Mb set of bin means, weighting bins equally, and reused for both views: (a) 0–2 Mb and (b) 0–10 Mb. Bins are left-closed and right-open, with 10 Mb retained in the last bin. The first bin mean is 0.5925 at the 5 kb midpoint, rather than an estimate at zero distance.

@@ -6,6 +6,8 @@ The supported commands are in [workflow.md](workflow.md). Use `scripts/workflow.
 
 Current canonical tables and the inclusive policy are documented in [the revision record](revision_2026-11-05.md). The supported main workflow defaults to these tables and updated SLEMM. Exact raw-P and native-LOG10P equality tests guard P ≤ 5 × 10⁻⁸; no numerical tolerance is used. The existing SuSiE locus manifest is unchanged.
 
+The [November 12 submission update](revision_2026-11-12.md) adds portable artwork scripts and pooled Table S1. Run `python scripts/workflow.py submission --out NEW_DIRECTORY` to redraw the figures supported by public aggregates. Figure 4/S1–S10 require restricted GWAS files as documented in the submission script README. [November 11 PVE calculators](../scripts/revision_2026-11-11) require explicit author-supplied restricted inputs and export aggregate results.
+
 ## Historical recorded execution
 
 The public tables were regenerated from 90 saved GWAS panels, cached Equation 13 predictions, saved converged fine-mapping fits and pairwise LD. Python 3.10.4 with the pinned scientific dependencies produced the aggregate results; R 4.3.2 produced the LD curve. No GWAS or SuSiE model was refitted during reconstruction or consolidation.
@@ -28,4 +30,4 @@ python scripts/workflow.py check
 
 The simulation description and sample chain are documented in [scientific provenance](scientific_provenance.md). The retained chip dataset matches the saved simulation order and checked GRM entries. GWAS and fine-mapping rows are aligned by IID. Original source data and the October manuscript remain unchanged; corrections are in a separate local manuscript copy.
 
-Equation 12 and maximum-SNP PVE provenance are deferred to Professor Jicai Jiang. The cached Equation 13 comparison remains available, with that scope explicit. GAPIT's retained source identifies version 4.0 while the manuscript reports 3.5; this version question remains in the author review record.
+The supplied recovered-effect table now supports the [November 11 PVE analysis](recovered_effects_2026-11-11.md); its recovery algorithm and original generating-effect interpretation remain unverified. Equation 12 generation remains unavailable. The cached Equation 13 comparison remains available, with that scope explicit. GAPIT's retained source identifies version 4.0 while the manuscript reports 3.5; this version question remains in the author review record.

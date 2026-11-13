@@ -2,9 +2,9 @@
 
 We compare how well widely used GWAS methods locate causal signals under diffuse polygenic architecture in livestock. The benchmark uses Duroc pig genotypes and simulated phenotypes, followed by SuSiE-adj and SuSiE-RSS fine-mapping.
 
-This repository contains the analysis scripts, result tables, figures, and configuration files. The original November 4 tables remain separate from the [November 5 revision results](docs/revision_2026-11-05.md). The revision, refreshed on November 9, includes updated ten-phenotype SLEMM and GCTA MLMA results, a completed paired SuSiE-RSS residual-variance rerun, and all 100 configuration–phenotype Manhattan panels.
+This repository contains the analysis scripts, result tables, figures, and configuration files. The [November 12 update](docs/revision_2026-11-12.md) adds the submission figures, pooled Table S1, and author-supplied recovered-effect PVE analyses. All ten SLEMM and GCTA MLMA phenotypes and all 100 configuration–phenotype panels are complete. Both final SuSiE pipelines estimate residual variance. The original November 4 results and [November 5–9 analysis revision](docs/revision_2026-11-05.md) remain available in their established paths.
 
-[Publication](#publication) · [Result tables](derived_data/README.md) · [Current figures](figures/revision_2026-11-05) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
+[Publication](#publication) · [Result tables](derived_data/README.md) · [Current figures](figures/submission_2026-11-12) · [Configuration](config/README.md) · [Analysis commands](docs/reproducibility.md)
 
 ## Publication
 
@@ -37,7 +37,7 @@ The original comparison includes nine GWAS configurations:
 
 Kansas and NYC refer to the GAPIT outputs before and after local refinement. The nine configurations across ten phenotypes give 90 GWAS result files. Full settings are in [analysis_parameters.yaml](config/analysis_parameters.yaml) and [methods.yaml](config/methods.yaml).
 
-The revision registry adds GCTA MLMA, giving seven method families and ten planned configurations. Completion counts come from [the registry and canonical tables](docs/revision_2026-11-05.md), rather than assuming all planned fits have completed.
+The revision registry adds GCTA MLMA, giving seven method families and ten configurations. All 100 configuration–phenotype summaries are validated in [the registry and canonical tables](docs/revision_2026-11-05.md).
 
 ## Workflow
 
@@ -55,6 +55,7 @@ Aggregate tables                  → main and supplementary figures
 | Step | Command | Where |
 |---|---|---|
 | Check the public package | `python scripts/workflow.py check` | Any configured Python/R environment |
+| Redraw submission plots and Table S1 from public aggregates | `submission --data derived_data --out NEW_DIRECTORY` | Any configured Python environment; Manhattan sources remain restricted |
 | Summarize the saved GWAS panels | `summarize --profile hpcc --simulation VERIFIED_SIMULATION --genotype-prefix VERIFIED_PREFIX --gcta-directory VERIFIED_GCTA --out NEW_DIRECTORY` | Machine holding the verified inputs |
 | Compare cached theory and observed statistics | `equation13 --profile mac --out ../benchmark-equation13` | Mac |
 | Verify saved LD / fine-mapping results | `ld`; or `fine-mapping --rss-directory COMPLETED_ERV_TRUE_RUN`, with profile/output arguments | HPCC |
@@ -67,7 +68,9 @@ MPH generated genetic values from the fixed causal-SNP relationship matrix and a
 
 ## Current and historical results
 
-Current results are in [derived_data/revision_2026-11-05](derived_data/revision_2026-11-05), with updated SLEMM and separate GCTA completion status. `config/verified_results.yaml` derives its primary blocks from these tables. Its `historical_*` blocks and the original paths below preserve the older strict snapshot. The [workflow guide](docs/workflow.md) describes the exact current and audit commands.
+Current association and residual-variance comparisons are in [derived_data/revision_2026-11-05](derived_data/revision_2026-11-05). The [November 11 recovered-effect results](derived_data/revision_2026-11-11) and [November 12 submission sources](derived_data/submission_2026-11-12) add lead-PVE summaries, the updated Figure 8, and pooled Table S1. Table S1 reports SLEMM effect/null percentages of 93.75/6.25 and GCTA MLMA 93.33/6.67; central-null percentages are zero for both. These pooled ratios differ from the phenotype-mean percentages retained in the earlier analysis tables.
+
+`config/verified_results.yaml` derives its primary blocks from committed tables and fingerprints their sources. Its `historical_*` blocks preserve the older strict snapshot. The [workflow guide](docs/workflow.md) describes the current and audit commands.
 
 The historical root set in [derived_data](derived_data/README.md) contains 27 populated TSV files; current revision tables are separately indexed above. The historical set covers:
 

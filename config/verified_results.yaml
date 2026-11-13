@@ -1,9 +1,9 @@
 schema_version: 2
-scope: Primary blocks derive from the current inclusive revision tables refreshed
-  November 9, updated SLEMM, ERV_TRUE RSS and all ten completed GCTA phenotypes. Explicit
-  historical_* blocks preserve the November 4 strict reconstruction. source_tables
-  fingerprints both separate datasets; historical and revised results must not be
-  mixed.
+scope: Primary blocks derive from the inclusive revision tables with updated SLEMM,
+  ERV_TRUE RSS and all ten completed GCTA phenotypes. November 11 recovered-effect
+  results and November 12 submission aggregates are separately indexed. Explicit historical_*
+  blocks preserve the November 4 strict reconstruction. source_tables fingerprints
+  each dataset; historical and revised estimators must not be mixed.
 regenerate_command: python scripts/build_result_config.py
 historical_study_checks:
   historical_configurations: 9
@@ -623,6 +623,42 @@ source_tables:
     path: derived_data/revision_2026-11-05/susie/sensitivity_paired_changes.tsv
     rows: 40
     sha256: 8c4ed5003fa78c45586bc4376ec719145589a328956477167a34b3f53c5089aa
+  revision_2026-11-11/finemapping/claim_evidence.tsv:
+    path: derived_data/revision_2026-11-11/finemapping/claim_evidence.tsv
+    rows: 4
+    sha256: f633a93c1953cb31ef69006490afb31521b549f69c5a339f023931f0b44b7fe4
+  revision_2026-11-11/finemapping/independently_recounted_pooled_metrics.tsv:
+    path: derived_data/revision_2026-11-11/finemapping/independently_recounted_pooled_metrics.tsv
+    rows: 6
+    sha256: 89a6a4e61c81c07ecdee593abe59a4e56d48c5ba98197519e9854fa8757966f4
+  revision_2026-11-11/finemapping/pve_groups_all_runs.tsv:
+    path: derived_data/revision_2026-11-11/finemapping/pve_groups_all_runs.tsv
+    rows: 36
+    sha256: 420d276587f5d37651723f6c84db46a174d7837b30054b74caa98af337eb8e93
+  revision_2026-11-11/finemapping/pve_groups_by_phenotype.tsv:
+    path: derived_data/revision_2026-11-11/finemapping/pve_groups_by_phenotype.tsv
+    rows: 360
+    sha256: 7bfa6566be73ea8416457f183c8b76c17e89cb888ff1e13cf6408823b548e8d2
+  revision_2026-11-11/gcta_estimated_pve/estimated_pve_summary.tsv:
+    path: derived_data/revision_2026-11-11/gcta_estimated_pve/estimated_pve_summary.tsv
+    rows: 66
+    sha256: 6d98c0d67c266bde1daddeec67a137ef50c44c76f9e508f4736317acc24764ad
+  revision_2026-11-11/gcta_estimated_pve/phenotype_variances.tsv:
+    path: derived_data/revision_2026-11-11/gcta_estimated_pve/phenotype_variances.tsv
+    rows: 10
+    sha256: ff90fe28f753324cb2b7ee785848e1b38a6c4673035dce394d356d0fb99c4645
+  revision_2026-11-11/recovered_effects/pve_normalization_check.tsv:
+    path: derived_data/revision_2026-11-11/recovered_effects/pve_normalization_check.tsv
+    rows: 10
+    sha256: cd16d1387ccf7f101aa66532e6b5b4b5aad1255e2514c49bb1028457c627b909
+  revision_2026-11-11/recovered_effects/recovered_effect_summary.tsv:
+    path: derived_data/revision_2026-11-11/recovered_effects/recovered_effect_summary.tsv
+    rows: 11
+    sha256: 2bd09e8ae2f204f835df4cbe56c8a4145b54981c1cf5ca8a63e5e63ea3cb2f56
+  revision_2026-11-11/recovered_effects/recovered_lead_pve_summary.tsv:
+    path: derived_data/revision_2026-11-11/recovered_effects/recovered_lead_pve_summary.tsv
+    rows: 4
+    sha256: 78e8accfeb6e8da91c81c4773124e7daabd34d7990aa6ac260c8edc6762f3461
   spillover_summary/spillover_by_pheno.tsv:
     path: derived_data/spillover_summary/spillover_by_pheno.tsv
     rows: 90
@@ -631,6 +667,94 @@ source_tables:
     path: derived_data/spillover_summary/spillover_summary.tsv
     rows: 9
     sha256: 14887c4e1a44a088cef872f5b3fe965ac37ade04300f698945dbe9cc3fd07702
+  submission_2026-11-12/Figure_03_counts.tsv:
+    path: derived_data/submission_2026-11-12/Figure_03_counts.tsv
+    rows: 100
+    sha256: f91b6ecc68990811c18d041031635a4a7b5e2fe4b723653c0484c882c06d9add
+  submission_2026-11-12/Figure_05_jaccard_by_phenotype.tsv:
+    path: derived_data/submission_2026-11-12/Figure_05_jaccard_by_phenotype.tsv
+    rows: 1000
+    sha256: 1893d1d157ae1fd4a8a01c1981502e32b59f98ee12ca0b8970a32fc4cb554550
+  submission_2026-11-12/Figure_06_ab_by_phenotype.tsv:
+    path: derived_data/submission_2026-11-12/Figure_06_ab_by_phenotype.tsv
+    rows: 100
+    sha256: 434d8a1d3718e2876c4da396fdcf3587dcf4cc06df15745d930c3005c8710aa3
+  submission_2026-11-12/Figure_06_ab_summary.tsv:
+    path: derived_data/submission_2026-11-12/Figure_06_ab_summary.tsv
+    rows: 10
+    sha256: 238ea646be62307c0f0ad2b42ae74ad9bd9c9ede83a3b90b14fc417b76bc27bf
+  submission_2026-11-12/Figure_06_cd_by_phenotype.tsv:
+    path: derived_data/submission_2026-11-12/Figure_06_cd_by_phenotype.tsv
+    rows: 4000
+    sha256: 853af7884a29e4872c8229dfeddf910c327d8c51e6cff6a6396876ea5c803e2e
+  submission_2026-11-12/Figure_06_cd_summary.tsv:
+    path: derived_data/submission_2026-11-12/Figure_06_cd_summary.tsv
+    rows: 400
+    sha256: cb6768937f46ed0d640f7426adc71ccede1d2924e26884b3003b358d90489e04
+  submission_2026-11-12/figure01_ld_10kb_bins.tsv:
+    path: derived_data/submission_2026-11-12/figure01_ld_10kb_bins.tsv
+    rows: 1000
+    sha256: 1fba62b5a32f9390c78d4072a1c067e78e370447dca2691c790eb7dd148f1076
+  submission_2026-11-12/figure01_shared_spline.tsv:
+    path: derived_data/submission_2026-11-12/figure01_shared_spline.tsv
+    rows: 7999
+    sha256: a075c68561e4bc8da0de63afcae10394bbb446e12d743eceea1bdca3afa78b7a
+  submission_2026-11-12/figure02_window_design.tsv:
+    path: derived_data/submission_2026-11-12/figure02_window_design.tsv
+    rows: 5
+    sha256: 386f81059e6ee53e5f8bc20a05e7e7329c17f0ee800c693b818f54352d2524b3
+  submission_2026-11-12/figure07_cached_observed_bins_by_phenotype.tsv:
+    path: derived_data/submission_2026-11-12/figure07_cached_observed_bins_by_phenotype.tsv
+    rows: 400
+    sha256: 3d50a5902e328fcd00a1b184a265654650f9b4f5f853f96903b6a3d2374a8fba
+  submission_2026-11-12/figure07_cached_theory_bin_summary.tsv:
+    path: derived_data/submission_2026-11-12/figure07_cached_theory_bin_summary.tsv
+    rows: 40
+    sha256: 691db9eaf74c86d0d3c69539b23f5522ed557a6d808a027b59a05290be970a91
+  submission_2026-11-12/figure08_pooled_metrics.tsv:
+    path: derived_data/submission_2026-11-12/figure08_pooled_metrics.tsv
+    rows: 4
+    sha256: ce0af2d4b0ef83abd19a461f60bd5b5e1a40a7d26c2e68cb6a1d013d52793c54
+  submission_2026-11-12/figure08_pr_display_vertices.tsv:
+    path: derived_data/submission_2026-11-12/figure08_pr_display_vertices.tsv
+    rows: 11908
+    sha256: b5462ae30f03b47f5fe21fb4feea2c33575d891157683dde482d723d103faa58
+  submission_2026-11-12/figure08_pve_group_summary.tsv:
+    path: derived_data/submission_2026-11-12/figure08_pve_group_summary.tsv
+    rows: 24
+    sha256: 31bfa0f2814ff3279718af911e52e150df4eb37fb4f1ef1c04a6001b3f85d945
+  submission_2026-11-12/manhattan_counts.tsv:
+    path: derived_data/submission_2026-11-12/manhattan_counts.tsv
+    rows: 100
+    sha256: 76bea4b5ccfbe49f15b6643561610991e61a8fd2f16f0fa488c1e1710edb6ff5
+  submission_2026-11-12/tables/Table_S1.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1.tsv
+    rows: 10
+    sha256: 6a0e281dec51542d2d579af8ca976f849bd19dd67e91c03ad3579caa3e163430
+  submission_2026-11-12/tables/Table_S1_by_phenotype.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_by_phenotype.tsv
+    rows: 100
+    sha256: a763909c2e6da072015fbbb99eaaf13a7a0d89900d718e3892bb0693340be4fb
+  submission_2026-11-12/tables/Table_S1_central_null_spillover.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_central_null_spillover.tsv
+    rows: 10
+    sha256: 2e85120ba5aee47071e635a7d889ee4a67e399bb7eef15a91e3a428fdfe1fba4
+  submission_2026-11-12/tables/Table_S1_display_locus_distribution.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_display_locus_distribution.tsv
+    rows: 10
+    sha256: 6a0e281dec51542d2d579af8ca976f849bd19dd67e91c03ad3579caa3e163430
+  submission_2026-11-12/tables/Table_S1_genomic_background.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_genomic_background.tsv
+    rows: 3
+    sha256: b41fadd32868fd5c55033ebcda9b8bbfb4bd3d7883fe00e64e57735f3cbbe8e9
+  submission_2026-11-12/tables/Table_S1_locus_distribution.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_locus_distribution.tsv
+    rows: 10
+    sha256: 5f2cc8a511e3bd356766285678097c19cf469367525a3f21256c7576aebac29b
+  submission_2026-11-12/tables/Table_S1_supporting_statistics.tsv:
+    path: derived_data/submission_2026-11-12/tables/Table_S1_supporting_statistics.tsv
+    rows: 10
+    sha256: 7bdbd2406846a964922c4988f8847218c7a4d1b57e5014bbbf1fb92d42708700
 revision_checks:
   registry: config/revision_methods.tsv
   planned_method_families: 7
@@ -1826,6 +1950,476 @@ gcta_heritability:
     h2_max: 0.5491414957417093
     precision_note: Ratios of rounded printed Vg and Ve; aggregate withheld until
       all ten MLMA analyses complete
+submission:
+  snapshot_date: '2026-11-12'
+  status_document: docs/revision_2026-11-12.md
+  artwork: figures/submission_2026-11-12
+  figure8_pooled_metrics:
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    method: BOLT-LMM
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 611196
+    n_causal_evaluated: 52685
+    random_precision_baseline: 0.0861998442398183
+    average_precision: 0.0953007256889708
+    trapezoid_auprc: 0.0953213913903328
+    n_high_pip: 2021
+    n_high_pip_causal: 261
+    high_pip_precision: 0.129143988124691
+    n_high_pip_effect: 843
+    n_high_pip_null: 1178
+    high_pip_null_fraction: 0.582879762493815
+    n_high_pip_central_null: 567
+    high_pip_central_null_fraction: 0.280554181098466
+    n_central_null_evaluated: 175218
+    central_null_pool_fraction: 0.286680541103018
+    mean_assigned_high_pip: 0.982781777279651
+  - pipeline: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    method: REGENIE-LOCO
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 596724
+    n_causal_evaluated: 50623
+    random_precision_baseline: 0.084834865029729
+    average_precision: 0.0903564558334229
+    trapezoid_auprc: 0.0903882623237911
+    n_high_pip: 2072
+    n_high_pip_causal: 254
+    high_pip_precision: 0.122586872586873
+    n_high_pip_effect: 820
+    n_high_pip_null: 1252
+    high_pip_null_fraction: 0.604247104247104
+    n_high_pip_central_null: 620
+    high_pip_central_null_fraction: 0.299227799227799
+    n_central_null_evaluated: 174411
+    central_null_pool_fraction: 0.292280853459891
+    mean_assigned_high_pip: 0.982806076279945
+  - pipeline: SuSiE-adj
+    fit_mode: ERV_TRUE
+    method: BOLT-LMM
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 611196
+    n_causal_evaluated: 52685
+    random_precision_baseline: 0.0861998442398183
+    average_precision: 0.0956236851134508
+    trapezoid_auprc: 0.0956447753745568
+    n_high_pip: 1974
+    n_high_pip_causal: 263
+    high_pip_precision: 0.13323201621074
+    n_high_pip_effect: 821
+    n_high_pip_null: 1153
+    high_pip_null_fraction: 0.584093211752786
+    n_high_pip_central_null: 552
+    high_pip_central_null_fraction: 0.279635258358663
+    n_central_null_evaluated: 175218
+    central_null_pool_fraction: 0.286680541103018
+    mean_assigned_high_pip: 0.982501014235391
+  - pipeline: SuSiE-adj
+    fit_mode: ERV_TRUE
+    method: REGENIE-LOCO
+    aggregation: pooled SNP-phenotype pairs across ten phenotypes
+    n_phenotypes: 10
+    n_evaluated: 596724
+    n_causal_evaluated: 50623
+    random_precision_baseline: 0.084834865029729
+    average_precision: 0.0909684154204346
+    trapezoid_auprc: 0.0909914610462466
+    n_high_pip: 2101
+    n_high_pip_causal: 256
+    high_pip_precision: 0.121846739647787
+    n_high_pip_effect: 827
+    n_high_pip_null: 1274
+    high_pip_null_fraction: 0.606377915278439
+    n_high_pip_central_null: 639
+    high_pip_central_null_fraction: 0.304140885292718
+    n_central_null_evaluated: 174411
+    central_null_pool_fraction: 0.292280853459891
+    mean_assigned_high_pip: 0.98234901232997
+  figure8_recovered_pve_groups:
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 0.5–1×
+    n: 8643
+    calls: 43
+    pooled: 0.0049751243781094
+    power: 0.0048755292677369
+    lo: 0.002908147404356
+    hi: 0.0068429111311179
+    min_n: 794
+    max_recovered_pve: 4.99942976495835e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 1–2×
+    n: 8093
+    calls: 45
+    pooled: 0.0055603608056345
+    power: 0.0055410313901416
+    lo: 0.003953475562238
+    hi: 0.0071285872180452
+    min_n: 729
+    max_recovered_pve: 9.99912326056287e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 2–4×
+    n: 5307
+    calls: 46
+    pooled: 0.0086677972489165
+    power: 0.0087253463137307
+    lo: 0.0057613263656515
+    hi: 0.01168936626181
+    min_n: 481
+    max_recovered_pve: 0.000199991021113
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: <0.5×
+    n: 28461
+    calls: 88
+    pooled: 0.0030919503882505
+    power: 0.0030705974615746
+    lo: 0.0023189167655451
+    hi: 0.0038222781576041
+    min_n: 2492
+    max_recovered_pve: 2.49923731265641e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: Non-causal
+    n: 558511
+    calls: 1711
+    pooled: 0.003063502777922
+    power: 0.0030359987217554
+    lo: 0.0027094144283103
+    hi: 0.0033625830152004
+    min_n: 49189
+    max_recovered_pve: null
+  - method: BOLT-LMM
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: ≥4×
+    n: 2181
+    calls: 41
+    pooled: 0.0187987161852361
+    power: 0.019093679577387
+    lo: 0.013842409864508
+    hi: 0.0243449492902659
+    min_n: 181
+    max_recovered_pve: 0.0009251244776168
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 0.5–1×
+    n: 8180
+    calls: 34
+    pooled: 0.0041564792176039
+    power: 0.0041218170770786
+    lo: 0.0024341716376341
+    hi: 0.005809462516523
+    min_n: 686
+    max_recovered_pve: 4.99942976495835e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 1–2×
+    n: 7728
+    calls: 45
+    pooled: 0.0058229813664596
+    power: 0.0059135672541895
+    lo: 0.0041163603675353
+    hi: 0.0077107741408438
+    min_n: 713
+    max_recovered_pve: 9.99912326056287e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: 2–4×
+    n: 5068
+    calls: 42
+    pooled: 0.0082872928176795
+    power: 0.0081188603869228
+    lo: 0.0035003772120678
+    hi: 0.0127373435617779
+    min_n: 455
+    max_recovered_pve: 0.000199991021113
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: <0.5×
+    n: 27572
+    calls: 106
+    pooled: 0.0038444799071521
+    power: 0.0038399271775956
+    lo: 0.0030136819661498
+    hi: 0.0046661723890415
+    min_n: 2457
+    max_recovered_pve: 2.49923731265641e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: Non-causal
+    n: 546101
+    calls: 1845
+    pooled: 0.003378495919253
+    power: 0.0033513238246236
+    lo: 0.0030412227100824
+    hi: 0.0036614249391649
+    min_n: 47560
+    max_recovered_pve: null
+  - method: REGENIE-LOCO
+    finemap: SuSiE-adj
+    fit_mode: ERV_TRUE
+    group: ≥4×
+    n: 2075
+    calls: 29
+    pooled: 0.0139759036144578
+    power: 0.0139028969293736
+    lo: 0.0092366641095023
+    hi: 0.0185691297492448
+    min_n: 187
+    max_recovered_pve: 0.0009251244776168
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 0.5–1×
+    n: 8643
+    calls: 37
+    pooled: 0.0042809209765127
+    power: 0.004216853197466
+    lo: 0.0026441453640494
+    hi: 0.0057895610308825
+    min_n: 794
+    max_recovered_pve: 4.99942976495835e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 1–2×
+    n: 8093
+    calls: 45
+    pooled: 0.0055603608056345
+    power: 0.0055387647744053
+    lo: 0.0042602736721164
+    hi: 0.0068172558766942
+    min_n: 729
+    max_recovered_pve: 9.99912326056287e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 2–4×
+    n: 5307
+    calls: 45
+    pooled: 0.00847936687394
+    power: 0.0085550298249416
+    lo: 0.0055954293213118
+    hi: 0.0115146303285715
+    min_n: 481
+    max_recovered_pve: 0.000199991021113
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: <0.5×
+    n: 28461
+    calls: 92
+    pooled: 0.0032324935877165
+    power: 0.0032147292132762
+    lo: 0.0024395659433751
+    hi: 0.0039898924831772
+    min_n: 2492
+    max_recovered_pve: 2.49923731265641e-05
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: Non-causal
+    n: 558511
+    calls: 1760
+    pooled: 0.0031512360544376
+    power: 0.0031209197484404
+    lo: 0.0027759659923214
+    hi: 0.0034658735045594
+    min_n: 49189
+    max_recovered_pve: null
+  - method: BOLT-LMM
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: ≥4×
+    n: 2181
+    calls: 42
+    pooled: 0.0192572214580468
+    power: 0.0196967730923579
+    lo: 0.0125672734994685
+    hi: 0.0268262726852473
+    min_n: 181
+    max_recovered_pve: 0.0009251244776168
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 0.5–1×
+    n: 8180
+    calls: 36
+    pooled: 0.00440097799511
+    power: 0.0043570250433588
+    lo: 0.0025214679668674
+    hi: 0.0061925821198502
+    min_n: 686
+    max_recovered_pve: 4.99942976495835e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 1–2×
+    n: 7728
+    calls: 46
+    pooled: 0.0059523809523809
+    power: 0.0060394637329599
+    lo: 0.0044211190001474
+    hi: 0.0076578084657723
+    min_n: 713
+    max_recovered_pve: 9.99912326056287e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: 2–4×
+    n: 5068
+    calls: 43
+    pooled: 0.0084846093133386
+    power: 0.0083891694389256
+    lo: 0.0039818048336379
+    hi: 0.0127965340442133
+    min_n: 455
+    max_recovered_pve: 0.000199991021113
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: <0.5×
+    n: 27572
+    calls: 102
+    pooled: 0.0036994051936747
+    power: 0.0036977049590485
+    lo: 0.0029144297259794
+    hi: 0.0044809801921175
+    min_n: 2457
+    max_recovered_pve: 2.49923731265641e-05
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: Non-causal
+    n: 546101
+    calls: 1818
+    pooled: 0.0033290545155566
+    power: 0.0033000106297547
+    lo: 0.0029795342166714
+    hi: 0.003620487042838
+    min_n: 47560
+    max_recovered_pve: null
+  - method: REGENIE-LOCO
+    finemap: SuSiE-RSS
+    fit_mode: ERV_TRUE
+    group: ≥4×
+    n: 2075
+    calls: 27
+    pooled: 0.0130120481927711
+    power: 0.0130370960635727
+    lo: 0.0087959860978715
+    hi: 0.0172782060292739
+    min_n: 187
+    max_recovered_pve: 0.0009251244776168
+  table_S1_aggregation: Ratios of pooled detected-locus counts across all ten phenotypes;
+    central-null is a subset of null
+  table_S1:
+  - Method: BOLT-LMM
+    Effect %: 40.06
+    Null %: 59.94
+    Central-null %: 28.38
+  - Method: REGENIE_LOCO
+    Effect %: 39.21
+    Null %: 60.79
+    Central-null %: 29.02
+  - Method: REGENIE_woLOCO
+    Effect %: 52.27
+    Null %: 47.73
+    Central-null %: 18.97
+  - Method: fastGWA
+    Effect %: 67.36
+    Null %: 32.64
+    Central-null %: 9.63
+  - Method: SLEMM
+    Effect %: 93.75
+    Null %: 6.25
+    Central-null %: 0.0
+  - Method: GCTA-MLMA
+    Effect %: 93.33
+    Null %: 6.67
+    Central-null %: 0.0
+  - Method: FarmCPU (NYC)
+    Effect %: 57.95
+    Null %: 42.05
+    Central-null %: 16.76
+  - Method: FarmCPU (Kansas)
+    Effect %: 61.33
+    Null %: 38.67
+    Central-null %: 15.31
+  - Method: BLINK (NYC)
+    Effect %: 70.66
+    Null %: 29.34
+    Central-null %: 9.61
+  - Method: BLINK (Kansas)
+    Effect %: 70.38
+    Null %: 29.62
+    Central-null %: 9.96
+recovered_effects:
+  definition: Author-supplied recovered-effect PVE; original generating effects and
+    recovery algorithm unverified
+  status_document: docs/recovered_effects_2026-11-11.md
+  lead_summary:
+  - method: SLEMM
+    n_loci: 16
+    n_causal_leads: 11
+    causal_lead_percent: 68.75
+    median_recovered_pve_fraction: 0.0001182320397639
+    median_recovered_pve_percent: 0.01182320397639
+    median_ratio_to_expected: 2.364640795278
+    median_pooled_causal_percentile: 89.576
+    percentile_q25: 87.555
+    percentile_q75: 94.012
+    n_causal_leads_perfectLD_flagged: 0
+  - method: GCTA_MLMA
+    n_loci: 15
+    n_causal_leads: 10
+    causal_lead_percent: 66.6666666666667
+    median_recovered_pve_fraction: 0.0001191679242975
+    median_recovered_pve_percent: 0.0119167924297523
+    median_ratio_to_expected: 2.38335848595046
+    median_pooled_causal_percentile: 89.702
+    percentile_q25: 87.2955
+    percentile_q75: 97.04025
+    n_causal_leads_perfectLD_flagged: 0
+  - method: BOLT-LMM
+    n_loci: 16002
+    n_causal_leads: 1519
+    causal_lead_percent: 9.4925634295713
+    median_recovered_pve_fraction: 3.31703114631608e-05
+    median_recovered_pve_percent: 0.003317031146316
+    median_ratio_to_expected: 0.663406229263216
+    median_pooled_causal_percentile: 61.843
+    percentile_q25: 32.983
+    percentile_q75: 85.7555
+    n_causal_leads_perfectLD_flagged: 105
+  - method: REGENIE_LOCO
+    n_loci: 15450
+    n_causal_leads: 1432
+    causal_lead_percent: 9.26860841423948
+    median_recovered_pve_fraction: 3.09737649969935e-05
+    median_recovered_pve_percent: 0.0030973764996993
+    median_ratio_to_expected: 0.61947529993987
+    median_pooled_causal_percentile: 60.1935
+    percentile_q25: 30.284
+    percentile_q75: 83.3465
+    n_causal_leads_perfectLD_flagged: 100
 validation:
   record: audit/revision_validation.json
   result:
@@ -1853,7 +2447,8 @@ validation:
       publication content
     incomplete_dependencies:
     - Actual Equation13 variant cache and benchmark Equation12 generator unavailable
-    - Original SNP-effect/PVE definition and SLEMM effect-analysis pipeline unavailable
+    - Original generating-effect interpretation and supplied recovered-effect recovery
+      algorithm unverified
     new_slemm_table_checks: independent8checks and spatial3200rowcomparison passed
     supplementary_table_S1_registry_check: PASS:10 current configurations exactly,
       values equal canonical association summary; SLEMM_previous retained only in
@@ -1894,6 +2489,94 @@ validation:
       values
     gcta_independent_metric_cells: 210
     gcta_independent_raw_checks: 230
+    latest_result_update: docs/revision_2026-11-12.md
+    november11_recovered_effects: Author-supplied recovered-effect table analyzed;
+      source algorithm remains unverified; portable aggregate calculators and explicit
+      input fingerprints included
+    november12_submission_artwork: Figures1–8/S1–S20, final TRUE-run PR and recovered-PVE
+      group Figure8, pooled four-column TableS1; source aggregates and portable scripts
+      included
+    validation_snapshot_scope: Existing numerical checks below describe the November9
+      comparison; publication_update_validation records the November13 repository
+      validation
+    publication_update_validation: audit/publication_update_2026-11-13.json
   scope: Current inclusive numerical revision; the older manuscript ledger is historical_validation.
     The ten-phenotype GCTA comparison is complete; upstream Equation12/13 cache verification
     remains incomplete.
+  publication_update_record: audit/publication_update_2026-11-13.json
+  publication_update:
+    status: PASS_WITH_EXPLICIT_INPUT_DEPENDENCIES
+    validation_date: '2026-11-13'
+    scientific_snapshot_date: '2026-11-12'
+    compared_worktree_base_commit: 658457ba2326466c86752b5ed3f5d9bf0cada8ea
+    workflow_check:
+      command: python scripts/workflow.py check
+      exit_code: 0
+      unittest_cases_passed: 38
+      static_checks: Python/shell/R syntax, YAML, aggregate schemas and method labels
+      result_configuration: matches committed source tables
+      historical_ledger: passed with retained, explicitly labeled unresolved historical
+        provenance
+    public_submission_workflow:
+      command: python scripts/workflow.py submission --data derived_data --out NEW_DIRECTORY
+      exit_code: 0
+      main_figures_regenerated:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 6
+      - 7
+      - 8
+      supplementary_figures_regenerated:
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      table_S1: Editable DOCX/PDF and supporting TSVs regenerated from public phenotype
+        aggregates
+      restricted_manhattan_smoke: Phenotype1 supplement regenerated from authorized
+        source cache; counts matched
+    retained_artwork:
+      figures_checked: 28
+      figures_passed: 28
+      stroke_font_raster_checks: 28 passed; see retained artwork audit
+      manifest_entries_hash_checked: 92
+      all_publication_files_below_10MB: true
+    numerical_checks:
+      table_S1: Pooled counts/percentages match canonical association-by-phenotype
+        data; supporting intervals use sample SD and t9
+      figure8: Final ERV_TRUE metrics; phenotype-mean recovered-PVE group rates and
+        rounded-t9 intervals match independent derivation
+      recovered_effects: Three portable calculators executed against authorized inputs;
+        aggregate outputs agree with retained audits
+      source_hashes: All three executed calculator fingerprints match final public
+        scripts
+      spatial_distance_summary: Portable calculator matches shared c66 estimator;
+        required framework unavailable, no distance-qualified results claimed
+    content_review:
+      private_root_text_or_docx_leaks: 0
+      text_and_docx_files_scanned: 171
+      raw_restricted_data_added: false
+      historical_artifacts_changed_by_this_update: false
+      markdown_broken_links: 0
+      independent_review: passed; no blocking findings
+    environment:
+      python: 3.13.11
+      numpy: 2.2.6
+      pandas: 2.3.3
+      scipy: 1.14.1
+      matplotlib: 3.10.9
+      PyYAML: 6.0.3
+    remaining_dependencies:
+    - Original Equation12 generator/theoretical variant framework and covariance normalization
+    - Recovery algorithm and original generating-effect interpretation for author-supplied
+      recovered effects
+    - Original framework distance-to-boundary column for distance-qualified null shares
+    - Historical GAPIT version attribution

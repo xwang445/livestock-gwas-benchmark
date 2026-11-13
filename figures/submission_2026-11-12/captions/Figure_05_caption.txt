@@ -1,0 +1,3 @@
+Figure 5. Phenotype-specific overlap of detected loci
+
+Each matrix shows the indicated phenotype. Full method names on the left and beneath the bottom matrices define the common row and column ordering. Cell color gives the Jaccard index (intersection/union) for detected 500-kb loci at P ≤ 5 × 10⁻⁸. Grey denotes NA when either locus set is empty. SLEMM and GCTA-MLMA have no detected loci in phenotypes 2, 6, 8, 9 and 10. Numerically annotated matrices are supplied in Figures S11–S20.

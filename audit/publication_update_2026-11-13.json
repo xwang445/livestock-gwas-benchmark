@@ -1,0 +1,77 @@
+{
+  "status": "PASS_WITH_EXPLICIT_INPUT_DEPENDENCIES",
+  "validation_date": "2026-11-13",
+  "scientific_snapshot_date": "2026-11-12",
+  "compared_worktree_base_commit": "658457ba2326466c86752b5ed3f5d9bf0cada8ea",
+  "workflow_check": {
+    "command": "python scripts/workflow.py check",
+    "exit_code": 0,
+    "unittest_cases_passed": 38,
+    "static_checks": "Python/shell/R syntax, YAML, aggregate schemas and method labels",
+    "result_configuration": "matches committed source tables",
+    "historical_ledger": "passed with retained, explicitly labeled unresolved historical provenance"
+  },
+  "public_submission_workflow": {
+    "command": "python scripts/workflow.py submission --data derived_data --out NEW_DIRECTORY",
+    "exit_code": 0,
+    "main_figures_regenerated": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "supplementary_figures_regenerated": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "table_S1": "Editable DOCX/PDF and supporting TSVs regenerated from public phenotype aggregates",
+    "restricted_manhattan_smoke": "Phenotype1 supplement regenerated from authorized source cache; counts matched"
+  },
+  "retained_artwork": {
+    "figures_checked": 28,
+    "figures_passed": 28,
+    "stroke_font_raster_checks": "28 passed; see retained artwork audit",
+    "manifest_entries_hash_checked": 92,
+    "all_publication_files_below_10MB": true
+  },
+  "numerical_checks": {
+    "table_S1": "Pooled counts/percentages match canonical association-by-phenotype data; supporting intervals use sample SD and t9",
+    "figure8": "Final ERV_TRUE metrics; phenotype-mean recovered-PVE group rates and rounded-t9 intervals match independent derivation",
+    "recovered_effects": "Three portable calculators executed against authorized inputs; aggregate outputs agree with retained audits",
+    "source_hashes": "All three executed calculator fingerprints match final public scripts",
+    "spatial_distance_summary": "Portable calculator matches shared c66 estimator; required framework unavailable, no distance-qualified results claimed"
+  },
+  "content_review": {
+    "private_root_text_or_docx_leaks": 0,
+    "text_and_docx_files_scanned": 171,
+    "raw_restricted_data_added": false,
+    "historical_artifacts_changed_by_this_update": false,
+    "markdown_broken_links": 0,
+    "independent_review": "passed; no blocking findings"
+  },
+  "environment": {
+    "python": "3.13.11",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.14.1",
+    "matplotlib": "3.10.9",
+    "PyYAML": "6.0.3"
+  },
+  "remaining_dependencies": [
+    "Original Equation12 generator/theoretical variant framework and covariance normalization",
+    "Recovery algorithm and original generating-effect interpretation for author-supplied recovered effects",
+    "Original framework distance-to-boundary column for distance-qualified null shares",
+    "Historical GAPIT version attribution"
+  ]
+}

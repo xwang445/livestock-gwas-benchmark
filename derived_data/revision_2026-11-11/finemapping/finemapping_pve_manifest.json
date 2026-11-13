@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "pooled_counts_match_saved_metrics": true,
+  "supervisor_table_reproduced": true,
+  "supervisor_table_max_absolute_differences": {
+    "n": 0.0,
+    "calls": 0.0,
+    "pooled": 9.8879238130678e-17,
+    "power": 9.367506770274758e-17,
+    "lo": 9.6710833785707e-17,
+    "hi": 9.8879238130678e-17,
+    "min_n": 0.0
+  },
+  "grouping": "Left-closed PVE / (h2/m) bins; equal-phenotype means; sample SD; rounded t9 critical value 2.262157",
+  "n_phenotypes": 10,
+  "expected_pve_fraction": 5e-05,
+  "maximum_recovered_pve_percent": 0.0925124477616862,
+  "effect_source": "Author-supplied recovered effects; recovery generator not supplied",
+  "detailed_outputs_written": false,
+  "inputs": [
+    {
+      "role": "recovered_effects",
+      "bytes": 1881052,
+      "sha256": "3c1378617a86976ef41da600e9b1686e71c48055cc83a1663828b8ab1d82bee4"
+    },
+    {
+      "role": "fixed_causal_truth",
+      "bytes": 135407,
+      "sha256": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446"
+    },
+    {
+      "role": "pooled_metrics",
+      "bytes": 2052,
+      "sha256": "f98306b277aa77d458219033c1fab3f4562115b6c6f627252eeb6b4e779b1422"
+    },
+    {
+      "role": "SuSiE-adj_ERV_TRUE",
+      "bytes": 53510768,
+      "sha256": "e1efb190096a6aebeba20d0336afcb02ff27849f5c49bd68d6630bffd5acb2f5"
+    },
+    {
+      "role": "SuSiE-RSS_ERV_TRUE",
+      "bytes": 52429602,
+      "sha256": "3b68f55faa03088fe073a2f7cb4bff8af47a05163b04d79a6e23a2cf0a28dfec"
+    },
+    {
+      "role": "SuSiE-RSS_ERV_FALSE",
+      "bytes": 52429574,
+      "sha256": "d7471ae901cd527633f8c5a31ad59ccb41803a279369c4c38407c9bf0c9a6ffb"
+    },
+    {
+      "role": "supervisor_group_baseline",
+      "bytes": 3116,
+      "sha256": "39064c382015419e08606a7a09f7b9c8dae3c968d34d4212039bbabc91c655cc"
+    }
+  ],
+  "source_sha256": "8cbe5b9e3ee435c88672ddb1d6997b00f1d3dc803a62a6a54bf3314640153df5"
+}

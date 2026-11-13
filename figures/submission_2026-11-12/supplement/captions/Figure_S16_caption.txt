@@ -1,0 +1,3 @@
+Figure S16. Detected-locus overlap for phenotype 6
+
+Cells show the Jaccard index between detected-locus sets for the indicated methods; loci are fixed, chromosome-specific 500-kb windows containing a SNP with P ≤ 5 × 10⁻⁸. Indices are rounded to two decimal places; 0.00 can therefore denote a nonzero value below 0.005. Grey cells marked NA are undefined because either locus set is empty. The calculation uses the current SLEMM configuration and all ten completed GCTA-MLMA phenotypes. Full-precision values are supplied in Figure_05_jaccard_by_phenotype.tsv.

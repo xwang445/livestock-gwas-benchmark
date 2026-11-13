@@ -1,0 +1,16 @@
+Title:          Figure_05
+Creator:        Matplotlib; verified benchmark source data
+Producer:       Matplotlib pdf backend v3.3.4
+CreationDate:   Thu Nov 12 12:12:19 2026 EST
+Tagged:         no
+UserProperties: no
+Suspects:       no
+Form:           none
+JavaScript:     no
+Pages:          1
+Encrypted:      no
+Page size:      481.89 x 538.583 pts
+Page rot:       0
+File size:      413026 bytes
+Optimized:      no
+PDF version:    1.4

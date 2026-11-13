@@ -9,7 +9,15 @@ python scripts/workflow.py check
 python scripts/workflow.py figures --data derived_data --out NEW_FIGURE_DIRECTORY
 ```
 
-The check validates current configuration/table consistency, exact-threshold regressions, syntax, aggregate schemas and the separately labeled historical manuscript ledger. The default figure command reads `derived_data/revision_2026-11-05/association`, draws Figures 3/5/6 and the power supplement, and regenerates Figure 1 from its verified LD table. It does not silently redraw the unavailable revised Figure 7 or substitute old RSS results. Fine-mapping figures have their own [canonical workflow](../scripts/revision_2026-11-05/susie/README.md).
+The check validates current configuration/table consistency, exact-threshold regressions, syntax, aggregate schemas and the separately labeled historical manuscript ledger. The default figure command reads `derived_data/revision_2026-11-05/association`, draws Figures 3/5/6 and the power supplement, and regenerates Figure 1 from its verified LD table. This command retains the November 5 diagnostic layouts. The November 12 submission stage below redraws Figure 7 from retained bin summaries and Figure 8 from final RSS plus recovered-PVE aggregates. Fine-mapping figures have their own [canonical workflow](../scripts/revision_2026-11-05/susie/README.md).
+
+## Submission artwork from public aggregates
+
+```bash
+python scripts/workflow.py submission --data derived_data --out NEW_SUBMISSION_DIRECTORY
+```
+
+This stage redraws Figures 1–3 and 5–8, S11–S20, and the pooled four-column Table S1 from [committed aggregate sources](../derived_data/submission_2026-11-12). The distributed [submission artwork](../figures/submission_2026-11-12) also contains Figure 4/S1–S10. Regenerating those Manhattan figures requires the explicit restricted-input command in the [submission script instructions](../scripts/submission_2026-11-12/README.md). Their raw variant-level caches are excluded from Git. The older `figures` stage retains its November 5 diagnostic layouts.
 
 ## Restricted-input reanalysis
 
@@ -29,9 +37,9 @@ python scripts/workflow.py fine-mapping --profile hpcc \
 
 Current summaries are written under `NEW_SUMMARY_DIRECTORY/tables`. Missing GCTA outputs are recorded explicitly, and ten-phenotype means are withheld until all ten are present. Manhattan plots require complete configurations by default; `--allow-incomplete` permits clearly labeled diagnostic panels. Fine-mapping verification requires the completed TRUE run and checks its fit-mode field; it preserves the original SuSiE locus manifest and does not refit models.
 
-Add `--individual` to the current `manhattan` command to write one PDF and PNG for each completed configuration × phenotype, in addition to the composite figures. Once all ten GCTA phenotypes validate, this produces 100 individual PDF/PNG pairs plus the eleven existing composite PDF/PNG pairs. Each individual uses the same loaded SNP coordinates, native inclusive decisions, chromosome colors and threshold line; the vertical axis shows that configuration’s full range. `manhattan_manifest.tsv` records relative `individual_pdf` and `individual_png` paths. Pending rows have no individual files.
+Add `--individual` to the current `manhattan` command to write one PDF and PNG for each completed configuration × phenotype, in addition to the composite figures. With all ten GCTA phenotypes validated, this produces 100 individual PDF/PNG pairs plus the eleven existing composite PDF/PNG pairs. Each individual uses the same loaded SNP coordinates, native inclusive decisions, chromosome colors and threshold line; the vertical axis shows that configuration’s full range. `manhattan_manifest.tsv` records relative `individual_pdf` and `individual_png` paths. Pending rows have no individual files.
 
-The existing snapshot has 100 planned manifest rows: 93 completed GWAS panels and seven pending GCTA panels. Those are panel counts, rather than counts of composite image files. The ten supplementary composite figures contain ten method rows each; pooled Figure 4 is a separate composite. Use the complete command without `--allow-incomplete` for the final set of 100 individual analyses.
+The existing snapshot has 100 planned manifest rows: 100 completed GWAS panels and zero pending GCTA panels. Those are panel counts, rather than counts of composite image files. The ten supplementary composite figures contain ten method rows each; pooled Figure 4 is a separate composite. Use the complete command without `--allow-incomplete` for the final set of 100 individual analyses.
 
 `equation13 --profile mac --out NEW_DIRECTORY` reads the verified cached theory and updated SLEMM input. The theoretical source remains unavailable in this execution environment; the command cannot supply missing inputs or reconstruct Equation 12.
 

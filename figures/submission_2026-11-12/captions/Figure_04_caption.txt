@@ -1,0 +1,3 @@
+Figure 4. Significant association signals across ten simulated phenotypes
+
+Rows show phenotypes 1–10. Columns show BOLT-LMM and REGENIE_LOCO (left), FarmCPU and BLINK with their NYC and Kansas configurations (middle), and fastGWA, REGENIE_woLOCO, SLEMM and GCTA-MLMA (right). All panels use the same −log₁₀(P) range of 0–110 and retain every observed peak. Points show SNPs with P ≤ 5 × 10⁻⁸; dashed lines mark this threshold. Colors and shapes identify configurations. Chromosomes 1–18 are concatenated. Full-genome plots of all tested SNPs are provided in Figures S1–S10.

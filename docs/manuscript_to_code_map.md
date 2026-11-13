@@ -2,7 +2,7 @@
 
 Specification: author-confirmed October 22 manuscript, SHA256 `691b4cad7f5a771392009a949becd0c8dded2b99a6481bb47f8069bc2dc34e09`. It has eight main figures and S1–S10; no numbered main results table. Equation 13 is Figure 7, and fine-mapping is Figure 8. This map supersedes the initial pre-validation map. Numeric evidence is in audit/manuscript_validation.tsv; full historical candidate classification is in audit/script_provenance.tsv.
 
-This is the historical October map. The November 5 revision uses the completed estimated-residual-variance RSS rerun and a pooled precision–recall Figure 8; see [the revision record](revision_2026-11-05.md) and [current fine-mapping entry point](../finemapping/pr_curve/README.md). Historical high-PIP/MAF panels and phenotype-mean sensitivity plots remain separately identified.
+This is the historical October map. Current artwork and pooled Table S1 are indexed in [the November 12 update](revision_2026-11-12.md); its Figure 8 includes recovered-effect PVE groups alongside final pooled PR curves. The November 5 revision uses the completed estimated-residual-variance RSS rerun and a pooled precision–recall Figure 8; see [the revision record](revision_2026-11-05.md) and [current fine-mapping entry point](../finemapping/pr_curve/README.md). Historical high-PIP/MAF panels and phenotype-mean sensitivity plots remain separately identified.
 
 | Manuscript section | Scientific purpose | Inputs | Expected / actual production code | Output files | Figure/table | Status | Evidence and notes |
 |---|---|---|---|---|---|---|---|

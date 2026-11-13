@@ -3,7 +3,7 @@
 | Class | Included or excluded | Treatment |
 |---|---|---|
 | A PUBLIC CODE | Analysis scripts, configurations, tests, documentation | Included for local author review; existing license retained |
-| B NON-IDENTIFYING DERIVED RESULTS | Counts, rates, lambda summaries, binned predictions, LD bin means, pooled fine-mapping metrics, manuscript figure redraws, comparison aggregates | Included after review for identifying fields; underlying access terms remain an author-provided item |
+| B NON-IDENTIFYING DERIVED RESULTS | Counts, rates, lambda summaries, binned predictions, LD bin means, pooled fine-mapping metrics, recovered-effect/PVE-group summaries, figure redraws, editable aggregate tables and captions, comparison aggregates | Included after review for identifying fields; underlying access terms remain an author-provided item |
 | C RESTRICTED INPUT/OUTPUT | Animal genotypes, individual phenotypes and IDs, raw GWAS, causal variant identifiers, GRMs, raw LD, detailed PIPs, manuscript DOCX | Excluded from Git; source files remain in authorized locations |
 | D TEMPORARY/HISTORICAL | Caches, inventories containing private paths, old outputs, renderer scratch files, third-party source snapshots | Retained privately where relevant; not committed |
 

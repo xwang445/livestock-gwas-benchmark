@@ -1,0 +1,2333 @@
+{
+  "status": "PASS",
+  "expected_figures": 28,
+  "main_figures": 8,
+  "supplementary_figures": 20,
+  "checked_figures": 28,
+  "passed_figures": 28,
+  "missing": [],
+  "failures": [],
+  "records": [
+    {
+      "figure": "Figure_01",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_01.pdf",
+      "png_path": "png/Figure_01.png",
+      "caption_path": "captions/Figure_01_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 1071810,
+        "sha256": "76d0f63448bcd5a115f53f6fad035bc5f426f45e29eda4db481dde912a2aea07",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 72.99995277777776,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 3,
+        "fontspec_sizes_pt": [
+          5.0,
+          8.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [
+          {
+            "size_pt": 5.0,
+            "text": "2",
+            "math_exempt": true
+          }
+        ],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 659,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 113006,
+        "sha256": "068c34bed0bbb02315c0b8d711e30d46d9aa90228d63f37393dfdede5625ebfd",
+        "width_px": 2007,
+        "height_px": 862,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          44,
+          20,
+          1985,
+          806
+        ],
+        "outer_margin_fractions": [
+          0.02192326856003986,
+          0.02320185614849188,
+          0.01096163428001993,
+          0.06496519721577726
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Linkage disequilibrium decay across the pig genome",
+        "title_words": 7,
+        "legend_words": 102,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 111,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_02",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_02.pdf",
+      "png_path": "png/Figure_02.png",
+      "caption_path": "captions/Figure_02_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 736612,
+        "sha256": "79de5761e82cf7cc24884e832e2e577e499c664bfdeb71a79f677bdd3b56f29c",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 105.0000722222222,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1119,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 147216,
+        "sha256": "9ba9acfccb96be54d07031375132ff251105588457596ea885d3a71bd16f37fd",
+        "width_px": 2007,
+        "height_px": 1240,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          87,
+          66,
+          1936,
+          1109
+        ],
+        "outer_margin_fractions": [
+          0.043348281016442454,
+          0.0532258064516129,
+          0.03537618335824614,
+          0.10564516129032259
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genomic windows for effect and null-region analyses",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_03",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_03.pdf",
+      "png_path": "png/Figure_03.png",
+      "caption_path": "captions/Figure_03_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 747309,
+        "sha256": "e0a43b3ea0a754b036007569fe8262b02150235fc52ea06fad24fd941f6365b4",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 139.9998611111111,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 2450,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 415332,
+        "sha256": "62fda6dd7a6551bbe65149433fcbc7f6ee96d9f489659927fa061559f15e2995",
+        "width_px": 2007,
+        "height_px": 1653,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          107,
+          60,
+          1936,
+          1603
+        ],
+        "outer_margin_fractions": [
+          0.05331340308918784,
+          0.036297640653357534,
+          0.03537618335824614,
+          0.030248033877797943
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Significant loci and SNPs across simulated phenotypes",
+        "title_words": 7,
+        "legend_words": 98,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 107,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_04",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_04.pdf",
+      "png_path": "png/Figure_04.png",
+      "caption_path": "captions/Figure_04_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 1116021,
+        "sha256": "5108b7ebb887729a620989ce147e433e02da3d01c1cbaf8136070b3cebad8bea",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 190.00011388888888,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 3020,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 620413,
+        "sha256": "a081dc4c8dcd2087da437b472d137b403937527839df0e037bfa342f110dafd3",
+        "width_px": 2007,
+        "height_px": 2244,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          20,
+          2000,
+          2222
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.008912655971479501,
+          0.003487792725460887,
+          0.00980392156862745
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Significant association signals across ten simulated phenotypes",
+        "title_words": 7,
+        "legend_words": 75,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 84,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_05",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_05.pdf",
+      "png_path": "png/Figure_05.png",
+      "caption_path": "captions/Figure_05_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 413026,
+        "sha256": "bd6f6f43941d0dcf6b14b8d58946edd5d7c10faad3a5eb34744d5b2479fa6ba1",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 190.00011388888888,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 6036,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 371881,
+        "sha256": "5029789557032640f015d326db42d9beff636ee92536ace5dc4db325f516e155",
+        "width_px": 2007,
+        "height_px": 2244,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          10,
+          8,
+          1924,
+          2236
+        ],
+        "outer_margin_fractions": [
+          0.004982561036372696,
+          0.0035650623885918,
+          0.041355256601893375,
+          0.0035650623885918
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Phenotype-specific overlap of detected loci",
+        "title_words": 5,
+        "legend_words": 73,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 80,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_06",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_06.pdf",
+      "png_path": "png/Figure_06.png",
+      "caption_path": "captions/Figure_06_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 1076382,
+        "sha256": "97a42d3152dc8e2edef1d377e428faf2f3ef2377afe87be5df6dc02a0f4accf2",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 159.99989166666666,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 3,
+        "fontspec_sizes_pt": [
+          5.0,
+          8.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [
+          {
+            "size_pt": 5.0,
+            "text": "GC",
+            "math_exempt": true
+          },
+          {
+            "size_pt": 5.0,
+            "text": "GC",
+            "math_exempt": true
+          },
+          {
+            "size_pt": 5.0,
+            "text": "6",
+            "math_exempt": true
+          },
+          {
+            "size_pt": 5.0,
+            "text": "5",
+            "math_exempt": true
+          }
+        ],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 2484,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 418678,
+        "sha256": "f1c699cad162d718af14ebed6ad750c90a94f34cc1bb3044f4f4052a37adaae6",
+        "width_px": 2007,
+        "height_px": 1889,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          123,
+          36,
+          1969,
+          1868
+        ],
+        "outer_margin_fractions": [
+          0.061285500747384154,
+          0.019057702488088937,
+          0.018933731938216243,
+          0.01111699311805188
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Central-null spillover and spatial signal decay",
+        "title_words": 6,
+        "legend_words": 167,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 175,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_07",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_07.pdf",
+      "png_path": "png/Figure_07.png",
+      "caption_path": "captions/Figure_07_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 1065127,
+        "sha256": "49823688497f15136b2244606bc594bbe23f75d1ebb29ac4f7a7c1b4e6509d4e",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 100.00015277777776,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 3,
+        "fontspec_sizes_pt": [
+          5.0,
+          8.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [
+          {
+            "size_pt": 5.0,
+            "text": "2",
+            "math_exempt": true
+          },
+          {
+            "size_pt": 5.0,
+            "text": "2",
+            "math_exempt": true
+          }
+        ],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 523,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 84201,
+        "sha256": "de182a136af7581943506aa975363e454663c58daacbb98e7694159ec4626ace",
+        "width_px": 2007,
+        "height_px": 1181,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          59,
+          21,
+          1980,
+          1113
+        ],
+        "outer_margin_fractions": [
+          0.029397110114598904,
+          0.017781541066892465,
+          0.013452914798206279,
+          0.057578323454699404
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Predicted and observed association statistics for LOCO methods",
+        "title_words": 8,
+        "legend_words": 105,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 115,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_08",
+      "category": "main",
+      "pdf_path": "pdfs/Figure_08.pdf",
+      "png_path": "png/Figure_08.png",
+      "caption_path": "captions/Figure_08_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 751067,
+        "sha256": "5101ddd52f1e9eb186dbd005ec3ba2f7887ef1a387ad1745749c2bee28b97bcf",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 154.99997222222223,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          11.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 2443,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 221222,
+        "sha256": "7e97e68f82e43be5040c590ec7c5c7cf166b473339712583a833b0a353f543a6",
+        "width_px": 2007,
+        "height_px": 1830,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          32,
+          41,
+          1965,
+          1787
+        ],
+        "outer_margin_fractions": [
+          0.015944195316392625,
+          0.022404371584699455,
+          0.02092675635276532,
+          0.023497267759562842
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Fine-mapping ranking and recovery by recovered causal PVE",
+        "title_words": 8,
+        "legend_words": 206,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 216,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S01",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S01.pdf",
+      "png_path": "supplement/png/Figure_S01.png",
+      "caption_path": "supplement/captions/Figure_S01_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 888764,
+        "sha256": "a296ac5542b57c7ce2cf23ffe8d26895da5b2a950c8dac7cbdaaa832b7e17fa9",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 266558,
+        "sha256": "195222a1dd8fb50b99cad66403bbd3d4a8e01f1fcdfc5681e4ebd1d1a567ff46",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 1",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S02",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S02.pdf",
+      "png_path": "supplement/png/Figure_S02.png",
+      "caption_path": "supplement/captions/Figure_S02_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 896066,
+        "sha256": "8598283f2a764639f31d00388006b7c02e19867d2c78246083ba15f7ae4b2ae9",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 276041,
+        "sha256": "ac32a6ea73bbbb05eaec9c067110d97eff2b23988f6b9d680886a82d2f089d47",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 2",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S03",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S03.pdf",
+      "png_path": "supplement/png/Figure_S03.png",
+      "caption_path": "supplement/captions/Figure_S03_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 916078,
+        "sha256": "e29beda423ec654e18090ce29d369034adcb42ffe2ea4d4eac3ea8aa39152fae",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 294469,
+        "sha256": "73ee0c9756bd73c6684c696b140f876ea49019e02fc50c96e340548871ccebd0",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 3",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S04",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S04.pdf",
+      "png_path": "supplement/png/Figure_S04.png",
+      "caption_path": "supplement/captions/Figure_S04_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 885765,
+        "sha256": "d6150d4bbc9529e4995fdfca93c0ec032c342e4780f7e581b0ba45861a303e6c",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 266470,
+        "sha256": "92ec8a6d2952ea17c583545df63f14c8a8b8b3ed4cb29412c5dbfdd23839fe9a",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 4",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S05",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S05.pdf",
+      "png_path": "supplement/png/Figure_S05.png",
+      "caption_path": "supplement/captions/Figure_S05_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 888493,
+        "sha256": "001a0cd548a60e4eeede77d5aef428da8e5bcce6fc8bce8cbdcc413583be78f2",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 270602,
+        "sha256": "726f90e30c5cce8c717197939c7115de68733a1385da1e0c23656aaa13aa3bcb",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 5",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S06",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S06.pdf",
+      "png_path": "supplement/png/Figure_S06.png",
+      "caption_path": "supplement/captions/Figure_S06_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 874535,
+        "sha256": "d3b5cf5df43892446c508de97202714ad389a540144ee797f3f6d35cc952b9da",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 258741,
+        "sha256": "2ba0390e354bbbbbd796ca44135dce7863aac83fe593f30ac6e5e513741d47d8",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 6",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S07",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S07.pdf",
+      "png_path": "supplement/png/Figure_S07.png",
+      "caption_path": "supplement/captions/Figure_S07_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 904799,
+        "sha256": "5c9a2edc78061780f8fb413e6e1c9921438780c908ff3890138d03c0072cf80b",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 287685,
+        "sha256": "9364f42b6815fd3cf4057f8c1eacc650812a8976a3479f09c0bbb785a5c2f063",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 7",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S08",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S08.pdf",
+      "png_path": "supplement/png/Figure_S08.png",
+      "caption_path": "supplement/captions/Figure_S08_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 905253,
+        "sha256": "d46fa6f6b9903121c4e1e55199199613520fe9763125fd49c2d48ed68e9a242d",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 290350,
+        "sha256": "ef5f192205de5205fe1d1cb4b433724fc9eed8d105ddd3ea82e6547a5bbfd6ee",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 8",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S09",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S09.pdf",
+      "png_path": "supplement/png/Figure_S09.png",
+      "caption_path": "supplement/captions/Figure_S09_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 880782,
+        "sha256": "fede4de70955e03f18673ea725fc61d04c3f58c21f5f7c6de1add50eb4d53f09",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 261499,
+        "sha256": "78f2242a7cab9e520a05fede7cf0b2fa7b5c98a7b9d4ae3a5d688180946346df",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 9",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S10",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S10.pdf",
+      "png_path": "supplement/png/Figure_S10.png",
+      "caption_path": "supplement/captions/Figure_S10_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 870428,
+        "sha256": "de0be483d7b04b0ed85389328a6725bf7fade03e640f5a8cdf1fef2bcf71b009",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 175.00000277777775,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 2,
+        "fontspec_sizes_pt": [
+          8.0,
+          9.0,
+          10.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 1714,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 256826,
+        "sha256": "6e9298a5e726d3f278a98d7796bab8eee11b23ed3bcc7ce01618b1bb9fecaebe",
+        "width_px": 2007,
+        "height_px": 2066,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          15,
+          31,
+          1990,
+          2031
+        ],
+        "outer_margin_fractions": [
+          0.007473841554559043,
+          0.015004840271055178,
+          0.008470353761833582,
+          0.016940948693126814
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Genome-wide association results for simulated phenotype 10",
+        "title_words": 7,
+        "legend_words": 124,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 133,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S11",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S11.pdf",
+      "png_path": "supplement/png/Figure_S11.png",
+      "caption_path": "supplement/captions/Figure_S11_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396198,
+        "sha256": "5d698a44b83d8c3dddbbcccc2dc93368d63f59a91c79674e33a6ac7308ead10b",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5643,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 346692,
+        "sha256": "a7a9c9c0af3afe61dd7636e667e70f20966f3ca35ecb7aff4da0fe7036129b01",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 1",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S12",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S12.pdf",
+      "png_path": "supplement/png/Figure_S12.png",
+      "caption_path": "supplement/captions/Figure_S12_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396177,
+        "sha256": "d807bf9b81bb096cb7094727a307324ebd733d7459b434d557156fc98648833d",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5893,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 327003,
+        "sha256": "b500e67d2ca0209f4b84d8a9c2cb003c1ac9424203ce10e3d695da6460278fe7",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 2",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S13",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S13.pdf",
+      "png_path": "supplement/png/Figure_S13.png",
+      "caption_path": "supplement/captions/Figure_S13_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396176,
+        "sha256": "7c2eb73f14a233ad5e562b14402f5413f3b93f82d8a7ba13479ed5ded0cf9839",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5643,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 353187,
+        "sha256": "31f0d6558b7fe0d4b480d13b542252879df08e1437e95537ed9994d6b570d7b7",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 3",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S14",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S14.pdf",
+      "png_path": "supplement/png/Figure_S14.png",
+      "caption_path": "supplement/captions/Figure_S14_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396192,
+        "sha256": "916d63b82b489ddf82ec210a0f307864504cbf9ea484f21b81c24f132b5699e2",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5643,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 350844,
+        "sha256": "a7239c114b4778802964b746ce77a74eb11ad2e1af9099191fb3d99eb7613e12",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 4",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S15",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S15.pdf",
+      "png_path": "supplement/png/Figure_S15.png",
+      "caption_path": "supplement/captions/Figure_S15_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396126,
+        "sha256": "a6ddc560754545d880bb775ac975d635c05b6866100e947809166a273b9d45eb",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5643,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 340550,
+        "sha256": "2dd36324804655f0de135a21a65562418383c4b80f362d2209467beb89751022",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 5",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S16",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S16.pdf",
+      "png_path": "supplement/png/Figure_S16.png",
+      "caption_path": "supplement/captions/Figure_S16_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396171,
+        "sha256": "e68ea8f1b959e481348c1c7450604943eb6cd2560280ed8094962cd60d30e61c",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5893,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 320452,
+        "sha256": "fdfad0dd34792ebf4a84b5dbe1b0bc7fb24048b214e869d85231c916529db205",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 6",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S17",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S17.pdf",
+      "png_path": "supplement/png/Figure_S17.png",
+      "caption_path": "supplement/captions/Figure_S17_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396204,
+        "sha256": "277a65727318b804fb794d1a683cbd5d1ad1ef472da85fcfe6d991389d06b599",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5643,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 347411,
+        "sha256": "4a6a3831870e6e851dff5ad39ba204322bc43ac61d58561f064e16a7116ca405",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 7",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S18",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S18.pdf",
+      "png_path": "supplement/png/Figure_S18.png",
+      "caption_path": "supplement/captions/Figure_S18_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396171,
+        "sha256": "46afd03274a33f1fc4b6b701c1793364f99fb5c5ef42a9ae733351cbb72f4376",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5893,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 324803,
+        "sha256": "7420af72fba60f08cb3d5c91a5c0e190043f9ffdac90063e546ec3a3209b70dd",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 8",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S19",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S19.pdf",
+      "png_path": "supplement/png/Figure_S19.png",
+      "caption_path": "supplement/captions/Figure_S19_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396184,
+        "sha256": "49f7f9cc4beb3043085f6b672d2b3396b50765a562a36005a3820cfb91bf2165",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5893,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 328663,
+        "sha256": "4067d68cec4661f84c46fe3c1077b629ff128cae21fbc159af8668592bc04843",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 9",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    },
+    {
+      "figure": "Figure_S20",
+      "category": "supplement",
+      "pdf_path": "supplement/pdfs/Figure_S20.pdf",
+      "png_path": "supplement/png/Figure_S20.png",
+      "caption_path": "supplement/captions/Figure_S20_caption.txt",
+      "status": "pass",
+      "pdf": {
+        "bytes": 396192,
+        "sha256": "2cb6cfd3f3247144ec2e478706ceffda13fc934162418ffe53c1989ec773ef13",
+        "pages": 1,
+        "width_mm": 170.00008333333332,
+        "height_mm": 150.00005277777777,
+        "rotation": 0,
+        "embedded_fonts": true,
+        "font_count": 1,
+        "fontspec_sizes_pt": [
+          8.0
+        ],
+        "minimum_base_font_pt": 8.0,
+        "small_font_fragments": [],
+        "text_outside_page": [],
+        "numbered_figure_titles_in_artwork": [],
+        "invalid_unicode_characters": [],
+        "inconsistent_method_aliases": [],
+        "text_extracted_characters": 5893,
+        "checks": {
+          "file_size": true,
+          "width": true,
+          "height": true,
+          "single_page": true,
+          "correct_orientation": true,
+          "embedded_fonts": true,
+          "no_numbered_title_or_caption": true,
+          "unicode": true,
+          "method_names": true,
+          "base_font_size": true,
+          "no_text_outside_page": true
+        }
+      },
+      "png": {
+        "bytes": 327090,
+        "sha256": "c72a024d01a1243ad400728d776d0105d4f71424b375d1fa352968229963b758",
+        "width_px": 2007,
+        "height_px": 1771,
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "content_bbox_px": [
+          120,
+          71,
+          1936,
+          1742
+        ],
+        "outer_margin_fractions": [
+          0.059790732436472344,
+          0.04009034443817053,
+          0.03537618335824614,
+          0.01637492941840768
+        ],
+        "checks": {
+          "file_size": true,
+          "dpi": true,
+          "dimensions_match_pdf": true,
+          "visible_artwork": true,
+          "close_outer_crop": true
+        }
+      },
+      "caption": {
+        "title": "Detected-locus overlap for phenotype 10",
+        "title_words": 5,
+        "legend_words": 74,
+        "title_pass": true,
+        "legend_pass": true,
+        "caption_total_words": 81,
+        "utf8_valid": true
+      },
+      "failed_checks": []
+    }
+  ],
+  "limits": {
+    "width_mm": 170,
+    "width_tolerance_mm": 0.2,
+    "graphic_height_mm": 190,
+    "file_bytes": 10000000,
+    "png_dpi": 300,
+    "base_font_poppler_rounded_pt": 8,
+    "title_words": 15,
+    "legend_words": 300
+  },
+  "font_note": "Poppler XML at zoom 1 reports integer sizes; 8.5 pt base type is reported as 8. Short mathematical super/subscripts are exempt from the base-size check.",
+  "source_sha256": "46e2718df747d95b04df220f74be6564fe5800e1b3269c40fdf1f4a465aaff48"
+}

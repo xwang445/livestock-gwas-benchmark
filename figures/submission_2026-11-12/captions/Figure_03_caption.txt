@@ -1,0 +1,3 @@
+Figure 3. Significant loci and SNPs across simulated phenotypes
+
+Each cell shows the number of detected loci above the number of significant SNPs in parentheses. Loci are chromosome-specific, zero-anchored 500-kb windows containing at least one SNP with P ≤ 5 × 10⁻⁸; terminal fragments are retained. Color represents detected-locus count, using a logarithmic scale for count plus one. All ten configurations use the same 20,000 animals, 135,358 markers and ten phenotype replicates. SLEMM uses the updated benchmark configuration. REGENIE_LOCO and REGENIE_woLOCO denote analyses with and without leave-one-chromosome-out prediction, respectively. NYC and Kansas identify the corresponding FarmCPU and BLINK implementations. The source table contains all 100 count pairs.

@@ -1,0 +1,6 @@
+start_mb	end_mb	region
+0	2	effect
+2	3	null
+3	5	central_null
+5	6	null
+6	8	effect

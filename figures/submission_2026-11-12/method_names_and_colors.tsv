@@ -1,0 +1,11 @@
+source_configuration	display_name	color_hex	legend_text_color_hex	marker	line_style
+BOLT-LMM	BOLT-LMM	#0072B2	#0072B2	o	-
+REGENIE_LOCO	REGENIE_LOCO	#D55E00	#C05500	s	-
+REGENIE_WO_LOCO	REGENIE_woLOCO	#E69F00	#996900	D	--
+fastGWA	fastGWA	#009E73	#008763	^	-
+FarmCPU_NYC	FarmCPU (NYC)	#D81B60	#D81B60	v	-
+FarmCPU_Kansas	FarmCPU (Kansas)	#004D40	#004D40	P	--
+BLINK_NYC	BLINK (NYC)	#B85A00	#B85A00	<	-
+BLINK_Kansas	BLINK (Kansas)	#1565C0	#1565C0	>	--
+SLEMM	SLEMM	#222222	#222222	X	-
+GCTA_MLMA	GCTA-MLMA	#AA4499	#AA4499	p	--

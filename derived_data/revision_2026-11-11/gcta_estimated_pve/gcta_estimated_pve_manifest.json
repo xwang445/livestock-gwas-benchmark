@@ -1,0 +1,210 @@
+{
+  "status": "complete",
+  "created_utc": "2026-11-13T15:41:14.674379+00:00",
+  "method": "GCTA-MLMA",
+  "estimand": "GWAS-estimated single-SNP component PVE; not generating-effect PVE",
+  "formula": "MLMA_b^2 * Var(observed_A1_dosage, ddof=1) / Var(observed_phenotype, ddof=1)",
+  "n_samples": 20000,
+  "n_variants": 135358,
+  "n_phenotypes": 10,
+  "n_leads": 15,
+  "n_causal_leads": 10,
+  "n_missing_genotypes": 0,
+  "maximum_allele_frequency_difference": 0.0,
+  "design_h2": 0.5,
+  "n_simulated_causal": 10000,
+  "design_expected_pve_fraction": 5e-05,
+  "locus_definition": "Fixed 500 kb windows; canonical min-P leads and deterministic tie rule",
+  "limitations": [
+    "MLMA coefficients are estimated association effects; these are not saved simulation effects.",
+    "Selection of significant lead SNPs can inflate their estimated effect magnitudes.",
+    "Single-SNP variance components must not be summed across LD-correlated SNPs.",
+    "Ratios to h2/m compare an estimated component with the design expectation; they do not recover realized generating-effect ratios."
+  ],
+  "detailed_outputs_written": false,
+  "inputs": [
+    {
+      "role": "restricted_input_01",
+      "bytes": 676790003,
+      "sha256": "f8260311e96fdf0b4ee7d44bce5c1912bf02928ce99893c362ef5985f523fe60"
+    },
+    {
+      "role": "restricted_input_02",
+      "bytes": 4269937,
+      "sha256": "85f23bc33ee79bbc596d9fb318ad9d0518032ba0cd78fbc21711dae02457adf8"
+    },
+    {
+      "role": "restricted_input_03",
+      "bytes": 380000,
+      "sha256": "d9e9f2b82802399f8802d380c7d7120e22a01abec80689279eda30a5c8c091f9"
+    },
+    {
+      "role": "restricted_input_04",
+      "bytes": 135407,
+      "sha256": "b7a026e40201e0f9644c48d440ff96ffd0fbbf0690baa0535d65b139d71c0446"
+    },
+    {
+      "role": "restricted_input_05",
+      "bytes": 7423849,
+      "sha256": "d2a9f6845ac92fe57656755f7e5dfefaf8b10e6e21ace14637edb3f26c445f18"
+    },
+    {
+      "role": "restricted_input_06",
+      "bytes": 4269937,
+      "sha256": "85f23bc33ee79bbc596d9fb318ad9d0518032ba0cd78fbc21711dae02457adf8"
+    },
+    {
+      "role": "restricted_input_07",
+      "bytes": 383609,
+      "sha256": "faed2c2a9e7d5d255ce7fbe60d6c7204816779566be481cce19114d0cfa538a1"
+    },
+    {
+      "role": "restricted_input_08",
+      "bytes": 9107506,
+      "sha256": "7c09883744b5ff14df26e03eae375b7aae61acb5be164649ea2a8469fcf78de0"
+    },
+    {
+      "role": "restricted_input_09",
+      "bytes": 3445,
+      "sha256": "0837a6104f6bbe319bfa6bf84b07fd70e7d0dcf5cb0f622c0c60f0b4a578bc6a"
+    },
+    {
+      "role": "restricted_input_10",
+      "bytes": 383175,
+      "sha256": "32927eadd87aab23ded611eaa32f386ff3484d940ea7ff558c28ebfd9031da99"
+    },
+    {
+      "role": "restricted_input_11",
+      "bytes": 9111331,
+      "sha256": "6793add0c6e8b293fe04a3f760a8db9374e1ce3f4b707a1154633618c663d48e"
+    },
+    {
+      "role": "restricted_input_12",
+      "bytes": 3420,
+      "sha256": "7eb9a70c1f33c32d736af2ad13b8fb919b38533df9df17ba9b286350bf0aec69"
+    },
+    {
+      "role": "restricted_input_13",
+      "bytes": 383292,
+      "sha256": "742c3a43921a789f771ad6e5f5c5166aa8b0079dafa1fee9d38fd1fd4e6284cd"
+    },
+    {
+      "role": "restricted_input_14",
+      "bytes": 9110291,
+      "sha256": "f7740257333c725b972b87c28cc4f9a44130d2692630f4127fff0bd2fb38480a"
+    },
+    {
+      "role": "restricted_input_15",
+      "bytes": 3419,
+      "sha256": "530552af2f47095eddb69695480bcc83e028c896f4486ae28a1e0ed7f7ea508b"
+    },
+    {
+      "role": "restricted_input_16",
+      "bytes": 383351,
+      "sha256": "3de9ba9fb7b8668e1fe55d3392d60d9ecd35b97b47ba46b23c7cdf99b9ea5f68"
+    },
+    {
+      "role": "restricted_input_17",
+      "bytes": 9113061,
+      "sha256": "b3da418ad2f59fcfedaf48b15e987e1c1a1758b0d184c11400fc040a78a46fa9"
+    },
+    {
+      "role": "restricted_input_18",
+      "bytes": 3447,
+      "sha256": "4a03a1f7c699df5811bb9d63e2c8e652aa3bd44dd4338580ccfdc2783a71cf71"
+    },
+    {
+      "role": "restricted_input_19",
+      "bytes": 383135,
+      "sha256": "fe9260d94679ebd5b4ec87ef90c1bf813991ee4aecb67eada35eab3853b807a1"
+    },
+    {
+      "role": "restricted_input_20",
+      "bytes": 9110373,
+      "sha256": "b08353d0e0f078406bd16b36edc88e39badef5cb2394ba523b3de8df394dfc08"
+    },
+    {
+      "role": "restricted_input_21",
+      "bytes": 3420,
+      "sha256": "336959828d9cc484fffc6f01dbedf9cbe3923ec7e0e35d1c6c19e9c6bb291a40"
+    },
+    {
+      "role": "restricted_input_22",
+      "bytes": 383150,
+      "sha256": "f8176f402cf133ca63e6f02584dc56f96fe80957222c2ba30c9e31c9c8403035"
+    },
+    {
+      "role": "restricted_input_23",
+      "bytes": 9111690,
+      "sha256": "394faad2c5d2eeb924dd38a653df2fd226ed3e26059c9cc2f1d14d538c540aa4"
+    },
+    {
+      "role": "restricted_input_24",
+      "bytes": 3392,
+      "sha256": "0728e69192c1e331d4944a1e6d069178f3ea4abeaf0632fc5d91ade105c52cc7"
+    },
+    {
+      "role": "restricted_input_25",
+      "bytes": 383071,
+      "sha256": "ae351483dea3365e9bd85ef333d1ed000896199f0e86ce6589c3b218586d6e45"
+    },
+    {
+      "role": "restricted_input_26",
+      "bytes": 9110710,
+      "sha256": "2a7e4ee1816effa6a0425ffaa1bdc971e2a0ddc60623f77309a6d0873d3175c9"
+    },
+    {
+      "role": "restricted_input_27",
+      "bytes": 3448,
+      "sha256": "7423eb7a68834334bb4d64668792f6aa942576aecfffb4cb7ca0fad2918a1e09"
+    },
+    {
+      "role": "restricted_input_28",
+      "bytes": 382936,
+      "sha256": "94e4b53fe5af25993eeca77ed58e871743d6b77a136227092df8332c3adfb09e"
+    },
+    {
+      "role": "restricted_input_29",
+      "bytes": 9110755,
+      "sha256": "c654670d6de31b276b7209e07f4b6129a1d66332fb46547bd2dd4eaf5fefd6ca"
+    },
+    {
+      "role": "restricted_input_30",
+      "bytes": 3448,
+      "sha256": "90cb0889b0fc24b806eecbb4ebac01409d91c2fa829730c55d5c3a22b4baadc4"
+    },
+    {
+      "role": "restricted_input_31",
+      "bytes": 383778,
+      "sha256": "fe8d394014a8641456ef00db966dd36664e00feeab642783ffd361cc52b433bd"
+    },
+    {
+      "role": "restricted_input_32",
+      "bytes": 9113803,
+      "sha256": "70cde2183a4b9093a97390f16678d1311f8e34f3fcc017d56168ac9cb6f1b881"
+    },
+    {
+      "role": "restricted_input_33",
+      "bytes": 3448,
+      "sha256": "bafdf4508ad08de74d76892207fd75f52a33d9733a1f2c0c1e11f44b1033d930"
+    },
+    {
+      "role": "restricted_input_34",
+      "bytes": 383220,
+      "sha256": "980f48915d458039eb7c91dc5741797cdb47441376805c9d62707e51ff4aec93"
+    },
+    {
+      "role": "restricted_input_35",
+      "bytes": 9111625,
+      "sha256": "ee1fd4dfdec1ba770845df93f91d03047db2e09217a44f2f70a602b963f7d01a"
+    },
+    {
+      "role": "restricted_input_36",
+      "bytes": 3396,
+      "sha256": "beebb56323b79891cd972909d7a304294b2b0df79f3911e74975740b1de40ed1"
+    }
+  ],
+  "source_sha256": "e58db3dd8b048813215f9aef4f563c91dd78a150ac6715dfc4237b6de50b7c0e",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3"
+}

@@ -13,6 +13,8 @@ Run `python scripts/workflow.py --help` from the repository root. [docs/workflow
 | `05_downstream/` | Guide to the shared downstream calculations |
 | `12_finemapping/` | Saved-fit evaluation and retained fitting implementation |
 | `13_figures/` | Figure generators |
+| `revision_2026-11-11/` | Recovered-effect lead/PVE and GWAS-coefficient PVE summaries |
+| `submission_2026-11-12/` | Portable submission figures and pooled Table S1 |
 | `provenance/` | Read-only sample-chain and manuscript-number checks |
 
 Older stage scripts are preserved in [archive](../archive/README.md), outside the supported workflow. The directory numbers preserve established paths; the workflow guide defines execution order.

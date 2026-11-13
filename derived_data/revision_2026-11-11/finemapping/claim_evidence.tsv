@@ -1,0 +1,5 @@
+statistic	group	minimum	maximum	units
+mean_phenotype_high_pip_rate	<0.5×	0.00307059746157465	0.00383992717759569	fraction
+mean_phenotype_high_pip_rate	Non-causal	0.00303599872175541	0.00335132382462368	fraction
+mean_phenotype_high_pip_rate	≥4×	0.0130370960635727	0.0196967730923579	fraction
+supplied_recovered_pve	all_causal_pairs	1.98339000682634e-14	0.000925124477616862	fraction

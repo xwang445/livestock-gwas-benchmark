@@ -1,0 +1,4 @@
+# Tested aggregate figure/table redraw environment (Python 3.10 or newer).
+-r requirements-validation.txt
+Pillow==13.0.0
+# Optional export QA also requires the Poppler command-line tools.
